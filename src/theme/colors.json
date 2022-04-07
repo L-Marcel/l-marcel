@@ -1,10 +1,140 @@
 {
-  "primary": {
-    "500": "#423958",
-    "400": "#80749B",
-    "350": "#C1B1E6",
-    "300": "#CABDE9",
-    "200": "#D5CCEB",
-    "100": "#E6E2F0"
+  "semanticTokens": { 
+    "colors": {
+      "imageColorDefault.300": {
+        "default": "#C1BFBF",
+        "_dark": "#474747"
+      },
+      "imageColorDefault.400": {
+        "default": "#aaaaaa",
+        "_dark": "#5D5C5C"
+      },
+      "imageColorDefault.500": {
+        "default": "#aaaaaa",
+        "_dark": "#5D5C5C"
+      },
+      "imageColorDefault.600": {
+        "default": "#e6e6e6",
+        "_dark": "#282828"
+      },
+      "imageColorDefault.700": {
+        "default": "#EFEFEF",
+        "_dark": "#1D1D1D"
+      },
+      "imageColorDefault.800": {
+        "default": "#FFFFFF",
+        "_dark": "#1D1D1D"
+      },
+      "background": {
+        "default": "whiteAlpha.900",
+        "_dark": "blackAlpha.900"
+      },
+      "alt.50": {
+        "default": "blackAlpha.50",
+        "_dark": "whiteAlpha.50"
+      },
+      "alt.100": {
+        "default": "blackAlpha.100",
+        "_dark": "whiteAlpha.100"
+      },
+      "alt.200": {
+        "default": "blackAlpha.200",
+        "_dark": "whiteAlpha.200"
+      },
+      "alt.300": {
+        "default": "blackAlpha.300",
+        "_dark": "whiteAlpha.300"
+      },
+      "alt.400": {
+        "default": "blackAlpha.400",
+        "_dark": "whiteAlpha.400"
+      },
+      "alt.500": {
+        "default": "blackAlpha.500",
+        "_dark": "whiteAlpha.500"
+      },
+      "alt.600": {
+        "default": "blackAlpha.600",
+        "_dark": "whiteAlpha.600"
+      },
+      "alt.700": {
+        "default": "blackAlpha.700",
+        "_dark": "whiteAlpha.700"
+      },
+      "alt.800": {
+        "default": "blackAlpha.800",
+        "_dark": "whiteAlpha.800"
+      },
+      "alt.900": {
+        "default": "blackAlpha.800",
+        "_dark": "whiteAlpha.800"
+      },
+      "default.50": {
+        "default": "whiteAlpha.50",
+        "_dark": "darkAlpha.50"
+      },
+      "default.100": {
+        "default": "whiteAlpha.100",
+        "_dark": "darkAlpha.100"
+      },
+      "default.200": {
+        "default": "whiteAlpha.200",
+        "_dark": "darkAlpha.200"
+      },
+      "default.300": {
+        "default": "whiteAlpha.300",
+        "_dark": "darkAlpha.300"
+      },
+      "default.400": {
+        "default": "whiteAlpha.400",
+        "_dark": "darkAlpha.400"
+      },
+      "default.500": {
+        "default": "whiteAlpha.500",
+        "_dark": "darkAlpha.500"
+      },
+      "default.600": {
+        "default": "whiteAlpha.600",
+        "_dark": "darkAlpha.600"
+      },
+      "default.700": {
+        "default": "whiteAlpha.700",
+        "_dark": "darkAlpha.700"
+      },
+      "default.800": {
+        "default": "whiteAlpha.800",
+        "_dark": "darkAlpha.800"
+      },
+      "default.900": {
+        "default": "whiteAlpha.800",
+        "_dark": "darkAlpha.800"
+      }
+    }
+  },
+  "colors": {
+    "primary": {
+      "50": "#f5eceb",
+      "100": "#f3d2c9",
+      "200": "#eeb6a7",
+      "300": "#e99c85",
+      "400": "#e7886b",
+      "500": "#e67755",
+      "600": "#db7151",
+      "700": "#cd6a4c",
+      "800": "#bd6449",
+      "900": "#9f5a45"
+    },
+    "secondary": {
+      "50": "#e3f7fd",
+      "100": "#baecfa",
+      "200": "#8fdff6",
+      "300": "#6ad2ef",
+      "400": "#57c9e8",
+      "500": "#53bfe1",
+      "600": "#4cafcd",
+      "700": "#439ab2",
+      "800": "#3c8699",
+      "900": "#2f636d"
+    }
   }
 }

@@ -1,22 +1,18 @@
 import { extendTheme } from "@chakra-ui/react";
-import { boxShadow } from "./effects/shadow";
-import colors from "./colors.json";
+import { mode } from "@chakra-ui/theme-tools";
+import colorsConfig from "./colors.json";
+
+const { colors, semanticTokens } = colorsConfig;
 
 export const theme = extendTheme({
+  semanticTokens,
   colors,
   fonts: {
     heading: "'Inter', sans-serif",
     body: "'Inter', sans-serif",
   },
   styles: {
-    global: {
-      ":root": {
-        "--primary": colors.primary[500],
-        "--primary-400": colors.primary[400],
-        "--primary-300": colors.primary[300],
-        "--primary-200": colors.primary[200],
-        "--primary-100": colors.primary[100]
-      },
+    global: (props) => ({
       "*": {
         userSelect: "none",
         transition: "filter .2s linear !important",
@@ -26,26 +22,26 @@ export const theme = extendTheme({
         mr: -2
       },
       "::-webkit-scrollbar-track": {
-        background: colors.primary[300],
-        ...boxShadow()
+        //background: colors.primary[300]
       },
       "::-webkit-scrollbar-thumb": {
-        background: colors.primary[400],
+        //background: colors.primary[400]
       },
       "::-webkit-scrollbar-thumb:hover": {
-        background: colors.primary[500],
+        //background: colors.primary[500]
       },
       body: {
-        bg: colors.primary[100],
+        bg: mode(semanticTokens.colors.background.default, semanticTokens.colors.background._dark)(props),
         h: "100vh",
         w: "100vw",
-        overflow: "hidden"
+        overflow: "hidden",
+        isRandom: true
       },
       "button:hover": {
         filter: "brightness(0.95)"
       },
       ".primary-progressbar > div[role='progressbar']": {
-        bg: colors.primary[500]
+        //bg: colors.primary[500]
       },
       "*:focus": {
         boxShadow: "none !important"
@@ -57,6 +53,6 @@ export const theme = extendTheme({
         color: "var(--primary) !important",
         bgColor: "primary.100"
       }
-    }
+    })
   }
 });
