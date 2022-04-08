@@ -7,10 +7,9 @@ function Profile() {
     <Box
       as={m.div}
       position="absolute"
-      top={0}
+      top={"-2px"}
       left={0}
       p={2}
-      m={8}
       bgColor="alt.200"
       _before={{
         content: "''",

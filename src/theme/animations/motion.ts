@@ -28,6 +28,28 @@ const fadeToTop = {
   }
 };
 
+const fadeToTopOnScroll = {
+  initial: "hidden",
+  viewport: { 
+    once: false
+  },
+  whileInView: "inView",
+  variants: {
+    hidden: {
+      opacity: 0,
+      y: 5
+    },
+    inView: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: .2,
+        duration: .2
+      }
+    }
+  }
+};
+
 const scaleOnInteract = {
   whileHover: {
     scale: .9
@@ -40,5 +62,6 @@ const scaleOnInteract = {
 export { 
   fadeToTop,
   fadeLayout,
+  fadeToTopOnScroll,
   scaleOnInteract
 };

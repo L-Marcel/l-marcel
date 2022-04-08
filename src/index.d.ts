@@ -1,5 +1,5 @@
+declare module "*.md";
 declare type BoxProps = import("@chakra-ui/react").BoxProps;
-
 declare interface PageProps extends BoxProps {
   user: User;
   repos: Repository[];
@@ -61,7 +61,9 @@ declare type Repository = {
   fork?: boolean;
   url: string;
   github: string;
+  languagesUrl: string;
   language: string;
+  languages?: { [key: string]: number };
   branch: string;
   importedConfig?: Config;
   badge?: string;
@@ -111,11 +113,11 @@ declare type RepositoriesFilterOptions = {
 declare type AppContext = {
   filteredRepositories: Repository[];
   filterOptions: RepositoriesFilterOptions;
-  setFilterOptions: (options: RepositoriesFilterOptions) => void;
+  setFilterOptions: (options: RepositoriesFilterOptions, user: User) => void;
   repositories: Repository[];
   setRepositories: (repositories: Repository[]) => void;
-  user: User;
-  setUser: (user: User) => void;
+  showBackground: boolean;
+  setShowBackground: (show: boolean) => void;
 };
 
 declare type Formatter = {
@@ -129,3 +131,11 @@ declare type RepositoryLink = {
 };
 
 declare type RepositoryLinkType = "self" | "figma" | "repo";
+
+declare type StatsImageOptions = {
+  color?: string;
+  titleColor?: string;
+  iconColor?: string;
+  bgColor?: string;
+  title?: string;
+};

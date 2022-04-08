@@ -6,13 +6,15 @@ type GithubGetReposOptions = {
   initialPage: number;
   repos: Repository[];
   formatters: Formatter[];
+  getLanguages?: boolean;
 };
 
 async function getGithubRepos(url: string, { 
   reposPerPage = 30, 
   initialPage = 1,
   repos = [],
-  formatters = []
+  formatters = [],
+  getLanguages = false,
 }: GithubGetReposOptions) {
   const pageRepos = await api.get(`${url}?per_page=${reposPerPage}&page=${initialPage}`).then(async(res) => {
     const data = res.data;
@@ -26,6 +28,7 @@ async function getGithubRepos(url: string, {
         template: repo.is_template,
         url: repo.url,
         github: repo.svn_url,
+        languagesUrl: repo.languages_url,
         language: repo.language,
         branch: repo.default_branch,
         license: repo.license?.name ?? null,
@@ -72,6 +75,8 @@ async function getGithubRepos(url: string, {
 
       repos[i].importedConfig = config;
       repos[i].formattedName = getRepoFormattedName(repos[i].importedConfig.name, formatters);
+
+      repos[i].languages = getLanguages && !repos[i].fork? await getGithubReposLanguages(repos[i].languagesUrl):{};
     };
 
     return repos;
@@ -85,10 +90,60 @@ async function getGithubRepos(url: string, {
       initialPage: initialPage + 1, 
       repos: [ ...repos, ...pageRepos ],
       formatters,
+      getLanguages
     });
   };
 
   return [ ...repos, ...pageRepos ];
 };
 
-export { getGithubRepos };
+async function getGithubUser() {
+  return await api.get("https://api.github.com/users/l-marcel")
+  .then(res => {
+    const data = res.data;
+    const splitedName = data.name.split(" ");
+    const firstName = splitedName.length > 0 ? splitedName[0]:"";
+    const lastName = splitedName.length > 1 ? splitedName[splitedName.length - 1]:"";
+
+    return {
+      username: String(data.login).toLowerCase(),
+      fullname: data.name,
+      name: `${firstName} ${lastName}`,
+      avatar: data.avatar_url,
+      reposUrl: data.repos_url,
+      qtdRepos: data.public_repos,
+      about: ""
+    } as User;
+  });
+};
+
+async function getGithubReposLanguages(languageUrl: string) {
+  return await api.get(languageUrl).then(res => res.data).catch(() => null);
+};
+
+function getGithubReposTopLanguages(repos: Repository[]): { [key: string]: number } {
+  const data = repos.reduce((pre, cur) => {
+    const entries = Object.entries(cur.languages);
+
+    for(let e in entries) {
+      let [key, value] = entries[e];
+
+      if(pre[key]) {
+        pre[key] += Number(value); 
+      } else {
+        pre[key] = Number(value); 
+      };
+    };
+
+    return pre;
+  }, {});
+
+  return data;
+};
+
+export { 
+  getGithubRepos,
+  getGithubUser,
+  getGithubReposLanguages,
+  getGithubReposTopLanguages
+ };

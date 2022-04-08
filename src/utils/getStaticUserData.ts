@@ -1,9 +1,10 @@
 import { api } from "../services/api";
-import { getGithubRepos } from "../services/github";
+import { getGithubRepos, getGithubReposTopLanguages, getGithubUser } from "../services/github";
 import { getPrismicClient } from "../services/prismic";
 
 const getStaticUserData = async({
-  getRepos = false
+  getRepos = false,
+  getLanguages = false
 }) => {
   const prismic = getPrismicClient();
 
@@ -23,23 +24,7 @@ const getStaticUserData = async({
     };
   });
 
-  const user = await api.get("https://api.github.com/users/l-marcel")
-  .then(res => {
-    const data = res.data;
-    const splitedName = data.name.split(" ");
-    const firstName = splitedName.length > 0 ? splitedName[0]:"";
-    const lastName = splitedName.length > 1 ? splitedName[splitedName.length - 1]:"";
-
-    return {
-      username: String(data.login).toLowerCase(),
-      fullname: data.name,
-      name: `${firstName} ${lastName}`,
-      avatar: data.avatar_url,
-      reposUrl: data.repos_url,
-      qtdRepos: data.public_repos,
-      about: ""
-    } as User;
-  });
+  const user = await getGithubUser();
 
   const formatters = getRepos? await prismic.getSingle("name_formatter", {}).then(res => {
     const formatters = res.data.formatter.map(f => {
@@ -51,20 +36,24 @@ const getStaticUserData = async({
     return formatters;
   }).catch((err) => {
     console.log(err);
-  }):undefined;
+  }):null;
 
-  const repos = getRepos? await getGithubRepos(user.reposUrl, {
+  const repos = getRepos || getLanguages? await getGithubRepos(user.reposUrl, {
     initialPage: 1,
     reposPerPage: 50,
     repos: [],
-    formatters
+    formatters,
+    getLanguages
   }):[];
+
+  const languages = getLanguages? getGithubReposTopLanguages(repos):null;
 
   return {
     user: {
       ...user,
       ...links
     },
+    languages,
     repos
   };
 };

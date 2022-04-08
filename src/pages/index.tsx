@@ -5,7 +5,7 @@ import { m } from "framer-motion";
 import { GetStaticProps } from "next";
 import { Header } from "../components/Header";
 import { Span } from "../components/Span";
-import { fadeToTop, scaleOnInteract } from "../theme/animations/motion";
+import { fadeLayout, fadeToTop, scaleOnInteract } from "../theme/animations/motion";
 import { getStaticUserData } from "../utils/getStaticUserData";
 
 import { BsFillMoonStarsFill } from "react-icons/bs";
@@ -16,6 +16,7 @@ import { boxShadow } from "../theme/effects/shadow";
 import { DeveloperImage } from "../components/images/svgs/DeveloperImage";
 import { Layout } from "../components/Layout";
 import Link from "next/link";
+import { Background } from "../components/Background";
 
 function Home({ user }: PageProps) {
   const primary = useColorModeValue("secondary.700", "primary.700");
@@ -81,16 +82,15 @@ function Home({ user }: PageProps) {
           click to <Span pl={1}>explore</Span>
         </Button>
       </Link>
-      <Box
-        position="absolute"
+      <Background
         w={[400, 400, 500, 500, 500, 600]}
         h="100%"
-        display="flex"
         bottom={[-270, -250, -240, -190, -190, -160]}
         left={[-34, -10, -50, -20, -10, -14]}
+        zIndex={-1}
       >
         <DeveloperImage/>
-      </Box>
+      </Background>
     </>
   );
 };

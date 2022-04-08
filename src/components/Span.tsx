@@ -1,7 +1,11 @@
 import { Text, TextProps, useColorModeValue } from "@chakra-ui/react";
-import { m } from "framer-motion";
+import { AnimationProps, m } from "framer-motion";
 
-function Span({ ...rest }: TextProps) {
+interface SpanProps extends TextProps {
+  variants?: AnimationProps["variants"]
+};
+
+function Span({ variants, ...rest }: SpanProps) {
   const primary = useColorModeValue(
     "var(--chakra-colors-secondary-700)", 
     "var(--chakra-colors-primary-700)"
@@ -11,7 +15,7 @@ function Span({ ...rest }: TextProps) {
     <Text
       as={m.span}
       color={primary}
-      variants={{
+      variants={variants ?? {
         hidden: {
           opacity: 0,
           x: -10

@@ -37,6 +37,9 @@ export const theme = extendTheme({
         overflow: "hidden",
         isRandom: true
       },
+      'div[role="progressbar"]': {
+        bgColor: mode(colors.secondary["700"], colors.primary["700"])(props)
+      },
       "button:hover": {
         filter: "brightness(0.95)"
       },

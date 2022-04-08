@@ -8,6 +8,7 @@ function Header() {
   return (
     <Box
       as={m.div}
+      position="relative"
       layoutId="header"
       {...fadeLayout}
     >

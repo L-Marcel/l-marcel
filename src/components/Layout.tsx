@@ -1,5 +1,6 @@
 import { Box, Icon, IconButton, Stack, useColorMode, useColorModeValue } from "@chakra-ui/react";
 import { m, motion } from "framer-motion";
+import { ReactNode } from "react";
 import { BsFillMoonStarsFill } from "react-icons/bs";
 import { FaSun } from "react-icons/fa";
 import { fadeLayout, scaleOnInteract } from "../theme/animations/motion";
@@ -16,6 +17,8 @@ function Layout({ children, ...rest }: BoxProps) {
       as={motion.div}
       p={8}
       h="100vh"
+      overflowY="auto"
+      overflowX="hidden"
       layout
       {...rest}
       {...fadeLayout}
@@ -48,7 +51,7 @@ function Layout({ children, ...rest }: BoxProps) {
         display="flex"
         flexDir="column"
         w="100%"
-        h="80%"
+        mt="40px"
         alignItems="center"
         justifyContent="center"
         color="alt.700"
