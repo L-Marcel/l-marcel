@@ -28,7 +28,7 @@ function SearchBar({ technologies }: SearchBarTecnhologies) {
       as={m.div}
       ml={[0, 0, 0, 300, 300, 0]}
       mt={[0, 0, 0, -20, -20, "-60px"]}
-      top={["40px"]}
+      top={"40px"}
       w={300}
       onFocus={() => setIsFocused(true)}
       onBlur={() => setIsFocused(false)}

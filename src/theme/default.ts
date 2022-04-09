@@ -16,6 +16,7 @@ export const theme = extendTheme({
       "*": {
         userSelect: "none",
         transition: "filter .2s linear !important",
+        WebkitTapHighlightColor: "transparent"
       },
       "::-webkit-scrollbar": {
         w: 2,

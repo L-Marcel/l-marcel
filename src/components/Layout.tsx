@@ -25,7 +25,7 @@ function Layout({ children, ...rest }: BoxProps) {
         position="relative"
         as={m.div}
         p={8}
-        minH="100vh"
+        minH={["calc(100vh + 0.5px)", "calc(100vh + 0.5px)", "100vh"]}
         w="100%"
         {...rest}
         {...fadeLayout}
@@ -79,6 +79,7 @@ function Layout({ children, ...rest }: BoxProps) {
           justifyContent="center"
           color="alt.700"
           spacing={4}
+          pb={["30px", 0, 0, 0, 0, 0]}
         >
           {children}
         </Stack>
