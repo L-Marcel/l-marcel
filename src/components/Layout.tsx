@@ -1,5 +1,5 @@
 import { Box, HStack, Icon, Stack, useColorMode, useColorModeValue } from "@chakra-ui/react";
-import { m, motion } from "framer-motion";
+import { m } from "framer-motion";
 import {  BsFillCloudDownloadFill, BsFillMoonStarsFill } from "react-icons/bs";
 import { FaSun } from "react-icons/fa";
 import { fadeLayout } from "../theme/animations/motion";
@@ -22,11 +22,10 @@ function Layout({ children, ...rest }: BoxProps) {
     >
       <Box
         position="relative"
-        as={motion.div}
+        as={m.div}
         p={8}
         minH="100vh"
         w="100%"
-        layout
         {...rest}
         {...fadeLayout}
       >
@@ -44,6 +43,7 @@ function Layout({ children, ...rest }: BoxProps) {
           mt={[118, 100, 109, 86, 86, 76]}
         />
         <Box
+          as={m.div}
           w="100%"
           top={0}
           left={0}
@@ -53,6 +53,7 @@ function Layout({ children, ...rest }: BoxProps) {
           alignItems="center"
         >
           <HStack
+            as={m.div}
             display="flex"
             justifyContent="center"
             ml={[0, 0, 450, 300, 300, 0]}
@@ -77,7 +78,6 @@ function Layout({ children, ...rest }: BoxProps) {
           justifyContent="center"
           color="alt.700"
           spacing={4}
-          layoutId="body"
         >
           {children}
         </Stack>

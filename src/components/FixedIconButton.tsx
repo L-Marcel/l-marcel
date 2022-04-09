@@ -24,7 +24,6 @@ function FixedIconButton({ mt, ...rest }: IconButtonProps) {
         bgColor: "buttons.100"
       }}
       borderBottom="2px"
-      layoutId={rest["aria-label"]}
       zIndex={10}
       borderBottomColor={primary}
       {...rest}

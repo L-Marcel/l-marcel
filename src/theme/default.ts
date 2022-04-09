@@ -45,6 +45,10 @@ export const theme = extendTheme({
       "button:hover": {
         filter: "brightness(0.95)"
       },
+      ".js-focus-visible :focus:not([data-focus-visible-added])": { 
+        outline: "none",
+        boxShadow: "none" 
+      },
       ".primary-progressbar > div[role='progressbar']": {
         //bg: colors.primary[500]
       },
