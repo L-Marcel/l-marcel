@@ -1,6 +1,4 @@
-import { Box, Text } from "@chakra-ui/react";
-import { m } from "framer-motion";
-import { GoalsImage } from "../images/svgs/GoalsImage";
+import { Grid } from "@chakra-ui/react";
 import { TopLanguageItem } from "./TopLanguageItem";
 
 interface TopLanguagesListProps extends BoxProps {
@@ -12,6 +10,7 @@ function TopLanguagesList({
   ...rest
 }: TopLanguagesListProps) {
   let langs = Object.entries(languages);
+  
   const total = langs.reduce((pre, cur) => {
     const [_, value] = cur;
     pre += value;
@@ -20,7 +19,7 @@ function TopLanguagesList({
   }, 0);
 
   langs = langs.sort((a, b) => b[1] - a[1]).reduce((pre, cur, i) => {
-    if(i <= 8) {
+    if(i < 8) {
       pre.push(cur);
     };
 
@@ -28,12 +27,26 @@ function TopLanguagesList({
   }, []);
 
   return (
-    <Box {...rest}>
-      {langs.map(l => {
+    <Grid
+      mt={5}
+      gridTemplateColumns="1fr 1fr"
+      gridTemplateAreas={[
+        `"a1""a2""a3""a4""a5""a6""a7""a8"`,
+        `"a1""a2""a3""a4""a5""a6""a7""a8"`,
+        `"a1 a2""a3 a4""a5 a6""a7 a8"`,
+        `"a1 a2""a3 a4""a5 a6""a7 a8"`,
+        `"a1 a2""a3 a4""a5 a6""a7 a8"`,
+        `"a1 a2""a3 a4""a5 a6""a7 a8"`,
+        `"a1 a2""a3 a4""a5 a6""a7 a8"`
+      ]} 
+      {...rest}
+    >
+      {langs.map((l, i) => {
         const [key, value] = l;
 
         return (
           <TopLanguageItem
+            gridArea={`a${i + 1}`}
             key={key}
             name={key}
             value={value}
@@ -41,7 +54,7 @@ function TopLanguagesList({
           />
         );
       })}
-    </Box>
+    </Grid>
   );
 };
 

@@ -22,18 +22,15 @@ function TopLanguageItem({
       as={m.div}
       w={300}
       alignItems="flex-start"
-      ml={6}
+      ml={[0, 6]}
       mb={3}
-      _first={{
-        mt: 5
-      }}
       {...rest}
       {...fadeToTopOnScroll}
     >
       <Text>{name}: {progress.toFixed(2)}%</Text>
       <Progress 
         display="flex" 
-        w={300}
+        w={[280, 300]}
         colorScheme={color}
         value={progress}
         borderRadius={8}

@@ -1,30 +1,26 @@
 //import Head from "next/head";
 
-import { Box, Button, Heading, HStack, Icon, IconButton, Image, Stack, useColorMode, useColorModeValue } from "@chakra-ui/react";
+import { Box, Button, Heading, HStack, Icon, useColorModeValue } from "@chakra-ui/react";
 import { m } from "framer-motion";
-import { GetStaticProps } from "next";
-import { Header } from "../components/Header";
 import { Span } from "../components/Span";
-import { fadeLayout, fadeToTop, scaleOnInteract } from "../theme/animations/motion";
-import { getStaticUserData } from "../utils/getStaticUserData";
+import { fadeToTop, scaleOnInteract } from "../theme/animations/motion";
 
-import { BsFillMoonStarsFill } from "react-icons/bs";
 import { SiReact, SiNextdotjs, SiPrisma, SiGit, SiVisualstudiocode } from "react-icons/si";
-import { FaNodeJs, FaSun } from "react-icons/fa";
+import { FaNodeJs } from "react-icons/fa";
 import { FiFramer } from "react-icons/fi";
 import { boxShadow } from "../theme/effects/shadow";
-import { DeveloperImage } from "../components/images/svgs/DeveloperImage";
-import { Layout } from "../components/Layout";
+import { DeveloperImage } from "../components/images/svgs/DeveloperImage"
 import Link from "next/link";
 import { Background } from "../components/Background";
 
-function Home({ user }: PageProps) {
+function Home() {
   const primary = useColorModeValue("secondary.700", "primary.700");
 
   return (
     <>
       <Heading
         as={m.h1}
+        mt={150}
         fontSize={[20, 30]}
         {...fadeToTop}
       >
@@ -93,14 +89,6 @@ function Home({ user }: PageProps) {
       </Background>
     </>
   );
-};
-
-export const getStaticProps: GetStaticProps = async() => {
-  const data = await getStaticUserData({});
-  return {
-    props: data,
-    revalidate: 60 * 60 * 24
-  };
 };
 
 export default Home;

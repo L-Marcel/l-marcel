@@ -6,12 +6,10 @@ function Background({
   children, 
   ...rest
 }: BoxProps) {
-  
-
   return (
     <Box
       as={m.div}
-      position="absolute"
+      position="fixed"
       display="flex"
       {...rest}
       {...fadeToTop}

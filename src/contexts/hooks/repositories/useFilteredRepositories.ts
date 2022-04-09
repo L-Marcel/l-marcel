@@ -1,8 +1,8 @@
 import { useContextSelector } from "use-context-selector";
-import { appContext } from "../../contexts/AppProvider";
+import { repositoriesContext } from "../../RepositoriesProvider";
 
 function useFilteredRepositories() {
-  const filteredRepositories = useContextSelector(appContext, v => v.filteredRepositories);
+  const filteredRepositories = useContextSelector(repositoriesContext, v => v.filteredRepositories);
   return {
     filteredRepositories
   };

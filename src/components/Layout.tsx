@@ -1,66 +1,83 @@
-import { Box, Icon, IconButton, Stack, useColorMode, useColorModeValue } from "@chakra-ui/react";
+import { Box, HStack, Icon, Stack, useColorMode, useColorModeValue } from "@chakra-ui/react";
 import { m, motion } from "framer-motion";
-import { ReactNode } from "react";
-import { BsFillMoonStarsFill } from "react-icons/bs";
+import {  BsFillCloudDownloadFill, BsFillMoonStarsFill } from "react-icons/bs";
 import { FaSun } from "react-icons/fa";
-import { fadeLayout, scaleOnInteract } from "../theme/animations/motion";
+import { fadeLayout } from "../theme/animations/motion";
+import { FixedIconButton } from "./FixedIconButton";
 import { Header } from "./Header";
+import { Navigation } from "./Navigation";
+import { Overlay } from "./Overlay";
 
 function Layout({ children, ...rest }: BoxProps) {
   const { toggleColorMode } = useColorMode();
 
-  const primary = useColorModeValue("secondary.700", "primary.700");
   const ColorModeIcon = useColorModeValue(BsFillMoonStarsFill, FaSun);
 
   return (
-    <Box
-      as={motion.div}
-      p={8}
-      h="100vh"
-      overflowY="auto"
-      overflowX="hidden"
-      layout
-      {...rest}
-      {...fadeLayout}
-    >
-      <IconButton
-        as={m.button}
-        position="absolute"
-        top={0}
-        right={0}
-        m={6}
-        aria-label="color-mode"
-        bgColor="alt.50"
-        onClick={toggleColorMode}
-        icon={<Icon as={ColorModeIcon}/>}
-        borderRadius={20}
-        _hover={{
-          bgColor: "alt.100"
-        }}
-        _active={{
-          bgColor: "alt.200"
-        }}
-        borderBottom="2px"
-        borderBottomColor={primary}
-        layoutId="toggleButton"
-        {...scaleOnInteract}
-      />
-      <Header/>
-      <Stack
-        as={m.div}
-        display="flex"
-        flexDir="column"
+    <>
+      <Box
+        position="relative"
+        as={motion.div}
+        p={8}
+        minH="100vh"
         w="100%"
-        mt="40px"
-        alignItems="center"
-        justifyContent="center"
-        color="alt.700"
-        spacing={4}
-        layoutId="body"
+        layout
+        {...rest}
+        {...fadeLayout}
       >
-        {children}
-      </Stack>
-    </Box>
+        <Overlay/>
+        <FixedIconButton
+          aria-label="toggleColor"
+          onClick={toggleColorMode}
+          icon={<Icon as={ColorModeIcon}/>}
+          zIndex={991}
+        />
+        <FixedIconButton
+          aria-label="toggleColor"
+          onClick={() => window.open("/curriculo.pdf", "_blank")}
+          icon={<Icon as={BsFillCloudDownloadFill}/>}
+          mt={[118, 100, 109, 86, 86, 76]}
+        />
+        <Box
+          w="100%"
+          top={0}
+          left={0}
+          position="absolute"
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+        >
+          <HStack
+            display="flex"
+            justifyContent="center"
+            ml={[0, 0, 450, 300, 300, 0]}
+            w={["100%", "100%", "100%", "30%", "30%", "20%"]}
+            spacing={0}
+            h="100%"
+            zIndex={4}
+          >
+            <Navigation type="first" href="/dev">Resume</Navigation>
+            <Navigation href="/projects">Projects</Navigation>
+            <Navigation type="last" href="/certificates">Certificates</Navigation>
+          </HStack>
+        </Box>
+        <Header/>
+        <Stack
+          as={m.div}
+          display="flex"
+          flexDir="column"
+          w="100%"
+          mt="50px"
+          alignItems="center"
+          justifyContent="center"
+          color="alt.700"
+          spacing={4}
+          layoutId="body"
+        >
+          {children}
+        </Stack>
+      </Box>
+    </>
   );
 };
 

@@ -1,5 +1,5 @@
 function filterRepositories(repos: Repository[], filter: RepositoriesFilterOptions) {
-  //with
+  /*//with
   if(filter.with.some) {
     const { description, figmaLink, license } = filter.with;
     repos = repos.filter(r => {
@@ -33,26 +33,8 @@ function filterRepositories(repos: Repository[], filter: RepositoriesFilterOptio
     return r.importedConfig.technologies.map(reposTech => {
       return filter.technologies.includes(reposTech.toLowerCase());
     }).every(Boolean);
-  });
+  });*/
   
-  //minLevelOfExperienceWithTechnology
-  // const minLevel = filter.minLevelOfExperienceWithTechnology;
-  // if(minLevel > 0) {
-  //   const userTechnologies = user.technologies; //Technology[]
-  //   repos = repos.filter(r => {
-  //     const reposTechnology = r.importedConfig.technologies[1];
-      
-  //     for(let i in userTechnologies) {
-  //       const technology = userTechnologies[i];
-  //       if(technology .level < minLevel && technology.name === reposTechnology) {
-  //         return false;
-  //       };
-  //     };
-      
-  //     return true;
-  //   });
-  // };
-
   // query: string;
   repos = repos.filter(r => {
     return r.name.toLowerCase()

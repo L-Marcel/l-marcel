@@ -1,39 +1,27 @@
-import { Box } from "@chakra-ui/react";
-import { m } from "framer-motion";
 import { GetStaticProps } from "next";
 
-import { fadeLayout } from "../theme/animations/motion";
 import { getStaticData } from "../utils/getStaticData";
-
-import { Markdown } from "../components/Markdown";
 import { GoalsImage } from "../components/images/svgs/GoalsImage";
 import { Background } from "../components/Background";
-import useShowBackground from "../contexts/hooks/useShowBackground";
+import { RepositoriesProvider } from "../contexts/RepositoriesProvider";
+import { SearchBar } from "../components/SearchBar";
+import { RepositoriesList } from "../components/RepositoriesList";
 
-interface DevProps {
-  languages: { [key: string]: number };
+interface ProjectsProps {
+  repos: Repository[];
+  technologies: string[];
 };
 
-function Dev({ languages }: DevProps) {
-  const { setShowBackground } = useShowBackground();
-  
+function Projects({ repos, technologies }: ProjectsProps) {
+  console.log(repos, technologies);
   return (
-    <>
-      <Box
-        as={m.div}
-        position="relative"
-        maxW="95%"
-        maxH="100%"
-        display="flex"
-        flexDir="column"
-        pb={10}
-        {...fadeLayout}
-      >
-        <Markdown
-          languages={languages}
-          onChangeViewport={setShowBackground}
-        />
-      </Box>
+    <RepositoriesProvider>
+      <SearchBar
+        technologies={technologies}
+      />
+      <RepositoriesList
+        repos={repos}
+      />
       <Background
         w={[400, 600, 600, 800, 800, 800]}
         h={[400, 400, 500, 800, 900, 1000]}
@@ -44,14 +32,14 @@ function Dev({ languages }: DevProps) {
       >
         <GoalsImage/>
       </Background>
-    </>
+    </RepositoriesProvider>
   );
 };
 
 export const getStaticProps: GetStaticProps = async() => {
   const data = await getStaticData({
     getRepos: true,
-    getLanguages: true
+    getTechnologies: true
   });
 
   return {
@@ -61,4 +49,4 @@ export const getStaticProps: GetStaticProps = async() => {
 };
 
 
-export default Dev;
+export default Projects;

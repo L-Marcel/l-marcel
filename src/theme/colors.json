@@ -1,6 +1,30 @@
 {
   "semanticTokens": { 
     "colors": {
+      "card": {
+        "default": "#F4F2F2",
+        "_dark": "#272727"
+      },
+      "overlay": {
+        "default": "#F4F2F2DA",
+        "_dark": "#272727DA"
+      },
+      "search.100": {
+        "default": "#F4F2F2",
+        "_dark": "#272727"
+      },
+      "search": {
+        "default": "#EFEFEF",
+        "_dark": "#242424"
+      },
+      "buttons.100": {
+        "default": "#E4E4E4",
+        "_dark": "#2B2B2B"
+      },
+      "buttons.200": {
+        "default": "#DFDFDF",
+        "_dark": "#242424"
+      },
       "imageColorDefault.300": {
         "default": "#C1BFBF",
         "_dark": "#474747"

@@ -1,21 +1,22 @@
 import { api } from "./api";
 import { getRepoFormattedName } from "../utils/getRepoFormattedName"; 
+import { getFormatters } from "../utils/getFormatters";
 
 type GithubGetReposOptions = {
-  reposPerPage: number;
-  initialPage: number;
-  repos: Repository[];
-  formatters: Formatter[];
+  reposPerPage?: number;
+  initialPage?: number;
+  repos?: Repository[];
   getLanguages?: boolean;
 };
 
-async function getGithubRepos(url: string, { 
-  reposPerPage = 30, 
+async function getGithubRepos({ 
+  reposPerPage = 50, 
   initialPage = 1,
   repos = [],
-  formatters = [],
   getLanguages = false,
 }: GithubGetReposOptions) {
+  const url = "https://api.github.com/users/l-marcel/repos";
+  const formatters = getFormatters();
   const pageRepos = await api.get(`${url}?per_page=${reposPerPage}&page=${initialPage}`).then(async(res) => {
     const data = res.data;
     const repos: Repository[] = data.map(repo => {
@@ -38,6 +39,8 @@ async function getGithubRepos(url: string, {
     for(let i in repos) {
       let config: Config = await api.get(`https://raw.githubusercontent.com/${repos[i].fullname}/${repos[i].branch}/l-marcel.config.json`)
       .then(config => config.data).catch(() => null);
+      const nameAlreadyDefined = !!config.name;
+
       config = {
         name: repos[i].name,
         icon: repos[i].language ?? "default",
@@ -74,7 +77,10 @@ async function getGithubRepos(url: string, {
       };
 
       repos[i].importedConfig = config;
-      repos[i].formattedName = getRepoFormattedName(repos[i].importedConfig.name, formatters);
+
+      let newName = repos[i].importedConfig.name;
+
+      repos[i].formattedName = nameAlreadyDefined? newName:getRepoFormattedName(newName, formatters);
 
       repos[i].languages = getLanguages && !repos[i].fork? await getGithubReposLanguages(repos[i].languagesUrl):{};
     };
@@ -85,36 +91,15 @@ async function getGithubRepos(url: string, {
   const reposListLength = repos.length + pageRepos.length;
 
   if(Math.floor(reposListLength/initialPage) >= reposPerPage) {
-    return await getGithubRepos(url, { 
+    return await getGithubRepos({ 
       reposPerPage, 
       initialPage: initialPage + 1, 
       repos: [ ...repos, ...pageRepos ],
-      formatters,
       getLanguages
     });
   };
 
   return [ ...repos, ...pageRepos ];
-};
-
-async function getGithubUser() {
-  return await api.get("https://api.github.com/users/l-marcel")
-  .then(res => {
-    const data = res.data;
-    const splitedName = data.name.split(" ");
-    const firstName = splitedName.length > 0 ? splitedName[0]:"";
-    const lastName = splitedName.length > 1 ? splitedName[splitedName.length - 1]:"";
-
-    return {
-      username: String(data.login).toLowerCase(),
-      fullname: data.name,
-      name: `${firstName} ${lastName}`,
-      avatar: data.avatar_url,
-      reposUrl: data.repos_url,
-      qtdRepos: data.public_repos,
-      about: ""
-    } as User;
-  });
 };
 
 async function getGithubReposLanguages(languageUrl: string) {
@@ -143,7 +128,6 @@ function getGithubReposTopLanguages(repos: Repository[]): { [key: string]: numbe
 
 export { 
   getGithubRepos,
-  getGithubUser,
   getGithubReposLanguages,
   getGithubReposTopLanguages
  };

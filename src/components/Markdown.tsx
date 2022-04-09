@@ -1,4 +1,4 @@
-import { Box, Code, Heading, Text, Image, ImageProps, useColorModeValue, useBreakpointValue } from "@chakra-ui/react";
+import { Box, Code, Heading, Text, Image, ImageProps, useColorModeValue, useBreakpointValue, List, ListItem, ListIcon } from "@chakra-ui/react";
 import Readme from "../../README.md";
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
@@ -10,6 +10,8 @@ import { Span } from "./Span";
 import { getStatsImageSrc, getTopLangsImageSrc } from "../utils/getStatsImageSrc";
 import { TopLanguagesList } from "./TopLanguagesList";
 import { memo } from "react";
+import { AiOutlineCheck } from "react-icons/ai";
+import { SocialButtons } from "./SocialButtons";
 
 interface MarkdownProps {
   languages?: { [key: string]: number };
@@ -36,6 +38,26 @@ function _Markdown({ languages, onChangeViewport }: MarkdownProps) {
             switch(id) {
               case "remove":
                 return null;
+              case "grid": 
+                return (
+                  <Box 
+                    as={m.div}
+                    display="grid"
+                    gridTemplateColumns={[
+                      "1fr",
+                      "1fr",
+                      "1fr 1fr",
+                      "1fr 1fr",
+                      "3fr 3fr 3fr 1fr",
+                      "3fr 2fr 3fr 1fr"
+                    ]}
+                    flexDir="column"
+                    justifyContent="flex-start"
+                    alignItems="flex-start"
+                    {...props}
+                    {...fadeToTopOnScroll}
+                  />
+                );
               case "images":
                 return (
                   <Box 
@@ -48,8 +70,6 @@ function _Markdown({ languages, onChangeViewport }: MarkdownProps) {
                     {...fadeToTopOnScroll}
                   />
                 );
-              case "buttons":
-                return (<></>);
               default:
                 return (
                   <Box 
@@ -63,9 +83,11 @@ function _Markdown({ languages, onChangeViewport }: MarkdownProps) {
           h1({ ...props }) {
             return (
               <Heading 
-                textAlign="center" 
+                textAlign="left"
                 as={m.h1}
                 mb={4}
+                ml={-2}
+                fontSize={[20, 25, 30, 30, 40, 40]}
                 {...props} 
                 {...fadeToTopOnScroll}
               />
@@ -75,8 +97,9 @@ function _Markdown({ languages, onChangeViewport }: MarkdownProps) {
             return (
               <Heading 
                 as={m.h2}
+                mt={id === "sub"? 1:0}
                 mb={id === "sub"? 0:4}
-                fontSize={20}
+                fontSize={[19, 25]}
                 textAlign="left"
                 {...props} 
                 {...fadeToTopOnScroll}
@@ -111,9 +134,34 @@ function _Markdown({ languages, onChangeViewport }: MarkdownProps) {
                 p={3}
                 mb={4}
                 borderRadius={8}
+                overflowX="auto"
                 {...props} 
                 {...fadeToTopOnScroll}
               />
+            );
+          },
+          ul({ ...props }) {
+            return (
+              <List
+                as={m.ul}
+                mt={4} 
+                {...props}
+                {...fadeToTopOnScroll}
+              />
+            );
+          },
+          li({ id, children, ...props }) {
+            return (
+              <ListItem
+                as={m.li}
+                mb={4}
+                ml={id === "space" && 20}
+                {...props}
+                {...fadeToTopOnScroll}
+              >
+                { id !== "space" && <ListIcon as={AiOutlineCheck} color={isDarkMode? "primary.500":"secondary.500"}/> }
+                {children}
+              </ListItem>
             );
           },
           span({ ...props }) {
@@ -161,6 +209,7 @@ function _Markdown({ languages, onChangeViewport }: MarkdownProps) {
                   <TopLanguagesList
                     languages={languages}
                   />
+                  <SocialButtons/>
                   <Box
                     mt={-15}
                     as={m.div}

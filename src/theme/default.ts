@@ -22,23 +22,25 @@ export const theme = extendTheme({
         mr: -2
       },
       "::-webkit-scrollbar-track": {
-        //background: colors.primary[300]
+        h: 5,
+        background: mode(semanticTokens.colors["imageColorDefault.300"].default, semanticTokens.colors["imageColorDefault.300"]._dark)(props)
       },
       "::-webkit-scrollbar-thumb": {
-        //background: colors.primary[400]
+        background: mode(colors.secondary[600], colors.primary[600])(props)
       },
       "::-webkit-scrollbar-thumb:hover": {
-        //background: colors.primary[500]
+        background: mode(colors.secondary[800], colors.primary[800])(props)
       },
       body: {
         bg: mode(semanticTokens.colors.background.default, semanticTokens.colors.background._dark)(props),
         h: "100vh",
         w: "100vw",
-        overflow: "hidden",
+        overflowY: "scroll",
+        overflowX: "hidden",
         isRandom: true
       },
       'div[role="progressbar"]': {
-        bgColor: mode(colors.secondary["700"], colors.primary["700"])(props)
+        bgColor: mode(colors.secondary[700], colors.primary[700])(props)
       },
       "button:hover": {
         filter: "brightness(0.95)"
