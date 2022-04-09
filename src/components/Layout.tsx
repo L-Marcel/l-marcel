@@ -19,6 +19,7 @@ function Layout({ children, ...rest }: BoxProps) {
       id="scrollable"
       h="100%"
       maxH="100vh"
+      overscrollBehaviorY="contain"
     >
       <Box
         position="relative"

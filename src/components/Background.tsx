@@ -3,7 +3,7 @@ import { m } from "framer-motion";
 import { fadeToTop } from "../theme/animations/motion";
 
 function Background({ 
-  children, 
+  children,
   ...rest
 }: BoxProps) {
   return (

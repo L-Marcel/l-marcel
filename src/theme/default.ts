@@ -31,10 +31,17 @@ export const theme = extendTheme({
       "::-webkit-scrollbar-thumb:hover": {
         background: mode(colors.secondary[800], colors.primary[800])(props)
       },
+      html: {
+        height: "-webkit-fill-available",
+        overscrollBehaviorY: "contain"
+      },
       body: {
         bg: mode(semanticTokens.colors.background.default, semanticTokens.colors.background._dark)(props),
-        h: "100vh",
         w: "100vw",
+        h: "100vh",
+        minHeight: "100vh",
+        minH: "-webkit-fill-available",
+        overscrollBehaviorY: "contain",
         overflowY: "hidden",
         overflowX: "hidden",
         isRandom: true

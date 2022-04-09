@@ -19,7 +19,7 @@ function Home() {
     <>
       <Heading
         as={m.h1}
-        mt={150}
+        mt="10%"
         fontSize={[20, 30]}
         {...fadeToTop}
       >
