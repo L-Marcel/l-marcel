@@ -14,7 +14,12 @@ function Layout({ children, ...rest }: BoxProps) {
   const ColorModeIcon = useColorModeValue(BsFillMoonStarsFill, FaSun);
 
   return (
-    <>
+    <Box
+      overflowY="scroll"
+      id="scrollable"
+      h="100%"
+      maxH="100vh"
+    >
       <Box
         position="relative"
         as={motion.div}
@@ -77,7 +82,7 @@ function Layout({ children, ...rest }: BoxProps) {
           {children}
         </Stack>
       </Box>
-    </>
+    </Box>
   );
 };
 

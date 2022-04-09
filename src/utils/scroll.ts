@@ -1,10 +1,10 @@
 
 function disableScroll() {
-  window.document.body.style.overflowY = "hidden";
+  window.document.getElementById("scrollable").style.overflowY = "scroll";
 }
 
 function enableScroll() {
-  window.document.body.style.overflowY = "scroll";
+  window.document.getElementById("scrollable").style.overflowY = "scroll";
 };
 
 export { disableScroll, enableScroll };
