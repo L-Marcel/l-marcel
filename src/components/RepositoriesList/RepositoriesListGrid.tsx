@@ -27,7 +27,6 @@ function RepositoriesListGrid({
 
   for(let c = 0; c < repos.length/qtdStacks; c++) {
     let child = repos.slice(c*qtdStacks, qtdStacks + (qtdStacks * c));
-    console.log(child, c*qtdStacks, qtdStacks + (qtdStacks * c));
     rows.push(child);
   };
 

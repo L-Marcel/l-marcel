@@ -27,6 +27,8 @@ function RepositoryModal({ repo: r, onClose, children, ...rest }: RepositoryModa
     return null;
   };
 
+  console.log(r.importedConfig);
+
   return (
     <Box
       as={motion.div}

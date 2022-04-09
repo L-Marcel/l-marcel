@@ -1,5 +1,6 @@
 
 import { Button, ButtonProps } from "@chakra-ui/react";
+import NamedIcon from "../NamedIcon";
 
 interface RepositoryModalLinkButtonProps extends ButtonProps {
   link: string;
@@ -13,14 +14,14 @@ function RepositoryModalLinkButton({
   icon,
   ...rest
 }: RepositoryModalLinkButtonProps) {
+  console.log(link);
   return (
     <Button
       aria-label="share"
-      icon={icon}
-      link={link}
       {...rest}
+      onClick={() => window.open(link, "_blank", "")}
     >
-      {title}
+      <NamedIcon name={icon} mr={2}/>{title}
     </Button>
   );
 };

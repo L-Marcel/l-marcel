@@ -35,7 +35,7 @@ export const theme = extendTheme({
         bg: mode(semanticTokens.colors.background.default, semanticTokens.colors.background._dark)(props),
         h: "100vh",
         w: "100vw",
-        overflowY: "scroll",
+        overflowY: "hidden",
         overflowX: "hidden",
         isRandom: true
       },

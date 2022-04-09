@@ -13,7 +13,6 @@ interface ProjectsProps {
 };
 
 function Projects({ repos, technologies }: ProjectsProps) {
-  console.log(repos, technologies);
   return (
     <RepositoriesProvider>
       <SearchBar

@@ -1,7 +1,7 @@
 import { Icon as ChakraIcon, IconProps as ChakraIconProps } from "@chakra-ui/react";
 import { 
   FaReact, FaDocker, FaGitAlt, 
-  FaJava, FaPython, FaBalanceScale
+  FaJava, FaPython, FaBalanceScale, FaGithubAlt
 } from "react-icons/fa";
 import { SiTypescript, SiNextdotjs, SiGnubash, SiDart } from "react-icons/si";
 import { DiCss3, DiSass } from "react-icons/di";
@@ -33,6 +33,7 @@ export const icons = {
   "java": FaJava,
   "git": FaGitAlt,
   "python": FaPython,
+  "github": FaGithubAlt,
   "bash": SiGnubash,
   "default": BsQuestionCircle,
   "calendar": AiOutlineCalendar,

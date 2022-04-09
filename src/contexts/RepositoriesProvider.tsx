@@ -42,9 +42,7 @@ function RepositoriesProvider({ children }: RepositoriesProviderProps) {
   }, [setFilterOptions]);
 
   useEffect(() => {
-    console.log(repositories, "on enter");
     let repos = filterRepositories(repositories, filterOptions);
-    console.log(repos, "on exit");
     setFilteredRepositories(repos);
   }, [repositories, filterOptions]);
 
