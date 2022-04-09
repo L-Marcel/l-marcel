@@ -8,7 +8,6 @@ import { fadeToTop, scaleOnInteract } from "../theme/animations/motion";
 import { SiReact, SiNextdotjs, SiPrisma, SiGit, SiVisualstudiocode } from "react-icons/si";
 import { FaNodeJs } from "react-icons/fa";
 import { FiFramer } from "react-icons/fi";
-import { boxShadow } from "../theme/effects/shadow";
 import { DeveloperImage } from "../components/images/svgs/DeveloperImage"
 import Link from "next/link";
 import { Background } from "../components/Background";
@@ -36,7 +35,6 @@ function Home() {
       <HStack 
         color={primary}
         fontSize={[19, 28]}
-        {...boxShadow(true)}
       >
         <Box 
           as={m.div}
