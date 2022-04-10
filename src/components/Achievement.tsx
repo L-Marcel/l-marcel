@@ -100,26 +100,40 @@ function Achievement({ item }: AchievementProps) {
         { code? <Tag 
           bg="alt.200"
           color="alt.500"
+          position="relative"
           p={2}
+          pr="60px"
           userSelect="text"
           onClick={() => navigator.clipboard.writeText(code)}
+          textOverflow="ellipsis"
+          overflow="hidden"
+          whiteSpace="nowrap"
+          maxW="100%"
+          style={{
+            lineClamp: 2
+          }}
           _hover={{
             cursor: "pointer"
           }}
         >{code} <IconButton 
-          as={m.button}
-          mr={[2, 0]} 
           aria-label="copy-button"
-          icon={<NamedIcon name="copy"/>} 
-          bgColor="transparent!important"
+          icon={<NamedIcon name="copy"/>}
+          bgColor="buttons.50"
+          position="absolute"
+          _hover={{
+            bgColor: "buttons.100"
+          }}
+          _active={{
+            bgColor: "buttons.200"
+          }}
+          right={0}
           color={primary}
           m={0}
-          p={0}
+          p={4}
+          mr={0}
           h="min-content"
           w="min-content"
           minW="min-content"
-          ml={2}
-          {...scaleOnInteract}
         /></Tag>:<Text
           color="alt.400"
         >

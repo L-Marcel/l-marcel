@@ -11,7 +11,7 @@ import { BsDownload, BsFillMoonStarsFill, BsQuestionCircle } from "react-icons/b
 import { 
   AiOutlineCalendar, AiOutlineCheck
 } from "react-icons/ai";
-import { IoIosRocket, IoLogoJavascript, IoMdOpen } from "react-icons/io";
+import { IoIosRocket, IoLogoJavascript, IoMdOpen, IoMdSchool } from "react-icons/io";
 import { FiCopy, FiFigma, FiPaperclip} from "react-icons/fi";
 import { GrNode } from "react-icons/gr";
 import { BiCubeAlt, BiSearchAlt } from "react-icons/bi";
@@ -41,6 +41,7 @@ export const icons = {
   "check": AiOutlineCheck,
   "figma": FiFigma,
   "self": FiPaperclip,
+  "school": IoMdSchool,
   "documentation": RiFilePaper2Line,
   "search": BiSearchAlt,
   "rocketseat": IoIosRocket,
