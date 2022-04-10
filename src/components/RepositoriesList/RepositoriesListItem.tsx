@@ -1,6 +1,5 @@
-import { Badge, Box, Heading, HStack, Icon, Text, useColorModeValue } from "@chakra-ui/react";
+import { Badge, Box, Heading, HStack, Text, useColorModeValue } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import { RiFlashlightFill } from "react-icons/ri";
 import { fadeToTopOnScroll } from "../../theme/animations/motion";
 import NamedIcon from "../NamedIcon";
 
@@ -35,8 +34,8 @@ function RepositoriesListItem({
       {...fadeToTopOnScroll}
     >
       <Box>
-        { r.importedConfig?.pinned && <Icon
-          as={RiFlashlightFill}
+        { r.importedConfig?.pinned && <NamedIcon
+          name="flash"
           position="absolute"
           color={secondary}
           w={5}
@@ -56,8 +55,8 @@ function RepositoriesListItem({
           as={motion.div}
           fontSize={10}
           lineHeight={2}
-          bgColor={"default"}
-          color="default.900"
+          bgColor="pri.400"
+          color="pri.900"
           layoutId={`repos-badge-${r.id}`}
           w="min-content"
           my={2}

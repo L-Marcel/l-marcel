@@ -1,5 +1,5 @@
 import { Box, HStack, Stack, useBreakpointValue } from "@chakra-ui/react";
-import { AnimatePresence, AnimateSharedLayout, domMax, LazyMotion } from "framer-motion";
+import { AnimatePresence, domMax, LazyMotion } from "framer-motion";
 import { useState } from "react";
 import useShowOverlay from "../../contexts/hooks/useShowOverlay";
 import { RepositoriesListItem } from "./RepositoriesListItem";

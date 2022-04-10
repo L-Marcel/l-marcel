@@ -8,7 +8,11 @@ declare type Certificate = {
   expiresIn?: string;
   code?: string;
   url?: string;
+  description?: string;
+  icon?: string;
 };
+
+declare type Achievement = Certificate;
 
 declare type Repository = {
   id: number;

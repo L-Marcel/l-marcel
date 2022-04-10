@@ -1,19 +1,20 @@
 import { Icon as ChakraIcon, IconProps as ChakraIconProps } from "@chakra-ui/react";
 import { 
   FaReact, FaDocker, FaGitAlt, 
-  FaJava, FaPython, FaBalanceScale, FaGithubAlt
+  FaJava, FaPython, FaBalanceScale, FaGithubAlt, FaSun
 } from "react-icons/fa";
 import { SiTypescript, SiNextdotjs, SiGnubash, SiDart } from "react-icons/si";
 import { DiCss3, DiSass } from "react-icons/di";
 import { AiFillHtml5 } from "react-icons/ai";
-import { RiFlutterFill, RiFilePaper2Line } from "react-icons/ri";
-import { BsQuestionCircle } from "react-icons/bs";
+import { RiFlutterFill, RiFilePaper2Line, RiFlashlightFill } from "react-icons/ri";
+import { BsDownload, BsFillMoonStarsFill, BsQuestionCircle } from "react-icons/bs";
 import { 
   AiOutlineCalendar, AiOutlineCheck
 } from "react-icons/ai";
-import { IoLogoJavascript } from "react-icons/io";
-import { FiFigma, FiPaperclip} from "react-icons/fi";
+import { IoIosRocket, IoLogoJavascript, IoMdOpen } from "react-icons/io";
+import { FiCopy, FiFigma, FiPaperclip} from "react-icons/fi";
 import { GrNode } from "react-icons/gr";
+import { BiCubeAlt, BiSearchAlt } from "react-icons/bi";
 interface IconProps extends ChakraIconProps {
   name?: string;
 };
@@ -41,8 +42,18 @@ export const icons = {
   "figma": FiFigma,
   "self": FiPaperclip,
   "documentation": RiFilePaper2Line,
+  "search": BiSearchAlt,
+  "rocketseat": IoIosRocket,
+  "copy": FiCopy,
+  "network": BiCubeAlt,
   "license": FaBalanceScale,
-  "dart": SiDart
+  "open": IoMdOpen,
+  "download": BsDownload,
+  "dart": SiDart,
+  "sun": FaSun,
+  "moon": BsFillMoonStarsFill,
+  "article": FiPaperclip,
+  "flash": RiFlashlightFill
 };
 
 function NamedIcon({ name = "default", ...rest }: IconProps) {

@@ -17,6 +17,10 @@
         "default": "#EFEFEF",
         "_dark": "#242424"
       },
+      "buttons.50": {
+        "default": "#E7E6E6",
+        "_dark": "#373737"
+      },
       "buttons.100": {
         "default": "#E4E4E4",
         "_dark": "#2B2B2B"
@@ -93,45 +97,45 @@
         "default": "blackAlpha.800",
         "_dark": "whiteAlpha.800"
       },
-      "default.50": {
+      "pri.50": {
         "default": "whiteAlpha.50",
-        "_dark": "darkAlpha.50"
+        "_dark": "blackAlpha.50"
       },
-      "default.100": {
+      "pri.100": {
         "default": "whiteAlpha.100",
-        "_dark": "darkAlpha.100"
+        "_dark": "blackAlpha.100"
       },
-      "default.200": {
+      "pri.200": {
         "default": "whiteAlpha.200",
-        "_dark": "darkAlpha.200"
+        "_dark": "blackAlpha.200"
       },
-      "default.300": {
+      "pri.300": {
         "default": "whiteAlpha.300",
-        "_dark": "darkAlpha.300"
+        "_dark": "blackAlpha.300"
       },
-      "default.400": {
+      "pri.400": {
         "default": "whiteAlpha.400",
-        "_dark": "darkAlpha.400"
+        "_dark": "blackAlpha.400"
       },
-      "default.500": {
+      "pri.500": {
         "default": "whiteAlpha.500",
-        "_dark": "darkAlpha.500"
+        "_dark": "blackAlpha.500"
       },
-      "default.600": {
+      "pri.600": {
         "default": "whiteAlpha.600",
-        "_dark": "darkAlpha.600"
+        "_dark": "blackAlpha.600"
       },
-      "default.700": {
+      "pri.700": {
         "default": "whiteAlpha.700",
-        "_dark": "darkAlpha.700"
+        "_dark": "blackAlpha.700"
       },
-      "default.800": {
+      "pri.800": {
         "default": "whiteAlpha.800",
-        "_dark": "darkAlpha.800"
+        "_dark": "blackAlpha.800"
       },
-      "default.900": {
+      "pri.900": {
         "default": "whiteAlpha.800",
-        "_dark": "darkAlpha.800"
+        "_dark": "blackAlpha.800"
       }
     }
   },

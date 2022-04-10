@@ -1,12 +1,13 @@
 import { getGithubRepos, getGithubReposTopLanguages } from "../services/github";
-import { getCertificatesData } from "../services/prismic";
+import { getAchievementsData, getCertificatesData } from "../services/prismic";
 import { getTechnologiesInRepositories } from "./getTechnologiesInRepositories";
 
 const getStaticData = async({
   getRepos = false,
   getLanguages = false,
   getTechnologies = false,
-  getCertificates = false
+  getCertificates = false,
+  getAchievements = false
 }) => {
   const needRepos = getRepos || getLanguages || getTechnologies;
   const repos = needRepos? await getGithubRepos({ getLanguages }):[];
@@ -15,11 +16,13 @@ const getStaticData = async({
   const technologies = getTechnologies? getTechnologiesInRepositories(repos):[];
 
   const certificates = getCertificates? await getCertificatesData():[];
+  const achievements = getAchievements? await getAchievementsData():[];
 
   return {
     languages,
     technologies,
     certificates,
+    achievements,
     repos
   };
 };

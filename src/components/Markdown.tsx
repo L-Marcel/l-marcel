@@ -10,7 +10,8 @@ import { Span } from "./Span";
 import { getStatsImageSrc, getTopLangsImageSrc } from "../utils/getStatsImageSrc";
 import { TopLanguagesList } from "./TopLanguagesList";
 import { memo } from "react";
-import { AiOutlineCheck } from "react-icons/ai";
+import NamedIcon from "./NamedIcon";
+
 import { SocialButtons } from "./SocialButtons";
 
 interface MarkdownProps {
@@ -159,7 +160,11 @@ function _Markdown({ languages, onChangeViewport }: MarkdownProps) {
                 {...props}
                 {...fadeToTopOnScroll}
               >
-                { id !== "space" && <ListIcon as={AiOutlineCheck} color={isDarkMode? "primary.500":"secondary.500"}/> }
+                { id !== "space" && <NamedIcon 
+                  name="check" 
+                  color={isDarkMode? "primary.500":"secondary.500"}
+                  mr={3}
+                /> }
                 {children}
               </ListItem>
             );

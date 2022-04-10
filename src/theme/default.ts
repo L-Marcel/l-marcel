@@ -69,6 +69,28 @@ export const theme = extendTheme({
       ".chakra-checkbox__control:not([data-checked])": {
         color: "var(--primary) !important",
         bgColor: "primary.100"
+      },
+      ".vertical-timeline-element-date": {
+        position: "absolute",
+        top: "-12px",
+        padding: "2px 9px !important",
+        borderRadius: "8px",
+        backgroundColor: "var(--chakra-colors-card)"
+      },
+      "@media only screen and (min-width: 1170px)": {
+        ".vertical-timeline--two-columns .vertical-timeline-element-icon": {
+          left: "calc(50% + 10px)",
+        },
+        ".vertical-timeline-element-date": {
+          padding: ".8em 0 !important",
+          backgroundColor: "transparent !important"
+        },
+      },
+      ".vertical-timeline::before": {
+        top: "50px"
+      },
+      ".vertical-timeline-element-content": {
+        boxShadow: "none !important",
       }
     })
   }

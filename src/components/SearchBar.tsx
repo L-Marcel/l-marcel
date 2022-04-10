@@ -1,9 +1,10 @@
-import { Icon, Input, InputGroup, InputLeftElement, useColorModeValue } from "@chakra-ui/react";
+import { Input, InputGroup, InputLeftElement, useColorModeValue } from "@chakra-ui/react";
 import { m } from "framer-motion";
 import { useState } from "react";
-import { BiSearchAlt } from "react-icons/bi";
+import { } from "react-icons/bi";
 import useFilterOptions from "../contexts/hooks/repositories/useFilterOptions";
 import { fadeToTop } from "../theme/animations/motion";
+import NamedIcon from "./NamedIcon";
 
 interface SearchBarTecnhologies {
   technologies: string[];
@@ -39,7 +40,7 @@ function SearchBar({ technologies }: SearchBarTecnhologies) {
         as={m.div}
         pointerEvents="none"
         borderRadius={8}
-        children={<Icon as={BiSearchAlt}/>}
+        children={<NamedIcon name="search"/>}
         bgColor={isFocused && "alt.50"}
         color={isFocused && color}
       />

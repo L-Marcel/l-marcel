@@ -1,17 +1,16 @@
-import { Box, HStack, Icon, Stack, useColorMode, useColorModeValue } from "@chakra-ui/react";
+import { Box, HStack, Stack, useColorMode, useColorModeValue } from "@chakra-ui/react";
 import { m } from "framer-motion";
-import {  BsFillCloudDownloadFill, BsFillMoonStarsFill } from "react-icons/bs";
-import { FaSun } from "react-icons/fa";
 import { fadeLayout } from "../theme/animations/motion";
 import { FixedIconButton } from "./FixedIconButton";
 import { Header } from "./Header";
+import NamedIcon from "./NamedIcon";
 import { Navigation } from "./Navigation";
 import { Overlay } from "./Overlay";
 
 function Layout({ children, ...rest }: BoxProps) {
   const { toggleColorMode } = useColorMode();
 
-  const ColorModeIcon = useColorModeValue(BsFillMoonStarsFill, FaSun);
+  const icon = useColorModeValue("moon", "sun");
 
   return (
     <Box
@@ -34,14 +33,14 @@ function Layout({ children, ...rest }: BoxProps) {
         <FixedIconButton
           aria-label="toggleColor"
           onClick={toggleColorMode}
-          icon={<Icon as={ColorModeIcon}/>}
-          zIndex={991}
+          icon={<NamedIcon name={icon}/>}
+          zIndex={999}
           mb={[74, 76, 76, 0, 0, 0]}
         />
         <FixedIconButton
           aria-label="download"
           onClick={() => window.open("/curriculo.pdf", "_blank")}
-          icon={<Icon as={BsFillCloudDownloadFill}/>}
+          icon={<NamedIcon name="download"/>}
           mt={[0, 0, 0, 74, 74, 76]}
         />
         <Box
@@ -66,7 +65,7 @@ function Layout({ children, ...rest }: BoxProps) {
           >
             <Navigation type="first" href="/dev">Resume</Navigation>
             <Navigation href="/projects">Projects</Navigation>
-            <Navigation type="last" href="/certificates">Certificates</Navigation>
+            <Navigation type="last" href="/achievements">Achievements</Navigation>
           </HStack>
         </Box>
         <Header/>
