@@ -36,12 +36,13 @@ function Layout({ children, ...rest }: BoxProps) {
           onClick={toggleColorMode}
           icon={<Icon as={ColorModeIcon}/>}
           zIndex={991}
+          mb={[74, 76, 76, 0, 0, 0]}
         />
         <FixedIconButton
-          aria-label="toggleColor"
+          aria-label="download"
           onClick={() => window.open("/curriculo.pdf", "_blank")}
           icon={<Icon as={BsFillCloudDownloadFill}/>}
-          mt={[118, 100, 109, 86, 86, 76]}
+          mt={[0, 0, 0, 74, 74, 76]}
         />
         <Box
           as={m.div}
