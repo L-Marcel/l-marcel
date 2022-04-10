@@ -4,7 +4,7 @@ import Document, { Head, Html, Main, NextScript } from "next/document";
 export default class MyDocument extends Document {
   render() {
     return (
-      <Html>
+      <Html translate="no">
         <Head>
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true"/>
           <link rel="preconnect" href="https://fonts.googleapis.com"/>

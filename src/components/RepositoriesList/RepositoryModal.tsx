@@ -67,8 +67,8 @@ function RepositoryModal({ repo: r, onClose, children, ...rest }: RepositoryModa
             lineHeight={[2, 6]}
             layoutId={`repos-badge-${r.id}`}
             px={2}
-            bgColor="alt.50" 
-            color="white"
+            bgColor="alt.200"
+            color="alt.800"
             w="min-content"
             my={2}
           >

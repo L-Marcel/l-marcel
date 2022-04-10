@@ -35,15 +35,11 @@ function Achievement({ item }: AchievementProps) {
     "primary.800"
   );
 
-  const primary900 = useColorModeValue(
-    "secondary.900", 
-    "primary.900"
-  );
-
   return (
     <Box
       as={TimelineItem}
       date={getFormattedDate(issuedIn)}
+
       contentArrowStyle={{ 
         borderRight: `7px solid ${primary}`
       }}

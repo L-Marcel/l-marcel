@@ -55,8 +55,8 @@ function RepositoriesListItem({
           as={motion.div}
           fontSize={10}
           lineHeight={2}
-          bgColor="pri.400"
-          color="pri.900"
+          bgColor="alt.200"
+          color="alt.800"
           layoutId={`repos-badge-${r.id}`}
           w="min-content"
           my={2}
