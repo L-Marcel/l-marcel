@@ -3,8 +3,8 @@
   "pinned": true,
   "technologies": [
     "Next.js",
-    "React.js",
     "ChakraUI",
+    "React.js",
     "Framer Motion",
     "HTML",
     "CSS"

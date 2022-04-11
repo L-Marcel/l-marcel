@@ -3,7 +3,7 @@ import {
   FaReact, FaDocker, FaGitAlt, 
   FaJava, FaPython, FaBalanceScale, FaGithubAlt, FaSun
 } from "react-icons/fa";
-import { SiTypescript, SiNextdotjs, SiGnubash, SiDart } from "react-icons/si";
+import { SiTypescript, SiNextdotjs, SiGnubash, SiDart, SiPrisma, SiVisualstudiocode, SiChakraui } from "react-icons/si";
 import { DiCss3, DiSass } from "react-icons/di";
 import { AiFillHtml5 } from "react-icons/ai";
 import { RiFlutterFill, RiFilePaper2Line, RiFlashlightFill } from "react-icons/ri";
@@ -12,7 +12,7 @@ import {
   AiOutlineCalendar, AiOutlineCheck
 } from "react-icons/ai";
 import { IoIosRocket, IoLogoJavascript, IoMdOpen, IoMdSchool } from "react-icons/io";
-import { FiCopy, FiFigma, FiPaperclip} from "react-icons/fi";
+import { FiCopy, FiFigma, FiFramer, FiPaperclip} from "react-icons/fi";
 import { GrNode } from "react-icons/gr";
 import { BiCubeAlt, BiSearchAlt } from "react-icons/bi";
 interface IconProps extends ChakraIconProps {
@@ -54,7 +54,11 @@ export const icons = {
   "sun": FaSun,
   "moon": BsFillMoonStarsFill,
   "article": FiPaperclip,
-  "flash": RiFlashlightFill
+  "flash": RiFlashlightFill,
+  "framer motion": FiFramer,
+  "prisma": SiPrisma,
+  "vscode": SiVisualstudiocode,
+  "chakraui": SiChakraui
 };
 
 function NamedIcon({ name = "default", ...rest }: IconProps) {

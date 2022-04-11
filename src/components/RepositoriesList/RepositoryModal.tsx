@@ -40,6 +40,7 @@ function RepositoryModal({ repo: r, onClose, children, ...rest }: RepositoryModa
       bgColor="card"
       bottom={[0, 0, 0, "auto", "auto" , "auto"]}
       borderBottomRadius={[0, 0, 0, 10, 10, 10]}
+      minW={["100%", "100%", "95%", 200, 200, 200, 200]}
       maxW={600}
       layoutId={`repos-${r.id}`}
       zIndex={992}
@@ -53,7 +54,7 @@ function RepositoryModal({ repo: r, onClose, children, ...rest }: RepositoryModa
         <Box>
           <Heading
             as={motion.h1}
-            maxWidth="80%"
+            maxWidth="100%"
             fontSize={[18, 25]}
             color={primary}
             textTransform="capitalize"
@@ -78,7 +79,7 @@ function RepositoryModal({ repo: r, onClose, children, ...rest }: RepositoryModa
             as={motion.div}
             flexWrap="wrap"
             display="flex"
-            maxW="90%"
+            maxW="100%"
           >
             {
               r.importedConfig?.technologies?.map(technology => {

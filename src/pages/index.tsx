@@ -5,12 +5,10 @@ import { m } from "framer-motion";
 import { Span } from "../components/Span";
 import { fadeToTop, scaleOnInteract } from "../theme/animations/motion";
 
-import { SiReact, SiNextdotjs, SiPrisma, SiGit, SiVisualstudiocode } from "react-icons/si";
-import { FaNodeJs } from "react-icons/fa";
-import { FiFramer } from "react-icons/fi";
 import { DeveloperImage } from "../components/images/svgs/DeveloperImage"
 import Link from "next/link";
 import { Background } from "../components/Background";
+import NamedIcon from "../components/NamedIcon";
 
 function Home() {
   const primary = useColorModeValue("secondary.700", "primary.700");
@@ -40,17 +38,14 @@ function Home() {
           as={m.div}
           {...fadeToTop}
         >
-          <Icon 
-            color="alt.700"
-            as={SiNextdotjs}
-          />
+          <NamedIcon color="alt.700" name="next.js"/>
         </Box>
-        <Box as={m.div} {...fadeToTop}><Icon as={SiReact}/></Box>
-        <Box as={m.div} {...fadeToTop}><Icon as={FaNodeJs}/></Box>
-        <Box as={m.div} {...fadeToTop}><Icon as={FiFramer}/></Box>
-        <Box as={m.div} {...fadeToTop}><Icon as={SiPrisma}/></Box>
-        <Box as={m.div} {...fadeToTop}><Icon as={SiGit}/></Box>
-        <Box as={m.div} {...fadeToTop}><Icon as={SiVisualstudiocode}/></Box>
+        <Box as={m.div} {...fadeToTop}><NamedIcon name="react.js"/></Box>
+        <Box as={m.div} {...fadeToTop}><NamedIcon name="node.js"/></Box>
+        <Box as={m.div} {...fadeToTop}><NamedIcon name="framer motion"/></Box>
+        <Box as={m.div} {...fadeToTop}><NamedIcon name="prisma"/></Box>
+        <Box as={m.div} {...fadeToTop}><NamedIcon name="git"/></Box>.
+        <Box as={m.div} {...fadeToTop}><NamedIcon name="vscode"/></Box>
       </HStack>
       
       <Link href="/dev">

@@ -13,7 +13,10 @@ const buttonGroupProps: ButtonGroupProps = {
   isAttached: true
 };
 
-function RepositoryModalButtonsGroup({ children, isWideOrNormalVersion = true }: RepositoryModalButtonsGroupProps) {
+function RepositoryModalButtonsGroup({ 
+  children, 
+  isWideOrNormalVersion = true 
+}: RepositoryModalButtonsGroupProps) {
   const firstChildrens = children.slice(0, 2);
   const lastChildrens = children.slice(2, 4);
 
