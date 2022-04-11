@@ -1,6 +1,6 @@
 import { ReactNode, useCallback, useEffect, useState } from "react";
 import { createContext } from "use-context-selector";
-import { filterRepositories } from "../utils/filterRepositories";
+import { getFilteredRepositories } from "../utils/getFilteredRepositories";
 
 
 export const repositoriesContext = createContext({} as RepositoriesContext);
@@ -42,7 +42,9 @@ function RepositoriesProvider({ children }: RepositoriesProviderProps) {
   }, [setFilterOptions]);
 
   useEffect(() => {
-    let repos = filterRepositories(repositories, filterOptions);
+    console.log(repositories);
+    let repos = getFilteredRepositories(repositories, filterOptions);
+    console.log(repos);
     setFilteredRepositories(repos);
   }, [repositories, filterOptions]);
 

@@ -1,4 +1,4 @@
-function filterRepositories(repos: Repository[], filter: RepositoriesFilterOptions) {
+function getFilteredRepositories(repos: Repository[], filter: RepositoriesFilterOptions) {
   /*//with
   if(filter.with.some) {
     const { description, figmaLink, license } = filter.with;
@@ -53,4 +53,4 @@ function filterRepositories(repos: Repository[], filter: RepositoriesFilterOptio
   return repos;
 };
 
-export { filterRepositories };
+export { getFilteredRepositories };

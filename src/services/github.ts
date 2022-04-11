@@ -17,6 +17,7 @@ async function getGithubRepos({
 }: GithubGetReposOptions) {
   const url = "https://api.github.com/users/l-marcel/repos";
   const formatters = getFormatters();
+
   const pageRepos = await api.get(`${url}?per_page=${reposPerPage}&page=${initialPage}`).then(async(res) => {
     const data = res.data;
     const repos: Repository[] = data.map(repo => {
@@ -38,7 +39,7 @@ async function getGithubRepos({
 
     for(let i in repos) {
       let config: Config = await api.get(`https://raw.githubusercontent.com/${repos[i].fullname}/${repos[i].branch}/l-marcel.config.json`)
-      .then(config => config.data).catch(() => null);
+      .then(config => config.data).catch((err) => null);
       const nameAlreadyDefined = !!config.name;
 
       config = {
@@ -49,6 +50,7 @@ async function getGithubRepos({
         technologies: [],
         ...config,
       };
+
 
       if(config.icon !== "self" && config.technologies.length > 0) {
         config.icon = config.technologies[0];

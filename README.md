@@ -1,5 +1,4 @@
 <h1>👋 Hello, I'm <span>Lucas Marcel</span>.</h1>
-<img src="https://github.com/L-Marcel/L-Marcel/blob/main/apps/main/public/assets/banner.gif" alt="banner"/>
 
 <p>I studied computing in <span>IFRN - MC</span> and finished the technical high school level in 2022. On this period, decided to dedicate to the software development, and I've been studying until then technologies like <span>React.js</span>, <span>Next.js</span> and <span>Node.js</span>. JavaScript with TypeScript, on general. I completed the trail of React.js in <span>Ignite</span> course of the Rocketseat and got a complete <span>scholarship some later</span></span>. I know a lot of the Node.js too.</p>
 
