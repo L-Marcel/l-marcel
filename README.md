@@ -1,18 +1,18 @@
 <h1>👋 Hello, I'm <span>Lucas Marcel</span>.</h1>
 
-<p>I studied computing in <span>IFRN - MC</span> and finished the technical high school level in 2022. On this period, decided to dedicate to the software development, and I've been studying until then technologies like <span>React.js</span>, <span>Next.js</span> and <span>Node.js</span>. JavaScript with TypeScript, on general. I completed the trail of React.js in <span>Ignite</span> course of the Rocketseat and got a complete <span>scholarship some later</span></span>. I know a lot of the Node.js too.</p>
+<p>I studied computing in <span>IFRN - MC</span> and finished the technical high school level in 2022. During this period, I dedicated to the software development with technologies like <span>React.js</span>, <span>Next.js</span> and <span>Node.js</span>. After finishing the Ignite course of the <span>Rocketseat</span>, I got a complete <span>scholarship some later</span></p>
 
 <pre>
 C:\projects> <span>yarn</span> create next-app --typescript l-marcel
 </pre>
 
-<p>My favorite <span>framework</span> is Next.js, together we can: make amazing pages with <span>SSR (Server-side Rendering)</span>, <span>SSG (Static Site Generation)</span> and <span>CSR (Client-side Rendering)</span> – used to make <span>SPA (Single-page Applications)</span>; use serverless functions and reduce deployment cost; force <span>revalidate on demand</span> of some pages with the latest resources (v12.1.0); and play with React.js without missing out on his incredible experience.</p>
+<p>My favorite <span>framework</span> is Next.js. Together, we can make amazing pages with <span>SSR (Server-side Rendering)</span>, <span>SSG (Static Site Generation)</span> and <span>CSR (Client-side Rendering)</span>; to use serverless functions and reduce deployment cost; force <span>re-validate on demand</span> of some pages with the latest resources (v12.1.0); and play with React.js without missing out on his incredible experience.</p>
 
 <pre>
 C:\projects\l-marcel> <span>yarn</span> dev
 </pre>
 
-<p>Furthermore, I've a <span>dream</span>: get my <span>first job</span> to put my skills into practice. For this, I'm willing to expand my knowledge and learn <span>new things</span>. I've been following this path for at least <span>3 years</span>.</p>
+<p>I've a <span>dream</span>: to get my <span>first job</span> to improve my skills. For this, I'm willing to expand my knowledge and learn <span>new things</span>. I've been following this path for at least <span>3 years</span>.</p>
 
 <div id="grid">
   <div>
