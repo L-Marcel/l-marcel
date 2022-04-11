@@ -1,4 +1,5 @@
 import { createHmac } from "crypto";
+import { buffer } from "micro";
 import { NextApiRequest } from "next";
 
 const secret = process.env.WEBHOOK_SECRET;
@@ -13,24 +14,22 @@ function getPrismicWebookIsAuth(req: NextApiRequest) {
   return false;
 };
 
-function getGithubWebookIsAuth(req: NextApiRequest) {
+async function getGithubWebookIsAuth(req: NextApiRequest) {
   try {
-    const expectedSignature = "sha1=" +
-        createHmac("sha1", secret)
-            .update(JSON.stringify(req.body))
-            .digest("hex");
+    const raw = await buffer(req);
 
-    const signature = req.headers["x-hub-signature"];
+    const expectedSignature = "sha256=" + createHmac("sha256", secret)
+      .update(raw)
+      .digest("hex");
 
-    console.log(signature !== expectedSignature);
-    console.log(signature.length, expectedSignature.length);
+    const signature = req.headers["x-hub-signature-256"];
 
-    if (signature !== expectedSignature) {
-        throw new Error("Invalid signature.");
+    if (signature === expectedSignature) {
+      return true;
     }
   } catch (error) {};
 
-  return true;
+  return false;
 };
 
 

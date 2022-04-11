@@ -8,9 +8,8 @@ export const config = {
 }
 
 async function revalidatePagesWithGithubData(req: NextApiRequest, res: NextApiResponse) {
-  console.log(req.body);
   if(req.method === "POST") {
-    const isAuth = getGithubWebookIsAuth(req);
+    const isAuth = await getGithubWebookIsAuth(req);
 
     if(!isAuth) {
       return res.status(401).json({
