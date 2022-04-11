@@ -53,6 +53,8 @@ export const getStaticProps: GetStaticProps = async() => {
     getAchievements: true
   });
 
+  console.log("/achievements is revalidated: ", data);
+
   return {
     props: data,
     revalidate: 60 * 60 * 24 * 30
