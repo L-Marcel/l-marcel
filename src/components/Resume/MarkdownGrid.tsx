@@ -1,5 +1,7 @@
 import { Box, HStack, Stack, useBreakpointValue } from "@chakra-ui/react";
+import { m } from "framer-motion";
 import { ReactNode } from "react";
+import { fadeToTopOnScroll } from "../../theme/animations/motion";
 
 interface MarkdownGridProps extends BoxProps {
   items: any[];
@@ -40,12 +42,14 @@ function MarkdownGrid({
 
   return (
     <Box
+      as={m.div}
       mt={1}
       position="relative"
       display="flex"
       justifyContent="flex-start"
       mb={[0, 5]}
       maxW="99vw"
+      { ...fadeToTopOnScroll }
     >
       <HStack
         alignItems="flex-start"

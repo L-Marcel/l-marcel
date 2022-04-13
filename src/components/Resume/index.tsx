@@ -178,11 +178,9 @@ function _Markdown({ languages, onChangeViewport }: MarkdownProps) {
           li({ id, children, ...props }) {
             return (
               <ListItem
-                as={m.li}
                 ml={id === "space" && 10}
                 mt={id === "space" && 2}
                 {...props}
-                {...fadeToTopOnScroll}
               >
                 { id !== "space" && <NamedIcon 
                   name="check" 

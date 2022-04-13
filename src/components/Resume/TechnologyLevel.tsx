@@ -1,6 +1,6 @@
 import { Box, HStack, Text, useColorModeValue } from "@chakra-ui/react";
 import { m } from "framer-motion";
-import { colorize, colorSequenceLayout, fadeToTopOnScroll } from "../../theme/animations/motion";
+import { colorize, colorSequenceLayout } from "../../theme/animations/motion";
 import NamedIcon from "../NamedIcon";
 
 interface TechnologyLevelProps {
@@ -31,7 +31,6 @@ function TechnologyLevel({ level, title, iconName }: TechnologyLevelProps) {
           color: hoverColor
         }
       }}
-      {...fadeToTopOnScroll}
     >
       <Box display="flex" alignItems="center">
         <NamedIcon

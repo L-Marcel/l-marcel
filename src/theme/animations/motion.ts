@@ -31,7 +31,7 @@ const fadeToTop = {
 const fadeToTopOnScroll = {
   initial: "hidden",
   viewport: { 
-    once: false
+    once: true
   },
   whileInView: "inView",
   variants: {
