@@ -41,8 +41,6 @@ export const getStaticProps: GetStaticProps = async() => {
     getTechnologies: true
   });
 
-  console.log("/projects is revalidated: ", data);
-
   return {
     props: data,
     revalidate: 60 * 60 * 24 * 7

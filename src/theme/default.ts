@@ -5,6 +5,8 @@ import colorsConfig from "./colors.json";
 const { colors, semanticTokens } = colorsConfig;
 
 export const theme = extendTheme({
+  initialColorMode: 'dark',
+  useSystemColorMode: false,
   semanticTokens,
   colors,
   fonts: {

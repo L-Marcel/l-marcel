@@ -1,18 +1,20 @@
-import { Box, Code, Heading, Text, Image, ImageProps, useColorModeValue, useBreakpointValue, List, ListItem, ListIcon } from "@chakra-ui/react";
-import Readme from "../../README.md";
+import { Box, Code, Heading, Text, Image, ImageProps, useColorModeValue, useBreakpointValue, List, ListItem } from "@chakra-ui/react";
+import Readme from "../../../README.md";
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
 import ReactMarkdown from "react-markdown";
 import { m } from "framer-motion";
 
-import { fadeToTopOnScroll } from "../theme/animations/motion";
-import { Span } from "./Span";
-import { getStatsImageSrc, getTopLangsImageSrc } from "../utils/getStatsImageSrc";
-import { TopLanguagesList } from "./TopLanguagesList";
+import { fadeToTopOnScroll } from "../../theme/animations/motion";
+import { Span } from "../Span";
+import { getStatsImageSrc, getTopLangsImageSrc } from "../../utils/getStatsImageSrc";
+import { TopLanguagesList } from "../TopLanguagesList";
 import { memo } from "react";
-import NamedIcon from "./NamedIcon";
+import NamedIcon from "../NamedIcon";
 
-import { SocialButtons } from "./SocialButtons";
+import { SocialButtons } from "../SocialButtons";
+import { MarkdownGrid } from "./MarkdownGrid";
+import { TechnologiesList } from "./TechnologiesList";
 
 interface MarkdownProps {
   languages?: { [key: string]: number };
@@ -41,22 +43,8 @@ function _Markdown({ languages, onChangeViewport }: MarkdownProps) {
                 return null;
               case "grid": 
                 return (
-                  <Box 
-                    as={m.div}
-                    display="grid"
-                    gridTemplateColumns={[
-                      "1fr",
-                      "1fr",
-                      "1fr 1fr",
-                      "1fr 1fr",
-                      "3fr 3fr 3fr 1fr",
-                      "3fr 2fr 3fr 1fr"
-                    ]}
-                    flexDir="column"
-                    justifyContent="flex-start"
-                    alignItems="flex-start"
+                  <MarkdownGrid
                     {...props}
-                    {...fadeToTopOnScroll}
                   />
                 );
               case "images":
@@ -112,7 +100,7 @@ function _Markdown({ languages, onChangeViewport }: MarkdownProps) {
               <Heading
                 as={m.h3}
                 mb={4}
-                fontSize={25}
+                fontSize={[19, 25]}
                 {...props} 
                 {...fadeToTopOnScroll}
               />
@@ -189,10 +177,23 @@ function _Markdown({ languages, onChangeViewport }: MarkdownProps) {
 
             if(id === "stats") {
               src = getStatsImageSrc({ darkMode: isDarkMode, showRank, hideTitle: true });
-              //maxH = 200;
+            } else if(id === "techs") {
+              return (
+                <Box mb={5}>
+                  <Heading 
+                    as={m.h2}
+                    fontSize={[19, 25]}
+                    mb={4}
+                    textAlign="left"
+                    {...fadeToTopOnScroll}
+                  >
+                    <Span>Technologies</Span> proficiency:
+                  </Heading>
+                  <TechnologiesList/>
+              </Box>
+              );
             } else if(id === "langs") {
               src = getTopLangsImageSrc({ darkMode: isDarkMode, hideTitle: true });
-              //maxH = 160;
 
               if(!languages) {
                 return null;
@@ -203,13 +204,11 @@ function _Markdown({ languages, onChangeViewport }: MarkdownProps) {
                   <Heading 
                     as={m.h2}
                     mb={0}
-                    fontSize={20}
+                    fontSize={25}
                     textAlign="left"
                     {...fadeToTopOnScroll}
                   >
-                    Top used <Span
-                      {...fadeToTopOnScroll}
-                    >languages</Span>:
+                    Top used <Span>languages</Span>:
                   </Heading>
                   <TopLanguagesList
                     languages={languages}

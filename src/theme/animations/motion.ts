@@ -57,11 +57,44 @@ const scaleOnInteract = {
   whileTap: {
     scale: .85
   }
-}
+};
+
+const colorSequenceLayout = {
+  initial: "uncolorized",
+  whileInView: "colorized",
+  variants: {
+    uncolorized: {
+      opacity: 0
+    },
+    colorized: {
+      opacity: 1,
+      transition: {
+        delayChildren: .3,
+        staggerChildren: .2
+      }
+    }
+  }
+};
+
+const colorize = {
+  variants: {
+    uncolorized: {
+      backgroundColor: "var(--chakra-colors-alt-300)"
+    },
+    colorized: {
+      backgroundColor: "currentColor",
+      transition: {
+        duration: .2
+      }
+    }
+  }
+};
 
 export { 
   fadeToTop,
   fadeLayout,
   fadeToTopOnScroll,
-  scaleOnInteract
+  scaleOnInteract,
+  colorSequenceLayout,
+  colorize
 };
