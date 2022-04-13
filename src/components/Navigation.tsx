@@ -5,31 +5,42 @@ import { useRouter } from "next/router";
 
 interface NavigationProps extends LinkProps {
   type?: "first" | "last" | "common";
+  locale?: string;
 };
 
-function Navigation({ type = "common", href, children, ...rest }: NavigationProps) {
+function Navigation({ 
+  locale, 
+  type = "common", 
+  href, 
+  children,
+  p,
+  px,
+  ...rest 
+}: NavigationProps) {
   const color = useColorModeValue("secondary.600", "primary.600");
-  const { asPath: path } = useRouter();
+  const { asPath: path, locale: selectedLocale } = useRouter();
+  
   let isPath = path === href;
+  let isSelected = (isPath || selectedLocale === locale);
 
   return (
-    <Link href={href} passHref>
+    <Link href={href ?? ""} locale={locale} passHref>
       <CLink
         as={m.a}
         {...rest}
       >
         <Box
-          bgColor={isPath? "alt.100":"alt.50"}
-          color={isPath && color}
-          p={[3, 4, 3]}
-          px={[5, 4, 4, 7]}
+          bgColor={isSelected? "alt.100":"alt.50"}
+          color={isSelected && color}
+          p={p ?? [3, 4, 3]}
+          px={px ?? [5, 4, 4, 7]}
           borderBottomLeftRadius={type === "first" && 20}
           borderBottomRightRadius={type === "last" && 20}
           _hover={{
-            bgColor: isPath? "alt.200":"alt.100"
+            bgColor: isSelected? "alt.200":"alt.100"
           }}
           _active={{
-            bgColor: isPath? "alt.300":"alt.200"
+            bgColor: isSelected? "alt.300":"alt.200"
           }}
         >
           {children}

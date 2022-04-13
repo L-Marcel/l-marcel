@@ -1,5 +1,4 @@
 import { Box, Code, Heading, Text, Image, ImageProps, useColorModeValue, useBreakpointValue, List, ListItem } from "@chakra-ui/react";
-import Readme from "../../../README.md";
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
 import ReactMarkdown from "react-markdown";
@@ -24,9 +23,16 @@ const MarkdownGrid = dynamic<{ items: any[] }>(() => import("./MarkdownGrid").th
 interface MarkdownProps {
   languages?: { [key: string]: number };
   onChangeViewport?: (v: boolean) => void;
+  locale: string;
+  markdown: string;
 };
 
-function _Markdown({ languages, onChangeViewport }: MarkdownProps) {
+function _Markdown({ 
+  markdown, 
+  languages,
+  locale,
+  onChangeViewport 
+}: MarkdownProps) {
   const isDarkMode = useColorModeValue(false, true);
   const showRank = useBreakpointValue({
     base: false,
@@ -37,7 +43,7 @@ function _Markdown({ languages, onChangeViewport }: MarkdownProps) {
   return (
     <>
       <ReactMarkdown
-        children={Readme}
+        children={markdown}
         components={{
           br() {
             return null;
@@ -82,7 +88,8 @@ function _Markdown({ languages, onChangeViewport }: MarkdownProps) {
                           textAlign="left"
                           {...fadeToTopOnScroll}
                         >
-                          <Span>Technologies</Span> proficiency:
+                          { locale === "pt-BR"? <>Proeficiência com as <Span>tecnologias</Span>:</>
+                          :<><Span>Technologies</Span>proficiency:</>}
                         </Heading>
                         <TechnologiesList/>
                       </Box>,
@@ -179,7 +186,7 @@ function _Markdown({ languages, onChangeViewport }: MarkdownProps) {
             return (
               <ListItem
                 ml={id === "space" && 10}
-                mt={id === "space" && 2}
+                mt={id === "space"? 2:"6px"}
                 {...props}
               >
                 { id !== "space" && <NamedIcon 
@@ -227,7 +234,8 @@ function _Markdown({ languages, onChangeViewport }: MarkdownProps) {
                     textAlign="left"
                     {...fadeToTopOnScroll}
                   >
-                    Top used <Span>languages</Span>:
+                    { locale === "pt-BR"? <><Span>Linguagens</Span> mais usadas</>
+                    :<>Top used <Span>languages</Span></>}
                   </Heading>
                   <TopLanguagesList
                     languages={languages}

@@ -9,8 +9,13 @@ import { DeveloperImage } from "../components/images/svgs/DeveloperImage"
 import Link from "next/link";
 import { Background } from "../components/Background";
 import NamedIcon from "../components/NamedIcon";
+import { GetStaticProps } from "next";
 
-function Home() {
+interface HomeProps {
+  locale: string;
+};
+
+function Home({ locale }: HomeProps) {
   const primary = useColorModeValue("secondary.700", "primary.700");
 
   return (
@@ -21,14 +26,21 @@ function Home() {
         fontSize={[20, 30]}
         {...fadeToTop}
       >
-        A <Span
+        { locale === "pt-BR"? <>Um desenvolvedor<Span
           bgColor="alt.50"
           p={1}
           px={3}
           borderRadius={20}
         >
           full-stack
-        </Span> developer
+        </Span></>:<>A <Span
+          bgColor="alt.50"
+          p={1}
+          px={3}
+          borderRadius={20}
+        >
+          full-stack
+        </Span> developer</>}
       </Heading>
       <HStack 
         color={primary}
@@ -68,7 +80,7 @@ function Home() {
           {...fadeToTop}
           {...scaleOnInteract}
         >
-          click to <Span pl={1}>explore</Span>
+          {locale === "pt-BR"? <>clique para <Span pl={1}>explorar</Span></>:<>click to <Span pl={1}>explore</Span></>}
         </Button>
       </Link>
       <Background
@@ -83,5 +95,13 @@ function Home() {
     </>
   );
 };
+
+export const getStaticProps: GetStaticProps = async({ locale }) => {
+  return {
+    props: { locale },
+    revalidate: 60 * 60 * 24 * 7
+  };
+};
+
 
 export default Home;

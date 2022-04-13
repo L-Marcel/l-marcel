@@ -8,15 +8,15 @@ const getStaticData = async({
   getTechnologies = false,
   getCertificates = false,
   getAchievements = false
-}) => {
+}, locale?: string) => {
   const needRepos = getRepos || getLanguages || getTechnologies;
   const repos = needRepos? await getGithubRepos({ getLanguages }):[];
 
   const languages = getLanguages? getGithubReposTopLanguages(repos):null;
   const technologies = getTechnologies? getTechnologiesInRepositories(repos):[];
 
-  const certificates = getCertificates? await getCertificatesData():[];
-  const achievements = getAchievements? await getAchievementsData():[];
+  const certificates = getCertificates? await getCertificatesData(locale):[];
+  const achievements = getAchievements? await getAchievementsData(locale):[];
 
   return {
     languages,

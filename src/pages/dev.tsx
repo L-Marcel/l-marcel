@@ -9,12 +9,20 @@ import { Markdown } from "../components/Resume";
 import { GoalsImage } from "../components/images/svgs/GoalsImage";
 import { Background } from "../components/Background";
 import useShowBackground from "../contexts/hooks/useShowBackground";
+import ReadmeENUS from "../../README.md";
+import ReadmePTBR from "../../README_ptbr.md";
 
 interface DevProps {
+  locale: string;
+  markdown: string;
   languages: { [key: string]: number };
 };
 
-function Dev({ languages }: DevProps) {
+function Dev({ 
+  markdown, 
+  languages,
+  locale
+}: DevProps) {
   const { setShowBackground } = useShowBackground();
   
   return (
@@ -30,6 +38,8 @@ function Dev({ languages }: DevProps) {
         {...fadeLayout}
       >
         <Markdown
+          locale={locale}
+          markdown={markdown}
           languages={languages}
           onChangeViewport={setShowBackground}
         />
@@ -48,14 +58,20 @@ function Dev({ languages }: DevProps) {
   );
 };
 
-export const getStaticProps: GetStaticProps = async() => {
+export const getStaticProps: GetStaticProps = async({ locale }) => {
   const data = await getStaticData({
     getRepos: true,
     getLanguages: true
   });
 
+  const markdown = locale === "pt-BR"? ReadmePTBR:ReadmeENUS;
+
   return {
-    props: data,
+    props: {
+      ...data, 
+      markdown, 
+      locale 
+    },
     revalidate: 60 * 60 * 24 * 7
   };
 };

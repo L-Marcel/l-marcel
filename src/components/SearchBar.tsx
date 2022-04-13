@@ -7,10 +7,11 @@ import { fadeToTop } from "../theme/animations/motion";
 import NamedIcon from "./NamedIcon";
 
 interface SearchBarTecnhologies {
+  locale: string;
   technologies: string[];
 };
 
-function SearchBar({ technologies }: SearchBarTecnhologies) {
+function SearchBar({ locale, technologies }: SearchBarTecnhologies) {
   const { filterOptions, setFilterOptions } = useFilterOptions();
   const border = useColorModeValue("secondary-700", "primary-700");
   const color = useColorModeValue("secondary.600", "primary.600");
@@ -28,7 +29,7 @@ function SearchBar({ technologies }: SearchBarTecnhologies) {
       position="sticky"
       as={m.div}
       ml={[0, 0, 0, 300, 300, 0]}
-      mt={[0, 0, 0, -20, -20, "-60px"]}
+      mt={[0, 0, 0, 0, 0, "-20px"]}
       top={"40px"}
       w={300}
       onFocus={() => setIsFocused(true)}
@@ -53,7 +54,7 @@ function SearchBar({ technologies }: SearchBarTecnhologies) {
         _placeholder={{
           color: "alt.400"
         }}
-        placeholder="Search by name..."
+        placeholder={locale === "pt-BR"? "Pesquisar por nome...":"Search by name..."}
         animate={isFocused? "focused":"initial"}
         onChange={(e) => onChangeQuery(e.target.value)}
         variants={{

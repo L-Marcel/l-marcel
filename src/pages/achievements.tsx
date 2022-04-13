@@ -11,9 +11,14 @@ import { Achievement } from "../components/Achievement";
 interface AchievementsProps {
   certificates: Certificate[];
   achievements: Achievement[];
+  locale: string;
 };
 
-function Achievements({ certificates, achievements }: AchievementsProps) {
+function Achievements({ 
+  locale,
+  certificates,
+  achievements 
+}: AchievementsProps) {
   let items = [ ...certificates, ...achievements ];
   items.sort((a, b) => 
     new Date(b.issuedIn).getTime() - 
@@ -27,7 +32,7 @@ function Achievements({ certificates, achievements }: AchievementsProps) {
         fontSize={[20, 25, 30, 30, 40, 40]}
         {...fadeToTop}
       >
-        My  <Span>achievements</Span>
+        {locale === "pt-BR"? <>Minhas <Span>conquistas</Span></>:<>My <Span>achievements</Span></>}
       </Heading>
       <Box
         as={Timeline} 
@@ -47,14 +52,14 @@ function Achievements({ certificates, achievements }: AchievementsProps) {
   );
 };
 
-export const getStaticProps: GetStaticProps = async() => {
+export const getStaticProps: GetStaticProps = async({ locale }) => {
   const data = await getStaticData({
     getCertificates: true,
     getAchievements: true
-  });
+  }, locale);
 
   return {
-    props: data,
+    props: { ...data, locale },
     revalidate: 60 * 60 * 24 * 30
   };
 };

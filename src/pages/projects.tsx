@@ -10,12 +10,14 @@ import { RepositoriesList } from "../components/RepositoriesList";
 interface ProjectsProps {
   repos: Repository[];
   technologies: string[];
+  locale: string;
 };
 
-function Projects({ repos, technologies }: ProjectsProps) {
+function Projects({ locale, repos, technologies }: ProjectsProps) {
   return (
     <RepositoriesProvider>
       <SearchBar
+        locale={locale}
         technologies={technologies}
       />
       <RepositoriesList
@@ -35,14 +37,14 @@ function Projects({ repos, technologies }: ProjectsProps) {
   );
 };
 
-export const getStaticProps: GetStaticProps = async() => {
+export const getStaticProps: GetStaticProps = async({ locale }) => {
   const data = await getStaticData({
     getRepos: true,
     getTechnologies: true
   });
 
   return {
-    props: data,
+    props: { ...data, locale },
     revalidate: 60 * 60 * 24 * 7
   };
 };

@@ -1,34 +1,34 @@
-<h1>👋 Hello, my name is <span>Lucas Marcel</span>.</h1>
-<p>I studied computing in <span>IFRN - MC</span> and finished the technical high school level in 2022. During this period, I dedicated to the software development with technologies like <span>React.js</span>, <span>Next.js</span> and <span>Node.js</span>. After finishing the Ignite course of the <span>Rocketseat</span>, I got a complete <span>scholarship some later</span>.</p>
+<h1>👋 Olá, me chamo <span>Lucas Marcel</span>.</h1>
+<p>Estudei informática no <span>IFRN - MC</span> e terminei o ensino médio técnico em 2022. Nesse mesmo périodo me dediquei ao desenvolvimento de aplicações com tecnologias como <span>React.js</span>, <span>Next.js</span> and <span>Node.js</span>. Após terminar o curso Ignite da <span>Rocketseat</span>, ganhei deles uma bolsa de estudos <span>completa</span> algum tempo depois.</p>
 <pre>
 C:\projects> <span>yarn</span> create next-app --typescript l-marcel
 </pre>
-<p>My favorite <span>framework</span> is Next.js. Together, we can make amazing pages with <span>SSR (Server-side Rendering)</span>, <span>SSG (Static Site Generation)</span> and <span>CSR (Client-side Rendering)</span>; to use serverless functions and reduce deployment cost; force <span>re-validate on demand</span> of some pages with the latest resources (v12.1.0); and play with React.js without missing out on his incredible experience.</p>
+<p>Meu <span>framework</span> favorito é o Next.js. Juntos, nós podemos fazer incríveis páginas com <span>SSR (Renderização do lado do servidor)</span>, <span>SSG (Geração estática de site)</span> and <span>CSR (Renderização do lado do cliente)</span>; usar funções serverless e reduzir o custo de implementação; forçar a <span>re-validação de algumas páginas de acordo com a demanda</span> com os recursos da versão mais recente (v12.1.0); e brincar um pouco com o React.js sem perder sua incrível experiência.</p>
 <pre>
 C:\projects\l-marcel> <span>yarn</span> dev
 </pre>
-<p>I've a <span>dream</span>: to get my <span>first job</span> to improve my skills. For this, I'm willing to expand my knowledge and learn <span>new things</span>. I've been following this path for at least <span>3 years</span>.</p>
+<p>Tenho um <span>sonho</span>: conseguir meu <span>primeiro emprego</span> para aperfeiçoar minhas habilidades. Para isso, estou disposto a expandir meus conhecimentos e aprender <span>coisas novas</span>. Sigo esse caminho por pelo menos <span>3 anos</span>.</p>
 <div id="grid">
-  <ul><h2 align="center">Some <span>competencies</span>:</h2>
-    <li>Agile methodologies' knowledge;</li>
-    <li>Experience with many deploy options;</li>
-    <li>Database’s entities relations knowledge;</li>
-    <li>Ready to do responsive;</li>
-    <li>Framer Motion animation’s knowledge.</li>
+  <ul><h2 align="center">Algumas <span>competências</span>:</h2>
+    <li>Conhece metodologias agéis;</li>
+    <li>Experiência com várias opções de implementação;</li>
+    <li>Entende os relacionamentos das entidades do banco de dados;</li>
+    <li>Pronto para fazer responsivo;</li>
+    <li>Capaz de realizar animações com o Framer Motion.</li>
   </ul>
-  <ul><h2 align="center"><span>Soft</span> skills:</h2>
-    <li>Fast reasoning;</li>
-    <li>Dedication;</li>
-    <li>Constant learning;</li>
-    <li>Objectivity.</li>
+  <ul><h2 align="center"><span>Habilidades</span> interpessoais:</h2>
+    <li>Raciocínio rápido;</li>
+    <li>Dedicação;</li>
+    <li>Aprendizado constante;</li>
+    <li>Objetividade.</li>
   </ul>
-  <ul><h2 align="center"><span>Languages</span> proficiency:</h2>
-    <li>Portuguese – fluent;</li>
-    <li>English – technical:</li>
-    <li id="space">Without real listening or speaking experience.</li>
+  <ul><h2 align="center"><span>Idiomas</span> falados:</h2>
+    <li>Português – fluente;</li>
+    <li>Inglês – técnico:</li>
+    <li id="space">Sem uma experiência real de fala ou escuta.</li>
   </ul>
 </div>
-<h2 id="sub" align="center"><span>Github profile</span> statistics:</h2>
+<h2 id="sub" align="center"><span>Estatísticas</span> do Github:</h2>
   <div id="remove" align="center">
     <a href="https://www.l-marcel.vercel.app"><img alt="linkedin" src="https://img.shields.io/badge/-Website-brightgreen?logoColor=ffffff&style=for-the-badge&logo=hack%20the%20box&color=423958"/></a>
     <a href="https://www.linkedin.com/in/l-marcel/"><img alt="linkedin" src="https://img.shields.io/badge/-LINKEDIN-brightgreen?logoColor=ffffff&style=for-the-badge&logo=linkedin&color=0A66C2"/></a>

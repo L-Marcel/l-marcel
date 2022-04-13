@@ -31,5 +31,9 @@ module.exports = {
       "github-readme-stats.vercel.app",
       "img.shields.io",
     ]
-},
+  },
+  i18n: {
+    locales: ['en-US', 'pt-BR'],
+    defaultLocale: 'en-US',
+  }
 }

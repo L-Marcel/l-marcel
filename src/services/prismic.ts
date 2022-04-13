@@ -13,23 +13,32 @@ function getPrismicClient() {
   return prismic;
 };
 
-async function getCertificatesData(): Promise<Certificate[]> {
+async function getCertificatesData(locale?: string): Promise<Certificate[]> {
   const prismic = getPrismicClient();
   return await prismic.getAllByType("certificate", {}).then(res => {
     return res.map(({
       id,
       data
     }) => {
-      const {
+      let {
         name,
+        "ptbr-name": ptBR_name,
         issuing_organization,
+        "ptbr-issuing_organization": ptBR_issuing_organization,
         issued_in,
         expires_in,
         description,
+        "ptbr-description": ptBR_description,
         code,
         icon,
         url
       } = data;
+
+      if(locale === "pt-BR") {
+        name = ptBR_name;
+        issuing_organization = ptBR_issuing_organization;
+        description = ptBR_description;
+      };
 
       return {
         id,
@@ -46,23 +55,32 @@ async function getCertificatesData(): Promise<Certificate[]> {
   }).catch(() => []);
 }
 
-async function getAchievementsData(): Promise<Achievement[]> {
+async function getAchievementsData(locale?: string): Promise<Achievement[]> {
   const prismic = getPrismicClient();
   return await prismic.getAllByType("achievements", {}).then(res => {
     return res.map(({
       id,
       data
     }) => {
-      const {
+      let {
         name,
+        "ptbr-name": ptBR_name,
         issuing_organization,
+        "ptbr-issuing_organization": ptBR_issuing_organization,
         issued_in,
         expires_in,
         description,
+        "ptbr-description": ptBR_description,
         code,
         icon,
         url
       } = data;
+
+      if(locale === "pt-BR") {
+        name = ptBR_name;
+        issuing_organization = ptBR_issuing_organization;
+        description = ptBR_description;
+      };
 
       return {
         id,
