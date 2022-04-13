@@ -17,12 +17,20 @@ async function revalidatePagesWithGithubData(req: NextApiRequest, res: NextApiRe
       });
     };
 
-    await res.unstable_revalidate('/dev').catch(() => {
-      console.log("[Github Webhook]: Can't revalidate /dev");
+    await res.unstable_revalidate('/en-US/dev').catch(() => {
+      console.log("[Github Webhook]: Can't revalidate /en-US/dev");
     });
 
-    await res.unstable_revalidate('/projects').catch(() => {
-      console.log("[Github Webhook]: Can't revalidate /projects");
+    await res.unstable_revalidate('/en-US/projects').catch(() => {
+      console.log("[Github Webhook]: Can't revalidate /en-US/projects");
+    });
+
+    await res.unstable_revalidate('/pt-BR/dev').catch(() => {
+      console.log("[Github Webhook]: Can't revalidate /pt-BR/dev");
+    });
+
+    await res.unstable_revalidate('/pt-BR/projects').catch(() => {
+      console.log("[Github Webhook]: Can't revalidate /pt-BR/projects");
     });
 
     return res.status(200).json({

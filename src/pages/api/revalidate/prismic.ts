@@ -12,7 +12,11 @@ async function revalidatePagesWithPrismicData(req: NextApiRequest, res: NextApiR
     };
 
     await res.unstable_revalidate('/achievements').catch(() => {
-      console.log("[Prismic Webhook]: Can't revalidate /achievements");
+      console.log("[Prismic Webhook]: Can't revalidate /en-US/achievements");
+    });
+
+    await res.unstable_revalidate('/achievements').catch(() => {
+      console.log("[Prismic Webhook]: Can't revalidate /pt-BR/achievements");
     });
 
     return res.status(200).json({
