@@ -44,6 +44,7 @@ function MarkdownGrid({
       position="relative"
       display="flex"
       justifyContent="flex-start"
+      mb={[0, 5]}
       maxW="99vw"
     >
       <HStack

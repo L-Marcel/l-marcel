@@ -58,7 +58,7 @@ function TechnologyLevel({ level, title, iconName }: TechnologyLevelProps) {
                 h={5}
                 w={3}
                 color="alt.300"
-                {...colorize}
+                {...colorize }
               />
             );
           })}

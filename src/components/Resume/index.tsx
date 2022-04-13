@@ -74,7 +74,7 @@ function _Markdown({ languages, onChangeViewport }: MarkdownProps) {
                 return (
                   <MarkdownGrid
                     items={[
-                      <Box mb={5}>
+                      <Box mb={2}>
                         <Heading 
                           as={m.h2}
                           fontSize={[19, 25]}
@@ -119,6 +119,9 @@ function _Markdown({ languages, onChangeViewport }: MarkdownProps) {
                 as={m.h2}
                 mt={id === "sub"? 1:0}
                 mb={id === "sub"? 0:4}
+                _first={{
+                  mt: 0
+                }}
                 fontSize={[19, 25]}
                 textAlign="left"
                 {...props} 
@@ -164,6 +167,9 @@ function _Markdown({ languages, onChangeViewport }: MarkdownProps) {
             return (
               <List
                 as={m.ul}
+                _notFirst={{
+                  mt: "10px!important"
+                }}
                 {...props}
                 {...fadeToTopOnScroll}
               />
@@ -173,8 +179,8 @@ function _Markdown({ languages, onChangeViewport }: MarkdownProps) {
             return (
               <ListItem
                 as={m.li}
-                mb={4}
-                ml={id === "space" && 20}
+                ml={id === "space" && 10}
+                mt={id === "space" && 2}
                 {...props}
                 {...fadeToTopOnScroll}
               >
@@ -219,7 +225,7 @@ function _Markdown({ languages, onChangeViewport }: MarkdownProps) {
                   <Heading 
                     as={m.h2}
                     mb={0}
-                    fontSize={25}
+                    fontSize={[19, 25]}
                     textAlign="left"
                     {...fadeToTopOnScroll}
                   >

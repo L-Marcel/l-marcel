@@ -15,6 +15,7 @@ function Layout({ children, ...rest }: BoxProps) {
   return (
     <Box
       overflowY="scroll"
+      overflowX="hidden"
       id="scrollable"
       h="100%"
       maxH="100vh"
