@@ -6,6 +6,7 @@ import { Background } from "../components/Background";
 import { RepositoriesProvider } from "../contexts/RepositoriesProvider";
 import { SearchBar } from "../components/SearchBar";
 import { RepositoriesList } from "../components/RepositoriesList";
+import { LayoutHead } from "../components/LayoutHead";
 
 interface ProjectsProps {
   repos: Repository[];
@@ -15,25 +16,32 @@ interface ProjectsProps {
 
 function Projects({ locale, repos, technologies }: ProjectsProps) {
   return (
-    <RepositoriesProvider>
-      <SearchBar
+    <>
+      <LayoutHead
         locale={locale}
-        technologies={technologies}
+        title="Projects"
+        ptBRTitle="Projetos"
       />
-      <RepositoriesList
-        repos={repos}
-      />
-      <Background
-        w={[400, 600, 600, 800, 800, 800]}
-        h={[400, 400, 500, 800, 900, 1000]}
-        bottom={[-120, -120, -160, -260, -300, -350]}
-        right={[-100, -220, -140, -200, -140, -75]}
-        filter={["opacity(50%)", "opacity(70%)", "opacity(80%)", "opacity(90%)", "opacity(100%)"]}
-        zIndex={-1}
-      >
-        <GoalsImage/>
-      </Background>
-    </RepositoriesProvider>
+      <RepositoriesProvider>
+        <SearchBar
+          locale={locale}
+          technologies={technologies}
+        />
+        <RepositoriesList
+          repos={repos}
+        />
+        <Background
+          w={[400, 600, 600, 800, 800, 800]}
+          h={[400, 400, 500, 800, 900, 1000]}
+          bottom={[-120, -120, -160, -260, -300, -350]}
+          right={[-100, -220, -140, -200, -140, -75]}
+          filter={["opacity(50%)", "opacity(70%)", "opacity(80%)", "opacity(90%)", "opacity(100%)"]}
+          zIndex={-1}
+        >
+          <GoalsImage/>
+        </Background>
+      </RepositoriesProvider>
+    </>
   );
 };
 

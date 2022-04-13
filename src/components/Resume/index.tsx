@@ -88,7 +88,7 @@ function _Markdown({
                           textAlign="left"
                           {...fadeToTopOnScroll}
                         >
-                          { locale === "pt-BR"? <>Proeficiência com as <Span>tecnologias</Span>:</>
+                          { locale === "pt-BR"? <>Proficiência com as <Span>tecnologias</Span>:</>
                           :<><Span>Technologies</Span>proficiency:</>}
                         </Heading>
                         <TechnologiesList/>

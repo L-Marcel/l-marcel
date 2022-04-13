@@ -24,6 +24,14 @@ function TechnologiesList() {
         title="Node.js"
       />
       <TechnologyLevel
+        level={2}
+        title="React Native"
+      />
+      <TechnologyLevel
+        level={1}
+        title="GraphQL"
+      />
+      <TechnologyLevel
         level={5}
         title="HTML"
       />
@@ -46,9 +54,29 @@ function TechnologiesList() {
         title="Prisma"
       />
       <TechnologyLevel
+        level={5}
+        title="Express"
+      />
+      <TechnologyLevel
+        level={3}
+        title="Jest"
+      />
+      <TechnologyLevel
         level={4}
         title="Git & Github"
         iconName="git"
+      />
+      <TechnologyLevel
+        level={1}
+        title="Docker"
+      />
+      <TechnologyLevel
+        level={3}
+        title="Figma"
+      />
+      <TechnologyLevel
+        level={1}
+        title="Kafka"
       />
       <TechnologyLevel
         level={5}

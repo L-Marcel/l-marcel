@@ -5,8 +5,11 @@ import { Span } from "../components/Span";
 import { fadeToTop } from "../theme/animations/motion";
 import { getStaticData } from "../utils/getStaticData";
 import { VerticalTimeline as Timeline }  from "react-vertical-timeline-component";
-import "react-vertical-timeline-component/style.min.css";
 import { Achievement } from "../components/Achievement";
+
+
+import "react-vertical-timeline-component/style.min.css";
+import { LayoutHead } from "../components/LayoutHead";
 
 interface AchievementsProps {
   certificates: Certificate[];
@@ -27,6 +30,11 @@ function Achievements({
   
   return (
     <>
+      <LayoutHead
+        locale={locale}
+        title="Achievements"
+        ptBRTitle="Conquistas"
+      />
       <Heading
         as={m.h1}
         fontSize={[20, 25, 30, 30, 40, 40]}

@@ -11,6 +11,7 @@ import { Background } from "../components/Background";
 import useShowBackground from "../contexts/hooks/useShowBackground";
 import ReadmeENUS from "../../README.md";
 import ReadmePTBR from "../../README_ptbr.md";
+import { LayoutHead } from "../components/LayoutHead";
 
 interface DevProps {
   locale: string;
@@ -27,6 +28,11 @@ function Dev({
   
   return (
     <>
+      <LayoutHead
+        locale={locale}
+        title="Resume"
+        ptBRTitle="Resumo"
+      />
       <Box
         as={m.div}
         position="relative"

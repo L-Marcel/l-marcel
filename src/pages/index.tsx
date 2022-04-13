@@ -1,6 +1,6 @@
 //import Head from "next/head";
 
-import { Box, Button, Heading, HStack, Icon, useColorModeValue } from "@chakra-ui/react";
+import { Box, Button, Heading, HStack, useColorModeValue } from "@chakra-ui/react";
 import { m } from "framer-motion";
 import { Span } from "../components/Span";
 import { fadeToTop, scaleOnInteract } from "../theme/animations/motion";
@@ -10,7 +10,7 @@ import Link from "next/link";
 import { Background } from "../components/Background";
 import NamedIcon from "../components/NamedIcon";
 import { GetStaticProps } from "next";
-
+import { LayoutHead } from "../components/LayoutHead";
 interface HomeProps {
   locale: string;
 };
@@ -20,6 +20,9 @@ function Home({ locale }: HomeProps) {
 
   return (
     <>
+      <LayoutHead
+        locale={locale}
+      />
       <Heading
         as={m.h1}
         mt={[150, 120, "10%", "10%", "10%", "10%"]}
@@ -54,9 +57,12 @@ function Home({ locale }: HomeProps) {
         </Box>
         <Box as={m.div} {...fadeToTop}><NamedIcon name="react.js"/></Box>
         <Box as={m.div} {...fadeToTop}><NamedIcon name="node.js"/></Box>
+        <Box as={m.div} {...fadeToTop}><NamedIcon name="react native"/></Box>
         <Box as={m.div} {...fadeToTop}><NamedIcon name="framer motion"/></Box>
         <Box as={m.div} {...fadeToTop}><NamedIcon name="prisma"/></Box>
-        <Box as={m.div} {...fadeToTop}><NamedIcon name="git"/></Box>.
+        <Box as={m.div} {...fadeToTop}><NamedIcon name="jest"/></Box>
+        <Box as={m.div} {...fadeToTop}><NamedIcon name="git"/></Box>
+        <Box as={m.div} {...fadeToTop}><NamedIcon name="docker"/></Box>
         <Box as={m.div} {...fadeToTop}><NamedIcon name="vscode"/></Box>
       </HStack>
       
