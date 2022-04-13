@@ -1,5 +1,5 @@
-<h1>👋 Hello, my name is <span>Lucas Marcel</span>.</h1>
-<p>I studied computing in <span>IFRN - MC</span> and finished the technical high school level in 2022. During this period, I dedicated to the software development with technologies like <span>React.js</span>, <span>Next.js</span> and <span>Node.js</span>. After finishing the Ignite course of the <span>Rocketseat</span>, I got a complete <span>scholarship some later</span>.</p>
+<h1>👋 Hello, I'm <span>Lucas Marcel</span>.</h1>
+<p>I studied computing in <span>IFRN - MC</span> and finished the technical high school level in 2022. During this period, I dedicated to the software development with technologies like <span>React.js</span>, <span>Next.js</span> and <span>Node.js</span>. After finishing the Ignite course of the <span>Rocketseat</span>, I got a complete <span>scholarship</span> in Do While 2021.</p>
 <pre>
 C:\projects> <span>yarn</span> create next-app --typescript l-marcel
 </pre>

@@ -187,6 +187,7 @@ function _Markdown({
               <ListItem
                 ml={id === "space" && 10}
                 mt={id === "space"? 2:"6px"}
+                maxW={["80%", "100%", "100%", "100%", "100%", "100%"]}
                 {...props}
               >
                 { id !== "space" && <NamedIcon 

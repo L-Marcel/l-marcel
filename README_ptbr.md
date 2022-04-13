@@ -1,5 +1,5 @@
-<h1>👋 Olá, me chamo <span>Lucas Marcel</span>.</h1>
-<p>Estudei informática no <span>IFRN - MC</span> e terminei o ensino médio técnico em 2022. Nesse mesmo périodo me dediquei ao desenvolvimento de aplicações com tecnologias como <span>React.js</span>, <span>Next.js</span> and <span>Node.js</span>. Após terminar o curso Ignite da <span>Rocketseat</span>, ganhei deles uma bolsa de estudos <span>completa</span> algum tempo depois.</p>
+<h1>👋 Olá, sou <span>Lucas Marcel</span>.</h1>
+<p>Estudei informática no <span>IFRN - MC</span> e terminei o ensino médio técnico em 2022. Nesse mesmo périodo me dediquei ao desenvolvimento de aplicações com tecnologias como <span>React.js</span>, <span>Next.js</span> and <span>Node.js</span>. Após terminar o curso Ignite da <span>Rocketseat</span>, ganhei deles uma bolsa de estudos <span>completa</span> no Do While 2021.</p>
 <pre>
 C:\projects> <span>yarn</span> create next-app --typescript l-marcel
 </pre>

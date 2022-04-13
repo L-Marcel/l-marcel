@@ -80,7 +80,7 @@ function Home({ locale }: HomeProps) {
           {...fadeToTop}
           {...scaleOnInteract}
         >
-          {locale === "pt-BR"? <>clique para <Span pl={1}>explorar</Span></>:<>click to <Span pl={1}>explore</Span></>}
+          {locale === "pt-BR"? <>clique para <Span pl={2}>explorar</Span></>:<>click to <Span pl={1}>explore</Span></>}
         </Button>
       </Link>
       <Background
