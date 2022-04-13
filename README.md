@@ -1,52 +1,33 @@
 <h1>👋 Hello, I'm <span>Lucas Marcel</span>.</h1>
-
 <p>I studied computing in <span>IFRN - MC</span> and finished the technical high school level in 2022. During this period, I dedicated to the software development with technologies like <span>React.js</span>, <span>Next.js</span> and <span>Node.js</span>. After finishing the Ignite course of the <span>Rocketseat</span>, I got a complete <span>scholarship some later</span>.</p>
-
 <pre>
 C:\projects> <span>yarn</span> create next-app --typescript l-marcel
 </pre>
-
 <p>My favorite <span>framework</span> is Next.js. Together, we can make amazing pages with <span>SSR (Server-side Rendering)</span>, <span>SSG (Static Site Generation)</span> and <span>CSR (Client-side Rendering)</span>; to use serverless functions and reduce deployment cost; force <span>re-validate on demand</span> of some pages with the latest resources (v12.1.0); and play with React.js without missing out on his incredible experience.</p>
-
 <pre>
 C:\projects\l-marcel> <span>yarn</span> dev
 </pre>
-
 <p>I've a <span>dream</span>: to get my <span>first job</span> to improve my skills. For this, I'm willing to expand my knowledge and learn <span>new things</span>. I've been following this path for at least <span>3 years</span>.</p>
-
 <div id="grid">
-  <div>
-    <img id="techs" src=""/>
-  </div>
-  <div>
-    <h2 align="center">Some <span>competencies</span>:</h2>
-    <ul>
-      <li>Agile methodologies' knowledge;</li>
-      <li>Experience with many deploy options;</li>
-      <li>Database’s entities relations knowledge;</li>
-      <li>Ready to do responsive;</li>
-      <li>Framer motion animation’s knowledge.</li>
-    </ul>
-  </div>
-  <div>
-    <h2 align="center"><span>Soft</span> skills:</h2>
-    <ul>
-      <li>Fast reasoning;</li>
-      <li>Dedication;</li>
-      <li>Constant learning;</li>
-      <li>Objectivity.</li>
-    </ul>
-  </div>
-  <div>
-    <h2 align="center"><span>Languages</span> proficiency:</h2>
-    <ul>
-      <li>Portuguese – fluent;</li>
-      <li>English – technical:</li>
-      <li id="space">Without real listening or speaking experience.</li>
-    </ul>
-  </div>
+  <ul><h2 align="center">Some <span>competencies</span>:</h2>
+    <li>Agile methodologies' knowledge;</li>
+    <li>Experience with many deploy options;</li>
+    <li>Database’s entities relations knowledge;</li>
+    <li>Ready to do responsive;</li>
+    <li>Framer motion animation’s knowledge.</li>
+  </ul>
+  <ul><h2 align="center"><span>Soft</span> skills:</h2>
+    <li>Fast reasoning;</li>
+    <li>Dedication;</li>
+    <li>Constant learning;</li>
+    <li>Objectivity.</li>
+  </ul>
+  <ul><h2 align="center"><span>Languages</span> proficiency:</h2>
+    <li>Portuguese – fluent;</li>
+    <li>English – technical:</li>
+    <li id="space">Without real listening or speaking experience.</li>
+  </ul>
 </div>
-
 <h2 id="sub" align="center"><span>Github profile</span> statistics:</h2>
   <div id="remove" align="center">
     <a href="https://www.l-marcel.vercel.app"><img alt="linkedin" src="https://img.shields.io/badge/-Website-brightgreen?logoColor=ffffff&style=for-the-badge&logo=hack%20the%20box&color=423958"/></a>

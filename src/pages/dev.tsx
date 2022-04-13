@@ -5,7 +5,7 @@ import { GetStaticProps } from "next";
 import { fadeLayout } from "../theme/animations/motion";
 import { getStaticData } from "../utils/getStaticData";
 
-import { Markdown } from "../components/Markdown";
+import { Markdown } from "../components/Resume";
 import { GoalsImage } from "../components/images/svgs/GoalsImage";
 import { Background } from "../components/Background";
 import useShowBackground from "../contexts/hooks/useShowBackground";

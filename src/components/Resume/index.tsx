@@ -13,8 +13,13 @@ import { memo } from "react";
 import NamedIcon from "../NamedIcon";
 
 import { SocialButtons } from "../SocialButtons";
-import { MarkdownGrid } from "./MarkdownGrid";
+
 import { TechnologiesList } from "./TechnologiesList";
+import dynamic from "next/dynamic";
+
+const MarkdownGrid = dynamic<{ items: any[] }>(() => import("./MarkdownGrid").then(mod => mod.MarkdownGrid), {
+  ssr: false
+});
 
 interface MarkdownProps {
   languages?: { [key: string]: number };
@@ -41,12 +46,6 @@ function _Markdown({ languages, onChangeViewport }: MarkdownProps) {
             switch(id) {
               case "remove":
                 return null;
-              case "grid": 
-                return (
-                  <MarkdownGrid
-                    {...props}
-                  />
-                );
               case "images":
                 return (
                   <Box 
@@ -57,6 +56,38 @@ function _Markdown({ languages, onChangeViewport }: MarkdownProps) {
                     alignItems="flex-start"
                     {...props}
                     {...fadeToTopOnScroll}
+                  />
+                );
+              case "grid":
+                let items = props.children as any[];
+
+                try {
+                  items = items.filter(p => typeof p !== "string");
+                } catch (error) {
+                  items = [];
+                };
+
+                if(items.length <= 2) {
+                  return null;
+                };
+
+                return (
+                  <MarkdownGrid
+                    items={[
+                      <Box mb={5}>
+                        <Heading 
+                          as={m.h2}
+                          fontSize={[19, 25]}
+                          mb={4}
+                          textAlign="left"
+                          {...fadeToTopOnScroll}
+                        >
+                          <Span>Technologies</Span> proficiency:
+                        </Heading>
+                        <TechnologiesList/>
+                      </Box>,
+                      ...items
+                    ]}
                   />
                 );
               default:
@@ -129,11 +160,10 @@ function _Markdown({ languages, onChangeViewport }: MarkdownProps) {
               />
             );
           },
-          ul({ ...props }) {
+          ul({ id, ...props }) {
             return (
               <List
                 as={m.ul}
-                mt={4} 
                 {...props}
                 {...fadeToTopOnScroll}
               />
@@ -177,21 +207,6 @@ function _Markdown({ languages, onChangeViewport }: MarkdownProps) {
 
             if(id === "stats") {
               src = getStatsImageSrc({ darkMode: isDarkMode, showRank, hideTitle: true });
-            } else if(id === "techs") {
-              return (
-                <Box mb={5}>
-                  <Heading 
-                    as={m.h2}
-                    fontSize={[19, 25]}
-                    mb={4}
-                    textAlign="left"
-                    {...fadeToTopOnScroll}
-                  >
-                    <Span>Technologies</Span> proficiency:
-                  </Heading>
-                  <TechnologiesList/>
-              </Box>
-              );
             } else if(id === "langs") {
               src = getTopLangsImageSrc({ darkMode: isDarkMode, hideTitle: true });
 

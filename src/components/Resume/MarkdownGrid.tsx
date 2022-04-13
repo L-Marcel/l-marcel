@@ -1,12 +1,13 @@
 import { Box, HStack, Stack, useBreakpointValue } from "@chakra-ui/react";
 import { ReactNode } from "react";
 
-interface MarkdownGridProps extends BoxProps {};
+interface MarkdownGridProps extends BoxProps {
+  items: any[];
+};
 
 function MarkdownGrid({
-  children
+  items
 }: MarkdownGridProps) {
-  const items = [ ...(children as any[] ?? []) ];
   const stacks = useBreakpointValue({
     base: ["a"],
     xl: ["a", "b", "c", "d"],
@@ -15,7 +16,7 @@ function MarkdownGrid({
     sm: ["a"]
   }) ?? [];
 
-  if(!children || items.length <= 0) {
+  if(!items || items?.length <= 0) {
     return null;
   };
 
@@ -23,10 +24,8 @@ function MarkdownGrid({
 
   const rows = [];
 
-  let filteredItems = items.filter(r => typeof r !== "string");
-
-  for(let c = 0; c < filteredItems.length/qtdStacks; c++) {
-    let child = filteredItems.slice(c*qtdStacks, qtdStacks + (qtdStacks * c));
+  for(let c = 0; c < items.length/qtdStacks; c++) {
+    let child = items.slice(c*qtdStacks, qtdStacks + (qtdStacks * c));
     rows.push(child);
   };
 
@@ -49,11 +48,11 @@ function MarkdownGrid({
     >
       <HStack
         alignItems="flex-start"
-        justifyContent="center"
+        justifyContent="flex-start"
         spacing={8}
       >
         {stacks.map((a, i) => {
-          if(i >= filteredItems.length) {
+          if(i >= items.length) {
             return null;
           };
 
