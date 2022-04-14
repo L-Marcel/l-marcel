@@ -46,8 +46,8 @@ async function getCertificatesData(locale?: string): Promise<Certificate[]> {
         icon,
         description: RichText.asText(description),
         issuingOrganization: issuing_organization,
-        issuedIn: getFormattedDate(issued_in),
-        expiresIn: expires_in? getFormattedDate(expires_in):null,
+        issuedIn: getFormattedDate(issued_in, locale),
+        expiresIn: expires_in? getFormattedDate(expires_in, locale):null,
         code: code,
         url: url
       } as Certificate;
@@ -88,8 +88,8 @@ async function getAchievementsData(locale?: string): Promise<Achievement[]> {
         icon,
         description: RichText.asText(description),
         issuingOrganization: issuing_organization,
-        issuedIn: getFormattedDate(issued_in),
-        expiresIn: expires_in? getFormattedDate(expires_in):null,
+        issuedIn: getFormattedDate(issued_in, locale),
+        expiresIn: expires_in? getFormattedDate(expires_in, locale):null,
         code: code,
         url: url
       } as Achievement;

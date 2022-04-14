@@ -16,7 +16,7 @@ export const theme = extendTheme({
   styles: {
     global: (props) => ({
       "*": {
-        //userSelect: "none",
+        userSelect: "none",
         transition: "filter .2s linear !important",
         WebkitTapHighlightColor: "transparent"
       },
