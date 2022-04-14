@@ -59,6 +59,7 @@ function Home({ locale }: HomeProps) {
         <Box as={m.div} {...fadeToTop}><NamedIcon name="react.js"/></Box>
         <Box as={m.div} {...fadeToTop}><NamedIcon name="node.js"/></Box>
         <Box as={m.div} {...fadeToTop}><NamedIcon name="react native"/></Box>
+        <Box as={m.div} {...fadeToTop}><NamedIcon name="nest.js"/></Box>
         <Box as={m.div} {...fadeToTop}><NamedIcon name="framer motion"/></Box>
         <Box as={m.div} {...fadeToTop}><NamedIcon name="prisma"/></Box>
         <Box as={m.div} {...fadeToTop}><NamedIcon name="jest"/></Box>

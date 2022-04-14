@@ -5,7 +5,7 @@ import {
 } from "react-icons/fa";
 import { 
   SiTypescript, SiJest, SiNextdotjs, SiGnubash, 
-  SiDart, SiPrisma, SiVisualstudiocode, SiChakraui, SiExpress, SiApachekafka, SiTailwindcss, SiApollographql
+  SiDart, SiPrisma, SiVisualstudiocode, SiChakraui, SiExpress, SiApachekafka, SiTailwindcss, SiApollographql, SiNestjs
 } from "react-icons/si";
 import { DiCss3, DiSass } from "react-icons/di";
 import { AiFillHtml5 } from "react-icons/ai";
@@ -67,7 +67,8 @@ export const icons = {
   "graphql": GrGraphQl,
   "kafka": SiApachekafka,
   "apollo": SiApollographql,
-  "tailwind": SiTailwindcss
+  "tailwind": SiTailwindcss,
+  "nest.js": SiNestjs
 };
 
 function NamedIcon({ name = "default", ...rest }: IconProps) {

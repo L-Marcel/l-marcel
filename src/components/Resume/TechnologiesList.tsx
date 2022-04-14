@@ -16,6 +16,10 @@ function TechnologiesList() {
         title="Next.js"
       />
       <TechnologyLevel
+        level={1}
+        title="Nest.js"
+      />
+      <TechnologyLevel
         level={5}
         title="React.js"
       />
