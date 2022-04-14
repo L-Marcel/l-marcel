@@ -7,6 +7,7 @@ type GithubGetReposOptions = {
   initialPage?: number;
   repos?: Repository[];
   getLanguages?: boolean;
+  locale?: string;
 };
 
 async function getGithubRepos({ 
@@ -14,6 +15,7 @@ async function getGithubRepos({
   initialPage = 1,
   repos = [],
   getLanguages = false,
+  locale = "en-US"
 }: GithubGetReposOptions) {
   const url = "https://api.github.com/users/l-marcel/repos";
   const formatters = getFormatters();
@@ -41,6 +43,10 @@ async function getGithubRepos({
       let config: Config = await api.get(`https://raw.githubusercontent.com/${repos[i].fullname}/${repos[i].branch}/l-marcel.config.json`)
       .then(config => config.data).catch((err) => null);
       const nameAlreadyDefined = !!config.name;
+
+      if(locale === "pt-BR" && config?.translatedDescription) {
+        repos[i].description = config?.translatedDescription
+      };
 
       config = {
         name: repos[i].name,
@@ -97,7 +103,8 @@ async function getGithubRepos({
       reposPerPage, 
       initialPage: initialPage + 1, 
       repos: [ ...repos, ...pageRepos ],
-      getLanguages
+      getLanguages,
+      locale
     });
   };
 

@@ -36,6 +36,7 @@ declare type Repository = {
 declare type Config = {
   name: string;
   icon: string;
+  translatedDescription: string;
   technologies: string[];
   pinned: boolean;
   links: { 

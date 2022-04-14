@@ -33,6 +33,7 @@ function Home({ locale }: HomeProps) {
           bgColor="alt.50"
           p={1}
           px={3}
+          ml={1}
           borderRadius={20}
         >
           full-stack

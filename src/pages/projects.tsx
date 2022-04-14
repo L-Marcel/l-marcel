@@ -49,7 +49,7 @@ export const getStaticProps: GetStaticProps = async({ locale }) => {
   const data = await getStaticData({
     getRepos: true,
     getTechnologies: true
-  });
+  }, locale);
 
   return {
     props: { ...data, locale },

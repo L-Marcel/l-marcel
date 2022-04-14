@@ -10,7 +10,7 @@ const getStaticData = async({
   getAchievements = false
 }, locale?: string) => {
   const needRepos = getRepos || getLanguages || getTechnologies;
-  const repos = needRepos? await getGithubRepos({ getLanguages }):[];
+  const repos = needRepos? await getGithubRepos({ getLanguages, locale }):[];
 
   const languages = getLanguages? getGithubReposTopLanguages(repos):null;
   const technologies = getTechnologies? getTechnologiesInRepositories(repos):[];
