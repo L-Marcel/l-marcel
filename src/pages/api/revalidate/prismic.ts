@@ -1,5 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { getPrismicWebookIsAuth } from "../../../services/webhook";
+import { revalidatePath } from "../../../utils/revalidatePath";
 
 async function revalidatePagesWithPrismicData(req: NextApiRequest, res: NextApiResponse) {
   if(req.method === "POST") {
@@ -11,13 +12,7 @@ async function revalidatePagesWithPrismicData(req: NextApiRequest, res: NextApiR
       });
     };
 
-    await res.unstable_revalidate('/achievements').catch(() => {
-      console.log("[Prismic Webhook]: Can't revalidate /en-US/achievements");
-    });
-
-    await res.unstable_revalidate('/achievements').catch(() => {
-      console.log("[Prismic Webhook]: Can't revalidate /pt-BR/achievements");
-    });
+    await revalidatePath(res, "achievements");
 
     return res.status(200).json({
       message: "[Prismic Webhook]: Revalidate request received."
