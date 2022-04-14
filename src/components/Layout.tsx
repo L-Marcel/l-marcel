@@ -74,7 +74,7 @@ function Layout({ children, ...rest }: BoxProps) {
             as={m.div}
             display="flex"
             position="absolute"
-            top={["40px", "44px", "40px", "40px", "40px", "40px"]}
+            top="55px"
             justifyContent="center"
             ml={[0, 0, 450, 300, 300, 0]}
             w={["50%", "40%", "20%"]}

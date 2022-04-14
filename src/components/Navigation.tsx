@@ -36,6 +36,8 @@ function Navigation({
           px={px ?? [5, 4, 4, 7]}
           borderBottomLeftRadius={type === "first" && 20}
           borderBottomRightRadius={type === "last" && 20}
+          borderTopLeftRadius={type === "first" && locale && 20}
+          borderTopRightRadius={type === "last" && locale && 20}
           _hover={{
             bgColor: isSelected? "alt.200":"alt.100"
           }}
