@@ -45,12 +45,12 @@ function Achievements({
       <Box
         as={Timeline} 
         lineColor="var(--chakra-colors-alt-200)"
-        dateText="11/2010 – Present"
       >
         {items.map(i => {
           return (
             <Achievement
               key={i.issuedIn}
+              locale={locale}
               item={i}
             />
           );

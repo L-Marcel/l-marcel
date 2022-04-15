@@ -7,9 +7,10 @@ import NamedIcon from "./NamedIcon";
 
 interface AchievementProps extends BoxProps {
   item: Certificate | Achievement;
+  locale?: string;
 };
 
-function Achievement({ item }: AchievementProps) {
+function Achievement({ item, locale }: AchievementProps) {
   const {
     issuedIn,
     issuingOrganization,
@@ -38,8 +39,7 @@ function Achievement({ item }: AchievementProps) {
   return (
     <Box
       as={TimelineItem}
-      date={getFormattedDate(issuedIn)}
-
+      date={getFormattedDate(issuedIn, locale)}
       contentArrowStyle={{ 
         borderRight: `7px solid ${primary}`
       }}

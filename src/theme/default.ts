@@ -78,7 +78,8 @@ export const theme = extendTheme({
         padding: "2px 9px !important",
         borderRadius: "8px",
         backgroundColor: "var(--chakra-colors-card)",
-        color: "var(--chakra-colors-alt-800)"
+        color: "var(--chakra-colors-alt-800)",
+        textTransform: "capitalize"
       },
       "@media only screen and (min-width: 1170px)": {
         ".vertical-timeline--two-columns .vertical-timeline-element-icon": {
