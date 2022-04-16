@@ -81,7 +81,8 @@ function RepositoriesProvider({ children }: RepositoriesProviderProps) {
       return getFilteredRepositories(repositories, filterOptions, locale)
     },
     {
-      initialData: repositories
+      initialData: repositories,
+      staleTime: 1000 * 60 * 60
     }
   );
 

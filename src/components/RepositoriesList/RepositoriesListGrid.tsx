@@ -66,6 +66,7 @@ function RepositoriesListGrid({
                 key={a} 
                 spacing={5}
                 minW="33%"
+                maxW={["100%", "100%", "90%", "60%"]}
                 mb={["20px", 0, 0, 0, 0, 0]}
               >
                 {columns.length > i && columns[i].map(r => {

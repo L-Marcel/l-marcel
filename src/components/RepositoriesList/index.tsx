@@ -1,21 +1,32 @@
-import { CircularProgress, Progress } from "@chakra-ui/react";
+import { Progress } from "@chakra-ui/react";
 import dynamic from "next/dynamic";
 import { useEffect } from "react";
 import useFilteredRepositories from "../../contexts/hooks/repositories/useFilteredRepositories";
 import useRepositories from "../../contexts/hooks/repositories/useRepositories";
-import { RepositoriesListGrid } from "./RepositoriesListGrid";
-
+import { BlankResult } from "./BlankResult";
 interface RepositoriesListProps {
   repos: Repository[];
+  locale?: string;
 };
 
-function RepositoriesList({ repos }: RepositoriesListProps) {
+function RepositoriesList({ 
+  repos,
+  locale
+}: RepositoriesListProps) {
   const { setRepositories } = useRepositories();
   const { filteredRepositories } = useFilteredRepositories();
 
   useEffect(() => {
     setRepositories(repos);
   }, [setRepositories, repos]);
+
+  if(repos.length === 0) {
+    return (
+      <BlankResult
+        locale={locale}
+      />
+    );
+  };
 
   const RepositoriesListGrid = dynamic<{ repos: Repository[] }>(
     async() => await import("./RepositoriesListGrid")

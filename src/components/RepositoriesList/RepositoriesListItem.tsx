@@ -43,35 +43,14 @@ function RepositoriesListItem({
           top={5}
           right={5}
         />}
-        <Box
-          display="flex"
-          alignItems="center"
-          mb={1}
+        <Heading
+          as={motion.h1}
+          fontSize={[14, 16]}
+          lineHeight={[5, 6]}
+          layoutId={`repos-title-${r.id}`}
         >
-          { r.badge && <Badge
-            as={motion.div}
-            fontSize={10}
-            lineHeight={2}
-            bgColor="alt.200"
-            color="alt.800"
-            layoutId={`repos-badge-${r.id}`}
-            w="min-content"
-            p={0}
-            pl={2}
-            pr={2}
-            mr={2}
-          >
-            {r.badge}
-          </Badge> }
-          <Heading
-            as={motion.h1}
-            fontSize={[14, 16]}
-            lineHeight={[5, 6]}
-            layoutId={`repos-title-${r.id}`}
-          >
             {r.formattedName}
         </Heading>
-        </Box>
         <Text
           textTransform="lowercase"
           fontWeight="light"
@@ -80,11 +59,27 @@ function RepositoriesListItem({
         >
           {r.name}
         </Text>
+        { r.badge && <Badge
+          as={motion.div}
+          fontSize={10}
+          lineHeight={2}
+          bgColor="alt.200"
+          color="alt.800"
+          layoutId={`repos-badge-${r.id}`}
+          w="min-content"
+          p={0}
+          mt={2}
+          pl={2}
+          pr={2}
+          mr={2}
+        >
+          {r.badge}
+        </Badge> }
         <Text 
           mt={2}
           textTransform="none"
           fontSize={14}
-          maxW="90%"
+          maxW="100%"
           as={motion.p}
           layoutId={`repos-description-${r.id}`}
         >
