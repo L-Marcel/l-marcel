@@ -43,27 +43,45 @@ function RepositoriesListItem({
           top={5}
           right={5}
         />}
-        <Heading
-          as={motion.h1}
-          fontSize={[14, 16]}
-          lineHeight={[5, 6]}
-          layoutId={`repos-title-${r.id}`}
+        <Box
+          display="flex"
+          alignItems="center"
+          mb={1}
         >
-          {r.formattedName}
+          { r.badge && <Badge
+            as={motion.div}
+            fontSize={10}
+            lineHeight={2}
+            bgColor="alt.200"
+            color="alt.800"
+            layoutId={`repos-badge-${r.id}`}
+            w="min-content"
+            p={0}
+            pl={2}
+            pr={2}
+            mr={2}
+          >
+            {r.badge}
+          </Badge> }
+          <Heading
+            as={motion.h1}
+            fontSize={[14, 16]}
+            lineHeight={[5, 6]}
+            layoutId={`repos-title-${r.id}`}
+          >
+            {r.formattedName}
         </Heading>
-        { r.badge && <Badge
-          as={motion.div}
-          fontSize={10}
-          lineHeight={2}
-          bgColor="alt.200"
-          color="alt.800"
-          layoutId={`repos-badge-${r.id}`}
-          w="min-content"
-          my={2}
+        </Box>
+        <Text
+          textTransform="lowercase"
+          fontWeight="light"
+          fontSize={13}
+          mt={-1}
         >
-          {r.badge}
-        </Badge> }
+          {r.name}
+        </Text>
         <Text 
+          mt={2}
           textTransform="none"
           fontSize={14}
           maxW="90%"

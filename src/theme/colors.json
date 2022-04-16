@@ -1,6 +1,14 @@
 {
   "semanticTokens": { 
     "colors": {
+      "filterOption.100": {
+        "default": "#4CAFCDDC",
+        "_dark": "#DB7151DC"
+      },
+      "filterOption": {
+        "default": "#4cafcdBF",
+        "_dark": "#DB7151BF"
+      },
       "card": {
         "default": "#F4F2F2",
         "_dark": "#272727"
@@ -16,6 +24,10 @@
       "search": {
         "default": "#EFEFEF",
         "_dark": "#242424"
+      },
+      "filter": {
+        "default": "#E8E8E8",
+        "_dark": "#1E1E1E"
       },
       "buttons.50": {
         "default": "#E7E6E6",

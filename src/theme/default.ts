@@ -50,7 +50,7 @@ export const theme = extendTheme({
         isRandom: true
       },
       'div[role="progressbar"]': {
-        bgColor: mode(colors.secondary[700], colors.primary[700])(props)
+        bgImage: `linear-gradient(to right, transparent 0%, ${mode(colors.secondary[500], colors.primary[500])(props)} 50%, ${mode(colors.secondary[700], colors.primary[700])(props)} 100%);`
       },
       "button:hover": {
         filter: "brightness(0.95)"
@@ -59,9 +59,6 @@ export const theme = extendTheme({
         outline: "none",
         boxShadow: "none" 
       },
-      ".primary-progressbar > div[role='progressbar']": {
-        //bg: colors.primary[500]
-      },
       "*:focus": {
         boxShadow: "none !important"
       },
@@ -69,8 +66,35 @@ export const theme = extendTheme({
         boxShadow: "none !important"
       },
       ".chakra-checkbox__control:not([data-checked])": {
-        color: "var(--primary) !important",
-        bgColor: "primary.100"
+        borderColor: "transparent!important",
+        bgColor: "alt.100",
+        color: "alpha.800",
+        p: 1,
+        h: 6,
+        w: 6,
+        borderRadius: 8
+      },
+      ".chakra-checkbox__control[data-focus]": {
+        outline: "none!important",
+        boxShadow: "none!important"
+      },
+      ".chakra-checkbox__control[data-checked]": {
+        borderColor: "transparent!important",
+        bgColor: `${mode(semanticTokens.colors.filterOption.default, semanticTokens.colors.filterOption._dark)(props)}!important`,
+        color: "var(--chakra-colors-alpha-800)!important",
+        p: 1,
+        h: 6,
+        w: 6,
+        borderRadius: 8
+      },
+      ".chakra-checkbox__control[data-indeterminate]": {
+        borderColor: "transparent!important",
+        bgColor: `${mode(semanticTokens.colors.filterOption.default, semanticTokens.colors.filterOption._dark)(props)}!important`,
+        color: "var(--chakra-colors-alpha-800)!important",
+        p: 1,
+        h: 6,
+        w: 6,
+        borderRadius: 8
       },
       ".vertical-timeline-element-date": {
         position: "absolute",

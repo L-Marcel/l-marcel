@@ -10,20 +10,23 @@ interface AppProvider {
 
 function AppProvider({ children }: AppProvider) {
   const [showBackground, setShowBackground] = useState(false);
+  const [overlayId, setOverlayId] = useState("");
   const _setShowBackground = useCallback((show: boolean) => {
     setShowBackground(show);
   }, [setShowBackground]);
 
   const [showOverlay, setShowOverlay] = useState(false);
-  const _setShowOverlay = useCallback((show: boolean) => {
+  const _setShowOverlay = useCallback((show: boolean, id?: string) => {
     show? disableScroll():enableScroll();
     setShowOverlay(show);
-  }, [setShowOverlay]);
+    setOverlayId(id ?? "");
+  }, [setShowOverlay, setOverlayId]);
 
   return (
     <appContext.Provider
       value={{
         showBackground,
+        overlayId,
         setShowBackground: _setShowBackground,
         showOverlay,
         setShowOverlay: _setShowOverlay

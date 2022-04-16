@@ -10,24 +10,21 @@ import useShowOverlay from "../../contexts/hooks/useShowOverlay";
 import { fadeLayout } from "../../theme/animations/motion";
 
 interface RepositoryModalProps extends ModalContentProps {
-  onClose: () => void,
   children?: ReactNode,
   repo: Repository;
 };
 
-function RepositoryModal({ repo: r, onClose, children, ...rest }: RepositoryModalProps) {
-  const { showOverlay } = useShowOverlay();
+function RepositoryModal({ repo: r, children, ...rest }: RepositoryModalProps) {
+  const { overlayId } = useShowOverlay();
   const primary = useColorModeValue("secondary.700", "primary.700");
   const isWideOrNormalVersion = useBreakpointValue({
     lg: true,
     base: false
   });
 
-  if(!showOverlay) {
+  if(overlayId !== "repo") {
     return null;
   };
-
-  console.log(r.importedConfig);
 
   return (
     <Box
@@ -62,33 +59,38 @@ function RepositoryModal({ repo: r, onClose, children, ...rest }: RepositoryModa
           >
             {r.formattedName}
           </Heading>
-          { r.badge && <Badge
-            as={motion.div}
-            fontSize={[10, 12]} 
-            lineHeight={[2, 6]}
-            layoutId={`repos-badge-${r.id}`}
-            px={2}
-            bgColor="alt.200"
-            color="alt.800"
-            w="min-content"
-            my={2}
-          >
-            {r.badge}
-          </Badge> }
-          { r.importedConfig?.technologies && <Box
-            as={motion.div}
-            flexWrap="wrap"
+          <Box
             display="flex"
-            maxW="100%"
           >
-            {
-              r.importedConfig?.technologies?.map(technology => {
-                return (
-                  <NamedIcon key={technology} color={primary} mr={2} mt={2} name={technology} w={6} h={6}/>
-                );
-              })
-            }
-          </Box> }
+            { r.badge && <Badge
+              as={motion.div}
+              fontSize={[10, 12]} 
+              lineHeight={[2, 6]}
+              layoutId={`repos-badge-${r.id}`}
+              px={2}
+              bgColor="alt.200"
+              color="alt.800"
+              w="min-content"
+              mt={2}
+              mr={2}
+            >
+              {r.badge}
+            </Badge> }
+            { r.importedConfig?.technologies && <Box
+              as={motion.div}
+              flexWrap="wrap"
+              display="flex"
+              maxW="100%"
+            >
+              {
+                r.importedConfig?.technologies?.map(technology => {
+                  return (
+                    <NamedIcon key={technology} color={primary} mr={2} mt={2} name={technology} w={6} h={6}/>
+                  );
+                })
+              }
+            </Box> }
+          </Box>
           { r.description && <Text
             mt={4}
             as={motion.p}

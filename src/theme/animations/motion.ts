@@ -90,11 +90,58 @@ const colorize = {
   }
 };
 
+const expandedFilterButton = {
+  variants: {
+    initial: {
+      paddingRight: "0.75rem"
+    },
+    selected: {
+      paddingRight: "1.75rem",
+      transition: {
+        duration: .2,
+        delayChildren: .1,
+        staggerChildren: .1
+      }
+    }
+  }
+};
+
+
+const reverseExpandedFilterButton = {
+  variants: {
+    initial: {
+      paddingLeft: "0.75rem"
+    },
+    selected: {
+      paddingLeft: "1.75rem",
+      transition: {
+        duration: .2,
+        delayChildren: .1,
+        staggerChildren: .1
+      }
+    }
+  }
+};
+
+const expandedFilterButtonIcon = {
+  variants: {
+    initial: {
+      opacity: 0
+    },
+    selected: {
+      opacity: 1
+    }
+  }
+};
+
 export { 
   fadeToTop,
   fadeLayout,
   fadeToTopOnScroll,
   scaleOnInteract,
   colorSequenceLayout,
-  colorize
+  colorize,
+  expandedFilterButton,
+  expandedFilterButtonIcon,
+  reverseExpandedFilterButton
 };

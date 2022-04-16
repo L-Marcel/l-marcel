@@ -5,8 +5,10 @@ import { GoalsImage } from "../components/images/svgs/GoalsImage";
 import { Background } from "../components/Background";
 import { RepositoriesProvider } from "../contexts/RepositoriesProvider";
 import { SearchBar } from "../components/SearchBar";
-import { RepositoriesList } from "../components/RepositoriesList";
 import { LayoutHead } from "../components/LayoutHead";
+import { SearchBarProvider } from "../contexts/SearchBarProvider";
+import { RepositoriesList } from "../components/RepositoriesList";
+import { AnimatePresence } from "framer-motion";
 
 interface ProjectsProps {
   repos: Repository[];
@@ -23,10 +25,14 @@ function Projects({ locale, repos, technologies }: ProjectsProps) {
         ptBRTitle="Projetos"
       />
       <RepositoriesProvider>
-        <SearchBar
-          locale={locale}
-          technologies={technologies}
-        />
+        <SearchBarProvider>
+          <AnimatePresence>
+            <SearchBar
+              locale={locale}
+              technologies={technologies}
+            />
+          </AnimatePresence>
+        </SearchBarProvider>
         <RepositoriesList
           repos={repos}
         />

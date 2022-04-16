@@ -5,16 +5,17 @@ import {
 } from "react-icons/fa";
 import { 
   SiTypescript, SiJest, SiNextdotjs, SiGnubash, 
-  SiDart, SiPrisma, SiVisualstudiocode, SiChakraui, SiExpress, SiApachekafka, SiTailwindcss, SiApollographql, SiNestjs
+  SiDart, SiPrisma, SiVisualstudiocode, SiChakraui, SiExpress, SiApachekafka, 
+  SiTailwindcss, SiApollographql, SiNestjs
 } from "react-icons/si";
 import { DiCss3, DiSass } from "react-icons/di";
-import { AiFillHtml5 } from "react-icons/ai";
+import { AiFillHtml5, AiFillCaretDown } from "react-icons/ai";
 import { RiFlutterFill, RiFilePaper2Line, RiFlashlightFill } from "react-icons/ri";
 import { BsDownload, BsFillMoonStarsFill, BsQuestionCircle } from "react-icons/bs";
 import { 
-  AiOutlineCalendar, AiOutlineCheck
+  AiOutlineCalendar, AiOutlineCheck, AiFillCaretUp
 } from "react-icons/ai";
-import { IoIosRocket, IoLogoJavascript, IoMdOpen, IoMdSchool } from "react-icons/io";
+import { IoIosCloseCircle, IoIosRocket, IoLogoJavascript, IoMdOpen, IoMdSchool } from "react-icons/io";
 import { FiCopy, FiFigma, FiFramer, FiPaperclip } from "react-icons/fi";
 import { GrNode, GrGraphQl } from "react-icons/gr";
 import { BiCubeAlt, BiSearchAlt } from "react-icons/bi";
@@ -68,7 +69,10 @@ export const icons = {
   "kafka": SiApachekafka,
   "apollo": SiApollographql,
   "tailwind": SiTailwindcss,
-  "nest.js": SiNestjs
+  "nest.js": SiNestjs,
+  "down": AiFillCaretDown,
+  "up": AiFillCaretUp,
+  "close": IoIosCloseCircle
 };
 
 function NamedIcon({ name = "default", ...rest }: IconProps) {

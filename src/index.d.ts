@@ -55,39 +55,56 @@ declare type RepositoryBadge = {
   color: string;
 };
 
+declare type RepositoriesFilterOptionsWith = {
+  description: boolean;
+  license: boolean;
+  figmaLink: boolean;
+  deploy: boolean;
+  some: boolean;
+};
+
+declare type RepositoriesFilterOptionsIs = {
+  fork: boolean;
+  template: boolean;
+  some: boolean;
+  highlight: boolean;
+};
+
+type Technologies = {
+  _type: "technology";
+  data: { [key: string]: boolean };
+};
+
+declare type RepositoriesFilterOptionsTag = "any" | "stagnated" | "canceled" | "not deployed" | "paused";
+
 declare type RepositoriesFilterOptions = {
-  minLevelOfExperienceWithTechnology: number;
-  technologies: string[];
+  technologies: Technologies;
   query: string;
-  pinnedsFirst: boolean;
-  with: {
-    description: boolean;
-    license: boolean;
-    figmaLink: boolean;
-    some: boolean;
-  };
-  is: {
-    fork: boolean;
-    some: boolean;
-    template: boolean;
-  };
+  with: RepositoriesFilterOptionsWith;
+  is: RepositoriesFilterOptionsIs;
+  tag: RepositoriesFilterOptionsTag;
 };
 
 declare type AppContext = {
   showBackground: boolean;
+  overlayId: string;
   setShowBackground: (show: boolean) => void;
   showOverlay: boolean;
-  setShowOverlay: (show: boolean) => void;
+  setShowOverlay: (show: boolean, id?: string) => void;
 };
 
 declare type RepositoriesContext = {
   filteredRepositories: Repository[];
   filterOptions: RepositoriesFilterOptions;
-  setFilterOptions: (options: RepositoriesFilterOptions, technologies: Technology[]) => void;
+  setFilterOptions: (options: RepositoriesFilterOptions, technologies?: Technology[]) => void;
   repositories: Repository[];
   setRepositories: (repositories: Repository[]) => void;
 };
 
+declare type SearchBarContext = {
+  filterIsOpen: boolean;
+  setFilterIsOpen: (filterIsOpen: boolean) => void;
+};
 
 declare type Formatter = {
   regex: string;

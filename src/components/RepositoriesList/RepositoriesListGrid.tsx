@@ -41,7 +41,7 @@ function RepositoriesListGrid({
   return (
     <LazyMotion features={domMax}>
       <Box 
-        pt={[15, 3, 4, 35]}
+        pt={["30px!important", "50px!important", "40px!important", 35]}
         position="relative"
         display="flex"
         justifyContent="center"
@@ -49,10 +49,6 @@ function RepositoriesListGrid({
         <AnimatePresence>
           {repo && <RepositoryModal 
             repo={repo}
-            onClose={() => {
-              setRepo(null); 
-              setShowOverlay(false);
-            }}
           />}
         </AnimatePresence>
         <HStack
@@ -77,9 +73,8 @@ function RepositoriesListGrid({
                     <RepositoriesListItem
                       onSelect={() => {
                         setRepo(r);
-                        setShowOverlay(true);
+                        setShowOverlay(true, "repo");
                       }}
-                      
                       key={r.id}
                       repo={r}
                     />
