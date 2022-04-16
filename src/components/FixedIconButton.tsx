@@ -11,6 +11,7 @@ function FixedIconButton({ mt, mb, ...rest }: IconButtonProps) {
   if(showOverlay && mb) {
     marginBottom[0] = 6;
     marginBottom[1] = 6;
+    marginBottom[2] = 6;
   };
 
   return (

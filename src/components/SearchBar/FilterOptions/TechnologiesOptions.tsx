@@ -55,6 +55,7 @@ function TechnologiesOptions({
           mr={2}
           isChecked={allIsChecked}
           isIndeterminate={someIsChecked && !allIsChecked}
+          pointerEvents="none"
         />
         <Text>
           {locale === "pt-BR"? "Tecnologas":"Technologies"}:

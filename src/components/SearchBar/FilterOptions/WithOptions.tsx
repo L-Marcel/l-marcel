@@ -50,6 +50,7 @@ function WithOptions({
           mr={2}
           isChecked={allIsChecked}
           isIndeterminate={someIsChecked && !allIsChecked}
+          pointerEvents="none"
         />
         <Text>
           {locale === "pt-BR"? "Repositório":"Repository"}:

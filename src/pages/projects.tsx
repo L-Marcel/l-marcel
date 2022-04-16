@@ -32,6 +32,7 @@ function Projects({ locale, repos, technologies }: ProjectsProps) {
         </SearchBarProvider>
         <RepositoriesList
           repos={repos}
+          locale={locale}
         />
         <Background
           w={[400, 600, 600, 800, 800, 800]}

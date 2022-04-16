@@ -9,7 +9,8 @@ interface BlankResultProps {
 function BlankResult({
   locale
 }: BlankResultProps) {
-  const primary = useColorModeValue("secondary.700", "primary.700")  
+  const primary = useColorModeValue("secondary.700", "primary.700");
+
   return (
     <Box
       position="relative"
@@ -17,7 +18,6 @@ function BlankResult({
       minH={100}
       p={5}
       pl={[0, 0, 0, 300, 300, 0]}
-      textTransform="capitalize"
       justifyContent="flex-start"
       alignItems="center"
       display="flex"

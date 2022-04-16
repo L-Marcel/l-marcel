@@ -59,6 +59,15 @@ const scaleOnInteract = {
   }
 };
 
+const weakScaleOnInteract = {
+  whileHover: {
+    scale: .95
+  },
+  whileTap: {
+    scale: .9
+  }
+};
+
 const colorSequenceLayout = {
   initial: "uncolorized",
   whileInView: "colorized",
@@ -139,6 +148,7 @@ export {
   fadeLayout,
   fadeToTopOnScroll,
   scaleOnInteract,
+  weakScaleOnInteract,
   colorSequenceLayout,
   colorize,
   expandedFilterButton,

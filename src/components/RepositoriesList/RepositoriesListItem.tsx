@@ -1,6 +1,6 @@
 import { Badge, Box, Heading, HStack, Text, useColorModeValue } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import { fadeToTopOnScroll } from "../../theme/animations/motion";
+import { fadeToTopOnScroll, weakScaleOnInteract } from "../../theme/animations/motion";
 import NamedIcon from "../NamedIcon";
 
 interface RepositoriesListItemProps {
@@ -31,8 +31,26 @@ function RepositoriesListItem({
       borderColor={primary}
       layoutId={`repos-${r.id}`}
       onClick={onSelect}
+      _hover={{
+        cursor: "pointer"
+      }}
       {...fadeToTopOnScroll}
+      {...weakScaleOnInteract}
     >
+      { r.badge && <Badge
+        position="absolute"
+        fontSize={[10, 12]} 
+        lineHeight={[2, 6]}
+        px={3}
+        py="2px"
+        mt="-33px"
+        bgColor="badge"
+        borderRadius={5}
+        color="alt.800"
+        w="min-content"
+      >
+        {r.badge}
+      </Badge> }
       <Box>
         { r.importedConfig?.pinned && <NamedIcon
           name="flash"
@@ -59,20 +77,6 @@ function RepositoriesListItem({
         >
           {r.name}
         </Text>
-        { r.badge && <Badge
-          fontSize={10}
-          lineHeight={2}
-          bgColor="alt.200"
-          color="alt.800"
-          w="min-content"
-          p={0}
-          mt={2}
-          pl={2}
-          pr={2}
-          mr={2}
-        >
-          {r.badge}
-        </Badge> }
         <Text 
           mt={2}
           textTransform="none"

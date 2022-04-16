@@ -34,19 +34,36 @@ function RepositoryModal({ repo: r, children, ...rest }: RepositoryModalProps) {
       borderBottom="2px"
       position="fixed"
       borderColor={primary}
-      bgColor="card"
+      bgColor="modalCard"
       bottom={[0, 0, 0, "auto", "auto" , "auto"]}
       borderBottomRadius={[0, 0, 0, 10, 10, 10]}
-      minW={["100%", "100%", "95%", 200, 200, 200, 200]}
+      right={[0, 0, 0, "auto", "auto", "auto", "auto"]}
+      minW={["100%", "100%", "100%", 200, 200, 200, 200]}
       maxW={600}
       layoutId={`repos-${r.id}`}
       zIndex={992}
       {...fadeLayout}
     >
+      { r.badge && <Badge
+        position="absolute"
+        fontSize={[12]} 
+        lineHeight={[6]}
+        px={3}
+        py="2px"
+        mt="-14px"
+        bgColor="badge"
+        borderRadius={5}
+        color="alt.800"
+        w="min-content"
+        ml={8}
+      >
+        {r.badge}
+      </Badge> }
       <Box
         p={8} 
         my="auto" 
         as={motion.div}
+        position="relative"
       >
         <Box>
           <Heading
@@ -59,36 +76,20 @@ function RepositoryModal({ repo: r, children, ...rest }: RepositoryModalProps) {
           >
             {r.formattedName}
           </Heading>
-          <Box
+          { r.importedConfig?.technologies && <Box
+            as={motion.div}
+            flexWrap="wrap"
             display="flex"
+            maxW="100%"
           >
-            { r.badge && <Badge
-              fontSize={[10, 12]} 
-              lineHeight={[2, 6]}
-              px={2}
-              bgColor="alt.200"
-              color="alt.800"
-              w="min-content"
-              mt={2}
-              mr={2}
-            >
-              {r.badge}
-            </Badge> }
-            { r.importedConfig?.technologies && <Box
-              as={motion.div}
-              flexWrap="wrap"
-              display="flex"
-              maxW="100%"
-            >
-              {
-                r.importedConfig?.technologies?.map(technology => {
-                  return (
-                    <NamedIcon key={technology} color={primary} mr={2} mt={2} name={technology} w={6} h={6}/>
-                  );
-                })
-              }
-            </Box> }
-          </Box>
+            {
+              r.importedConfig?.technologies?.map(technology => {
+                return (
+                  <NamedIcon key={technology} color={primary} mr={2} mt={2} name={technology} w={6} h={6}/>
+                );
+              })
+            }
+          </Box> }
           { r.description && <Text
             mt={4}
             as={motion.p}
