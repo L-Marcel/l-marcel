@@ -1,6 +1,5 @@
 import { ReactNode, useCallback, useState } from "react";
 import { createContext } from "use-context-selector";
-import { disableScroll, enableScroll } from "../utils/scroll";
 
 export const appContext = createContext({} as AppContext);
 
@@ -17,7 +16,6 @@ function AppProvider({ children }: AppProvider) {
 
   const [showOverlay, setShowOverlay] = useState(false);
   const _setShowOverlay = useCallback((show: boolean, id?: string) => {
-    show? disableScroll():enableScroll();
     setShowOverlay(show);
     setOverlayId(id ?? "");
   }, [setShowOverlay, setOverlayId]);

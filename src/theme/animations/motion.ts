@@ -7,9 +7,10 @@ const fadeLayout = {
     },
     visible: {
       opacity: 1,
+      duration: .2,
       transition: {
-        delayChildren: .3,
-        staggerChildren: .2
+        delayChildren: .05,
+        staggerChildren: .05
       }
     }
   }

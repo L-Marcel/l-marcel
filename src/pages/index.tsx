@@ -27,11 +27,10 @@ function Home({ locale }: HomeProps) {
         fontSize={[20, 30]}
         {...fadeToTop}
       >
-        { locale === "pt-BR"? <>Um desenvolvedor<Span
+        { locale === "pt-BR"? <>Um desenvolvedor <Span
           bgColor="alt.50"
           p={1}
           px={3}
-          ml={1}
           borderRadius={20}
         >
           full-stack

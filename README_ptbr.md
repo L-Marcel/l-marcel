@@ -7,7 +7,7 @@ C:\projects> <span>yarn</span> create next-app --typescript l-marcel
 <pre>
 C:\projects\l-marcel> <span>yarn</span> dev
 </pre>
-<p>Tenho um <span>sonho</span>: conseguir meu <span>primeiro emprego</span> para aperfeiçoar minhas habilidades. Para isso, estou disposto a expandir meus conhecimentos e aprender <span>coisas novas</span>. Sigo esse caminho por pelo menos <span>3 anos</span>.</p>
+<p>Tenho um <span>sonho</span>: conseguir meu <span>primeiro emprego</span> para aperfeiçoar minhas habilidades. Para isso, estou disposto a expandir meus conhecimentos e aprender <span>coisas novas</span>. Sigo esse caminho por pelo menos <span>3 anos</span>. <span id="years"></span></p>
 <div id="grid">
   <ul><h2 align="center">Algumas <span>competências</span>:</h2>
     <li>Conhece metodologias ágeis;</li>

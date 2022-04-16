@@ -26,6 +26,7 @@ function Filters({
       flexDir="column"
       w="100%"
       zIndex={-1}
+      overscrollBehaviorY="contain"
     >
       <Stack
         as={m.div}
@@ -53,6 +54,7 @@ function Filters({
         }}
         maxH="60vh"
         overflowY="auto"
+        overscrollBehaviorY="contain"
       >
         <WithOptions locale={locale}/>
         <IsOptions locale={locale}/>

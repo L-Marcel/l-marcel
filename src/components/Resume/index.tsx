@@ -15,6 +15,7 @@ import { SocialButtons } from "../SocialButtons";
 
 import { TechnologiesList } from "./TechnologiesList";
 import dynamic from "next/dynamic";
+import { getYearsOld } from "../../utils/getYearsOld";
 
 const MarkdownGrid = dynamic<{ items: any[] }>(() => import("./MarkdownGrid").then(mod => mod.MarkdownGrid), {
   ssr: false
@@ -199,9 +200,24 @@ function _Markdown({
               </ListItem>
             );
           },
-          span({ ...props }) {
+          span({ id, ...props }) {
+            if(id === "years") {
+              return (
+                <Span
+                  id={id}
+                  color="alt.600"
+                  fontStyle="italic"
+                  {...props} 
+                  {...fadeToTopOnScroll}
+                >
+                  {locale === "pt-BR"? `(Eu tenho ${getYearsOld()} anos)`:`(I've ${getYearsOld()} years old)`}.
+                </Span>
+              );
+            };
+
             return (
               <Span
+                id={id}
                 {...props} 
                 {...fadeToTopOnScroll}
               />
