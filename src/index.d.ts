@@ -72,6 +72,7 @@ declare type RepositoriesFilterOptionsIs = {
 
 type Technologies = {
   _type: "technology";
+  some: boolean;
   data: { [key: string]: boolean };
 };
 
@@ -96,7 +97,7 @@ declare type AppContext = {
 declare type RepositoriesContext = {
   filteredRepositories: Repository[];
   filterOptions: RepositoriesFilterOptions;
-  setFilterOptions: (options: RepositoriesFilterOptions, technologies?: Technology[]) => void;
+  setFilterOptions: (options: RepositoriesFilterOptions, technologies?: string[] | Technologies) => void;
   repositories: Repository[];
   setRepositories: (repositories: Repository[]) => void;
 };

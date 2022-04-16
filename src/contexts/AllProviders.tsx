@@ -1,7 +1,5 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import { LazyMotion, MotionConfig } from "framer-motion";
-import { QueryClientProvider } from "react-query";
-import { Layout } from "../components/Layout";
 import { AppProvider } from "./AppProvider";
 
 const composeProviders = (...providers) => props => {
@@ -18,7 +16,6 @@ const composeProviders = (...providers) => props => {
 export const AllProviders = composeProviders(
   ChakraProvider,
   AppProvider,
-  QueryClientProvider,
   LazyMotion,
   MotionConfig
 );

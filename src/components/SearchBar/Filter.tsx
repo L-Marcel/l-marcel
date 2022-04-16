@@ -5,6 +5,7 @@ import useShowOverlay from "../../contexts/hooks/useShowOverlay";
 import { FilterButton } from "./FilterButton";
 import { IsOptions } from "./FilterOptions/IsOptions";
 import { TagOptions } from "./FilterOptions/TagOptions";
+import { TechnologiesOptions } from "./FilterOptions/TechnologiesOptions";
 import { WithOptions } from "./FilterOptions/WithOptions";
 
 interface FiltersProps {
@@ -31,10 +32,11 @@ function Filters({
         as={m.div}
         display="flex"
         flexDir="column"
-        borderBottomRadius={8}
+        borderBottomLeftRadius={8}
         borderBottom={`2px solid var(--chakra-colors-${border})!important`}
         position="relative"
         initial="close"
+        spacing={4}
         mx={2}
         p={4}
         mt={-4}
@@ -50,10 +52,13 @@ function Filters({
             marginTop: "-8px"
           }
         }}
+        maxH="60vh"
+        overflowY="auto"
       >
         <WithOptions locale={locale}/>
         <IsOptions locale={locale}/>
         <TagOptions locale={locale}/>
+        <TechnologiesOptions locale={locale}/>
       </Stack>
       <FilterButton
         locale={locale}

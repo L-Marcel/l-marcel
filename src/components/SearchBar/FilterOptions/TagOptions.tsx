@@ -13,6 +13,7 @@ function TagOptions({
       w="98%"
     >
       <Box 
+        mt="-5px"
         display="flex"
       >
         <Text>

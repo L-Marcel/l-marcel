@@ -1,7 +1,6 @@
 import { ReactNode, useCallback, useEffect, useState } from "react";
 import { createContext } from "use-context-selector";
 import { getFilteredRepositories } from "../utils/getFilteredRepositories";
-import { useQuery } from "react-query";
 import useShowOverlay from "./hooks/useShowOverlay";
 import { getFilterConfigIsIndeterminated } from "../utils/getFIlterConfigIsIndeterminated";
 import { useRouter } from "next/router";
@@ -35,6 +34,7 @@ function RepositoriesProvider({ children }: RepositoriesProviderProps) {
     },
     technologies: {
       _type: "technology",
+      some: false,
       data: {}
     },
     query: ""
@@ -46,7 +46,6 @@ function RepositoriesProvider({ children }: RepositoriesProviderProps) {
 
   const _setFilterOptions = useCallback((o: RepositoriesFilterOptions, technologies?: string[] | Technologies) => {
     let techs = technologies as Technologies;
-
     if(!techs?._type && techs) {
       const arr = technologies as string[];
       techs = arr.reduce<Technologies>((pre, t: string) => {
@@ -56,41 +55,27 @@ function RepositoriesProvider({ children }: RepositoriesProviderProps) {
         };
 
         return pre;
-      }, { _type: "technology", data: {} });
-    } else if(techs) {
+      }, { _type: "technology", some: false, data: {} });
+      o.technologies = techs;
+    } else if(techs?._type === "technology") {
       o.technologies = techs;
     };
 
     o.with.some = getFilterConfigIsIndeterminated(o.with);
     o.is.some = getFilterConfigIsIndeterminated(o.is);
+    o.technologies.some = getFilterConfigIsIndeterminated(o.technologies.data);
 
-    setFilterOptions({
-      ...o
-    });
+    setFilterOptions(o);
   }, [setFilterOptions]);
 
   const [filteredRepositories, setFilteredRepositories] = useState(repositories);
 
-  const { data: newfilteredRepositories } = 
-  useQuery(overlayId === "filter"? "none":[locale, repositories.length, filterOptions], 
-    () => {
-      if(overlayId === "filter") {
-        return [];
-      };
-      
-      return getFilteredRepositories(repositories, filterOptions, locale)
-    },
-    {
-      initialData: repositories,
-      staleTime: 1000 * 60 * 60
-    }
-  );
-
   useEffect(() => {
     if(overlayId !== "filter") {
-      setFilteredRepositories(newfilteredRepositories);
+      const newData = getFilteredRepositories(repositories, filterOptions, locale);
+      setFilteredRepositories(newData);
     };
-  }, [overlayId, setFilteredRepositories, newfilteredRepositories]);
+  }, [overlayId, setFilteredRepositories, repositories, filterOptions, locale]);
 
   return (
     <repositoriesContext.Provider

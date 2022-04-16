@@ -2,6 +2,7 @@ import { getLocaleTag } from "./getLocaleTag";
 
 function getFilteredRepositories(repos: Repository[], filter: RepositoriesFilterOptions, locale?: string) {
   //with
+  console.log("a", filter.with);
   if(filter.with.some) {
     const { description, figmaLink, license, deploy } = filter.with;
     repos = repos.filter(r => {
@@ -30,6 +31,7 @@ function getFilteredRepositories(repos: Repository[], filter: RepositoriesFilter
     });
   };
 
+  console.log("b", filter.is);
   //is
   if(filter.is.some) {
     const { fork, template, highlight } = filter.is;
@@ -39,24 +41,27 @@ function getFilteredRepositories(repos: Repository[], filter: RepositoriesFilter
   };
 
   //technologies
-  repos = repos.filter(r => {
-    const techs = r.importedConfig?.technologies ?? [];
-    const entries = Object.entries(filter.technologies?.data ?? {});
-
-    for(let e in entries) {
-      const [key, value] = entries[e];
-      
-      if(value) {
-        const haveTech = techs.some(t => t.toLowerCase() === key);
-
-        if(!haveTech) {
-          return false;
+  console.log("c", filter.technologies);
+  if(filter.technologies?.some) {
+    repos = repos.filter(r => {
+      const techs = r.importedConfig?.technologies ?? [];
+      const entries = Object.entries(filter.technologies?.data ?? {});
+  
+      for(let e in entries) {
+        const [key, value] = entries[e];
+        
+        if(value) {
+          const haveTech = techs.some(t => t.toLowerCase() === key);
+  
+          if(!haveTech) {
+            return false;
+          };
         };
       };
-    };
-   
-    return true;
-  });
+     
+      return true;
+    });
+  };
 
   //tag
   repos = repos.filter(r => {

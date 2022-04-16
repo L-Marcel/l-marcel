@@ -20,7 +20,8 @@ function FilterButton({
   const color = useColorModeValue("secondary.600", "primary.600");
   const numbOfActivedFilters = getNumberOfActivedFilters([
     filterOptions.is,
-    filterOptions.with
+    filterOptions.with,
+    filterOptions.technologies?.data
   ], filterOptions.tag !== "any"? 1:0);
 
   return (
@@ -88,12 +89,11 @@ function FilterButton({
           bgColor={color}
           initial="initial"
           animate={numbOfActivedFilters? "actived":"initial"}
-          right={-10}
+          left="90px"
           top={0}
           px={numbOfActivedFilters === 1? "8px":"7px"}
           pt="10px"
           h="100%"
-          w={6}
           borderBottomRadius={8}
           variants={{
             initial: {

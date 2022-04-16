@@ -24,8 +24,8 @@ function SearchBar({ locale, technologies }: SearchBarTecnhologies) {
     base: [350, 300],
     xl: [600,  450],
     lg: [550, 450],
-    md: [500, 400],
-    sm: [310, 300]
+    md: [600, 400],
+    sm: [340, 300]
   }) ?? [];
 
   useEffect(() => {
