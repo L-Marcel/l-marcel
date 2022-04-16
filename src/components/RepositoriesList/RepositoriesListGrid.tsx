@@ -73,8 +73,8 @@ function RepositoriesListGrid({
                   return (
                     <RepositoriesListItem
                       onSelect={() => {
-                        setRepo(r);
                         setShowOverlay(true, "repo");
+                        setRepo(r);
                       }}
                       key={r.id}
                       repo={r}

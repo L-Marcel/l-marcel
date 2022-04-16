@@ -9,34 +9,30 @@ interface BlankResultProps {
 function BlankResult({
   locale
 }: BlankResultProps) {
-  const primary = useColorModeValue("secondary.700", "primary.700");
-  
+  const primary = useColorModeValue("secondary.700", "primary.700")  
   return (
     <Box
       position="relative"
+      mt={20}
       as={m.div}
-      w="100%"
       minH={100}
-      bgColor="card"
       p={5}
       textTransform="capitalize"
-      justifyContent="space-between"
-      alignSelf="flex-start"
-      borderRadius={10}
-      borderBottom="2px"
-      borderColor={primary}
+      justifyContent="flex-start"
+      alignItems="center"
+      display="flex"
     >
       <NamedIcon
         name="info" 
         h={30} 
         w={30}
-        color="primary.500"
+        color={primary}
       />
       <Heading
         ml={2}
         fontSize={[14, 16]}
         lineHeight={[5, 6]}
-        color="primary.500"
+        color={primary}
         my="auto"
       >
         {locale === "pt-BR"? "Nenhum repositório encontrado.":"No repository found."}

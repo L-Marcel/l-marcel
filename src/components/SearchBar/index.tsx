@@ -52,7 +52,7 @@ function SearchBar({ locale, technologies }: SearchBarTecnhologies) {
       position="sticky"
       ml={overlayId === "filter"? 0:[0, 0, 0, 300, 300, 0]}
       mt={overlayId === "filter"? "-80px!important":[0, 5, 0, 0, 0, "-20px"]}
-      top={overlayId === "filter"? 0:"40px"}
+      top="40px"
       zIndex={overlayId === "filter"? 991:30}
       variants={{
         normal: {

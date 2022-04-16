@@ -20,7 +20,7 @@ function RepositoriesList({
     setRepositories(repos);
   }, [setRepositories, repos]);
 
-  if(repos.length === 0) {
+  if(filteredRepositories.length === 0) {
     return (
       <BlankResult
         locale={locale}

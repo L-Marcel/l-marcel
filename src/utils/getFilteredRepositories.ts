@@ -2,7 +2,6 @@ import { getLocaleTag } from "./getLocaleTag";
 
 function getFilteredRepositories(repos: Repository[], filter: RepositoriesFilterOptions, locale?: string) {
   //with
-  console.log("a", filter.with);
   if(filter.with.some) {
     const { description, figmaLink, license, deploy } = filter.with;
     repos = repos.filter(r => {
@@ -31,7 +30,6 @@ function getFilteredRepositories(repos: Repository[], filter: RepositoriesFilter
     });
   };
 
-  console.log("b", filter.is);
   //is
   if(filter.is.some) {
     const { fork, template, highlight } = filter.is;
@@ -41,7 +39,6 @@ function getFilteredRepositories(repos: Repository[], filter: RepositoriesFilter
   };
 
   //technologies
-  console.log("c", filter.technologies);
   if(filter.technologies?.some) {
     repos = repos.filter(r => {
       const techs = r.importedConfig?.technologies ?? [];

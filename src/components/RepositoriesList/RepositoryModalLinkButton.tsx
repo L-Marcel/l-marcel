@@ -16,7 +16,6 @@ function RepositoryModalLinkButton({
   icon,
   ...rest
 }: RepositoryModalLinkButtonProps) {
-  console.log(link);
   return (
     <Button
       as={m.button}

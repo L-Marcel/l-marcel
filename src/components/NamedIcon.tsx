@@ -9,7 +9,7 @@ import {
   SiTailwindcss, SiApollographql, SiNestjs
 } from "react-icons/si";
 import { DiCss3, DiSass } from "react-icons/di";
-import { AiFillHtml5, AiFillCaretDown } from "react-icons/ai";
+import { AiFillHtml5, AiFillCaretDown, AiOutlineInfoCircle } from "react-icons/ai";
 import { RiFlutterFill, RiFilePaper2Line, RiFlashlightFill } from "react-icons/ri";
 import { BsDownload, BsFillMoonStarsFill, BsQuestionCircle } from "react-icons/bs";
 import { 
@@ -72,7 +72,8 @@ export const icons = {
   "nest.js": SiNestjs,
   "down": AiFillCaretDown,
   "up": AiFillCaretUp,
-  "close": IoIosCloseCircle
+  "close": IoIosCloseCircle,
+  "info": AiOutlineInfoCircle
 };
 
 function NamedIcon({ name = "default", ...rest }: IconProps) {
