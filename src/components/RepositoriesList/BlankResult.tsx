@@ -13,10 +13,10 @@ function BlankResult({
   return (
     <Box
       position="relative"
-      mt={20}
       as={m.div}
       minH={100}
       p={5}
+      pl={[0, 0, 0, 300, 300, 0]}
       textTransform="capitalize"
       justifyContent="flex-start"
       alignItems="center"
