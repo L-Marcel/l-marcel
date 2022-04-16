@@ -1,7 +1,6 @@
 import { ReactNode, useCallback, useEffect, useState } from "react";
 import { createContext } from "use-context-selector";
 import { getFilteredRepositories } from "../utils/getFilteredRepositories";
-import useShowOverlay from "./hooks/useShowOverlay";
 import { getFilterConfigIsIndeterminated } from "../utils/getFIlterConfigIsIndeterminated";
 import { useRouter } from "next/router";
 
@@ -13,10 +12,8 @@ interface RepositoriesProviderProps {
 };
 
 function RepositoriesProvider({ children }: RepositoriesProviderProps) {
-  const { overlayId } = useShowOverlay();
   const { locale } = useRouter();
   const [repositories, setRepositories] = useState<Repository[]>([]);
-  const [filterChanged, setFilterChanged] = useState(false);
   const [filterOptions, setFilterOptions] = 
   useState<RepositoriesFilterOptions>({
     tag: "any",
@@ -66,26 +63,15 @@ function RepositoriesProvider({ children }: RepositoriesProviderProps) {
     o.is.some = getFilterConfigIsIndeterminated(o.is);
     o.technologies.some = getFilterConfigIsIndeterminated(o.technologies.data);
 
-    setFilterChanged(true);
     setFilterOptions(o);
-  }, [setFilterOptions, setFilterChanged]);
+  }, [setFilterOptions]);
 
   const [filteredRepositories, setFilteredRepositories] = useState(repositories);
 
   useEffect(() => {
-    if(overlayId !== "filter" && overlayId !== "repo" && filterChanged) {
-      const newData = getFilteredRepositories(repositories, filterOptions, locale);
-      setFilteredRepositories(newData);
-      setFilterChanged(false);
-    };
-  }, [
-    setFilteredRepositories, 
-    setFilterChanged, 
-    filterChanged, 
-    repositories, 
-    filterOptions, 
-    locale
-  ]);
+    const newData = getFilteredRepositories(repositories, filterOptions, locale);
+    setFilteredRepositories(newData);
+  }, [setFilteredRepositories, repositories, filterOptions, locale]);
 
   return (
     <repositoriesContext.Provider
