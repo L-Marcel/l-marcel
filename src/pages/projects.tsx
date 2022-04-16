@@ -8,7 +8,6 @@ import { SearchBar } from "../components/SearchBar";
 import { LayoutHead } from "../components/LayoutHead";
 import { SearchBarProvider } from "../contexts/SearchBarProvider";
 import { RepositoriesList } from "../components/RepositoriesList";
-import { AnimatePresence } from "framer-motion";
 
 interface ProjectsProps {
   repos: Repository[];
@@ -26,12 +25,10 @@ function Projects({ locale, repos, technologies }: ProjectsProps) {
       />
       <RepositoriesProvider>
         <SearchBarProvider>
-          <AnimatePresence>
-            <SearchBar
-              locale={locale}
-              technologies={technologies}
-            />
-          </AnimatePresence>
+          <SearchBar
+            locale={locale}
+            technologies={technologies}
+          />
         </SearchBarProvider>
         <RepositoriesList
           repos={repos}

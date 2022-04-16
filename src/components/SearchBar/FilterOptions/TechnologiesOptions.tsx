@@ -41,18 +41,20 @@ function TechnologiesOptions({
     >
       <Box
         display="flex"
+        onClick={(e) => {
+          e.stopPropagation();
+          e.preventDefault();
+          if(allIsChecked) {
+            disableAll();
+          } else {
+            enableAll();
+          };
+        }}
       >
         <Checkbox
           mr={2}
           isChecked={allIsChecked}
           isIndeterminate={someIsChecked && !allIsChecked}
-          onChange={(e) => {
-            if(!e.currentTarget.checked) {
-              disableAll();
-            } else {
-              enableAll();
-            };
-          }}
         />
         <Text>
           {locale === "pt-BR"? "Tecnologas":"Technologies"}:

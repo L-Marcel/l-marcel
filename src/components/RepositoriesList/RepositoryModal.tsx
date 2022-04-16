@@ -63,10 +63,8 @@ function RepositoryModal({ repo: r, children, ...rest }: RepositoryModalProps) {
             display="flex"
           >
             { r.badge && <Badge
-              as={motion.div}
               fontSize={[10, 12]} 
               lineHeight={[2, 6]}
-              layoutId={`repos-badge-${r.id}`}
               px={2}
               bgColor="alt.200"
               color="alt.800"

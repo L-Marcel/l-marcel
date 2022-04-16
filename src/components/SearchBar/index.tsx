@@ -1,5 +1,5 @@
 import { Box, Input, InputGroup, InputLeftElement, useBreakpointValue, useColorModeValue } from "@chakra-ui/react";
-import { m, motion } from "framer-motion";
+import { m } from "framer-motion";
 import { useEffect, useState } from "react";
 import { } from "react-icons/bi";
 import useFilterOptions from "../../contexts/hooks/repositories/useFilterOptions";
@@ -43,22 +43,21 @@ function SearchBar({ locale, technologies }: SearchBarTecnhologies) {
 
   return (
     <Box
-      layoutId="search-bar"
-      as={motion.div}
-      w={[300, 300, 400, 450, 500]}
-      animate={filterIsOpen && overlayId === "filter"? "expand":"normal"}
+      as={m.div}
+      w={[300, 300, 400, 450, 450]}
+      initial="normalbar"
+      animate={filterIsOpen? "expandedbar":"normalbar"}
       maxH="90%"
-      transition="width .5s linear"
       position="sticky"
       ml={overlayId === "filter"? 0:[0, 0, 0, 300, 300, 0]}
       mt={overlayId === "filter"? "-80px!important":[0, 5, 0, 0, 0, "-20px"]}
       top="40px"
       zIndex={overlayId === "filter"? 991:30}
       variants={{
-        normal: {
-          width: mw
+        normalbar: {
+          width: mw ?? 450
         },
-        expand: {
+        expandedbar: {
           width: w
         }
       }}

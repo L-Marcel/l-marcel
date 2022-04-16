@@ -21,7 +21,7 @@ function Overlay() {
       h="100vh"
       w="100vw"
       bgColor="overlay"
-      onClick={() => setShowOverlay(false)}
+      onClick={() => setShowOverlay(false, "none")}
       zIndex={990}
     />
   );

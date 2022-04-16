@@ -60,12 +60,10 @@ function RepositoriesListItem({
           {r.name}
         </Text>
         { r.badge && <Badge
-          as={motion.div}
           fontSize={10}
           lineHeight={2}
           bgColor="alt.200"
           color="alt.800"
-          layoutId={`repos-badge-${r.id}`}
           w="min-content"
           p={0}
           mt={2}
