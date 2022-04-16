@@ -1,4 +1,4 @@
-import { Text, TextProps, useColorModeValue } from "@chakra-ui/react";
+import { Text, TextProps } from "@chakra-ui/react";
 import { AnimationProps, m } from "framer-motion";
 
 interface SpanProps extends TextProps {
@@ -6,15 +6,10 @@ interface SpanProps extends TextProps {
 };
 
 function Span({ variants, ...rest }: SpanProps) {
-  const primary = useColorModeValue(
-    "var(--chakra-colors-secondary-700)", 
-    "var(--chakra-colors-primary-700)"
-  );
-
   return (
     <Text
       as={m.span}
-      color={primary}
+      color="var(--chakra-colors-primary-700)"
       {...rest}
     />
   );

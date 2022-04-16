@@ -2,13 +2,12 @@ import { extendTheme } from "@chakra-ui/react";
 import { mode } from "@chakra-ui/theme-tools";
 import colorsConfig from "./colors.json";
 
-const { colors, semanticTokens } = colorsConfig;
+const { semanticTokens } = colorsConfig;
 
 export const theme = extendTheme({
   initialColorMode: 'dark',
   useSystemColorMode: false,
   semanticTokens,
-  colors,
   fonts: {
     heading: "'Inter', sans-serif",
     body: "'Inter', sans-serif",
@@ -29,10 +28,10 @@ export const theme = extendTheme({
         background: mode(semanticTokens.colors["imageColorDefault.300"].default, semanticTokens.colors["imageColorDefault.300"]._dark)(props)
       },
       "::-webkit-scrollbar-thumb": {
-        background: mode(colors.secondary[600], colors.primary[600])(props)
+        background: mode(semanticTokens.colors["primary.600"].default, semanticTokens.colors["primary.600"]._dark)(props)
       },
       "::-webkit-scrollbar-thumb:hover": {
-        background: mode(colors.secondary[800], colors.primary[800])(props)
+        background: mode(semanticTokens.colors["primary.800"].default, semanticTokens.colors["primary.800"]._dark)(props)
       },
       html: {
         height: "-webkit-fill-available",
@@ -50,7 +49,9 @@ export const theme = extendTheme({
         isRandom: true
       },
       'div[role="progressbar"]': {
-        bgImage: `linear-gradient(to right, transparent 0%, ${mode(colors.secondary[500], colors.primary[500])(props)} 50%, ${mode(colors.secondary[700], colors.primary[700])(props)} 100%);`
+        bgImage: `linear-gradient(to right, ${
+          mode(semanticTokens.colors["primary.800"].default, semanticTokens.colors["primary.800"]._dark)(props)} 0%, ${
+            mode(semanticTokens.colors["primary.500"].default, semanticTokens.colors["primary.500"]._dark)(props)} 100%);`
       },
       "button:hover": {
         filter: "brightness(0.95)"

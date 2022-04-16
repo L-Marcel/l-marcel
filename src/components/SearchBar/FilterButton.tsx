@@ -1,8 +1,8 @@
-import { Box, Text, useColorModeValue } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 import { m } from "framer-motion";
 import useFilterOptions from "../../contexts/hooks/repositories/useFilterOptions";
 import { getNumberOfActivedFilters } from "../../utils/getNumberOfActivedFilters";
-import NamedIcon from "../NamedIcon";
+import { NamedIcon } from "../NamedIcon";
 
 interface FilterButtonProps {
   isOpen: boolean;
@@ -16,8 +16,6 @@ function FilterButton({
   locale
 }: FilterButtonProps) {
   const { filterOptions } = useFilterOptions();
-  const border = useColorModeValue("secondary-600", "primary-600");
-  const color = useColorModeValue("secondary.600", "primary.600");
   const numbOfActivedFilters = getNumberOfActivedFilters([
     filterOptions.is,
     filterOptions.with,
@@ -57,7 +55,7 @@ function FilterButton({
         bgColor="search"
         aria-label="filter-button"
         zIndex={-1}
-        borderLeft={`2px solid var(--chakra-colors-${border})!important`}
+        borderLeft={`2px solid var(--chakra-colors-primary-600)!important`}
       >
         <Text
           fontSize={15}
@@ -86,7 +84,7 @@ function FilterButton({
           as={m.div}
           position="absolute"
           display="flex"
-          bgColor={color}
+          bgColor="primary.600"
           initial="initial"
           animate={numbOfActivedFilters? "actived":"initial"}
           left="90px"

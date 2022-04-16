@@ -7,7 +7,6 @@ import { theme } from "../theme/default";
 
 import "focus-visible/dist/focus-visible.min.js";
 
-
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <AllProviders 

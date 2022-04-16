@@ -3,9 +3,13 @@ import { m } from "framer-motion";
 import { fadeToTopOnScroll } from "../../theme/animations/motion";
 import { SocialButton } from "./SocialButton";
 
-function SocialButtons() {
-  const messageTitle = "👋 Hello, Marcel!";
-  const message = "I would love to talk to you about...";
+interface SocialButtonsProps {
+  locale?: string;
+};
+
+function SocialButtons({ locale }: SocialButtonsProps) {
+  const messageTitle = locale === "pt-BR"? "👋 Olá, Marcel!":"👋 Hello, Marcel!";
+  const message = locale === "pt-BR"? "Eu adoraria falar com você sobre...":"I would love to talk to you about...";
 
   const rocketseat = "https://app.rocketseat.com.br/me/l-marcel";
   const github = "https://github.com/l-marcel";

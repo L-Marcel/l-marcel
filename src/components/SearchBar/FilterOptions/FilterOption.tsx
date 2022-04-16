@@ -7,7 +7,7 @@ import {
   expandedFilterButtonIcon 
 } from "../../../theme/animations/motion";
 import { getConfigOptionText } from "../../../utils/getConfigOptionText";
-import NamedIcon from "../../NamedIcon";
+import { NamedIcon } from "../../NamedIcon";
 
 interface FilterOptionProps {
   config?: "with" | "is";

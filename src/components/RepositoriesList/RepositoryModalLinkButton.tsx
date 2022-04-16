@@ -2,7 +2,7 @@
 import { Button, ButtonProps } from "@chakra-ui/react";
 import { m } from "framer-motion";
 import { scaleOnInteract } from "../../theme/animations/motion";
-import NamedIcon from "../NamedIcon";
+import { NamedIcon } from "../NamedIcon";
 
 interface RepositoryModalLinkButtonProps extends ButtonProps {
   link: string;

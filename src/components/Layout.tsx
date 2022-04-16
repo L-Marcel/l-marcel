@@ -1,18 +1,16 @@
-import { Box, HStack, Stack, useColorMode, useColorModeValue } from "@chakra-ui/react";
+import { Box, HStack, Stack, useColorMode } from "@chakra-ui/react";
 import { m } from "framer-motion";
 import { useRouter } from "next/router";
 import { fadeLayout } from "../theme/animations/motion";
 import { FixedIconButton } from "./FixedIconButton";
 import { Header } from "./Header";
-import NamedIcon from "./NamedIcon";
+import { NamedIcon } from "./NamedIcon";
 import { Navigation } from "./Navigation";
 import { Overlay } from "./Overlay";
 
 function Layout({ children, ...rest }: BoxProps) {
   const { toggleColorMode } = useColorMode();
   const { locale } = useRouter();
-
-  const icon = useColorModeValue("moon", "sun");
 
   return (
     <Box
@@ -36,7 +34,6 @@ function Layout({ children, ...rest }: BoxProps) {
         <FixedIconButton
           aria-label="toggleColor"
           onClick={toggleColorMode}
-          icon={<NamedIcon name={icon}/>}
           zIndex={999}
           mb={[74, 76, 76, 0, 0, 0]}
         />

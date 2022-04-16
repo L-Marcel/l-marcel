@@ -1,4 +1,4 @@
-import { Box, Link as CLink, LinkProps, useColorModeValue } from "@chakra-ui/react";
+import { Box, Link as CLink, LinkProps } from "@chakra-ui/react";
 import { m } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -17,7 +17,6 @@ function Navigation({
   px,
   ...rest 
 }: NavigationProps) {
-  const color = useColorModeValue("secondary.600", "primary.600");
   const { asPath: path, locale: selectedLocale } = useRouter();
   
   let isPath = path === href;
@@ -31,7 +30,7 @@ function Navigation({
       >
         <Box
           bgColor={isSelected? "alt.100":"alt.50"}
-          color={isSelected && color}
+          color={isSelected && "primary.600"}
           p={p ?? [3, 4, 3]}
           px={px ?? [5, 4, 4, 7]}
           borderBottomLeftRadius={type === "first" && 20}

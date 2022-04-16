@@ -1,7 +1,7 @@
-import { Box, HStack, Text, useColorModeValue } from "@chakra-ui/react";
+import { Box, HStack, Text } from "@chakra-ui/react";
 import { m } from "framer-motion";
 import { colorize, colorSequenceLayout } from "../../theme/animations/motion";
-import NamedIcon from "../NamedIcon";
+import { NamedIcon } from "../NamedIcon";
 
 interface TechnologyLevelProps {
   level: 1 | 2 | 3 | 4 | 5 | 6;
@@ -10,8 +10,6 @@ interface TechnologyLevelProps {
 };
 
 function TechnologyLevel({ level, title, iconName }: TechnologyLevelProps) {
-  const color = useColorModeValue("secondary.600", "primary.600");
-  const hoverColor = useColorModeValue("primary.600", "secondary.600");
   const levels = [1, 2, 3, 4, 5, 6];
 
   return (
@@ -22,13 +20,13 @@ function TechnologyLevel({ level, title, iconName }: TechnologyLevelProps) {
       gridTemplateColumns="3fr 5fr"
       __css={{
         "& #tech-color": {
-          color
+          color: "primary.600"
         }
       }}
       _hover={{
-        color: hoverColor,
+        color: "secondary.600",
         "& #tech-color": {
-          color: hoverColor
+          color: "secondary.600"
         }
       }}
     >

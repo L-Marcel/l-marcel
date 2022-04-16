@@ -1,4 +1,4 @@
-import { Box, Stack, useColorModeValue } from "@chakra-ui/react";
+import { Box, Stack } from "@chakra-ui/react";
 import { m } from "framer-motion";
 import useFilterIsOpen from "../../contexts/hooks/searchBar/useFilterIsOpen";
 import useShowOverlay from "../../contexts/hooks/useShowOverlay";
@@ -15,7 +15,6 @@ interface FiltersProps {
 function Filters({
   locale
 }: FiltersProps) {
-  const border = useColorModeValue("secondary-600", "primary-600");
   const { setShowOverlay, overlayId } = useShowOverlay();
   const { setFilterIsOpen, filterIsOpen } = useFilterIsOpen();
 
@@ -33,7 +32,7 @@ function Filters({
         display="flex"
         flexDir="column"
         borderBottomLeftRadius={8}
-        borderBottom={`2px solid var(--chakra-colors-${border})!important`}
+        borderBottom={`2px solid var(--chakra-colors-priamry-600)!important`}
         position="relative"
         initial="close"
         spacing={4}

@@ -1,11 +1,11 @@
-import { Badge, Box, Heading, Text, useBreakpointValue, useColorModeValue } from "@chakra-ui/react";
+import { Badge, Box, Heading, Text, useBreakpointValue } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 
 import { ModalContentProps } from "@chakra-ui/react";
 import { ReactNode } from "react";
 import RepositoryModalButtonsGroup from "./RepositoryModalButtonsGroup";
 import RepositoryModalLinkButton from "./RepositoryModalLinkButton";
-import NamedIcon from "../NamedIcon";
+import { NamedIcon } from "../NamedIcon";
 import useShowOverlay from "../../contexts/hooks/useShowOverlay";
 import { fadeLayout } from "../../theme/animations/motion";
 
@@ -16,7 +16,6 @@ interface RepositoryModalProps extends ModalContentProps {
 
 function RepositoryModal({ repo: r, children, ...rest }: RepositoryModalProps) {
   const { overlayId } = useShowOverlay();
-  const primary = useColorModeValue("secondary.700", "primary.700");
   const isWideOrNormalVersion = useBreakpointValue({
     lg: true,
     base: false
@@ -33,7 +32,7 @@ function RepositoryModal({ repo: r, children, ...rest }: RepositoryModalProps) {
       borderRadius={10}
       borderBottom="2px"
       position="fixed"
-      borderColor={primary}
+      borderColor="primary.700"
       bgColor="modalCard"
       bottom={[0, 0, 0, "auto", "auto" , "auto"]}
       borderBottomRadius={[0, 0, 0, 10, 10, 10]}
@@ -70,7 +69,7 @@ function RepositoryModal({ repo: r, children, ...rest }: RepositoryModalProps) {
             as={motion.h1}
             maxWidth="100%"
             fontSize={[18, 25]}
-            color={primary}
+            color="primary.700"
             textTransform="capitalize"
             layoutId={`repos-title-${r.id}`}
           >
@@ -85,7 +84,7 @@ function RepositoryModal({ repo: r, children, ...rest }: RepositoryModalProps) {
             {
               r.importedConfig?.technologies?.map(technology => {
                 return (
-                  <NamedIcon key={technology} color={primary} mr={2} mt={2} name={technology} w={6} h={6}/>
+                  <NamedIcon key={technology} color="primary.700" mr={2} mt={2} name={technology} w={6} h={6}/>
                 );
               })
             }
@@ -121,7 +120,7 @@ function RepositoryModal({ repo: r, children, ...rest }: RepositoryModalProps) {
             mt={5}
             display="flex"
             alignItems="center"
-            color={primary}
+            color="primary.700"
           >
             <NamedIcon name="license" mr={2} fontSize={22}/>
             {r.license}

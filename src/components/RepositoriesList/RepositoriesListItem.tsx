@@ -1,7 +1,7 @@
-import { Badge, Box, Heading, HStack, Text, useColorModeValue } from "@chakra-ui/react";
+import { Badge, Box, Heading, HStack, Text } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { fadeToTopOnScroll, weakScaleOnInteract } from "../../theme/animations/motion";
-import NamedIcon from "../NamedIcon";
+import { NamedIcon } from "../NamedIcon";
 
 interface RepositoriesListItemProps {
   repo: Repository;
@@ -12,9 +12,6 @@ function RepositoriesListItem({
   repo: r, 
   onSelect 
 }: RepositoriesListItemProps) {
-  const primary = useColorModeValue("secondary.700", "primary.700");
-  const secondary = useColorModeValue("primary.700", "secondary.700");
-
   return (
     <Box 
       position="relative"
@@ -28,7 +25,7 @@ function RepositoriesListItem({
       alignSelf="flex-start"
       borderRadius={10}
       borderBottom="2px"
-      borderColor={primary}
+      borderColor="primary.700"
       layoutId={`repos-${r.id}`}
       onClick={onSelect}
       _hover={{
@@ -55,7 +52,7 @@ function RepositoriesListItem({
         { r.importedConfig?.pinned && <NamedIcon
           name="flash"
           position="absolute"
-          color={secondary}
+          color="secondary.700"
           w={5}
           h={5}
           top={5}
@@ -92,7 +89,7 @@ function RepositoriesListItem({
         alignSelf="flex-end"
         justifySelf="flex-end"
         mt={2} 
-        color={primary}
+        color="primary.700"
       >
         <NamedIcon name={r.importedConfig.technologies[0]} w={6} h={6}/>
         <Text fontSize={[12, 15]}>{'->'} {r.importedConfig.technologies[0] ?? "Desconhecido"}</Text>

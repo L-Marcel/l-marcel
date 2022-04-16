@@ -1,11 +1,11 @@
-import { Box, Input, InputGroup, InputLeftElement, useBreakpointValue, useColorModeValue } from "@chakra-ui/react";
+import { Box, Input, InputGroup, InputLeftElement, useBreakpointValue } from "@chakra-ui/react";
 import { m } from "framer-motion";
 import { useEffect, useState } from "react";
 import { } from "react-icons/bi";
 import useFilterOptions from "../../contexts/hooks/repositories/useFilterOptions";
 import useShowOverlay from "../../contexts/hooks/useShowOverlay";
 import { Filters } from "./Filter";
-import NamedIcon from "../NamedIcon";
+import { NamedIcon } from "../NamedIcon";
 import useFilterIsOpen from "../../contexts/hooks/searchBar/useFilterIsOpen";
 
 interface SearchBarTecnhologies {
@@ -17,8 +17,6 @@ function SearchBar({ locale, technologies }: SearchBarTecnhologies) {
   const { setShowOverlay, overlayId } = useShowOverlay();
   const { filterIsOpen } = useFilterIsOpen();
   const { filterOptions, setFilterOptions } = useFilterOptions();
-  const border = useColorModeValue("secondary-600", "primary-600");
-  const color = useColorModeValue("secondary.600", "primary.600");
   const [isFocused, setIsFocused] = useState(false);
   const [w, mw] = useBreakpointValue({
     base: [350, 300],
@@ -81,13 +79,13 @@ function SearchBar({ locale, technologies }: SearchBarTecnhologies) {
           borderRadius={8}
           children={<NamedIcon name="search"/>}
           bgColor={isFocused && "alt.50"}
-          color={isFocused && color}
+          color={isFocused && "primary.600"}
         />
         <Input
           as={m.input}
           bgColor="search"
           border="none"
-          borderBottom={`2px solid var(--chakra-colors-${border})!important`}
+          borderBottom={`2px solid var(--chakra-colors-primary-600)!important`}
           borderRadius={8}
           _placeholder={{
             color: "alt.400"

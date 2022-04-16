@@ -10,6 +10,7 @@ interface  LayoutHeadProps {
 function LayoutHead({ locale, title, ptBRTitle }:  LayoutHeadProps) {
   const favicon = useColorModeValue("favicon.ico", "favicon-dark.ico");
   const haveTitle = ptBRTitle || title;
+  
   return (
     <Head>
       <title>L-Marcel{haveTitle && ":"} {locale === "pt-BR"? ptBRTitle:title}</title>

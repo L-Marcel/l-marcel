@@ -1,6 +1,6 @@
 //import Head from "next/head";
 
-import { Box, Button, Heading, HStack, useColorModeValue } from "@chakra-ui/react";
+import { Box, Button, Heading, HStack } from "@chakra-ui/react";
 import { m } from "framer-motion";
 import { Span } from "../components/Span";
 import { fadeToTop, scaleOnInteract } from "../theme/animations/motion";
@@ -8,7 +8,7 @@ import { fadeToTop, scaleOnInteract } from "../theme/animations/motion";
 import { DeveloperImage } from "../components/images/svgs/DeveloperImage"
 import Link from "next/link";
 import { Background } from "../components/Background";
-import NamedIcon from "../components/NamedIcon";
+import { NamedIcon } from "../components/NamedIcon";
 import { GetStaticProps } from "next";
 import { LayoutHead } from "../components/LayoutHead";
 interface HomeProps {
@@ -16,8 +16,6 @@ interface HomeProps {
 };
 
 function Home({ locale }: HomeProps) {
-  const primary = useColorModeValue("secondary.700", "primary.700");
-
   return (
     <>
       <LayoutHead
@@ -47,7 +45,7 @@ function Home({ locale }: HomeProps) {
         </Span> developer</>}
       </Heading>
       <HStack 
-        color={primary}
+        color="primary.700"
         fontSize={[19, 28]}
       >
         <Box 
@@ -84,7 +82,7 @@ function Home({ locale }: HomeProps) {
           }}
           fontSize={[16, 20]}
           borderBottom="2px"
-          borderBottomColor={primary}
+          borderBottomColor="primary.700"
           {...fadeToTop}
           {...scaleOnInteract}
         >

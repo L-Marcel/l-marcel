@@ -15,7 +15,6 @@ function TopLanguageItem({
   ...rest 
 }: TopLanguageItemProps) {
   const progress = (value/compareWith) * 100;
-  const color = useColorModeValue("secondary", "primary");
 
   return (
     <Stack
@@ -31,7 +30,7 @@ function TopLanguageItem({
       <Progress 
         display="flex" 
         w={[280, 300]}
-        colorScheme={color}
+        colorScheme="primary"
         value={progress}
         borderRadius={8}
       />

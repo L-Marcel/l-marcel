@@ -9,7 +9,7 @@ import { Span } from "../Span";
 import { getStatsImageSrc, getTopLangsImageSrc } from "../../utils/getStatsImageSrc";
 import { TopLanguagesList } from "../TopLanguagesList";
 import { memo } from "react";
-import NamedIcon from "../NamedIcon";
+import { NamedIcon } from "../NamedIcon";
 
 import { SocialButtons } from "../SocialButtons";
 
@@ -23,7 +23,7 @@ const MarkdownGrid = dynamic<{ items: any[] }>(() => import("./MarkdownGrid").th
 interface MarkdownProps {
   languages?: { [key: string]: number };
   onChangeViewport?: (v: boolean) => void;
-  locale: string;
+  locale?: string;
   markdown: string;
 };
 
@@ -192,7 +192,7 @@ function _Markdown({
               >
                 { id !== "space" && <NamedIcon 
                   name="check" 
-                  color={isDarkMode? "primary.500":"secondary.500"}
+                  color="primary.500"
                   mr={3}
                 /> }
                 {children}
@@ -241,7 +241,9 @@ function _Markdown({
                   <TopLanguagesList
                     languages={languages}
                   />
-                  <SocialButtons/>
+                  <SocialButtons
+                    locale={locale}
+                  />
                   <Box
                     mt={-15}
                     as={m.div}

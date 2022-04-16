@@ -1,9 +1,9 @@
-import { Box, Heading, HStack, IconButton, Tag, Text, useColorModeValue } from "@chakra-ui/react";
+import { Box, Heading, HStack, IconButton, Tag, Text } from "@chakra-ui/react";
 import { m } from "framer-motion";
 import { VerticalTimelineElement as TimelineItem }  from "react-vertical-timeline-component";
 import { scaleOnInteract } from "../theme/animations/motion";
 import { getFormattedDate } from "../utils/getFormattedDate";
-import NamedIcon from "./NamedIcon";
+import { NamedIcon } from "./NamedIcon";
 
 interface AchievementProps extends BoxProps {
   item: Certificate | Achievement;
@@ -21,31 +21,17 @@ function Achievement({ item, locale }: AchievementProps) {
     icon,
     url
   } = item;
-  const primary = useColorModeValue(
-    "var(--chakra-colors-secondary-600)", 
-    "var(--chakra-colors-primary-600)"
-  );
-
-  const primary700 = useColorModeValue(
-    "secondary.700", 
-    "primary.700"
-  );
-
-  const primary800 = useColorModeValue(
-    "secondary.800", 
-    "primary.800"
-  );
 
   return (
     <Box
       as={TimelineItem}
       date={getFormattedDate(issuedIn, locale)}
       contentArrowStyle={{ 
-        borderRight: `7px solid ${primary}`
+        borderRight: `7px solid var(--chakra-colors-primary-600)`
       }}
       contentStyle={{ 
         background: "var(--chakra-colors-alt-50)",
-        borderBottom: `4px solid ${primary}`,
+        borderBottom: `4px solid var(--chakra-colors-primary-600)`,
         color: "#fff"
       }}
       icon={<NamedIcon name={icon}/>}
@@ -53,13 +39,13 @@ function Achievement({ item, locale }: AchievementProps) {
         background: "var(--chakra-colors-card)",
         width: "40px",
         height: "40px",
-        color: primary,
+        color: "var(--chakra-colors-primary-600)",
         boxShadow: `0 0 0 4px var(--chakra-colors-alt-50), inset 0 2px 0 rgb(0 0 0 / 8%), 0 3px 0 4px rgb(0 0 0 / 5%)`,
         marginTop: "12px"
       }}
     >
       <Heading
-        color={`${primary}!important`}
+        color={`var(--chakra-colors-primary-600)!important`}
         fontSize={[20, 24]}
       >
         {name}
@@ -85,9 +71,9 @@ function Achievement({ item, locale }: AchievementProps) {
           as={m.button}
           aria-label="open-button"
           icon={<NamedIcon name="download"/>}
-          bgColor={primary700}
+          bgColor="primary.700"
           _hover={{
-            bgColor: primary800
+            bgColor: "primary.800"
           }}
           size="sm"
           onClick={() => window.open(url, "_blank")}
@@ -123,7 +109,7 @@ function Achievement({ item, locale }: AchievementProps) {
             bgColor: "buttons.200"
           }}
           right={0}
-          color={primary}
+          color="var(--chakra-colors-primary-600)"
           m={0}
           p={4}
           mr={0}

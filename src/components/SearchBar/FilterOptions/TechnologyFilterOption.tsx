@@ -6,7 +6,7 @@ import {
   scaleOnInteract, 
   expandedFilterButtonIcon 
 } from "../../../theme/animations/motion";
-import NamedIcon from "../../NamedIcon";
+import { NamedIcon } from "../../NamedIcon";
 
 interface TechnologyFilterOptionProps {
   keyName: string;

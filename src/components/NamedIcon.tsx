@@ -87,4 +87,4 @@ function NamedIcon({ name = "default", ...rest }: IconProps) {
   );
 };
 
-export default NamedIcon;
+export { NamedIcon };

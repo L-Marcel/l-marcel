@@ -3,7 +3,6 @@ import useFilterOptions from "../../../contexts/hooks/repositories/useFilterOpti
 import { getAllFIlterConfigIsActived } from "../../../utils/getAllFIlterConfigIsActived";
 import { getDisabledOptions } from "../../../utils/getDisabledOptions";
 import { getEnabledOptions } from "../../../utils/getEnabledOptions";
-import { FilterOption } from "./FilterOption";
 import { TechnologyFilterOption } from "./TechnologyFilterOption";
 
 interface TechnologiesOptions {

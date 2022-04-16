@@ -1,12 +1,27 @@
-import { IconButton, IconButtonProps, useColorModeValue } from "@chakra-ui/react";
-import { m } from "framer-motion";
+import { IconButton, IconButtonProps } from "@chakra-ui/react";
+import { ReactElement } from "react-markdown/lib/react-markdown";
 import useShowOverlay from "../contexts/hooks/useShowOverlay";
 import { scaleOnInteract } from "../theme/animations/motion";
+import { ToogleColorIcon } from "./ToogleColorIcon";
+import { m } from "framer-motion";
+import { NamedIcon } from "./NamedIcon";
+interface FixedIconButtonProps extends IconButtonProps {
+  icon?: ReactElement;
+};
 
-function FixedIconButton({ mt, mb, ...rest }: IconButtonProps) {
-  const primary = useColorModeValue("secondary.700", "primary.700");
+function FixedIconButton({ mt, mb, icon,  ...rest }: FixedIconButtonProps) {
   const { showOverlay } = useShowOverlay();
   const marginBottom = mb? [ ...mb as any[] ]:mb;
+
+  if(!icon && rest["aria-label"] === "toggleColor") {
+    icon = (
+      <ToogleColorIcon/>
+    );
+  } else if(!icon) {
+    icon = (
+      <NamedIcon name="abc"/>
+    );
+  };
 
   if(showOverlay && mb) {
     marginBottom[0] = 6;
@@ -34,7 +49,8 @@ function FixedIconButton({ mt, mb, ...rest }: IconButtonProps) {
       }}
       borderBottom="2px"
       zIndex={10}
-      borderBottomColor={primary}
+      borderBottomColor="primary.700"
+      icon={icon}
       {...rest}
       {...scaleOnInteract}
     />

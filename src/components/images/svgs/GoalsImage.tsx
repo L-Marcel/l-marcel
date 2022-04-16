@@ -1,17 +1,15 @@
-import { useColorModeValue } from "@chakra-ui/react";
 import { m } from "framer-motion";
 import useShowBackground from "../../../contexts/hooks/useShowBackground";
 import { fadeToTop } from "../../../theme/animations/motion";
 
 function GoalsImage() {
   const { showBackground: show } = useShowBackground();
-  const imageColorDefault300 = useColorModeValue("var(--chakra-colors-imageColorDefault-300)", "var(--chakra-colors-imageColorDefault-300)");
-  const imageColorDefault400 = useColorModeValue("var(--chakra-colors-imageColorDefault-400)", "var(--chakra-colors-imageColorDefault-400)");
-  const imageColorDefault = useColorModeValue("var(--chakra-colors-imageColorDefault-500)", "var(--chakra-colors-imageColorDefault-500)");
-  const imageColorDefault600 = useColorModeValue("var(--chakra-colors-imageColorDefault-600)", "var(--chakra-colors-imageColorDefault-600)");
-  const imageColorDefault700 = useColorModeValue("var(--chakra-colors-imageColorDefault-700)", "var(--chakra-colors-imageColorDefault-700)");
-  const primary = useColorModeValue("var(--chakra-colors-secondary-600)", "var(--chakra-colors-primary-600)");
-  const secondary = useColorModeValue("var(--chakra-colors-primary-700)", "var(--chakra-colors-secondary-700)");
+  const imageColorDefault300 = "var(--chakra-colors-imageColorDefault-300)";
+  const imageColorDefault400 = "var(--chakra-colors-imageColorDefault-400)";
+  const imageColorDefault600 = "var(--chakra-colors-imageColorDefault-600)";
+  const imageColorDefault700 = "var(--chakra-colors-imageColorDefault-700)";
+  const primary = "var(--chakra-colors-primary-600)";
+  const secondary = "var(--chakra-colors-secondary-700)";
   
   return (
     <m.svg 
