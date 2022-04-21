@@ -23,9 +23,8 @@ C:\projects\l-marcel> <span>yarn</span> dev
     <li>Objectivity.</li>
   </ul>
   <ul><h2 align="center"><span>Languages</span> proficiency:</h2>
-    <li>Portuguese – fluent;</li>
-    <li>English – technical:</li>
-    <li id="space">Without real listening or speaking experience.</li>
+    <li>Portuguese – native;</li>
+    <li>English – technical.</li>
   </ul>
 </div>
 <h2 id="sub" align="center"><span>Github profile</span> statistics:</h2>
