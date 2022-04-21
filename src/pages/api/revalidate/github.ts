@@ -8,18 +8,25 @@ export const config = {
   },
 }
 
-async function revalidatePagesWithGithubData(req: NextApiRequest, res: NextApiResponse) {
+//Example with Github Webhook
+async function revalidatePagesWithGithubData(
+  req: NextApiRequest, 
+  res: NextApiResponse
+) {
   if(req.method === "POST") {
     const isAuth = await getGithubWebookIsAuth(req);
-
+    //When the valid webhook calls...
     if(!isAuth) {
       return res.status(401).json({
         message: "[Github Webhook]: Unauthorized request."
       });
     };
 
-    await revalidatePath(res, "dev");
-    await revalidatePath(res, "projects");
+    //...these pages are revalidated
+    await Promise.all([
+      revalidatePath(res, "dev"),
+      revalidatePath(res, "projects")
+    ]);
 
     return res.status(200).json({
       message: "[Github Webhook]: Revalidate request received."

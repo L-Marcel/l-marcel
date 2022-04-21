@@ -10,7 +10,7 @@ C:\projects\l-marcel> <span>yarn</span> dev
 <p>Tenho um <span>sonho</span>: conseguir meu <span>primeiro emprego</span> para aperfeiçoar minhas habilidades. Para isso, estou disposto a expandir meus conhecimentos e aprender <span>coisas novas</span>. Sigo esse caminho por pelo menos <span>3 anos</span>. <span id="years"></span></p>
 <div id="grid">
   <ul><h2 align="center">Algumas <span>competências</span>:</h2>
-    <li>Conhece metodologias ágeis;</li>
+    <li>Conhecimento das metodologias ágeis;</li>
     <li>Tem Experiência com várias opções de implementação;</li>
     <li>Entende os relacionamentos das entidades do banco de dados;</li>
     <li>Pronto para fazer responsivo;</li>
@@ -23,9 +23,8 @@ C:\projects\l-marcel> <span>yarn</span> dev
     <li>Objetividade.</li>
   </ul>
   <ul><h2 align="center"><span>Idiomas</span> falados:</h2>
-    <li>Português – fluente;</li>
-    <li>Inglês – técnico:</li>
-    <li id="space">Sem uma experiência real de fala ou escuta.</li>
+    <li>Português – nativo;</li>
+    <li>Inglês – técnico.</li>
   </ul>
 </div>
 <h2 id="sub" align="center"><span>Estatísticas</span> do Github:</h2>

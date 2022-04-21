@@ -38,7 +38,7 @@ function Layout({ children, ...rest }: BoxProps) {
         />
         <FixedIconButton
           aria-label="download"
-          onClick={() => window.open("/curriculo.pdf", "_blank")}
+          onClick={() => window.open(locale === "pt-BR"? "/curriculo.pdf":"/resume.pdf", "_blank")}
           icon={<NamedIcon name="download"/>}
           mt={[0, 0, 0, 74, 74, 76]}
         />
