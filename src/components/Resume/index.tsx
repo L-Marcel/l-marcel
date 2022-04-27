@@ -1,21 +1,21 @@
-import { Box, Code, Heading, Text, Image, ImageProps, useColorModeValue, useBreakpointValue, List, ListItem } from "@chakra-ui/react";
-import remarkGfm from "remark-gfm";
-import rehypeRaw from "rehype-raw";
-import ReactMarkdown from "react-markdown";
+import { Box, Code, Heading, Image, ImageProps, List, ListItem, Text, useBreakpointValue, useColorModeValue } from "@chakra-ui/react";
 import { m } from "framer-motion";
+import ReactMarkdown from "react-markdown";
+import rehypeRaw from "rehype-raw";
+import remarkGfm from "remark-gfm";
 
-import { fadeToTopOnScroll } from "../../theme/animations/motion";
-import { Span } from "../Span";
-import { getStatsImageSrc, getTopLangsImageSrc } from "../../utils/getStatsImageSrc";
-import { TopLanguagesList } from "../TopLanguagesList";
 import { memo } from "react";
+import { fadeToTopOnScroll } from "../../theme/animations/motion";
+import { getStatsImageSrc, getTopLangsImageSrc } from "../../utils/getStatsImageSrc";
 import { NamedIcon } from "../NamedIcon";
+import { Span } from "../Span";
+import { TopLanguagesList } from "../TopLanguagesList";
 
 import { SocialButtons } from "../SocialButtons";
 
-import { TechnologiesList } from "./TechnologiesList";
 import dynamic from "next/dynamic";
 import { getYearsOld } from "../../utils/getYearsOld";
+import { TechnologiesList } from "./TechnologiesList";
 
 const MarkdownGrid = dynamic<{ items: any[] }>(() => import("./MarkdownGrid").then(mod => mod.MarkdownGrid), {
   ssr: false
@@ -90,7 +90,7 @@ function _Markdown({
                           {...fadeToTopOnScroll}
                         >
                           { locale === "pt-BR"? <>Proficiência com as <Span>tecnologias</Span>:</>
-                          :<><Span>Technologies</Span>proficiency:</>}
+                          :<><Span>Technologies</Span> proficiency:</>}
                         </Heading>
                         <TechnologiesList/>
                       </Box>,
@@ -291,3 +291,4 @@ function _Markdown({
 const Markdown = memo(_Markdown);
 
 export { Markdown };
+
