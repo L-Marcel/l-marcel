@@ -18,6 +18,7 @@ function RepositoriesListItem({
       as={motion.div}
       w="100%"
       minH={100}
+      minW={270}
       bgColor="card"
       p={5}
       textTransform="capitalize"
