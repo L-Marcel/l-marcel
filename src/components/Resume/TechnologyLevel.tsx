@@ -66,3 +66,4 @@ function TechnologyLevel({ level, title, iconName }: TechnologyLevelProps) {
 };
 
 export { TechnologyLevel };
+

@@ -1,20 +1,21 @@
 <h1>👋 Hello, I'm <span>Lucas Marcel</span>.</h1>
-<p>I studied computing in <span>IFRN - MC</span> and finished the technical high school level in 2022. During this period, I dedicated to the software development with technologies like <span>React.js</span>, <span>Next.js</span> and <span>Node.js</span>. After finishing the Ignite course of the <span>Rocketseat</span>, I got a complete <span>scholarship</span> in Do While 2021.</p>
+<p>I live in Brazil (Macau – RN) and finished computing technical high school in <span>IFRN - MC</span> in 2022. During this period, I dedicated myself to software development with technologies like <span>React.js</span>, <span>Next.js</span> and <span>Node.js</span>. After finishing the <span>Ignite</span> course of the <span>Rocketseat</span>, I got a full <span>scholarship</span> in Do While 2021.</p>
 <pre>
 C:\projects> <span>yarn</span> create next-app --typescript l-marcel
 </pre>
-<p>My favorite <span>framework</span> is Next.js. Together, we can make amazing pages with <span>SSR (Server-side Rendering)</span>, <span>SSG (Static Site Generation)</span> and <span>CSR (Client-side Rendering)</span>; to use serverless functions and reduce deployment cost; force <span>re-validate on demand</span> of some pages with the latest resources (v12.1.0); and play with React.js without missing out on his incredible experience.</p>
+<p>My favorite <span>framework</span> is Next.js. Some of his features, mainly those related to the page rendering methods, like the <span>SSR (Server-side Rendering)</span>, <span>SSG (Static Site Generation)</span>, <span>CSR (Client-side Rendering)</span>, and the <span>ISG (Incremental Static Generation)</span> allows a better user experience and that suits a variety of use cases. Furthermore, using serverless functions I can deploy the ecosystem of my small projects in a practical and fast way without the necessity of breaking apart the Front-end of the Back-end.</p>
 <pre>
 C:\projects\l-marcel> <span>yarn</span> dev
 </pre>
-<p>I've a <span>dream</span>: to get my <span>first job</span> to improve my skills. For this, I'm willing to expand my knowledge and learn <span>new things</span>. I've been following this path for at least <span>3 years</span>. <span id="years"></span></p>
+<p>I’m willing to expand my knowledge and learn new things. I’ve been following this path for at least <span>three years</span>. <span id="years"></span></p>
 <div id="grid">
   <ul><h2 align="center">Some <span>competencies</span>:</h2>
-    <li>Agile methodologies' knowledge;</li>
-    <li>Experience with many deploy options;</li>
-    <li>Database’s entities relations knowledge;</li>
-    <li>Ready to do responsive;</li>
-    <li>Framer Motion animation’s knowledge.</li>
+    <li>I know and have used agile methodologies;</li>
+    <li>I’ve experienced a variety of deployment options;</li>
+    <li>I understand the database’s entity relations;</li>
+    <li>I develop responsively;</li>
+    <li>I make animations with Framer Motion;</li>
+    <li>I can find and resolve errors myself.</li>
   </ul>
   <ul><h2 align="center"><span>Soft</span> skills:</h2>
     <li>Fast reasoning;</li>

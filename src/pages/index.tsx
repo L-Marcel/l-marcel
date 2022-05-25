@@ -5,12 +5,12 @@ import { m } from "framer-motion";
 import { Span } from "../components/Span";
 import { fadeToTop, scaleOnInteract } from "../theme/animations/motion";
 
-import { DeveloperImage } from "../components/images/svgs/DeveloperImage"
+import { GetStaticProps } from "next";
 import Link from "next/link";
 import { Background } from "../components/Background";
-import { NamedIcon } from "../components/NamedIcon";
-import { GetStaticProps } from "next";
+import { DeveloperImage } from "../components/images/svgs/DeveloperImage";
 import { LayoutHead } from "../components/LayoutHead";
+import { NamedIcon } from "../components/NamedIcon";
 interface HomeProps {
   locale: string;
 };
@@ -58,6 +58,7 @@ function Home({ locale }: HomeProps) {
         <Box as={m.div} {...fadeToTop}><NamedIcon name="react native"/></Box>
         <Box as={m.div} {...fadeToTop}><NamedIcon name="nest.js"/></Box>
         <Box as={m.div} {...fadeToTop}><NamedIcon name="framer motion"/></Box>
+        <Box as={m.div} {...fadeToTop}><NamedIcon name="tailwind"/></Box>
         <Box as={m.div} {...fadeToTop}><NamedIcon name="prisma"/></Box>
         <Box as={m.div} {...fadeToTop}><NamedIcon name="jest"/></Box>
         <Box as={m.div} {...fadeToTop}><NamedIcon name="git"/></Box>

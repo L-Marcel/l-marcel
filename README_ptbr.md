@@ -1,20 +1,21 @@
 <h1>👋 Olá, sou <span>Lucas Marcel</span>.</h1>
-<p>Estudei informática no <span>IFRN - MC</span> e terminei o ensino médio técnico em 2022. Nesse mesmo período me dediquei ao desenvolvimento de aplicações com tecnologias como <span>React.js</span>, <span>Next.js</span> and <span>Node.js</span>. Após terminar o curso Ignite da <span>Rocketseat</span>, ganhei deles uma bolsa de estudos <span>completa</span> no Do While 2021.</p>
+<p>Moro no Brasil (Macau - RN) e terminei o ensino médio integrado ao curso técnico em informática em 2022 no <span>IFRN - MC</span>. Nesse mesmo período me dediquei ao desenvolvimento de aplicações com tecnologias como <span>React.js</span>, <span>Next.js</span> and <span>Node.js</span>. E, após terminar o curso <span>Ignite</span> da <span>Rocketseat</span>, ganhei deles uma bolsa de estudos <span>completa</span> no <span>Do While 2021</span>.</p>
 <pre>
 C:\projects> <span>yarn</span> create next-app --typescript l-marcel
 </pre>
-<p>Meu <span>framework</span> favorito é o Next.js. Juntos, nós podemos fazer incríveis páginas com <span>SSR (Renderização do lado do servidor)</span>, <span>SSG (Geração estática de site)</span> and <span>CSR (Renderização do lado do cliente)</span>; usar funções serverless e reduzir o custo de implementação; forçar a <span>re-validação de algumas páginas de acordo com a demanda</span> com os recursos da versão mais recente (v12.1.0); e brincar um pouco com o React.js sem perder sua incrível experiência.</p>
+<p>Meu <span>framework</span> favorito é o <span>Next.js</span>. Alguns dos seus recursos, principalmente os relacionados aos métodos de renderização de páginas, como: <span>SSR (Renderização do lado do servidor)</span>, <span>SSG (Geração estática de site)</span>, <span>CSR (Renderização do lado do cliente)</span> e <span>ISG (Geração estática incremental)</span> permitem uma melhor experiência de usuário e que se adequa a vários casos de uso. Além disso, utilizando <span>serverless functions</span> consigo implementar o ecossistema dos meus pequenos projetos de forma prática e rápida sem a necessidade de separar o Front-end do Back-end.</p>
 <pre>
 C:\projects\l-marcel> <span>yarn</span> dev
 </pre>
-<p>Tenho um <span>sonho</span>: conseguir meu <span>primeiro emprego</span> para aperfeiçoar minhas habilidades. Para isso, estou disposto a expandir meus conhecimentos e aprender <span>coisas novas</span>. Sigo esse caminho por pelo menos <span>3 anos</span>. <span id="years"></span></p>
+<p>Estou sempre disposto a expandir meus conhecimentos e aprender coisas novas. Sigo esse caminho por pelo menos <span>3 anos</span>. <span id="years"></span></p>
 <div id="grid">
   <ul><h2 align="center">Algumas <span>competências</span>:</h2>
-    <li>Conhecimento das metodologias ágeis;</li>
-    <li>Tem Experiência com várias opções de implementação;</li>
-    <li>Entende os relacionamentos das entidades do banco de dados;</li>
-    <li>Pronto para fazer responsivo;</li>
-    <li>Capaz de realizar animações com o Framer Motion.</li>
+    <li>Conheço e já utilizei metodologias ágeis;</li>
+    <li>Tenho experiência com várias opções de implementação;</li>
+    <li>Entendo os relacionamentos das entidades do banco de dados;</li>
+    <li>Desenvolvo com responsividade;</li>
+    <li>Crio animações com o Framer Motion;</li>
+    <li>Consigo encontrar e resolver erros sozinho.</li>
   </ul>
   <ul><h2 align="center"><span>Habilidades</span> interpessoais:</h2>
     <li>Raciocínio rápido;</li>

@@ -32,7 +32,7 @@ function TechnologiesList() {
         title="React Native"
       />
       <TechnologyLevel
-        level={1}
+        level={2}
         title="GraphQL"
       />
       <TechnologyLevel
@@ -48,6 +48,11 @@ function TechnologiesList() {
         level={4}
         title="Chakra UI"
         iconName="chakraui"
+      />
+      <TechnologyLevel
+        level={3}
+        title="Tailwind CSS"
+        iconName="tailwind"
       />
       <TechnologyLevel
         level={3}
@@ -91,3 +96,4 @@ function TechnologiesList() {
 };
 
 export { TechnologiesList };
+
