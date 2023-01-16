@@ -27,7 +27,7 @@ export const formatters: Formatter[] = [
   },
   {
     regex: "react native",
-    replace: "/",
+    replace: "/ native /",
   },
   {
     regex: "/ 2022",
