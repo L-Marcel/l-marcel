@@ -1,16 +1,72 @@
 import { IconBaseProps } from "react-icons";
 import { BiCubeAlt, BiGitRepoForked, BiSearchAlt } from "react-icons/bi";
-import { BsCheck2Circle, BsClockHistory, BsDownload, BsFillPatchQuestionFill, BsXLg } from "react-icons/bs";
-import { FaAlignRight, FaBalanceScale, FaGitAlt, FaGoogleDrive, FaMoon, FaSun } from "react-icons/fa";
-import { FiChevronLeft, FiChevronRight, FiChevronsLeft, FiChevronsRight, FiCopy, FiPaperclip } from "react-icons/fi";
+import {
+  BsCheck2Circle,
+  BsClockHistory,
+  BsDownload,
+  BsFillPatchQuestionFill,
+  BsXLg,
+} from "react-icons/bs";
+import {
+  FaAlignRight,
+  FaBalanceScale,
+  FaGitAlt,
+  FaGoogleDrive,
+  FaMoon,
+  FaSun,
+} from "react-icons/fa";
+import {
+  FiChevronLeft,
+  FiChevronRight,
+  FiChevronsLeft,
+  FiChevronsRight,
+  FiCopy,
+  FiPaperclip,
+} from "react-icons/fi";
 import { GiSpellBook } from "react-icons/gi";
 import { HiArrowSmLeft, HiOutlineAdjustments, HiTemplate } from "react-icons/hi";
 import { IoIosSchool, IoMdOpen } from "react-icons/io";
-import { SiAngular, SiChakraui, SiCplusplus, SiCsharp, SiCss3, SiDiscord, SiDocker, SiFigma, SiFramer, SiGitbook, SiGithub, SiHtml5, SiInstagram, SiJamstack, SiJava, SiJavascript, SiJest, SiJsonwebtokens, SiLinkedin, SiMaildotru, SiNestjs, SiNextdotjs, SiNodedotjs, SiNpm, SiPrisma, SiPython, SiReact, SiRust, SiSocketdotio, SiTailwindcss, SiTypescript, SiVisualstudiocode, SiWhatsapp, SiYarn } from "react-icons/si";
+import {
+  SiAngular,
+  SiChakraui,
+  SiCplusplus,
+  SiCsharp,
+  SiCss3,
+  SiDiscord,
+  SiDocker,
+  SiFigma,
+  SiFramer,
+  SiGitbook,
+  SiGithub,
+  SiHtml5,
+  SiInstagram,
+  SiJamstack,
+  SiJava,
+  SiJavascript,
+  SiJest,
+  SiJsonwebtokens,
+  SiLinkedin,
+  SiMaildotru,
+  SiNestjs,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiNpm,
+  SiPrisma,
+  SiPython,
+  SiReact,
+  SiRust,
+  SiSocketdotio,
+  SiTailwindcss,
+  SiTypescript,
+  SiVisualstudiocode,
+  SiWhatsapp,
+  SiYarn,
+} from "react-icons/si";
 import { TiFlash } from "react-icons/ti";
 import { VscSymbolKeyword, VscSymbolMethod } from "react-icons/vsc";
 import { Tooltip } from "../Tooltip";
 import { AsRocketseat } from "./assets/AsRocketseat";
+import { DiAndroid, DiApple } from "react-icons/di";
 
 const languagesAndFrameworks = {
   "next.js": SiNextdotjs,
@@ -28,7 +84,7 @@ const languagesAndFrameworks = {
   java: SiJava,
   "c++": SiCplusplus,
   "c#": SiCsharp,
-  python: SiPython
+  python: SiPython,
 };
 
 const arrows = {
@@ -36,7 +92,7 @@ const arrows = {
   leftArrow: FiChevronLeft,
   leftArrows: FiChevronsLeft,
   rightArrow: FiChevronRight,
-  rightArrows: FiChevronsRight 
+  rightArrows: FiChevronsRight,
 };
 
 const icons = {
@@ -49,6 +105,8 @@ const icons = {
   yarn: SiYarn,
   jamstack: SiJamstack,
   figma: SiFigma,
+  android: DiAndroid,
+  ios: DiApple,
   docker: SiDocker,
   gitbook: SiGitbook,
   "json-web-tokens": SiJsonwebtokens,
@@ -81,7 +139,7 @@ const icons = {
   filter: HiOutlineAdjustments,
 
   ...languagesAndFrameworks,
-  
+
   default: BsFillPatchQuestionFill,
 
   ...arrows,
@@ -91,7 +149,7 @@ const icons = {
   license: FaBalanceScale,
   flash: TiFlash,
   fork: BiGitRepoForked,
-  template: HiTemplate
+  template: HiTemplate,
 };
 
 export type IconType = keyof typeof icons;
@@ -118,30 +176,32 @@ export function Icon({
   className,
   ...rest
 }: IconProps) {
-  if(!icons[name]) {
+  if (!icons[name]) {
     name = "default";
   }
 
   const icon = icons[name]({
-    className: 
+    className:
       "drop-shadow-sm md:drop-shadow-lg " +
-      (size === "sm"? 
-        "text-[1.4rem] md:text-[1.4125rem] ":
-        "text-[1.6rem] md:text-4xl "
-      ) + (isFocused? "text-primary-700 ":"") +
+      (size === "sm"
+        ? "text-[1.4rem] md:text-[1.4125rem] "
+        : "text-[1.6rem] md:text-4xl ") +
+      (isFocused ? "text-primary-700 " : "") +
       className,
-    ...rest
+    ...rest,
   });
 
-  if(withoutTooltip) {
+  if (withoutTooltip) {
     return icon;
   }
 
-  return (<Tooltip 
-    label={label ?? name} 
-    className={tooltipClassName}
-    containerClassName={tooltipContainerClassName}
-  >
-    {icon}
-  </Tooltip>);
+  return (
+    <Tooltip
+      label={label ?? name}
+      className={tooltipClassName}
+      containerClassName={tooltipContainerClassName}
+    >
+      {icon}
+    </Tooltip>
+  );
 }
