@@ -205,7 +205,7 @@ export class Github {
 
     const pageRepos = await this.api
       .get<GithubRepositoryData[]>(
-        `${url}?sort=pushed&per_page=${reposPerPage}&page=${initialPage}`
+        `${url}?sort=updated&per_page=${reposPerPage}&page=${initialPage}`
       )
       .then(async (res) => {
         const data = res.data;
