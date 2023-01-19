@@ -2,7 +2,7 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import { ParsedUrlQuery } from "querystring";
 import Resume, { ResumeProps } from "..";
 import { useRouter } from "../../context/hooks/useRouter";
-import { Github } from "../../services/Github";
+import { Github } from "../../services/classes/Github";
 import { ReadStream } from "tty";
 
 

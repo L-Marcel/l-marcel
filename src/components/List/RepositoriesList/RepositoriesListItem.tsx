@@ -1,6 +1,6 @@
 import { MouseEvent } from "react";
 import { useRouter } from "../../../context/hooks/useRouter";
-import { Repository } from "../../../services/Github";
+import { Repository } from "../../../services/classes/Github";
 import { IconButton } from "../../Button/IconButton";
 import { Icon, IconType } from "../../Icon";
 import { RepositoriesListItemBackgroundIcon, RepositoriesListItemContainer, RepositoriesListItemDescription, RepositoriesListItemHeaderContainer, RepositoriesListItemHeaderIconContainer, RepositoriesListItemHeaderTitle, RepositoriesListItemProgressContainer, RepositoriesListItemProgressItem } from "./styles";

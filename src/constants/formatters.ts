@@ -1,4 +1,4 @@
-import { Formatter } from "../services/Github";
+import { Formatter } from "../services/classes/Github";
 
 export const formatters: Formatter[] = [
   {

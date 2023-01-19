@@ -1,6 +1,6 @@
 import { ReactNode, useMemo } from "react";
 import { createContext } from "use-context-selector";
-import { Repository } from "../../services/Github";
+import { Repository } from "../../services/classes/Github";
 import { useFilterReducer } from "../hooks/useFilterReducer";
 import { usePaginationReducer } from "../hooks/usePaginationReducer";
 import { FilterToggleOptionActionGroups, FilterType } from "./reducers/filter";

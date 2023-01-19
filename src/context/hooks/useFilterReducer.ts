@@ -1,5 +1,5 @@
 import { useCallback, useEffect } from "react";
-import { Repository } from "../../services/Github";
+import { Repository } from "../../services/classes/Github";
 import arrayToData from "../../utils/arrayToData";
 import { create } from "zustand";
 import { createJSONStorage, persist, redux } from "zustand/middleware";

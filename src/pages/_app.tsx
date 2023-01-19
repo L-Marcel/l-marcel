@@ -8,17 +8,19 @@ import { Analytics } from "@vercel/analytics/react";
 import "../styles/main.scss";
 import "../styles/slider.scss";
 import "../styles/timeline.scss";
+import { QueryClientProvider } from "react-query";
+import { queryClient } from "../services/queries";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <>
+    <QueryClientProvider client={queryClient}>
       <Layout>
-        <Header/>
+        <Header />
         <Component {...pageProps} />
-        <Footer/>
+        <Footer />
       </Layout>
-      <Analytics/>
-    </>
+      <Analytics />
+    </QueryClientProvider>
   );
 }
 

@@ -13,7 +13,7 @@ import { MarkdownListItem } from "../components/Markdown/MarkdownListItem";
 import { MarkdownSections } from "../components/Markdown/MarkdownSections";
 import { MarkdownBrContainer, MarkdownH1Container, MarkdownH2Container, MarkdownNavContainer, MarkdownPContainer } from "../components/Markdown/styles";
 import { Profile } from "../components/Profile";
-import { Github } from "../services/Github";
+import { Github } from "../services/classes/Github";
 import { DemoVideoContainer, FirstSection } from "../styles/document/styles";
 import Image from "next/image";
 
