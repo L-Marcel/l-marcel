@@ -241,7 +241,7 @@ export class Github {
 
           if (locale === "pt-br" && config?.translatedDescription) {
             repos[i].description = config?.translatedDescription;
-          } else if (locale === "pt-br") {
+          } else if (locale === "pt-br" && !repos[i].fork) {
             repos[i].description = "";
           }
 
