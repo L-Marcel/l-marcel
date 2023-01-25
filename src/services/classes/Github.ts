@@ -116,31 +116,43 @@ export class Github {
   }
 
   static async getReadme(locale: string, repository = "l-marcel/l-marcel") {
-    return await this.api
-      //en-US
-      .get(`repos/${repository}/contents/README${locale === "en-us" ? ".en-US" : ""}.md`)
-      .then((res) => {
-        return this.getReadmeContent(res);
-      })
-      .catch(async () => {
-        if (locale === "en-us") {
+    if (locale === "en-us") {
+      return await this.api
+        //en-US
+        .get(`repos/${repository}/contents/README.en-US.md`)
+        .then((res) => {
+          return this.getReadmeContent(res);
+        })
+        .catch(async () => {
           return await this.api
             //en-us
-            .get(
-              `repos/${repository}/contents/readme${
-                locale === "en-us" ? ".en-us" : ""
-              }.md`
-            )
+            .get(`repos/${repository}/contents/readme.en-us.md`)
             .then((res) => {
               return this.getReadmeContent(res);
             })
             .catch(async () => {
               return await this.getErrorReadme(locale);
             });
-        }
-
-        return await this.getErrorReadme(locale);
-      });
+        });
+    } else {
+      return await this.api
+        //.github/pt-BR
+        .get(`repos/${repository}/contents/.github/README.md`)
+        .then((res) => {
+          return this.getReadmeContent(res);
+        })
+        .catch(async () => {
+          return await this.api
+            //pt-BR
+            .get(`repos/${repository}/contents/README.md`)
+            .then((res) => {
+              return this.getReadmeContent(res);
+            })
+            .catch(async () => {
+              return await this.getErrorReadme(locale);
+            });
+        });
+    }
   }
 
   static async getDemoVideoURL(repository = "l-marcel/l-marcel") {
