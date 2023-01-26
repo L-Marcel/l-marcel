@@ -131,13 +131,21 @@ export class Github {
               return this.getReadmeContent(res);
             })
             .catch(async () => {
-              return await this.getErrorReadme(locale);
+              return await this.api
+                //.github/en-US
+                .get(`repos/${repository}/contents/.github/readme.en-US.md`)
+                .then((res) => {
+                  return this.getReadmeContent(res);
+                })
+                .catch(async () => {
+                  return await this.getErrorReadme(locale);
+                });
             });
         });
     } else {
       return await this.api
         //.github/pt-BR
-        .get(`repos/${repository}/contents/.github/README.md`)
+        .get(`repos/${repository}/contents/.github/README.pt-BR.md`)
         .then((res) => {
           return this.getReadmeContent(res);
         })
