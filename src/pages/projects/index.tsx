@@ -82,7 +82,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
       updatedAt,
       locale,
     },
-    revalidate: 1,
+    revalidate: 60 * 60 * 24,
   };
 };
 

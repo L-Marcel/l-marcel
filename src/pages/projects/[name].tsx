@@ -15,32 +15,32 @@ export function Project(props: ResumeProps) {
 }
 
 export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
-  const repositories = await Github.getRepositories({});
-  let paths: (
-    | string
-    | {
-        params: ParsedUrlQuery;
-        locale?: string | undefined;
-      }
-  )[] = [];
+  // const repositories = await Github.getRepositories({});
+  // let paths: (
+  //   | string
+  //   | {
+  //       params: ParsedUrlQuery;
+  //       locale?: string | undefined;
+  //     }
+  // )[] = [];
 
-  for (const l in locales) {
-    const localePaths = await Promise.all(
-      repositories.map(async (repository) => {
-        return {
-          params: {
-            name: repository.name.toLowerCase(),
-          },
-          locale: locales[Number(l)],
-        };
-      })
-    );
+  // for (const l in locales) {
+  //   const localePaths = await Promise.all(
+  //     repositories.map(async (repository) => {
+  //       return {
+  //         params: {
+  //           name: repository.name.toLowerCase(),
+  //         },
+  //         locale: locales[Number(l)],
+  //       };
+  //     })
+  //   );
 
-    paths = [...paths, ...localePaths];
-  }
+  //   paths = [...paths, ...localePaths];
+  // }
 
   return {
-    paths,
+    paths: [],
     fallback: true,
   };
 };
