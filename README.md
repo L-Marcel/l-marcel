@@ -3,15 +3,15 @@
   <p>Um desenvolvedor fullstack especializado em <span>TypeScript</span> e que é entusiasta do <span>Next.js</span>.</p>
   <nav>
     <div id="repository-buttons"/>
-    <a class="navigation-link disabled" href="https://github.com/L-Marcel/l-marcel/blob/main/README.en-US.md" target="__blank__">
+    <a class="navigation-link disabled" href="https://github.com/L-Marcel/l-marcel/blob/main/README.en-US.md" target="_blank">
       en-us
     </a>
     <span class="disabled">•</span>
-    <a class="navigation-link" href="https://www.figma.com/file/RasJwsoUk7npUECQuWp2Yh/l-marcel?node-id=5%3A2&t=zXLOXZQQOlPbMviX-1" target="__blank__">
+    <a class="navigation-link" href="https://www.figma.com/file/RasJwsoUk7npUECQuWp2Yh/l-marcel?node-id=5%3A2&t=zXLOXZQQOlPbMviX-1" target="_blank">
       figma
     </a>
     <span>•</span>
-    <a class="navigation-link" href="https://l-marcel.vercel.app/curriculo.pdf" target="__blank__">
+    <a class="navigation-link" href="https://l-marcel.vercel.app/curriculo.pdf" target="_blank">
       baixar curriculo
     </a>
   </nav>
@@ -23,7 +23,7 @@
   <img src="https://readme-typing-svg.demolab.com/?font=Inter&duration=4000&pause=1500&color=EB513B&vCenter=true&width=435&height=25&lines=Estou+feliz+em+v%C3%AA-lo+por+aqui;Espero+que+encontre+o+que+procura;H%C3%A1+sempre+espa%C3%A7o+para+sonhar;Aqui+%C3%A9+um+dos+lugares+onde+sonho;Certamente+h%C3%A1+muitos+defeitos;Mas+n%C3%A3o+s%C3%A3o+os+primeiros;...nem+os+%C3%BAltimos" alt="Typing SVG"/>
 </div>
 
-<p>Tenho 20 anos, moro no Brasil (Macau - RN) e terminei o ensino médio técnico em informática no <a href="https://portal.ifrn.edu.br/campus/macau" target="__blank__">IFRN - MC</a> em 2022, recebendo, inclusive, uma láurea acadêmica. Nesse período me profissionalizei no desenvolvimento web com tecnologias como o <a href="https://pt-br.reactjs.org" target="__blank__">React.js</a>, <a href="https://nextjs.org" target="__blank__">Next.js</a> e <a href="https://nodejs.org/pt-br" target="__blank__">Node.js</a>. Após terminar o curso <a href="https://lp.rocketseat.com.br/ignite" target="__blank__">Ignite</a> da <a href="https://www.rocketseat.com.br" target="__blank__">Rocketseat</a> consegui uma <span>bolsa de estudos completa</span> no <a href="https://dowhile.io/espera" target="__blank__">Do While 2021</a>.</p>
+<p>Tenho 20 anos, moro no Brasil (Macau - RN) e terminei o ensino médio técnico em informática no <a href="https://portal.ifrn.edu.br/campus/macau" target="_blank">IFRN - MC</a> em 2022, recebendo, inclusive, uma láurea acadêmica. Nesse período me profissionalizei no desenvolvimento web com tecnologias como o <a href="https://pt-br.reactjs.org" target="_blank">React.js</a>, <a href="https://nextjs.org" target="_blank">Next.js</a> e <a href="https://nodejs.org/pt-br" target="_blank">Node.js</a>. Após terminar o curso <a href="https://lp.rocketseat.com.br/ignite" target="_blank">Ignite</a> da <a href="https://www.rocketseat.com.br" target="_blank">Rocketseat</a> consegui uma <span>bolsa de estudos completa</span> no <a href="https://dowhile.io/espera" target="_blank">Do While 2021</a>.</p>
 
 <pre>
 C:\projects> <span>yarn</span> create next-app --typescript l-marcel

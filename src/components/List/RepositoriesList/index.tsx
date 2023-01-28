@@ -3,7 +3,6 @@ import { usePagination } from "../../../context/hooks/usePagination";
 import { MasonryGrid } from "../../MansoryGrid";
 import { RepositoriesListItem } from "./RepositoriesListItem";
 
-
 export function RepositoriesList() {
   const { pagination } = usePagination();
   const { filteredRepositories } = useFilteredRepositories();
@@ -14,10 +13,9 @@ export function RepositoriesList() {
 
   return (
     <MasonryGrid
-      items={repositoriesInPage.map(repository => {
-        return (
-          <RepositoriesListItem key={repository.id} repository={repository}/>
-        );
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      items={repositoriesInPage.map((repository: any) => {
+        return <RepositoriesListItem key={repository.id} repository={repository} />;
       })}
     />
   );

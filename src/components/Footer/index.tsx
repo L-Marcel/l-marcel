@@ -5,17 +5,16 @@ export function Footer() {
   const network = {
     discord: "https://discordapp.com/users/286662065802838016",
     whatsapp: "https://wa.me/5584996230190",
-    instagram: "https://www.instagram.com/invites/contact/?i=1wo4rehc0fw8w&utm_content=49g8mfj",
     github: "https://github.com/l-marcel",
     linkedin: "https://linkedin.com/in/l-marcel",
     npm: "https://www.npmjs.com/~lmarcel",
     rocketseat: "https://app.rocketseat.com.br/me/l-marcel",
     email: "https://mail.google.com/mail/u/0/?to=lmgh1312@gmail.com&su=&body=&tf=cm",
-    emailApp: "mailto:lmgh1312@gmail.com?subject=&body=&tf=cm"
+    emailApp: "mailto:lmgh1312@gmail.com?subject=&body=&tf=cm",
   };
 
   function redirectToSocial(social: keyof typeof network) {
-    window.open(network[social], "__blank__");
+    window.open(network[social], "_blank");
   }
 
   return (
@@ -24,7 +23,9 @@ export function Footer() {
         <ul className="flex flex-row flex-wrap gap-2 pb-6">
           <li>
             <IconButton
-              onClick={() => redirectToSocial("discord")}
+              onClick={() => {
+                return redirectToSocial("discord");
+              }}
               className="rounded-lg"
               icon="discord"
               size="sm"
@@ -33,7 +34,9 @@ export function Footer() {
           </li>
           <li>
             <IconButton
-              onClick={() => redirectToSocial("whatsapp")}
+              onClick={() => {
+                return redirectToSocial("whatsapp");
+              }}
               className="rounded-lg"
               icon="whatsapp"
               size="sm"
@@ -42,7 +45,9 @@ export function Footer() {
           </li>
           <li>
             <IconButton
-              onClick={() => redirectToSocial("github")}
+              onClick={() => {
+                return redirectToSocial("github");
+              }}
               className="rounded-lg"
               icon="github"
               size="sm"
@@ -51,7 +56,9 @@ export function Footer() {
           </li>
           <li className="hidden md:inline">
             <IconButton
-              onClick={() => redirectToSocial("email")}
+              onClick={() => {
+                return redirectToSocial("email");
+              }}
               className="rounded-lg"
               icon="mail"
               size="sm"
@@ -60,7 +67,9 @@ export function Footer() {
           </li>
           <li className="inline md:hidden">
             <IconButton
-              onClick={() => redirectToSocial("emailApp")}
+              onClick={() => {
+                return redirectToSocial("emailApp");
+              }}
               className="rounded-lg"
               icon="mail"
               size="sm"
@@ -69,7 +78,9 @@ export function Footer() {
           </li>
           <li>
             <IconButton
-              onClick={() => redirectToSocial("linkedin")}
+              onClick={() => {
+                return redirectToSocial("linkedin");
+              }}
               className="rounded-lg"
               icon="linkedin"
               size="sm"
@@ -78,7 +89,9 @@ export function Footer() {
           </li>
           <li>
             <IconButton
-              onClick={() => redirectToSocial("npm")}
+              onClick={() => {
+                return redirectToSocial("npm");
+              }}
               className="rounded-lg"
               icon="npm"
               size="sm"
@@ -87,16 +100,9 @@ export function Footer() {
           </li>
           <li>
             <IconButton
-              onClick={() => redirectToSocial("instagram")}
-              className="rounded-lg"
-              icon="instagram"
-              size="sm"
-              title="instagram"
-            />
-          </li>
-          <li>
-            <IconButton
-              onClick={() => redirectToSocial("rocketseat")}
+              onClick={() => {
+                return redirectToSocial("rocketseat");
+              }}
               className="rounded-lg"
               icon="rocketseat"
               size="sm"

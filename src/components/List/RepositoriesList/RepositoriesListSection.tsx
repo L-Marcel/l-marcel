@@ -5,8 +5,8 @@ import { RepositoriesListSectionContainer } from "./styles";
 export function RepositoriesListSection() {
   return (
     <RepositoriesListSectionContainer>
-      <RepositoriesList/>
-      <PaginationButtons/>
+      <RepositoriesList />
+      <PaginationButtons />
     </RepositoriesListSectionContainer>
   );
 }

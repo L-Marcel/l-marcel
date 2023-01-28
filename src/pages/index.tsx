@@ -89,7 +89,7 @@ export const getStaticProps: GetStaticProps = async({ locale }) => {
     repositoryName: "l-marcel",
     locale: locale ?? "pt-br",
     replaceRules: (readme) => {
-      readme = readme.replace("<div id=\"repository-buttons\"/>", `<a class="navigation-link" href="https://github.com/l-marcel/l-marcel" target="__blank__">
+      readme = readme.replace("<div id=\"repository-buttons\"/>", `<a class="navigation-link" href="https://github.com/l-marcel/l-marcel" target="_blank">
   ${locale !== "pt-br"? "repository":"repositório"}
 </a>
 <span id="only-if-not-last">•</span>`);

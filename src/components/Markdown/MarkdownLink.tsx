@@ -5,28 +5,22 @@ import { Tooltip } from "../Tooltip";
 
 export interface MarkdownLinkProps extends HTMLAttributes<HTMLAnchorElement> {
   href: string;
+  target: string;
 }
 
-export function MarkdownLink({
-  className,
-  href,
-  ...rest
-}: MarkdownLinkProps) {
-  if(!className?.includes("navigation-link")) {
-    return (
-      <Link 
-        className={className}
-        href={href}
-        {...rest}
-      />
-    );
+export function MarkdownLink({ className, href, target, ...rest }: MarkdownLinkProps) {
+  if (!className?.includes("navigation-link")) {
+    target = "_blank";
+    return <Link className={className} target={target} href={href} {...rest} />;
   }
 
   return (
     <Tooltip label={href} containerClassName={className}>
       <Button
         size="sm"
-        onClick={() => window.open(href, "__blank__")}
+        onClick={() => {
+          return window.open(href, "_blank");
+        }}
         className={(className ?? "") + " shadow-sm md:shadow-lg"}
       >
         {rest?.children}
