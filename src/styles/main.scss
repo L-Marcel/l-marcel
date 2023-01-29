@@ -384,16 +384,14 @@
   }
 
   .list-title {
-    li {
-      svg {
-        @apply
-          text-white-500
-          mt-0
-          mr-2
-          hidden
-          md:text-[2.25rem]
-          md:block;
-      }
+    svg {
+      @apply
+        text-white-500
+        mt-0
+        mr-2
+        hidden
+        md:text-[2.25rem]
+        md:block;
     }
   }
 };
