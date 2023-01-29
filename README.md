@@ -32,7 +32,7 @@ C:\projects\l-marcel> <span>pnpm</span> dev
 <p>Quero entrar para o mercado e continuar expandindo meus conhecimentos na área.</p>
 
 <div id="list-title">
-<li id="school"></li>
+<div id="icon school"></div>
 <h2>Educação</h2>
 </div>
 <div id="list">
@@ -56,7 +56,7 @@ C:\projects\l-marcel> <span>pnpm</span> dev
 
 
 <div id="list-title">
-<li id="cube"></li>
+<div id="icon cube"></div>
 <h2>Habilidades e Conhecimentos</h2>
 </div>
 <div id="list">
@@ -91,7 +91,7 @@ C:\projects\l-marcel> <span>pnpm</span> dev
 </div>
 
 <div id="list-title">
-<li id="experience"></li>
+<div id="icon experience"></div>
 <h2>Experiência</h2>
 </div>
 <div id="list">

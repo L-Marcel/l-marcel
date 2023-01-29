@@ -6,6 +6,7 @@ import {
   MarkdownGridContainer,
   MarkdownGridItem,
 } from "./styles";
+import { Icon, IconType } from "../Icon";
 
 export interface MarkdownSectionsProps extends HTMLAttributes<HTMLDivElement> {
   showReturnButton?: boolean;
@@ -16,6 +17,17 @@ export function MarkdownSections({
   id,
   ...rest
 }: MarkdownSectionsProps) {
+  if (id?.includes("icon") && id?.match(/ /g)) {
+    const [, icon] = id.split(/ /g);
+    return (
+      <Icon
+        withoutTooltip
+        name={(icon || "default") as IconType}
+        className="min-h-[1.4rem] min-w-[1.4rem] text-primary-500 md:min-h-[1.4125rem] md:min-w-[1.4125rem]"
+      />
+    );
+  }
+
   switch (id) {
     case "technologies":
       return <MarkdownTechnologies />;

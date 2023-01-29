@@ -9,15 +9,12 @@ export function MarkdownListItem({
 }: HTMLAttributes<HTMLLIElement> & { ordered: boolean | undefined }) {
   rest.ordered = undefined;
 
-  if(id && id.length > 0) {
+  if (id && id.length > 0) {
     return (
-      <MarkdownListItemContainer 
-        {...rest}
-        className="flex flex-row items-start"
-      >
-        <Icon 
-          withoutTooltip 
-          name={id as IconType} 
+      <MarkdownListItemContainer {...rest} className="flex flex-row items-start">
+        <Icon
+          withoutTooltip
+          name={id as IconType}
           className="mt-[2px] mr-2 min-h-[1.4rem] min-w-[1.4rem] text-primary-500 md:min-h-[1.4125rem] md:min-w-[1.4125rem]"
         />
         {children}
@@ -25,9 +22,5 @@ export function MarkdownListItem({
     );
   }
 
-  return (
-    <MarkdownListItemContainer {...rest}>
-      {children}
-    </MarkdownListItemContainer>
-  );
+  return <MarkdownListItemContainer {...rest}>{children}</MarkdownListItemContainer>;
 }
