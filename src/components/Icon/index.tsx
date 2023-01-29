@@ -67,6 +67,7 @@ import { VscSymbolKeyword, VscSymbolMethod } from "react-icons/vsc";
 import { Tooltip } from "../Tooltip";
 import { AsRocketseat } from "./assets/AsRocketseat";
 import { DiAndroid, DiApple } from "react-icons/di";
+import { AiTwotoneExperiment } from "react-icons/ai";
 
 const languagesAndFrameworks = {
   "next.js": SiNextdotjs,
@@ -137,6 +138,7 @@ const icons = {
   open: IoMdOpen,
   search: BiSearchAlt,
   filter: HiOutlineAdjustments,
+  experience: AiTwotoneExperiment,
 
   ...languagesAndFrameworks,
 

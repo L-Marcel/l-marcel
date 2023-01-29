@@ -54,11 +54,25 @@ export interface MarkdownDivContainerProps {
 
 export const MarkdownDivContainer = tw.div<MarkdownDivContainerProps>`
   py-8
-  ${props => props.$highlight? 
-    "bg-primary-500 force-white-text text-4xl":
-    "bg-white-500 dark:bg-gray-600"}
+  ${(props) => {
+    return props.$highlight
+      ? "bg-primary-500 force-white-text text-4xl"
+      : "bg-white-500 dark:bg-gray-600";
+  }}
   markdown-section-container
   first-of-type:with-description
+`;
+
+export const MarkdownCommonListContainer = tw.div<MarkdownDivContainerProps>`
+  py-8
+  markdown-section-container
+  flex
+  flex-col
+  ${(props) => {
+    return props.$highlight
+      ? "flex-row gap-2 list-title text-white-500 bg-primary-500 force-white-text text-4xl mb-0"
+      : "flex-col gap-6 bg-white-500 dark:bg-gray-600";
+  }}
 `;
 
 export const MarkdownListContainer = tw.ul`

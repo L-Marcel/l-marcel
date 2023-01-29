@@ -15,10 +15,10 @@ export function LevelBlock({
         className="h-full w-full"
         variants={{
           disabled: {
-            backgroundColor: levelIsLow? "#C1412E00":"#EB513B00"
+            backgroundColor: levelIsLow? "#2A7B8800":"#2093a500"
           },
           visible: {
-            backgroundColor: levelIsLow? "#C1412E":"#EB513B"
+            backgroundColor: levelIsLow? "#2A7B88":"#2093a5"
           }
         }}
       />}

@@ -1,6 +1,6 @@
 <div valing="top">
   <h1>Hello, I'm <span>Lucas Marcel</span></h1>
-  <p>A fullstack developer who specializes in <span>TypeScript</span> and is a <span>Next.js</span> enthusiast.</p>
+  <p>I'm a junior full-stack developer specializing in <span>JavaScript</span> and a <span>React.js</span> enthusiast.</p>
   <nav>
     <div id="repository-buttons"/>
     <a class="navigation-link disabled" href="https://github.com/L-Marcel/l-marcel/blob/main/README.md" target="_blank">
@@ -12,7 +12,7 @@
     </a>
     <span>•</span>
     <a class="navigation-link" href="https://l-marcel.vercel.app/resume.pdf" target="_blank">
-      download resume
+      resume
     </a>
   </nav>
 </div>
@@ -20,60 +20,89 @@
 <br/>
 
 <div id="just-github">
-  <img src="https://readme-typing-svg.demolab.com?font=Inter&duration=4000&pause=1500&color=EB513B&vCenter=true&width=435&height=25&lines=I'm+happy+to+see+you+here;I+hope+you+find+what+you're+looking+for;There+is+always+room+to+dream;Here+is+one+of+the+places+where+I+dream;There+are+certainly+many+defects;But+they+aren't+the+first;...nor+the+lasts" alt="Typing SVG" />
+<img src="https://readme-typing-svg.demolab.com/?font=Inter&duration=4000&pause=1500&color=2093a5&vCenter=true&width=435&height=25&lines=Estou+feliz+em+v%C3%AA-lo+por+aqui;Espero+que+encontre+o+que+procura;H%C3%A1+sempre+espa%C3%A7o+para+sonhar;Aqui+%C3%A9+um+dos+lugares+onde+sonho;Certamente+h%C3%A1+muitos+defeitos;Mas+n%C3%A3o+s%C3%A3o+os+primeiros;...nem+os+%C3%BAltimos" alt="Typing SVG"/>
 </div>
 
-<p>I'm 20 years old, I live in Brazil (Macau - RN), and I finished technical high school in informatics at <a href="https://portal.ifrn.edu.br/campus/macau" target="_blank">IFRN - MC</a> in 2022, even receiving an academic honor. During this period I became a professional in web development with technologies such as <a href="https://reactjs.org" target="_blank">React.js</a>, <a href="https://nextjs.org" target="_blank">Next.js</a>, and <a href="https://nodejs.org/en" target="_blank">Node.js</a>. After finishing the <a href="https://lp.rocketseat.com.br/ignite" target="_blank">Rocketseat's Ignite</a> course I got a <span>full scholarship</span> in <a href="https://dowhile.io/espera" target="_blank">Do While 2021</a>.</p>
+<p>I'm 20 years old, I'm Brazilian and I started programming for the first time in 2018. I finished technical high school in 2022 and received an academic award for my performance. I also won a Rocketseat full scholarship in early 2022 and today I continue my studies on my own.</p>
 
 <pre>
-C:\projects> <span>yarn</span> create next-app --typescript l-marcel
+C:\projects\l-marcel> <span>pnpm</span> dev
 </pre>
 
-<p>At the moment I prefer the <span>Front-end</span>, but I know a little bit of everything I need to complete my projects by myself, with database or not. Mobile application development is an area where I have less experience. My favorite <span>framework</span> is Next.js, with he I can deploy the ecosystem of my projects in an optimized way and without need to separate the Front-end and the Back-end completely.</p>
+<p>I want to enter the market and continue expanding my knowledge in the area.</p>
 
-<pre>
-C:\projects\l-marcel> <span>yarn</span> dev
-</pre>
+<div id="list-title">
+<li id="school"></li>
+<h2>Education</h2>
+</div>
+<div id="list">
+<div id="grid-item">
+  <h3>Integrated Technical Education | <span>02/2022</span> | IFRN</h3>
+  <ul>
+    <li><p>Main class: Internet Programming</p></li>
+    <li><p>Secondary class: Object Oriented Programming</p></li>
+    <li><p>Related courses: Computing</p></li>
+  </ul>
+</div>
+</div>
+<div id="list">
+<div id="grid-item">
+  <h3>Ignite | <span>10/2021</span> | Rocketseat</h3>
+  <ul>
+    <li><p>Trails: React.js, Node.js and React Native</p></li>
+  </ul>
+</div>
+</div>
 
-<p>I started to program in <span>2018</span>, and today I'm still willing to expand my skills and learn new things as before, continuing my studies.</p>
+<div id="list-title">
+<li id="cube"></li>
+<h2>Skills and knowledge</h2>
+</div>
+<div id="list">
+<div id="grid-item">
+  <h3><span>Software</span> development</h3>
+  <p>I have been programming since 2018 and, since then, I have acquired a wide range of knowledge using technologies, languages, frameworks, and libraries such as: JavaScript, TypeScript, React.js, Next, Vite, Nest, Node, Prisma, Figma, Docker, Storybook, Git, HTML, CSS, Sass, Tailwind, Stitches and others.</p>
+</div>
+</div>
+<div id="list">
+<div id="grid-item">
+  <h3>Constant <span>learning</span></h3>
+  <p>I practice autodidactism. I read documentation, research new ways to solve a problem, and follow news within the area.</p>
+</div>
+</div>
+<div id="list">
+<div id="grid-item">
+  <h3>Communication</h3>
+  <p>I know several technical terms used in the area and I have developed a lot of reading and writing in English, but I am not fluent. My mother tongue is Portuguese.</p>
+</div>
+</div>
+<div id="list">
+<div id="grid-item">
+  <h3>Database management</h3>
+  <p>I understand the relationships of entities within a database. I know how to plan and organize these structures and I know how to query the database directly.</p>
+</div>
+</div>
+<div id="list">
+<div id="grid-item">
+  <h3>Continuous <span>integration and delivery</span></h3>
+  <p>Compreendo os relacionamentos das entidades dentro de um banco de dados. Sei planejar e reorganizar essas estruturas e sei fazer consultas diretas ao banco de dados.</p>
+</div>
+</div>
 
-<div id="technologies"></div>
-
-<div id="grid">
-  <div id="grid-item">
-    <h2 align="center">Some <span>competencies</span>:</h2>
-    <ul>
-      <li id="checked"><p>I know and have used agile methodologies;</p></li>
-      <li id="checked"><p>I’ve experienced a variety of deployment options;</p></li>
-      <li id="checked"><p>I understand the database’s entity relations;</p></li>
-      <li id="checked"><p>I develop responsively;</p></li>
-      <li id="checked"><p>I try to try new things;</p></li>
-      <li id="checked"><p>I can find and resolve errors myself.</p></li>
-    </ul>
-  </div>
-  <div id="grid-item">
-    <h2 align="center"><span>Soft</span> skills:</h2>
-    <ul>
-      <li id="checked"><p>Fast reasoning;</p></li>
-      <li id="checked"><p>Dedication;</p></li>
-      <li id="checked"><p>Constant learning;</p></li>
-      <li id="checked"><p>Communication;</p></li>
-      <li id="checked"><p>Objectivity;</p></li>
-      <li id="checked"><p>Flexibility.</p></li>
-    </ul>
-  </div>
-  <div id="grid-item">
-    <h2 align="center"><span>Languages</span> proficiency:</h2>
-    <ul>
-      <li id="checked"><p>Portuguese – native;</p></li>
-      <li id="checked"><p>English – technical.</p></li>
-    </ul>
-  </div>
+<div id="list-title">
+<li id="experience"></li>
+<h2>Experience</h2>
+</div>
+<div id="list">
+<div id="grid-item">
+  <h3>Scholar | IFRN | <span>2020 - 2021</span></h3>
+  <p>I was assigned to teach Instrumental Electricity classes for lower-year students and be responsible for the Electronics laboratory, during this period I also taught classes in Algorithms and Digital Electronics.</p>
+</div>
 </div>
 
 <div id="statistics">
-  <h2 align="center"><span>Github profile</span> statistics:</h2>
-  <div align="center">
+  <h2><span>Github profile</span> statistics:</h2>
+  <div>
     <a href="https://www.l-marcel.vercel.app"><img alt="linkedin" src="https://img.shields.io/badge/-Website-brightgreen?logoColor=ffffff&style=for-the-badge&logo=hack%20the%20box&color=423958"/></a>
     <a href="https://www.linkedin.com/in/l-marcel/"><img alt="linkedin" src="https://img.shields.io/badge/-LINKEDIN-brightgreen?logoColor=ffffff&style=for-the-badge&logo=linkedin&color=0A66C2"/></a>
     <a href="mailto:lmgh1312@gmail.com"><img alt="gmail" src="https://img.shields.io/badge/-GMAIL-brightgreen?logoColor=ffffff&style=for-the-badge&logo=gmail&color=EA4335"/></a>
@@ -83,7 +112,10 @@ C:\projects\l-marcel> <span>yarn</span> dev
 
 <br/>
 
-<div id="images" align="center">
+<div id="images">
   <img id="stats" alt="stats" src="https://github-readme-stats.vercel.app/api?username=l-marcel&show_icons=true&layout=compact&bg_color=white&title_color=423958&border_color=ffffff00&icon_color=423958&locale=pt-br"/>
+</div>
+
+<div id="images">
   <img id="langs" alt="langs" src="https://github-readme-stats.vercel.app/api/top-langs/?username=l-marcel&layout=compact&bg_color=white&title_color=423958&border_color=ffffff00&locale=pt-br"/>
 </div>

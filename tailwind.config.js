@@ -1,9 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/**/*.{html,js,jsx,ts,tsx}", 
+    "./src/**/*.{html,js,jsx,ts,tsx}",
     "!./node_modules",
-    "./app/**/*.{html,js,jsx,ts,tsx}"
+    "./app/**/*.{html,js,jsx,ts,tsx}",
   ],
   darkMode: "class",
   future: {
@@ -13,12 +13,12 @@ module.exports = {
     extend: {
       screens: {
         xs: {
-          max: "340px"
+          max: "340px",
         },
-        "2lg": "1170px"
+        "2lg": "1170px",
       },
       fontFamily: {
-        inter: ["Inter", "sans-serif"]
+        inter: ["Inter", "sans-serif"],
       },
       colors: {
         gray: {
@@ -29,8 +29,8 @@ module.exports = {
           700: "#1B1816",
         },
         primary: {
-          500: "#EB513B",
-          600: "#C1412E"
+          500: "#2093a5",
+          600: "#2A7B88",
         },
         white: {
           default: "#FFF",
@@ -38,17 +38,15 @@ module.exports = {
           500: "#F1F1F1",
           600: "#E3E3E3",
           700: "#d1d1d1",
-          800: "#818181"
-        }
-      }
+          800: "#818181",
+        },
+      },
     },
   },
-  plugins: [
-    require("tailwind-scrollbar"),
-  ],
+  plugins: [require("tailwind-scrollbar")],
   variants: {
     extends: {
-      scrollbar: ["dark"]
-    }
-  }
+      scrollbar: ["dark"],
+    },
+  },
 };

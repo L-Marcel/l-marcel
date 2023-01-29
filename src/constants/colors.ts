@@ -7,8 +7,8 @@ export const colors = {
     700: "#1B1816",
   },
   primary: {
-    500: "#EB513B",
-    600: "#C1412E"
+    500: "#2093a5",
+    600: "#2A7B88"
   },
   white: {
     default: "#FFF",
