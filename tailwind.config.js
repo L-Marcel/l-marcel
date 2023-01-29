@@ -32,6 +32,10 @@ module.exports = {
           500: "#2093a5",
           600: "#2A7B88",
         },
+        // primary: {
+        //   500: "#EB513B",
+        //   600: "#C1412E",
+        // },
         white: {
           default: "#FFF",
           400: "#F5F5F5",
