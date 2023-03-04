@@ -19,10 +19,6 @@
 
 <br/>
 
-<div id="just-github">
-<img src="https://readme-typing-svg.demolab.com/?font=Inter&duration=4000&pause=1500&color=2093a5&vCenter=true&width=435&height=25&lines=Estou+feliz+em+v%C3%AA-lo+por+aqui;Espero+que+encontre+o+que+procura;H%C3%A1+sempre+espa%C3%A7o+para+sonhar;Aqui+%C3%A9+um+dos+lugares+onde+sonho;Certamente+h%C3%A1+muitos+defeitos;Mas+n%C3%A3o+s%C3%A3o+os+primeiros;...nem+os+%C3%BAltimos" alt="Typing SVG"/>
-</div>
-
 <p>I'm 20 years old, I'm Brazilian and I started programming for the first time in 2018. I finished technical high school in 2022 and received an academic award for my performance. I also won a Rocketseat full scholarship in early 2022 and today I continue my studies on my own.</p>
 
 <pre>
