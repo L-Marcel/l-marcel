@@ -37,6 +37,7 @@ export const ButtonContainer = tf(
     },
     defaultVariants: {
       size: "md",
+      selected: false,
     },
   }
 );
