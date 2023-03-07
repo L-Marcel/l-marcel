@@ -12,7 +12,6 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   i18n,
-  outputFileTracing: true,
 };
 
 module.exports = nextConfig;
