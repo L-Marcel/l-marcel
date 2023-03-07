@@ -81,7 +81,7 @@ function Resume({ data, withProfile, updatedAt, demoVideoURL = null }: ResumePro
               alt="A man coding..."
               width={812}
               height={612}
-              className="absolute -bottom-[20%] left-[40%] !h-[140%] opacity-60 lg:left-[25%] 2xl:left-[22%]"
+              className="absolute bottom-[-20%] left-[40%] !h-[140%] opacity-60 lg:left-[25%] 2xl:left-[22%]"
             />
           </DemoVideoContainer>
         )}
@@ -99,6 +99,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
     locale: locale ?? "pt-br",
     replaceRules: (readme) => {
       readme = readme.replace(
+        // eslint-disable-next-line prettier/prettier
         "<div id=\"repository-buttons\"/>",
         `<a class="navigation-link" href="https://github.com/l-marcel/l-marcel" target="_blank">
   ${locale !== "pt-br" ? "repository" : "repositório"}

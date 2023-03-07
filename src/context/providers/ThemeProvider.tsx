@@ -13,16 +13,14 @@ export interface ThemeContext {
 
 export const themeContext = createContext<ThemeContext>({} as ThemeContext);
 
-export function ThemeProvider({
-  children
-}:ThemeProviderProps) {
+export function ThemeProvider({ children }: ThemeProviderProps) {
   const [theme, setTheme] = useState<ThemeType>("dark");
 
   const handleToggleTheme = useCallback(() => {
     startTransition(() => {
-      setTheme(theme => {
+      setTheme((theme) => {
         const isDarkTheme = theme === "dark";
-        const currentTheme = isDarkTheme? "light":"dark";
+        const currentTheme = isDarkTheme ? "light" : "dark";
         localStorage.setItem("theme", currentTheme);
 
         return currentTheme;
@@ -33,10 +31,10 @@ export function ThemeProvider({
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
 
-    if(savedTheme === "dark" || savedTheme === "light") {
+    if (savedTheme === "dark" || savedTheme === "light") {
       setTheme(savedTheme);
 
-      if(theme === "dark") {
+      if (theme === "dark") {
         document.documentElement.classList.add("dark");
       } else {
         document.documentElement.classList.remove("dark");
@@ -50,7 +48,7 @@ export function ThemeProvider({
     <themeContext.Provider
       value={{
         isDarkTheme,
-        toggleTheme: handleToggleTheme
+        toggleTheme: handleToggleTheme,
       }}
     >
       {children}

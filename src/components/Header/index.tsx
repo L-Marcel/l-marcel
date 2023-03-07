@@ -1,6 +1,5 @@
 import { ThemeProvider } from "../../context/providers/ThemeProvider";
 import { ToggleThemeButton } from "./ToggleThemeButton";
-
 import { NavLink } from "../Navigation/NavLink";
 import { VerticalDivider } from "../VerticalDivider";
 import { MobileMenu } from "./Mobile/MobileMenu";

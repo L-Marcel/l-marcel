@@ -10,7 +10,7 @@ export enum PaginationAction {
   NEXT_PAGE = "NEXT_PAGE",
   PREVIOUS_PAGE = "PREVIOUS_PAGE",
   LAST_PAGE = "LAST_PAGE",
-  FIRST_PAGE = "FIRST_PAGE"
+  FIRST_PAGE = "FIRST_PAGE",
 }
 
 export type PaginationUpdateLimitActionPayload = {
@@ -23,12 +23,9 @@ export type PaginationSetPageActionPayload = {
   onError?: (page: number) => void;
 };
 
-
 export interface PaginationReducerAction {
   type: PaginationAction;
-  payload?: 
-    PaginationUpdateLimitActionPayload | 
-    PaginationSetPageActionPayload;
+  payload?: PaginationUpdateLimitActionPayload | PaginationSetPageActionPayload;
 }
 
 export class Pagination {
@@ -36,83 +33,76 @@ export class Pagination {
     const { min, max, page } = pagination;
 
     switch (action.type) {
-    case PaginationAction.SET_PAGE: {
-      if(!action.payload) {
-        return pagination;
+      case PaginationAction.SET_PAGE: {
+        if (!action.payload) {
+          return pagination;
+        }
+
+        const { page: newPage, onError } =
+          action.payload as PaginationSetPageActionPayload;
+
+        if (isNaN(newPage)) {
+          onError && onError(page);
+          return pagination;
+        }
+
+        const _page = newPage > max ? max : newPage < min ? min : newPage;
+
+        onError && _page !== newPage && onError(_page);
+
+        return {
+          min,
+          max,
+          page: _page,
+        };
       }
-      
-      const { page: newPage, onError } = action.payload as PaginationSetPageActionPayload;
+      case PaginationAction.UPDATE_LIMIT: {
+        if (!action.payload) {
+          return pagination;
+        }
 
-      if(isNaN(newPage)) {
-        onError && onError(page);
-        return pagination;
+        const { min: newMin, max: newMax } =
+          action.payload as PaginationUpdateLimitActionPayload;
+        return {
+          min: newMin,
+          max: newMax,
+          page: page > newMax ? newMax : page < newMin ? newMin : page,
+        };
       }
+      case PaginationAction.NEXT_PAGE: {
+        const nextPage = page + 1;
 
-      const _page = newPage > max? max:
-        newPage < min? min:
-          newPage;
-
-      (onError && _page !== newPage) && onError(_page);
-
-      return {
-        min,
-        max,
-        page: _page
-      };
-    }
-    case PaginationAction.UPDATE_LIMIT: {
-      if(!action.payload) {
-        return pagination;
+        return {
+          min,
+          max,
+          page: page >= max ? max : nextPage,
+        };
       }
-  
-      const { min: newMin, max: newMax } = action.payload as PaginationUpdateLimitActionPayload;
-      return {
-        min: newMin,
-        max: newMax,
-        page: 
-          page > newMax? newMax:
-            page < newMin? newMin:
-              page
-      };
-    }
-    case PaginationAction.NEXT_PAGE: {
-      const nextPage = page + 1;
-  
-      return {
-        min,
-        max,
-        page: 
-          page >= max? max:
-            nextPage
-      };
-    }
-    case PaginationAction.LAST_PAGE: {
-      return {
-        min,
-        max,
-        page: max
-      };
-    }
-    case PaginationAction.PREVIOUS_PAGE: {
-      const previousPage = page - 1;
-  
-      return {
-        min,
-        max,
-        page: 
-          page <= min? min:
-            previousPage
-      };
-    }
-    case PaginationAction.FIRST_PAGE: {
-      return {
-        min,
-        max,
-        page: min
-      };
-    }
-    default:   
-      return pagination;
+      case PaginationAction.LAST_PAGE: {
+        return {
+          min,
+          max,
+          page: max,
+        };
+      }
+      case PaginationAction.PREVIOUS_PAGE: {
+        const previousPage = page - 1;
+
+        return {
+          min,
+          max,
+          page: page <= min ? min : previousPage,
+        };
+      }
+      case PaginationAction.FIRST_PAGE: {
+        return {
+          min,
+          max,
+          page: min,
+        };
+      }
+      default:
+        return pagination;
     }
   }
 
@@ -121,8 +111,8 @@ export class Pagination {
       type: PaginationAction.SET_PAGE,
       payload: {
         page,
-        onError
-      }
+        onError,
+      },
     };
   }
 
@@ -131,32 +121,32 @@ export class Pagination {
       type: PaginationAction.UPDATE_LIMIT,
       payload: {
         max,
-        min
-      }
+        min,
+      },
     };
   }
 
   static nextPage() {
     return {
-      type: PaginationAction.NEXT_PAGE
+      type: PaginationAction.NEXT_PAGE,
     };
   }
 
   static lastPage() {
     return {
-      type: PaginationAction.LAST_PAGE
+      type: PaginationAction.LAST_PAGE,
     };
   }
 
   static previousPage() {
     return {
-      type: PaginationAction.PREVIOUS_PAGE
+      type: PaginationAction.PREVIOUS_PAGE,
     };
   }
-  
+
   static firstPage() {
     return {
-      type: PaginationAction.FIRST_PAGE
+      type: PaginationAction.FIRST_PAGE,
     };
   }
 }

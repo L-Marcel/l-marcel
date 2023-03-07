@@ -44,6 +44,7 @@ export function usePaginationReducer({ size }: UsePaginationReducerProps) {
     const max = Math.ceil(size / 12) - 1;
 
     updatePageLimit(min, max);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const setPage = useCallback(

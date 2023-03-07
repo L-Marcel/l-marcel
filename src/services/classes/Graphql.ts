@@ -7,11 +7,12 @@ export class Graphql {
   static api = new GraphQLClient(this.endpoint, {
     headers: {
       authorization: `Bearer ${this.token}`,
-    }
+    },
   });
 
   static async getInformation(locale: "BR" | "EN" = "BR") {
-    return await this.api.request(`
+    return await this.api.request(
+      `
       query MyAchivements {
         achievements(orderBy: registered_in_DESC) {
           id
@@ -27,8 +28,11 @@ export class Graphql {
           button_text
         }
       }
-    `, undefined, {
-      "gcms-locales": locale
-    });
+    `,
+      undefined,
+      {
+        "gcms-locales": locale,
+      }
+    );
   }
 }

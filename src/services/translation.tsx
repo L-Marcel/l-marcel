@@ -19,6 +19,7 @@ export class Translation {
         });
       }
 
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       return <Component {...(props as any)} />;
     };
   }

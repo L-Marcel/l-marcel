@@ -73,6 +73,7 @@ export function useFilterReducer({ technologies = [] }: UseFilterReducerProps) {
 
   useEffect(() => {
     setTechnologies(initialTechnologies);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const setNames = useCallback(

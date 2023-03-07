@@ -98,7 +98,6 @@ export const MarkdownCommonListContainer = tf(
   py-8
   markdown-section-container
   flex
-  flex-col
 `,
   {
     variants: {

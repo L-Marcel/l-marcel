@@ -11,20 +11,20 @@ export interface MenuContext {
 
 export const menuContext = createContext<MenuContext>({} as MenuContext);
 
-export function MenuProvider({ 
-  children 
-}: MenuProviderProps) {
+export function MenuProvider({ children }: MenuProviderProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleToggleMenu = useCallback(() => {
-    setIsOpen(isOpen => !isOpen);
+    setIsOpen((isOpen) => {
+      return !isOpen;
+    });
   }, [setIsOpen]);
 
   return (
     <menuContext.Provider
       value={{
         isOpen,
-        toggleMenu: handleToggleMenu
+        toggleMenu: handleToggleMenu,
       }}
     >
       {children}

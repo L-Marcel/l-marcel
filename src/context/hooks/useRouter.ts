@@ -6,6 +6,6 @@ export function useRouter() {
 
   return {
     isNotPtBr,
-    ...router
+    ...router,
   };
 }
