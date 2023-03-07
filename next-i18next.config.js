@@ -8,7 +8,6 @@ module.exports = {
     locales: ["en-US", "pt-BR"],
     localeDetection: false,
   },
-  localePath:
-    typeof window === "undefined" ? path.resolve("./public/locales") : "/locales",
+  localePath: typeof window === "undefined" ? path.resolve("./public/locale") : "/locale",
   reloadOnPrerender: process.env.NODE_ENV === "development",
 };
