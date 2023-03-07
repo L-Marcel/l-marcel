@@ -22,7 +22,6 @@ import { Profile } from "../components/Profile";
 import { Github } from "../services/classes/Github";
 import { DemoVideoContainer, FirstSection } from "../styles/document/styles";
 import Image from "next/image";
-import { Translation } from "../services/translation";
 import { i18n } from "next-i18next";
 
 export type MarkdownComponents = Partial<
@@ -129,4 +128,4 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
   };
 };
 
-export default Translation.use(Resume);
+export default Resume;

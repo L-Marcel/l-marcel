@@ -11,17 +11,9 @@
   },
   "repositories": {
     "item": {
-      "licensed": "licenciado",
-      "documentation": "documentação",
-      "fork": "bifurcação",
-      "template": "modelo",
       "flash": "destaque",
       "Repository": "Repositório",
-      "self": "visitar"
-    }
-  },
-  "filter": {
-    "menu": {
+      "self": "visitar",
       "finished": "concluído",
       "deployed": "implementado",
       "licensed": "licenciado",
@@ -34,7 +26,9 @@
       "none": "nenhum",
       "description": "descrição",
       "documentation": "documentação"
-    },
+    }
+  },
+  "filter": {
     "progress": {
       "label": "progresso",
       "disabled": "/ filtro desativado"

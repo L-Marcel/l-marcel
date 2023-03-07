@@ -12,13 +12,22 @@
   "repositories": {
     "item": {
       "flash": "highlighted",
-      "self": "visit"
+      "self": "visit",
+      "finished": "finished",
+      "deployed": "deployed",
+      "licensed": "licensed",
+      "canceled": "canceled",
+      "common": "common",
+      "highlight": "highlight",
+      "fork": "fork",
+      "template": "template",
+      "none": "none",
+      "description": "description",
+      "progress": "in progress",
+      "documentation": "documentation"
     }
   },
   "filter": {
-    "menu": {
-      "progress": "in progress"
-    },
     "progress": {
       "label": "progress",
       "disabled": "/ disabled filter"

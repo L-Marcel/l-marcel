@@ -99,4 +99,4 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
   };
 };
 
-export default Translation.use(Projects);
+export default Projects;
