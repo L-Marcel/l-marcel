@@ -14,7 +14,7 @@ export function ToggleFilterMenuButton({ ...rest }: HTMLAttributes<HTMLButtonEle
     <>
       <ToggleFilterMenuButtonContainer
         id="toggle-filter-menu-button-container"
-        $open={isOpen}
+        open={isOpen}
         onClick={toggleMenu}
         icon={isOpen ? "returnLeftArrow" : "filter"}
         iconClassName="!text-[2.1rem] md:!text-[1.4125rem]"

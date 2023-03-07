@@ -1,7 +1,10 @@
-import tw from "tw-tailwind";
+import { Combobox } from "@headlessui/react";
 import { Icon } from "../Icon";
+import { tf, removeWhiteSpaceInClasses } from "tailwind-factory";
 
-export const SearchBox = tw.div`
+export const SearchBox = tf(
+  "div",
+  `
   relative
   flex
   w-full 
@@ -9,25 +12,42 @@ export const SearchBox = tw.div`
   justify-start
   max-w-xl
   z-40
-`;
+`
+);
 
-export const SearchInputIcon = tw(Icon)`
+export const SearchInputIcon = tf(
+  Icon,
+  `
   absolute
   h-full
   w-11
   rounded-md
   p-[8.2px]
-  ${(props) => {
-    return props.isFocused
-      ? "bg-primary-500 dark:bg-primary-500 !text-white-500 dark:!text-gray-700"
-      : "bg-white-700 dark:bg-gray-400 !text-gray-700 dark:!text-white-500";
-  }}
   pl-[6.2px]
   border-l-2
   border-l-primary-500
-`;
+`,
+  {
+    variants: {
+      isFocused: {
+        true: `
+        bg-primary-500
+        dark:bg-primary-500
+        !text-white-500
+        dark:!text-gray-700
+      `,
+        false: `
+        bg-white-700
+        dark:bg-gray-400
+        !text-gray-700
+        dark:!text-white-500
+      `,
+      },
+    },
+  }
+);
 
-export const SearchInput = tw.input`
+export const comboboxInputClassName = removeWhiteSpaceInClasses(`
   rounded-md
   pl-14
   pr-2
@@ -55,9 +75,11 @@ export const SearchInput = tw.input`
   focus-visible:border-r-primary-500
   focus-visible:dark:border-r-primary-500
   w-full
-`;
+`);
 
-export const SearchOptions = tw.ul`
+export const SearchOptions = tf(
+  Combobox.Options,
+  `
   absolute
   top-12
   z-40
@@ -84,13 +106,12 @@ export const SearchOptions = tw.ul`
   scrollbar-thumb-primary-500 
   dark:scrollbar-track-gray-500
   hover:scrollbar-thumb-primary-600
-`;
+`
+);
 
-interface SearchOptionProps {
-  "data-headlessui-state"?: string;
-}
-
-export const SearchOption = tw.li<SearchOptionProps>`
+export const SearchOption = tf(
+  Combobox.Option,
+  `
   flex
   flex-row
   items-start
@@ -105,12 +126,13 @@ export const SearchOption = tw.li<SearchOptionProps>`
   border-b-white-700
   dark:border-b-gray-500
   last-of-type:border-none
-  ${({ "data-headlessui-state": state }) => {
-    return state?.includes("active") ? "bg-white-600 dark:bg-gray-400" : "";
-  }}
-`;
+  actived-search-option
+`
+);
 
-export const PaginationInputContainer = tw.input`
+export const PaginationInputContainer = tf(
+  "input",
+  `
   w-12
   px-1
   text-center
@@ -124,33 +146,57 @@ export const PaginationInputContainer = tw.input`
   focus:dark:!bg-primary-500
   focus-visible:!bg-primary-500
   focus-visible:dark:!bg-primary-500
-`;
+`
+);
 
-export interface CheckboxLabelProps {
-  isEnabled: boolean;
-}
+export const CheckboxLabel = tf(
+  "p",
+  `
+  text-base
+`,
+  {
+    variants: {
+      isEnabled: {
+        true: "",
+        false: `
+      line-through
+      text-gray-default
+      dark:text-gray-default
+      `,
+      },
+    },
+  }
+);
 
-export const CheckboxLabel = tw.p<CheckboxLabelProps>`
-  text-base ${(props) => {
-    return props.isEnabled ? "" : "line-through text-gray-default dark:text-gray-default";
-  }}
-`;
-
-export const CheckboxDisabledLabel = tw.p`
+export const CheckboxDisabledLabel = tf(
+  "p",
+  `
   text-base
   italic
   xs:hidden
   text-gray-default
   dark:text-gray-default
-`;
+`
+);
 
-export const OptionsKdb = tw.kbd`
-  mx-1
-  lowercase
+export const KdbContainer = tf(
+  "div",
+  `
+  ml-auto 
+  pl-5
   hidden
   md:inline
+`
+);
+
+export const OptionsKdb = tf(
+  "kbd",
+  `
+  mx-1
+  lowercase
   bg-gray-700
   rounded-lg
   px-[5px]
-  py-[1px]
-`;
+  py-[1.2px]
+`
+);

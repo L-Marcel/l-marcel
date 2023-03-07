@@ -1,6 +1,8 @@
-import tw from "tw-tailwind";
+import { tf } from "tailwind-factory";
 
-export const ColumnContainer = tw.div`
+export const ColumnContainer = tf(
+  "div",
+  `
   flex 
   h-fit 
   w-full 
@@ -8,9 +10,12 @@ export const ColumnContainer = tw.div`
   flex-wrap 
   content-start 
   gap-3
-`;
+`
+);
 
-export const ExpansibleItem = tw.div`
+export const ExpansibleItem = tf(
+  "div",
+  `
   flex 
   h-full 
   min-h-[6px]
@@ -19,12 +24,16 @@ export const ExpansibleItem = tw.div`
   bg-white-400 
   dark:bg-gray-600 
   dark:opacity-50
-`;
+`
+);
 
-export const ListColumnContainer = tw.li`
+export const ListColumnContainer = tf(
+  "li",
+  `
   flex 
   h-[initial] 
   w-full 
   flex-col 
   gap-3
-`;
+`
+);

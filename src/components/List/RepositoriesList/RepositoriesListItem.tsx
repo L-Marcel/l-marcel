@@ -84,7 +84,7 @@ export function RepositoriesListItem({ repository }: RepositoriesListItemProps) 
     <RepositoriesListItemContainer
       onClick={handleNavigateToProject}
       tabIndex={0}
-      $filtered={isFiltered}
+      filtered={isFiltered}
     >
       <span className="absolute top-0 left-0 h-full w-full overflow-hidden rounded-md">
         <RepositoriesListItemBackgroundIcon
@@ -151,7 +151,7 @@ export function RepositoriesListItem({ repository }: RepositoriesListItemProps) 
               return (
                 <RepositoriesListItemProgressItem
                   key={`${name}-progress-${i + 1}`}
-                  $actived={barIsActived}
+                  actived={barIsActived}
                 />
               );
             })}

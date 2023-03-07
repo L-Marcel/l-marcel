@@ -14,6 +14,7 @@ import {
   FaGoogleDrive,
   FaMoon,
   FaSun,
+  FaJava,
 } from "react-icons/fa";
 import {
   FiChevronLeft,
@@ -41,7 +42,6 @@ import {
   SiHtml5,
   SiInstagram,
   SiJamstack,
-  SiJava,
   SiJavascript,
   SiJest,
   SiJsonwebtokens,
@@ -82,7 +82,7 @@ const languagesAndFrameworks = {
   git: FaGitAlt,
   angular: SiAngular,
   rust: SiRust,
-  java: SiJava,
+  java: FaJava,
   "c++": SiCplusplus,
   "c#": SiCsharp,
   python: SiPython,

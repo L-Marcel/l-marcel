@@ -1,6 +1,8 @@
-import tw from "tw-tailwind";
+import { tf } from "tailwind-factory";
 
-export const FooterContainer = tw.footer`
+export const FooterContainer = tf(
+  "footer",
+  `
   flex
   w-full
   flex-row
@@ -12,9 +14,12 @@ export const FooterContainer = tw.footer`
   md:h-28
   bg-notifications
   mt-8
-`;
+`
+);
 
-export const FooterNavigation = tw.nav`
+export const FooterNavigation = tf(
+  "nav",
+  `
   w-full
   px-12
   flex
@@ -24,4 +29,5 @@ export const FooterNavigation = tw.nav`
   dark:border-b-gray-600
   border-b-[2rem]
   md:border-b-[2rem]
-`;
+`
+);

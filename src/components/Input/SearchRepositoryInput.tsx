@@ -7,10 +7,11 @@ import { Icon } from "../Icon";
 import {
   SearchBox,
   OptionsKdb,
-  SearchInput,
   SearchInputIcon,
   SearchOption,
   SearchOptions,
+  comboboxInputClassName,
+  KdbContainer,
 } from "./styles";
 import { create } from "zustand";
 import { createJSONStorage, persist } from "zustand/middleware";
@@ -153,7 +154,8 @@ export function SearchRepositoryInput({ repositories = [] }: SearchRepositoryInp
             <Combobox.Button onFocus={handleOnFocus} className="relative w-full">
               <SearchInputIcon name="search" isFocused={show} withoutTooltip />
               <Combobox.Input
-                as={SearchInput}
+                as="input"
+                className={comboboxInputClassName}
                 autoComplete="off"
                 placeholder={t("input.search") ?? "Search by name"}
                 onKeyUp={handleOnKeyUp}
@@ -167,7 +169,7 @@ export function SearchRepositoryInput({ repositories = [] }: SearchRepositoryInp
               />
             </Combobox.Button>
             {show && filteredRepositories.length >= 1 && (
-              <Combobox.Options as={SearchOptions} static>
+              <SearchOptions as="ul" static>
                 {filteredRepositories &&
                   filteredRepositories
                     .sort((a, b) => {
@@ -175,11 +177,11 @@ export function SearchRepositoryInput({ repositories = [] }: SearchRepositoryInp
                     })
                     .map(({ name, formattedName, isPinned }, index) => {
                       return (
-                        <Combobox.Option
+                        <SearchOption
                           onClick={() => {
                             handleOnSelect(name);
                           }}
-                          as={SearchOption}
+                          as="li"
                           key={name}
                           value={name}
                         >
@@ -191,14 +193,19 @@ export function SearchRepositoryInput({ repositories = [] }: SearchRepositoryInp
                             />
                           )}
                           {formattedName ?? name}
-                          <div className="ml-auto pl-5">
+                          <KdbContainer>
                             <OptionsKdb>tab</OptionsKdb>
-                            {index > 0 && <OptionsKdb>enter</OptionsKdb>}
-                          </div>
-                        </Combobox.Option>
+                            {index > 0 && (
+                              <>
+                                {"/"}
+                                <OptionsKdb>enter</OptionsKdb>
+                              </>
+                            )}
+                          </KdbContainer>
+                        </SearchOption>
                       );
                     })}
-              </Combobox.Options>
+              </SearchOptions>
             )}
           </>
         );

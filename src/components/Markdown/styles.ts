@@ -1,16 +1,24 @@
-import tw from "tw-tailwind";
+import { tf } from "tailwind-factory";
 
-export const MarkdownH1Container = tw.h1`
+export const MarkdownH1Container = tf(
+  "h1",
+  `
   px-12  
   md:px-16
-`;
+`
+);
 
-export const MarkdownPContainer = tw.p`
+export const MarkdownPContainer = tf(
+  "p",
+  `
   px-12  
   md:px-16
-`;
+`
+);
 
-export const MarkdownNavContainer = tw.nav`
+export const MarkdownNavContainer = tf(
+  "nav",
+  `
   flex
   flex-1
   flex-row 
@@ -22,20 +30,29 @@ export const MarkdownNavContainer = tw.nav`
   mt-4
   text-primary-500
   markdown-navigation
-`;
+`
+);
 
-export const MarkdownBrContainer = tw.br`
+export const MarkdownBrContainer = tf(
+  "br",
+  `
   ignore-first-break
-`;
+`
+);
 
-export const MarkdowmPreMainContainer = tw.div`
+export const MarkdownPreMainContainer = tf(
+  "div",
+  `
   mx-12
   md:mx-16
   rounded-[15px]
   overflow-hidden
-`;
+`
+);
 
-export const MarkwodnPreContainer = tw.pre`
+export const MarkdownPreContainer = tf(
+  "pre",
+  `
   w-[calc(100%+2rem)]
   bg-white-500
   px-5
@@ -46,57 +63,100 @@ export const MarkwodnPreContainer = tw.pre`
   scrollbar-thumb-primary-500 
   dark:scrollbar-track-gray-600
   hover:scrollbar-thumb-primary-600
-`;
+`
+);
 
-export interface MarkdownDivContainerProps {
-  $highlight: boolean;
-}
-
-export const MarkdownDivContainer = tw.div<MarkdownDivContainerProps>`
+export const MarkdownDivContainer = tf(
+  "div",
+  `
   py-8
-  ${(props) => {
-    return props.$highlight
-      ? "bg-primary-500 force-white-text text-4xl"
-      : "bg-white-500 dark:bg-gray-600";
-  }}
-  markdown-section-container
-  first-of-type:with-description
-`;
+`,
+  {
+    variants: {
+      highlight: {
+        true: `
+        bg-primary-500 
+        force-white-text 
+        text-4xl
+        markdown-section-container
+        first-of-type:with-description
+      `,
+        false: `
+        bg-white-500 
+        dark:bg-gray-600
+        markdown-section-container
+        first-of-type:with-description
+      `,
+      },
+    },
+  }
+);
 
-export const MarkdownCommonListContainer = tw.div<MarkdownDivContainerProps>`
+export const MarkdownCommonListContainer = tf(
+  "div",
+  `
   py-8
   markdown-section-container
   flex
   flex-col
-  ${(props) => {
-    return props.$highlight
-      ? "flex-row gap-2 list-title text-white-500 bg-primary-500 force-white-text text-4xl mb-0"
-      : "flex-col gap-6 bg-white-500 dark:bg-gray-600";
-  }}
-`;
+`,
+  {
+    variants: {
+      highlight: {
+        true: `
+        flex-row
+        gap-2
+        list-title
+        text-white-500
+        bg-primary-500
+        force-white-text
+        text-4xl
+        mb-0
+      `,
+        false: `
+        flex-col
+        gap-6
+        bg-white-500
+        dark:bg-gray-600
+        `,
+      },
+    },
+  }
+);
 
-export const MarkdownListContainer = tw.ul`
+export const MarkdownListContainer = tf(
+  "ul",
+  `
   text-left
   list-container
   gap-[3px]
   flex
   flex-col
-`;
+`
+);
 
-export const MarkdownListItemContainer = tw.li`
+export const MarkdownListItemContainer = tf(
+  "li",
+  `
   text-lg
   2xl:text-xl
   flex
   flex-col
-`;
+`
+);
 
-export const MarkdownOrderedListContainer = tw.ol`
+export const MarkdownOrderedListContainer = tf(
+  "ol",
+  `
   text-lg
   2xl:text-xl
   gap-[3px]
-`;
+`
+);
 
-export const MarkdownGridContainer = tw.div`
+export const MarkdownGridContainer = tf(
+  "div",
+  `
   py-8
   markdown-section-container
   first-of-type:with-description
@@ -108,18 +168,25 @@ export const MarkdownGridContainer = tw.div`
   md:gap-y-8
   flex-wrap
   last-of-type:-mb-8
-`;
+`
+);
 
-export const MarkdownH2Container = tw.h2`
+export const MarkdownH2Container = tf(
+  "h2",
+  `
   px-12  
   md:px-16
-`;
+`
+);
 
-export const MarkdownGridItem = tw.div`
+export const MarkdownGridItem = tf(
+  "div",
+  `
   text-left
   list-container
   list-container-div
   gap-[3px]
   flex
   flex-col
-`;
+`
+);

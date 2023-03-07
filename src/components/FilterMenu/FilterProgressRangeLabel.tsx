@@ -6,14 +6,8 @@ import {
   ProgressRangeLabelBox,
 } from "./styles";
 
-export interface FilterProgressRangeLabelProps {
-  disabledLabel?: string;
-}
-
-export function FilterProgressRangeLabel({
-  disabledLabel,
-}: FilterProgressRangeLabelProps) {
-  const { t } = useTranslation("progress");
+export function FilterProgressRangeLabel() {
+  const { t } = useTranslation("projects");
   const { filter } = useFilter();
 
   const minProgress = filter.progress.min / 100;
@@ -30,7 +24,7 @@ export function FilterProgressRangeLabel({
       <ProgressRangeLabel isEnabled={isEnabled}>
         {t("filter.progress.label")}
       </ProgressRangeLabel>
-      {disabledLabel && !isEnabled && (
+      {!isEnabled && (
         <ProgressRangeDisabledLabel>
           {t("filter.progress.disabled")}
         </ProgressRangeDisabledLabel>

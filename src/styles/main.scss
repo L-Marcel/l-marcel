@@ -148,6 +148,12 @@
 @tailwind components;
 
 @layer components {
+  .actived-search-option[data-headlessui-state="active"] {
+    @apply 
+      bg-white-600 
+      dark:bg-gray-400;
+  }
+
   .nav-links > li {
     button {
       @apply rounded-none;

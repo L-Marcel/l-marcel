@@ -14,7 +14,7 @@ export function MarkdownDiv({
   ...rest
 }: MarkdownDivProps) {
   return (
-    <MarkdownDivContainer $highlight={isHighlight} {...rest}>
+    <MarkdownDivContainer highlight={isHighlight} {...rest}>
       {showReturnButton && (
         <div id="first-div-return-button">
           <ReturnButton path="/projects" />

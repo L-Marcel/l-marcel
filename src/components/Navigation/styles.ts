@@ -1,27 +1,41 @@
-import tw from "tw-tailwind";
+import { tf } from "tailwind-factory";
 
-export interface MobileNavLinkListItemContainerProps {
-  selected: boolean;
-}
-
-export interface MobileNavLinkIconContainerProps {
-  selected: boolean;
-}
-
-export const MobileNavLinkListItemContainer = tw.li<MobileNavLinkListItemContainerProps>`
+export const MobileNavLinkListItemContainer = tf(
+  "li",
+  `
   p-3
   rounded-2xl
-  ${(props) => {
-    return props.selected ? "bg-primary-500/30" : "";
-  }}
-`;
+`,
+  {
+    variants: {
+      selected: {
+        true: "bg-primary-500/30",
+        false: "",
+      },
+    },
+    defaultVariants: {},
+  }
+);
 
-export const MobileNavLinkIconContainer = tw.div<MobileNavLinkIconContainerProps>`
+export const MobileNavLinkIconContainer = tf(
+  "div",
+  `
   rounded-xl
   p-3
-  ${(props) => {
-    return props.selected
-      ? "dark:!bg-primary-600 !bg-primary-500 text-gray-600"
-      : "bg-white-600 dark:bg-gray-600 ";
-  }}
-`;
+`,
+  {
+    variants: {
+      selected: {
+        true: `
+        dark:!bg-primary-600 
+        !bg-primary-500 
+        text-gray-600
+      `,
+        false: `
+        bg-white-600 
+        dark:bg-gray-600 
+      `,
+      },
+    },
+  }
+);

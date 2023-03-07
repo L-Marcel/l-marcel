@@ -1,6 +1,8 @@
-import tw from "tw-tailwind";
+import { tf } from "tailwind-factory";
 
-export const ProfileArticleContainer = tw.article`
+export const ProfileArticleContainer = tf(
+  "article",
+  `
   flex 
   flex-row 
   items-center 
@@ -11,9 +13,12 @@ export const ProfileArticleContainer = tw.article`
   md:pb-8 
   md:pt-[4.43rem]
   bg-developer 
-`;
+`
+);
 
-export const ProfileAvatarContainer = tw.div`
+export const ProfileAvatarContainer = tf(
+  "div",
+  `
   mr-4 
   h-[40px] 
   w-[40px] 
@@ -24,9 +29,12 @@ export const ProfileAvatarContainer = tw.div`
   md:w-[190px] 
   2xl:h-[250px] 
   2xl:w-[250px]
-`;
+`
+);
 
-export const ProfileTimerContainer = tw.div`
+export const ProfileTimerContainer = tf(
+  "div",
+  `
   mt-[0.1rem] 
   flex 
   flex-row 
@@ -35,4 +43,5 @@ export const ProfileTimerContainer = tw.div`
   text-gray-500 
   dark:text-white-600 
   md:mt-4
-`;
+`
+);

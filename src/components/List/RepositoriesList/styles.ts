@@ -1,11 +1,9 @@
-import tw from "tw-tailwind";
 import { Icon } from "../../Icon";
+import { tf } from "tailwind-factory";
 
-interface RepositoriesListItemContainerProps {
-  $filtered: boolean;
-}
-
-export const RepositoriesListItemContainer = tw.article<RepositoriesListItemContainerProps>`
+export const RepositoriesListItemContainer = tf(
+  "article",
+  `
   relative
   w-full
   text-gray-600
@@ -19,9 +17,6 @@ export const RepositoriesListItemContainer = tw.article<RepositoriesListItemCont
   flex-col
   repository-list-item
   cursor-pointer
-  ${(props) => {
-    return props.$filtered ? "opacity-100" : "opacity-20";
-  }}
   ring-primary-500
   ring-offset-white-500
   dark:ring-offset-gray-500
@@ -30,9 +25,20 @@ export const RepositoriesListItemContainer = tw.article<RepositoriesListItemCont
   focus-visible:ring-2
   focus-visible:!bg-white-500
   focus-visible:dark:!bg-gray-500
-`;
+`,
+  {
+    variants: {
+      filtered: {
+        true: "opacity-100",
+        false: "opacity-20",
+      },
+    },
+  }
+);
 
-export const RepositoriesListItemBackgroundIcon = tw(Icon)`
+export const RepositoriesListItemBackgroundIcon = tf(
+  Icon,
+  `
   absolute
   right-[-12px]
   bottom-[-12px]
@@ -42,9 +48,12 @@ export const RepositoriesListItemBackgroundIcon = tw(Icon)`
   !drop-shadow-none
   z-0
   repository-list-item-tech
-`;
+`
+);
 
-export const RepositoriesListItemHeaderContainer = tw.header`
+export const RepositoriesListItemHeaderContainer = tf(
+  "header",
+  `
   repository-list-item-title 
   flex 
   w-full 
@@ -52,9 +61,12 @@ export const RepositoriesListItemHeaderContainer = tw.header`
   justify-between 
   gap-4 
   pr-8
-`;
+`
+);
 
-export const RepositoriesListItemHeaderIconContainer = tw.div`
+export const RepositoriesListItemHeaderIconContainer = tf(
+  "div",
+  `
   absolute 
   top-2 
   right-2 
@@ -66,9 +78,12 @@ export const RepositoriesListItemHeaderIconContainer = tw.div`
   bg-white-500 
   p-2 
   dark:bg-gray-500
-`;
+`
+);
 
-export const RepositoriesListItemHeaderTitle = tw.h3`
+export const RepositoriesListItemHeaderTitle = tf(
+  "h3",
+  `
   text-break-word
   relative 
   z-10 
@@ -77,18 +92,24 @@ export const RepositoriesListItemHeaderTitle = tw.h3`
   capitalize 
   leading-6
   md:leading-7
-`;
+`
+);
 
-export const RepositoriesListItemDescription = tw.p`
+export const RepositoriesListItemDescription = tf(
+  "p",
+  `
   relative 
   z-10 
   text-[1.1rem] 
   font-light 
   leading-5
   mb-1
-`;
+`
+);
 
-export const RepositoriesListItemProgressContainer = tw.div`
+export const RepositoriesListItemProgressContainer = tf(
+  "div",
+  `
   mt-4
   flex
   h-2
@@ -100,23 +121,34 @@ export const RepositoriesListItemProgressContainer = tw.div`
   bg-white-600
   shadow-inner
   dark:bg-gray-700
-`;
+`
+);
 
-export interface RepositoriesListItemProgressItemProps {
-  $actived: boolean;
-}
-
-export const RepositoriesListItemProgressItem = tw.div<RepositoriesListItemProgressItemProps>`
+export const RepositoriesListItemProgressItem = tf(
+  "div",
+  `
   h-full
   w-[5%]
-  ${(props) => {
-    return props.$actived
-      ? "bg-gray-600 dark:bg-white-600 repository-list-item-group"
-      : "bg-transparent";
-  }}
-`;
+`,
+  {
+    variants: {
+      actived: {
+        true: `
+        bg-gray-600
+        dark:bg-white-600
+        repository-list-item-group
+        `,
+        false: `
+        bg-transparent
+      `,
+      },
+    },
+  }
+);
 
-export const RepositoriesListSectionContainer = tw.section`
+export const RepositoriesListSectionContainer = tf(
+  "section",
+  `
   relative
   mx-12
   my-5
@@ -128,4 +160,5 @@ export const RepositoriesListSectionContainer = tw.section`
   justify-self-start
   md:mx-16
   -mb-4
-`;
+`
+);

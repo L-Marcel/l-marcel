@@ -1,7 +1,9 @@
-import tw from "tw-tailwind";
 import { IconButton } from "../Button/IconButton";
+import { tf } from "tailwind-factory";
 
-export const TimelineElementTimerContainer = tw.time`
+export const TimelineElementTimerContainer = tf(
+  "time",
+  `
   absolute 
   right-5 
   bottom-[-12px] 
@@ -17,9 +19,12 @@ export const TimelineElementTimerContainer = tw.time`
   dark:bg-gray-600 
   dark:text-white-700 
   md:shadow-lg
-`;
+`
+);
 
-export const TimelineElementDownloadButton = tw(IconButton)`
+export const TimelineElementDownloadButton = tf(
+  IconButton,
+  `
   flex 
   flex-row 
   items-center 
@@ -35,9 +40,12 @@ export const TimelineElementDownloadButton = tw(IconButton)`
   hover:dark:bg-primary-600
   active:text-white-500
   active:dark:text-gray-700
-`;
+`
+);
 
-export const TimelineElementCodeContainer = tw.code`
+export const TimelineElementCodeContainer = tf(
+  "code",
+  `
   relative
   whitespace-nowrap
   px-2
@@ -48,13 +56,12 @@ export const TimelineElementCodeContainer = tw.code`
   dark:bg-gray-600
   flex
   pr-14
-`;
+`
+);
 
-export interface TimelineElementCodeCopyButtonProps {
-  isNotPtBr: boolean;
-}
-
-export const TimelineElementCodeCopyButton = tw.button<TimelineElementCodeCopyButtonProps>`
+export const TimelineElementCodeCopyButton = tf(
+  "button",
+  `
   absolute
   top-0
   bottom-0
@@ -71,7 +78,17 @@ export const TimelineElementCodeCopyButton = tw.button<TimelineElementCodeCopyBu
   flex
   flex-row
   items-center
-  ${(props) => {
-    return props.isNotPtBr ? "timeline-code-en-us" : "timeline-code-pt-br";
-  }}
-`;
+`,
+  {
+    variants: {
+      isNotPtBr: {
+        true: `
+        timeline-code-en-us
+      `,
+        false: `
+        timeline-code-pt-br
+      `,
+      },
+    },
+  }
+);

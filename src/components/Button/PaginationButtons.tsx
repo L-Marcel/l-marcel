@@ -23,7 +23,7 @@ export function PaginationButtons() {
       {!isVeryTiny && (
         <SpecialPaginationIconButtonContainer
           onClick={firstPage}
-          className="rounded-md p-0 pr-[2px]"
+          className="rounded-md !pr-[2px]"
           iconClassName="h-[1.8rem] w-[1.8rem]"
           icon="leftArrows"
           disabled={isFirstPage}
@@ -32,7 +32,7 @@ export function PaginationButtons() {
       <div className="flex flex-row">
         <PaginationIconButtonContainer
           onClick={previousPage}
-          className="rounded-l-md p-0 pr-[1px]"
+          className="rounded-l-md !pr-[1px]"
           iconClassName="h-[1.8rem] w-[1.8rem]"
           icon="leftArrow"
           disabled={isFirstPage}
@@ -40,7 +40,7 @@ export function PaginationButtons() {
         <PageInput />
         <PaginationIconButtonContainer
           onClick={nextPage}
-          className="rounded-r-md p-0 pl-[1px]"
+          className="rounded-r-md !pl-[1px]"
           iconClassName="h-[1.8rem] w-[1.8rem]"
           icon="rightArrow"
           disabled={isLastPage}
@@ -49,7 +49,7 @@ export function PaginationButtons() {
       {!isVeryTiny && (
         <SpecialPaginationIconButtonContainer
           onClick={lastPage}
-          className="rounded-md p-0 pl-[2px]"
+          className="rounded-md !pl-[2px]"
           iconClassName="h-[1.8rem] w-[1.8rem]"
           icon="rightArrows"
           disabled={isLastPage}

@@ -36,9 +36,9 @@ export function MarkdownSections({
     case "just-github":
       return null;
     case "list":
-      return <MarkdownCommonListContainer $highlight={false} {...rest} />;
+      return <MarkdownCommonListContainer highlight={false} {...rest} />;
     case "list-title":
-      return <MarkdownCommonListContainer $highlight={true} {...rest} />;
+      return <MarkdownCommonListContainer highlight={true} {...rest} />;
     case "grid":
       return <MarkdownGridContainer {...rest} />;
     case "grid-item":

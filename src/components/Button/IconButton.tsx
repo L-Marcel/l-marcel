@@ -1,11 +1,10 @@
-import { HTMLAttributes } from "react";
+import { ComponentProps } from "react";
 import { Icon, IconType } from "../Icon";
 import { Tooltip } from "../Tooltip";
-import { IconButtonContainer, IconButtonSize } from "./styles";
+import { IconButtonContainer } from "./styles";
 
-export interface IconButtonProps extends HTMLAttributes<HTMLButtonElement> {
+export interface IconButtonProps extends ComponentProps<typeof IconButtonContainer> {
   icon: IconType;
-  size?: IconButtonSize;
   iconClassName?: string;
   tooltipClassName?: string;
   disabled?: boolean;
@@ -14,7 +13,6 @@ export interface IconButtonProps extends HTMLAttributes<HTMLButtonElement> {
 export function IconButton({
   icon,
   title,
-  size = "md",
   iconClassName,
   tooltipClassName,
   disabled = false,
@@ -22,7 +20,7 @@ export function IconButton({
 }: IconButtonProps) {
   if (!title) {
     return (
-      <IconButtonContainer size={size} disabled={disabled} {...rest}>
+      <IconButtonContainer disabled={disabled} {...rest}>
         <Icon
           className={(iconClassName ?? "") + " duration-75"}
           name={icon}
@@ -35,7 +33,7 @@ export function IconButton({
 
   return (
     <Tooltip label={title} className={"mt-2 " + tooltipClassName}>
-      <IconButtonContainer size={size} {...rest}>
+      <IconButtonContainer {...rest}>
         <Icon className="duration-75" name={icon} withoutTooltip />
       </IconButtonContainer>
     </Tooltip>

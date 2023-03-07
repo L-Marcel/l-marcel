@@ -58,7 +58,7 @@ export function FilterMenuOptionButton({
         },
       }}
     >
-      <p className="mt-[-1px] pb-[1px] align-baseline !text-inherit !transition-none !duration-75">
+      <p className="align-baseline !text-inherit !transition-none !duration-75">
         {getTranslatedText(item)}
       </p>
       {isSelected && (
