@@ -1,6 +1,9 @@
 import { useFilter } from "../../context/hooks/useFilter";
 import { usePagination } from "../../context/hooks/usePagination";
-import { Filter, FilterToggleOptionActionGroups } from "../../context/providers/reducers/filter";
+import {
+  Filter,
+  FilterToggleOptionActionGroups,
+} from "../../context/providers/reducers/filter";
 import { Checkbox } from "../Input/Checkbox";
 import { FilterMenuOptionButton } from "./FilterMenuOptionButton";
 import { FilterMenuGroupContainer } from "./styles";
@@ -10,13 +13,10 @@ export interface FilterMenuGroupProps {
   type: FilterToggleOptionActionGroups;
 }
 
-export function FilterMenuGroup({
-  type,
-  label
-}: FilterMenuGroupProps) {
+export function FilterMenuGroup({ type, label }: FilterMenuGroupProps) {
   const { filter, toggleOption } = useFilter();
   const { firstPage } = usePagination();
-  
+
   const group = filter[type];
   const allIsSelected = Filter.allFiltersIsSelected(group);
 
@@ -29,19 +29,19 @@ export function FilterMenuGroup({
     toggleOption("_some", type);
     firstPage();
   }
-  
+
   return (
     <FilterMenuGroupContainer>
-      <Checkbox 
-        className="mb-1 !w-[inherit]" 
+      <Checkbox
+        className="mb-1 !w-[inherit]"
         label={label}
         disabledLabel="/ disabled filter"
         checked={allIsSelected}
         indeterminate={!allIsSelected && group._some}
         onChange={handleToggleAllOptions}
       />
-      { Object.entries(group).map(([option, isSelected]) => {
-        if(option === "_some") {
+      {Object.entries(group).map(([option, isSelected]) => {
+        if (option === "_some") {
           return null;
         }
 
@@ -54,7 +54,7 @@ export function FilterMenuGroup({
             />
           </li>
         );
-      }) }
+      })}
     </FilterMenuGroupContainer>
   );
 }

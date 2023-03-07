@@ -6,6 +6,9 @@ import { MenuProvider } from "../../context/providers/MenuProvider";
 import { Github, Repository } from "../../services/classes/Github";
 import { NextSeo } from "next-seo";
 import { SearchProvider } from "../../context/providers/SearchProvider";
+import { Translation } from "../../services/translation";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { i18n } from "next-i18next";
 interface ProjectsProps {
   repositories: Repository[];
   technologies: string[];
@@ -45,6 +48,8 @@ function Projects({ repositories, technologies, locale }: ProjectsProps) {
 }
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  const isNotPtBr = locale === "en-us";
+
   const repositories = await Github.getRepositories({
     locale: locale ?? "pt-br",
     getLanguages: true,
@@ -73,6 +78,10 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
 
   const technologies = Array.from(repositoriesData.technologies);
 
+  if (process.env.NODE_ENV === "development") {
+    await i18n?.reloadResources();
+  }
+
   return {
     props: {
       repositories: repositories.sort((a, b) => {
@@ -81,9 +90,13 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
       technologies,
       updatedAt,
       locale,
+      ...(await serverSideTranslations(isNotPtBr ? "en-US" : "pt-BR", [
+        "common",
+        "projects",
+      ])),
     },
     revalidate: 60 * 60 * 24,
   };
 };
 
-export default Projects;
+export default Translation.use(Projects);

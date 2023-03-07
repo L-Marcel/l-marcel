@@ -6,22 +6,12 @@ export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
   selected?: boolean;
 }
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(({
-  size = "md",
-  selected = false,
-  ...rest
-}, ref) => {
-  return (
-    <ButtonContainer
-      ref={ref}
-      selected={selected}
-      size={size}
-      {...rest}
-    />
-  );
-});
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ size = "md", selected = false, ...rest }, ref) => {
+    return <ButtonContainer ref={ref} selected={selected} size={size} {...rest} />;
+  }
+);
 
 Button.displayName = "Button";
 
 export { Button };
-

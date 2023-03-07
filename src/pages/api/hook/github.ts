@@ -1,7 +1,6 @@
 import { buffer } from "micro";
 import { NextApiRequest, NextApiResponse } from "next";
 import { getGithubWebookIsAuth } from "../../../services/webhook";
-import { revalidatePath } from "../../../utils/revalidatePath";
 
 export const config = {
   api: {

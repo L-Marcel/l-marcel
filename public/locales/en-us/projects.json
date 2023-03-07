@@ -1,0 +1,31 @@
+{
+  "input": {
+    "search": "Search by name"
+  },
+  "checkbox": {
+    "technologies": "technologies",
+    "status": "status",
+    "type": "type",
+    "documents": "documents",
+    "/ disabled filter": "/ disabled filter"
+  },
+  "repositories": {
+    "item": {
+      "flash": "highlighted",
+      "self": "visit"
+    }
+  },
+  "filter": {
+    "menu": {
+      "progress": "in progress"
+    },
+    "progress": {
+      "label": "progress",
+      "disabled": "/ disabled filter"
+    },
+    "button": {
+      "projects": "projects",
+      "filters": "filters"
+    }
+  }
+}

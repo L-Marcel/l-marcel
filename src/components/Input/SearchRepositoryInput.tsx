@@ -2,7 +2,6 @@ import { Combobox, Transition } from "@headlessui/react";
 import { ChangeEvent, KeyboardEvent, useEffect, useMemo, useState } from "react";
 import { useFilter } from "../../context/hooks/useFilter";
 import { usePagination } from "../../context/hooks/usePagination";
-import { useRouter } from "../../context/hooks/useRouter";
 import { Icon } from "../Icon";
 
 import {
@@ -15,6 +14,7 @@ import {
 } from "./styles";
 import { create } from "zustand";
 import { createJSONStorage, persist } from "zustand/middleware";
+import { useTranslation } from "next-i18next";
 
 export type RepositoryBasicData = {
   name: string;
@@ -57,7 +57,7 @@ const useZustandQuery = create(
 
 export function SearchRepositoryInput({ repositories = [] }: SearchRepositoryInputProps) {
   const { setNames } = useFilter();
-  const { isNotPtBr } = useRouter();
+  const { t } = useTranslation("projects");
   const { firstPage } = usePagination();
 
   const [userWantsToSeeMainList, setUserWantsToSeeMainList] = useState(false);
@@ -155,7 +155,7 @@ export function SearchRepositoryInput({ repositories = [] }: SearchRepositoryInp
               <Combobox.Input
                 as={SearchInput}
                 autoComplete="off"
-                placeholder={isNotPtBr ? "Search by name" : "Pesquisar por nome"}
+                placeholder={t("input.search") ?? "Search by name"}
                 onKeyUp={handleOnKeyUp}
                 onFocusCapture={handleOnFocus}
                 onFocus={handleOnFocus}

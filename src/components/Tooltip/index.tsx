@@ -12,7 +12,7 @@ export function Tooltip({
   label,
   children,
   className,
-  containerClassName
+  containerClassName,
 }: TooltipProps) {
   return (
     <TooltipContainer className={containerClassName}>

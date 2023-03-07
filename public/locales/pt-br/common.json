@@ -1,0 +1,19 @@
+{
+  "return_button": "<- voltar",
+  "navigation": {
+    "resume": "currículo",
+    "projects": "projetos",
+    "achievements": "conquistas",
+    "pt-br": "pt-br",
+    "en-us": "en-us",
+    "descriptions": {
+      "resume": "informações sobre mim",
+      "projects": "meus repositórios públicos",
+      "achievements": "tudo que fiz até agora"
+    }
+  },
+  "theme": {
+    "toggle_to_light": "trocar para tema claro",
+    "toggle_to_dark": "trocar para tema escuro"
+  }
+}

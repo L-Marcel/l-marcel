@@ -12,13 +12,14 @@ import { useRouter } from "../../context/hooks/useRouter";
 import { Tooltip } from "../Tooltip";
 import { TimelineElementDownloadButton, TimelineElementTimerContainer } from "./styles";
 import { TimelineElementCode } from "./TimelineElementCode";
+import { useTranslation } from "next-i18next";
 
 export interface TimelineProps {
   achievements: Achievement[];
-  locale?: Locale;
 }
 
 export function Timeline({ achievements }: TimelineProps) {
+  const { t } = useTranslation("achievements");
   const { isNotPtBr } = useRouter();
 
   const dateConfig = {
@@ -81,12 +82,12 @@ export function Timeline({ achievements }: TimelineProps) {
                   <TimelineElementTimerContainer dateTime={dateTimeToExpire}>
                     {isExpired >= 1 ? (
                       <>
-                        {isNotPtBr ? "Expired in" : "Expirado em"}{" "}
+                        {t("timeline.expired_in")}
                         <span className="capitalize">{dateToExpire}</span>
                       </>
                     ) : (
                       <>
-                        {isNotPtBr ? "Expires in" : "Expira em"}{" "}
+                        {t("timeline.expires_in")}
                         <span className="capitalize">{dateToExpire}</span>
                       </>
                     )}
@@ -113,7 +114,7 @@ export function Timeline({ achievements }: TimelineProps) {
                               className="download-button-label"
                               htmlFor={`${id}-donwload-button`}
                             >
-                              {button_text ?? (isNotPtBr ? "Download" : "Baixar")}
+                              {button_text ?? t("timeline.download")}
                             </label>
                           )}
                         </div>

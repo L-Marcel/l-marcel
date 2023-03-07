@@ -9,14 +9,14 @@ export function ProgressRange() {
   const { min, max } = filter.progress;
 
   function handleOnChangeInterval(interval: number | number[]) {
-    if(Array.isArray(interval) && interval.length === 2) {
+    if (Array.isArray(interval) && interval.length === 2) {
       changeProgressRange(interval[0], interval[1]);
       firstPage();
     }
   }
 
   return (
-    <Slider 
+    <Slider
       range
       defaultValue={[min, max]}
       className="slider"
@@ -30,7 +30,7 @@ export function ProgressRange() {
         25: "25%",
         50: "50%",
         75: "75%",
-        100: "100%"
+        100: "100%",
       }}
     />
   );

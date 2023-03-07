@@ -4,7 +4,7 @@ import { MarkdowmPreMainContainer, MarkwodnPreContainer } from "./styles";
 export function MarkdownCode(props: HTMLAttributes<HTMLPreElement>) {
   return (
     <MarkdowmPreMainContainer>
-      <MarkwodnPreContainer {...props}/>
+      <MarkwodnPreContainer {...props} />
     </MarkdowmPreMainContainer>
   );
 }

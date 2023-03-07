@@ -50,7 +50,6 @@ export const TimelineElementCodeContainer = tw.code`
   pr-14
 `;
 
-
 export interface TimelineElementCodeCopyButtonProps {
   isNotPtBr: boolean;
 }
@@ -72,5 +71,7 @@ export const TimelineElementCodeCopyButton = tw.button<TimelineElementCodeCopyBu
   flex
   flex-row
   items-center
-  ${props => props.isNotPtBr? "timeline-code-en-us":"timeline-code-pt-br"}
+  ${(props) => {
+    return props.isNotPtBr ? "timeline-code-en-us" : "timeline-code-pt-br";
+  }}
 `;

@@ -1,7 +1,7 @@
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import { ChangeEvent } from "react";
-import { useRouter } from "../../context/hooks/useRouter";
 import { CheckboxDisabledLabel, CheckboxLabel } from "./styles";
+import { useTranslation } from "next-i18next";
 
 export interface CheckboxProps {
   label?: string;
@@ -18,9 +18,10 @@ export function Checkbox({
   checked,
   indeterminate = false,
   onChange,
-  className
+  className,
 }: CheckboxProps) {
-  const { isNotPtBr } = useRouter();
+  const { t } = useTranslation("projects");
+
   const isChecked = checked;
   const isIndeterminate = !isChecked && indeterminate;
   const isEnabled = isChecked || isIndeterminate;
@@ -32,84 +33,58 @@ export function Checkbox({
     onChange && onChange(ev.currentTarget.checked);
   }
 
-  function getTranslatedText(text: string, isNotPtBr: boolean) {
-    if(isNotPtBr) {
-      switch(text) {
-      default:
-        return text;
-      }
-    }
-
-    switch(text) {
-    case "technologies":
-      return "tecnologias";
-    case "status":
-      return "situação";
-    case "type":
-      return "tipo";
-    case "documents":
-      return "documentos";
-    case "/ disabled filter":
-      return "/ filtro desativado";
-    default:
-      return text;
-    }
-  }
-
   return (
     <motion.label
-      className={"checkbox flex h-fit w-fit cursor-pointer flex-row items-center gap-2 " + className}
-      initial={isChecked? "checked":
-        isIndeterminate? "indeterminate":"unchecked"
+      className={
+        "checkbox flex h-fit w-fit cursor-pointer flex-row items-center gap-2 " +
+        className
       }
-      animate={isChecked? "checked":
-        isIndeterminate? "indeterminate":"unchecked"
-      }
+      initial={isChecked ? "checked" : isIndeterminate ? "indeterminate" : "unchecked"}
+      animate={isChecked ? "checked" : isIndeterminate ? "indeterminate" : "unchecked"}
       whileTap="pressed"
       variants={{
         pressed: {
           transition: {
-            duration: .3,
+            duration: 0.3,
             delayChildren: 0,
-            staggerChildren: 0
-          }
+            staggerChildren: 0,
+          },
         },
         checked: {
           transition: {
-            duration: .3,
+            duration: 0.3,
             delayChildren: 0,
-            staggerChildren: 0
-          }
+            staggerChildren: 0,
+          },
         },
         unchecked: {
           transition: {
-            duration: .3,
+            duration: 0.3,
             delayChildren: 0,
-            staggerChildren: 0
-          }
+            staggerChildren: 0,
+          },
         },
         indeterminate: {
           transition: {
-            duration: .3,
+            duration: 0.3,
             delayChildren: 0,
-            staggerChildren: 0
-          }
-        }
+            staggerChildren: 0,
+          },
+        },
       }}
     >
-      <input 
+      <input
         className="hidden h-0 w-0"
-        type="checkbox" 
+        type="checkbox"
         name={label}
-        id={label} 
+        id={label}
         checked={isChecked}
-        onChange={handleOnChange} 
+        onChange={handleOnChange}
       />
       <motion.span>
         <motion.div
           className={`checkbox-input w-fit rounded-xl p-2 ${
-            (isEnabled)? "checkbox-checked-input":
-              "checkbox-unchecked-input"
+            isEnabled ? "checkbox-checked-input" : "checkbox-unchecked-input"
           }`}
         >
           <motion.svg
@@ -120,38 +95,46 @@ export function Checkbox({
             stroke="currentColor"
             viewBox="0 0 12 10"
           >
-            { isIndeterminate? 
-              <motion.line 
-                x1="10%" 
-                x2="90%" 
-                y1="5" 
+            {isIndeterminate ? (
+              <motion.line
+                x1="10%"
+                x2="90%"
+                y1="5"
                 y2="5"
                 variants={{
-                  pressed: { 
+                  pressed: {
                     pathLength: 0.85,
                     x: 1.5,
-                    rotate: 130
+                    rotate: 130,
                   },
                   indeterminate: { pathLength: 1 },
-                  unchecked: { pathLength: 0 }
+                  unchecked: { pathLength: 0 },
                 }}
                 style={{ pathLength, opacity }}
-              />:
-              <motion.polyline 
+              />
+            ) : (
+              <motion.polyline
                 points="1.5 6 4.5 9 10.5 1"
                 variants={{
-                  pressed: (isChecked: boolean) => ({ pathLength: isChecked ? 0.85 : 0.2 }),
+                  pressed: (isChecked: boolean) => {
+                    return { pathLength: isChecked ? 0.85 : 0.2 };
+                  },
                   checked: { pathLength: 1 },
-                  unchecked: { pathLength: 0 }
+                  unchecked: { pathLength: 0 },
                 }}
                 style={{ pathLength, opacity }}
                 custom={isEnabled}
-              /> }
+              />
+            )}
           </motion.svg>
         </motion.div>
       </motion.span>
-      { label && <CheckboxLabel isEnabled={isEnabled}>{getTranslatedText(label, isNotPtBr)}</CheckboxLabel> }
-      { (disabledLabel && !isEnabled) && <CheckboxDisabledLabel>{getTranslatedText(disabledLabel, isNotPtBr)}</CheckboxDisabledLabel>}
+      {label && (
+        <CheckboxLabel isEnabled={isEnabled}>{t(`checkbox.${label}`)}</CheckboxLabel>
+      )}
+      {disabledLabel && !isEnabled && (
+        <CheckboxDisabledLabel>{t(`checkbox.${disabledLabel}`)}</CheckboxDisabledLabel>
+      )}
     </motion.label>
   );
 }

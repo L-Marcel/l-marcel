@@ -6,17 +6,11 @@ export function MarkdownList({
   ordered,
   ...rest
 }: HTMLAttributes<HTMLUListElement> & { ordered: boolean }) {
-  if(ordered) {
+  if (ordered) {
     return (
-      <MarkdownOrderedListContainer {...rest}>
-        {children}
-      </MarkdownOrderedListContainer>
+      <MarkdownOrderedListContainer {...rest}>{children}</MarkdownOrderedListContainer>
     );
   }
-  
-  return (
-    <MarkdownListContainer {...rest}>
-      {children}
-    </MarkdownListContainer>
-  );
+
+  return <MarkdownListContainer {...rest}>{children}</MarkdownListContainer>;
 }

@@ -3,6 +3,9 @@ import { NextSeo } from "next-seo";
 import { IconType } from "../components/Icon";
 import { Timeline } from "../components/Timeline";
 import { Graphql } from "../services/classes/Graphql";
+import { Translation } from "../services/translation";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { i18n, useTranslation } from "next-i18next";
 
 export type Achievement = {
   id: string;
@@ -20,14 +23,15 @@ export type Achievement = {
 
 export interface AchievementsProps {
   achievements: Achievement[];
-  locale?: string;
 }
 
-function Achivements({ achievements, locale }: AchievementsProps) {
+function Achievements({ achievements }: AchievementsProps) {
+  const { t } = useTranslation("achievements");
+
   return (
     <>
       <NextSeo
-        title={locale === "en-us" ? "Achivements" : "Conquistas"}
+        title={t("seo.title") ?? "L-Marcel"}
         defaultTitle="L-Marcel"
         titleTemplate="L-Marcel - %s"
       />
@@ -41,20 +45,28 @@ function Achivements({ achievements, locale }: AchievementsProps) {
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   const isNotPtBr = locale === "en-us";
   const achievements = await Graphql.getInformation(isNotPtBr ? "EN" : "BR")
-    .then((res) => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    .then((res: any) => {
       return res.achievements ?? [];
     })
     .catch(() => {
       return [];
     });
 
+  if (process.env.NODE_ENV === "development") {
+    await i18n?.reloadResources();
+  }
+
   return {
     props: {
       achievements,
-      locale,
+      ...(await serverSideTranslations(isNotPtBr ? "en-US" : "pt-BR", [
+        "common",
+        "achievements",
+      ])),
     },
     revalidate: false,
   };
 };
 
-export default Achivements;
+export default Translation.use(Achievements);

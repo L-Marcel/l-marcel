@@ -6,10 +6,10 @@ export function TechnologiesIcons() {
     <div className="flex flex-row gap-2 text-gray-600 dark:text-white-500">
       {technologies.levels.map(({ isPrimary, name }) => {
         return (
-          <Icon 
-            className={isPrimary? "text-primary-500":""}
-            key={name.toLocaleLowerCase()} 
-            size="md" 
+          <Icon
+            className={isPrimary ? "text-primary-500" : ""}
+            key={name.toLocaleLowerCase()}
+            size="md"
             name={name.toLocaleLowerCase() as IconType}
           />
         );

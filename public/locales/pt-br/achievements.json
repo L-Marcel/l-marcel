@@ -1,0 +1,14 @@
+{
+  "seo": {
+    "title": "Conquistas"
+  },
+  "timeline": {
+    "expires_in": "Expira em ",
+    "expired_in": "Expirado em ",
+    "download": "Baixar",
+    "copy_button": {
+      "copied": "código copiado!",
+      "click_to_copy": "aperte para copiar"
+    }
+  }
+}

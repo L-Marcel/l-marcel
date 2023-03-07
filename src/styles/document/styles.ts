@@ -1,6 +1,8 @@
-import tw from "tw-tailwind";
+import { tf } from "tailwind-factory";
 
-export const PageBody = tw.body`
+export const PageBody = tf(
+  "body",
+  `
   relative
   scrollbar-thin 
   scrollbar-track-white-700 
@@ -10,26 +12,38 @@ export const PageBody = tw.body`
   mb-[40px]
   overflow-x-hidden
   md:mb-0
-`;
+`
+);
 
-export const Layout = tw.main`
+export const Layout = tf(
+  "main",
+  `
   relative
   flex
   flex-col
   justify-between
   min-h-[calc(100vh-3.1rem)]
   md:min-h-[calc(100vh-2.8125rem)]
-`;
+`
+);
 
-export interface FirstSectionProps {
-  $profile: boolean;
-}
+export const FirstSection = tf("section", "", {
+  variants: {
+    profile: {
+      false: `
+        px-4
+        pt-[1.15rem]
+        md:px-16
+        md:pb-12
+      `,
+      true: "",
+    },
+  },
+});
 
-export const FirstSection = tw.section<FirstSectionProps>`
- ${props => !props.$profile? "px-4 pt-[1.15rem] md:px-16 md:pb-12":""}
-`;
-
-export const DemoVideoContainer = tw.div`
+export const DemoVideoContainer = tf(
+  "div",
+  `
   pr-12
   pl-0
   md:pr-16  
@@ -40,4 +54,5 @@ export const DemoVideoContainer = tw.div`
   relative
   overflow-hidden
   w-full
-`;
+`
+);

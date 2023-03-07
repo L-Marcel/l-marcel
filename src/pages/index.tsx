@@ -2,6 +2,7 @@ import { GetStaticProps } from "next";
 import { NextSeo } from "next-seo";
 import ReactMarkdown from "react-markdown";
 import { SpecialComponents } from "react-markdown/lib/ast-to-react";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { NormalComponents } from "react-markdown/lib/complex-types";
 import rehypeRaw from "rehype-raw";
 import remarkGfm from "remark-gfm";
@@ -21,10 +22,13 @@ import { Profile } from "../components/Profile";
 import { Github } from "../services/classes/Github";
 import { DemoVideoContainer, FirstSection } from "../styles/document/styles";
 import Image from "next/image";
+import { Translation } from "../services/translation";
+import { i18n } from "next-i18next";
 
 export type MarkdownComponents = Partial<
   Omit<NormalComponents, keyof SpecialComponents> & SpecialComponents
 >;
+
 export interface ResumeProps {
   data: string;
   updatedAt: string;
@@ -37,7 +41,7 @@ function Resume({ data, withProfile, updatedAt, demoVideoURL = null }: ResumePro
   return (
     <>
       <NextSeo defaultTitle="L-Marcel" titleTemplate="L-Marcel" />
-      <FirstSection $profile={withProfile}>
+      <FirstSection profile={withProfile}>
         {withProfile && <Profile updatedAt={updatedAt} />}
       </FirstSection>
       <section className="flex h-full min-h-[calc(100vh_-_14rem)] flex-1 flex-col gap-8 md:min-h-[calc(100vh_-_16rem)] xs:min-h-[calc(100vh_-_9rem)]">
@@ -87,6 +91,7 @@ function Resume({ data, withProfile, updatedAt, demoVideoURL = null }: ResumePro
 }
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  const isNotPtBr = locale === "en-us";
   const updatedAt = new Date().toString();
 
   const { readme, demoVideoURL } = await Github.getRepositoryDocs({
@@ -94,7 +99,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
     locale: locale ?? "pt-br",
     replaceRules: (readme) => {
       readme = readme.replace(
-        '<div id="repository-buttons"/>',
+        "<div id=\"repository-buttons\"/>",
         `<a class="navigation-link" href="https://github.com/l-marcel/l-marcel" target="_blank">
   ${locale !== "pt-br" ? "repository" : "repositório"}
 </a>
@@ -104,15 +109,23 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
     },
   });
 
+  if (process.env.NODE_ENV === "development") {
+    await i18n?.reloadResources();
+  }
+
   return {
     props: {
       data: readme,
       updatedAt,
       withProfile: true,
       demoVideoURL,
+      ...(await serverSideTranslations(isNotPtBr ? "en-US" : "pt-BR", [
+        "common",
+        "home",
+      ])),
     },
     revalidate: false,
   };
 };
 
-export default Resume;
+export default Translation.use(Resume);

@@ -30,7 +30,9 @@ export interface ToggleFilterMenuButtonContainerProps extends IconButtonProps {
   $open: boolean;
 }
 
-export const ToggleFilterMenuButtonContainer = tw(IconButton)<ToggleFilterMenuButtonContainerProps>`
+export const ToggleFilterMenuButtonContainer = tw(
+  IconButton
+)<ToggleFilterMenuButtonContainerProps>`
   active:!text-gray-700
   rounded-full
   border-4
@@ -57,9 +59,11 @@ export const ToggleFilterMenuButtonContainer = tw(IconButton)<ToggleFilterMenuBu
   md:w-[2.4rem]
   md:h-[2.4rem]
   md:rounded-md
-  ${props => props.$open? 
-    "md:!bg-primary-500 md:dark:!bg-primary-500 md:!text-gray-700 md:dark:!text-gray-700 md:hover:dark:!bg-primary-600 md:hover:!bg-primary-600":
-    "md:!bg-white-600 md:dark:!bg-gray-500 md:!text-gray-700 md:dark:!text-white-600 md:hover:!bg-white-700 md:hover:dark:!bg-gray-600"}
+  ${(props) => {
+    return props.$open
+      ? "md:!bg-primary-500 md:dark:!bg-primary-500 md:!text-gray-700 md:dark:!text-gray-700 md:hover:dark:!bg-primary-600 md:hover:!bg-primary-600"
+      : "md:!bg-white-600 md:dark:!bg-gray-500 md:!text-gray-700 md:dark:!text-white-600 md:hover:!bg-white-700 md:hover:dark:!bg-gray-600";
+  }}
 `;
 
 export const ToggleFilterMenuButtonContainerLabel = tw.label`
@@ -97,7 +101,9 @@ export const ProgressRangeLabelBox = tw.div`
 export const ProgressRangeLabel = tw.label<ProgressRangeLabelProps>`
   text-gray-600
   dark:text-white-600
-  text-base ${props => props.isEnabled? "":"line-through text-gray-default dark:text-gray-default"}
+  text-base ${(props) => {
+    return props.isEnabled ? "" : "line-through text-gray-default dark:text-gray-default";
+  }}
 `;
 
 export const ProgressRangeDisabledLabel = tw.p`

@@ -1,0 +1,19 @@
+{
+  "return_button": "<- return",
+  "navigation": {
+    "resume": "resume",
+    "projects": "projects",
+    "achievements": "achievements",
+    "pt-br": "pt-br",
+    "en-us": "en-us",
+    "descriptions": {
+      "resume": "information about me",
+      "projects": "my public repositories",
+      "achievements": "everything I've done so far"
+    }
+  },
+  "theme": {
+    "toggle_to_light": "toggle to light theme",
+    "toggle_to_dark": "toggle to dark theme"
+  }
+}

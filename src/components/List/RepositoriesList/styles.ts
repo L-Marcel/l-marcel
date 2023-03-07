@@ -19,7 +19,9 @@ export const RepositoriesListItemContainer = tw.article<RepositoriesListItemCont
   flex-col
   repository-list-item
   cursor-pointer
-  ${props => props.$filtered? "opacity-100":"opacity-20"}
+  ${(props) => {
+    return props.$filtered ? "opacity-100" : "opacity-20";
+  }}
   ring-primary-500
   ring-offset-white-500
   dark:ring-offset-gray-500
@@ -75,7 +77,7 @@ export const RepositoriesListItemHeaderTitle = tw.h3`
   capitalize 
   leading-6
   md:leading-7
-`; 
+`;
 
 export const RepositoriesListItemDescription = tw.p`
   relative 
@@ -107,7 +109,11 @@ export interface RepositoriesListItemProgressItemProps {
 export const RepositoriesListItemProgressItem = tw.div<RepositoriesListItemProgressItemProps>`
   h-full
   w-[5%]
-  ${props => props.$actived? "bg-gray-600 dark:bg-white-600 repository-list-item-group":"bg-transparent"}
+  ${(props) => {
+    return props.$actived
+      ? "bg-gray-600 dark:bg-white-600 repository-list-item-group"
+      : "bg-transparent";
+  }}
 `;
 
 export const RepositoriesListSectionContainer = tw.section`

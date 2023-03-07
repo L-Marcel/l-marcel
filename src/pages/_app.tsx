@@ -8,6 +8,7 @@ import { Analytics } from "@vercel/analytics/react";
 import "../styles/main.scss";
 import "../styles/slider.scss";
 import "../styles/timeline.scss";
+import { appWithTranslation } from "next-i18next";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -22,4 +23,4 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 
-export default MyApp;
+export default appWithTranslation(MyApp);

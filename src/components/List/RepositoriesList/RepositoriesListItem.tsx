@@ -1,8 +1,8 @@
 import { MouseEvent } from "react";
-import { useRouter } from "../../../context/hooks/useRouter";
 import { Repository } from "../../../services/classes/Github";
 import { IconButton } from "../../Button/IconButton";
 import { Icon, IconType } from "../../Icon";
+import { useTranslation } from "next-i18next";
 import {
   RepositoriesListItemBackgroundIcon,
   RepositoriesListItemContainer,
@@ -20,7 +20,7 @@ interface RepositoriesListItemProps {
 }
 
 export function RepositoriesListItem({ repository }: RepositoriesListItemProps) {
-  const { isNotPtBr } = useRouter();
+  const { t } = useTranslation("projects");
 
   const {
     fullname,
@@ -35,36 +35,15 @@ export function RepositoriesListItem({ repository }: RepositoriesListItemProps) 
     _filtered: isFiltered,
   } = repository;
 
-  function getTranslatedText(text: string, isNotPtBr: boolean) {
-    if (isNotPtBr) {
-      switch (text) {
-        case "self":
-          return "visit";
-        case "flash":
-          return "highlighted";
-        default:
-          return text;
-      }
+  function getTranslatedText(text: string) {
+    const translationKey = `repositories.item.${text}`;
+    const translatedText = t(translationKey);
+
+    if (translatedText !== translationKey) {
+      return translatedText;
     }
 
-    switch (text) {
-      case "licensed":
-        return "licenciado";
-      case "documentation":
-        return "documentação";
-      case "fork":
-        return "bifurcação";
-      case "template":
-        return "modelo";
-      case "flash":
-        return "destaque";
-      case "Repository":
-        return "Repositório";
-      case "self":
-        return "visitar";
-      default:
-        return text;
-    }
+    return text;
   }
 
   const links = importedConfig?.links;
@@ -122,7 +101,7 @@ export function RepositoriesListItem({ repository }: RepositoriesListItemProps) 
           {(isPinned || isFork || isTemplate || haveLicense) && (
             <Icon
               name={iconName}
-              label={getTranslatedText(iconName, isNotPtBr)}
+              label={getTranslatedText(iconName)}
               tooltipClassName="z-20 mt-[-10px]"
               tooltipContainerClassName="h-fit"
             />
@@ -144,7 +123,7 @@ export function RepositoriesListItem({ repository }: RepositoriesListItemProps) 
                   className="rounded-lg"
                   tooltipClassName="z-10 mt-[-10px]"
                   icon={key as IconType}
-                  title={getTranslatedText(key, isNotPtBr)}
+                  title={getTranslatedText(key)}
                   onClick={(e) => {
                     return handleOpenLink(e, value);
                   }}
@@ -161,11 +140,9 @@ export function RepositoriesListItem({ repository }: RepositoriesListItemProps) 
             }}
           />
           {linksInList.length <= 0 ? (
-            <h4 className="z-10">{getTranslatedText("Repository", isNotPtBr)}</h4>
+            <h4 className="z-10">{getTranslatedText("Repository")}</h4>
           ) : (
-            <h4 className="z-10 sm:hidden md:block">
-              {getTranslatedText("Repository", isNotPtBr)}
-            </h4>
+            <h4 className="z-10 sm:hidden md:block">{getTranslatedText("Repository")}</h4>
           )}
         </div>
         {progress !== 0 && !isCompleted && (

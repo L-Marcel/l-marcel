@@ -1,0 +1,47 @@
+{
+  "input": {
+    "search": "Pesquisar por nome"
+  },
+  "checkbox": {
+    "technologies": "tecnologias",
+    "status": "situação",
+    "type": "tipo",
+    "documents": "documentos",
+    "/ disabled filter": "/ filtro desativado"
+  },
+  "repositories": {
+    "item": {
+      "licensed": "licenciado",
+      "documentation": "documentação",
+      "fork": "bifurcação",
+      "template": "modelo",
+      "flash": "destaque",
+      "Repository": "Repositório",
+      "self": "visitar"
+    }
+  },
+  "filter": {
+    "menu": {
+      "finished": "concluído",
+      "deployed": "implementado",
+      "licensed": "licenciado",
+      "progress": "em progresso",
+      "canceled": "cancelado",
+      "common": "comum",
+      "highlight": "destaque",
+      "fork": "bifurcação",
+      "template": "modelo",
+      "none": "nenhum",
+      "description": "descrição",
+      "documentation": "documentação"
+    },
+    "progress": {
+      "label": "progresso",
+      "disabled": "/ filtro desativado"
+    },
+    "button": {
+      "projects": "projetos",
+      "filters": "filtros"
+    }
+  }
+}

@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { useRouter } from "../../context/hooks/useRouter";
 import { Icon, IconType } from "../Icon";
-import { getTranslatedRouteName } from "./NavLink";
 import { MobileNavLinkIconContainer, MobileNavLinkListItemContainer } from "./styles";
+import { TFunction } from "next-i18next";
 
 interface MobileNavLinkProps {
   locale?: string;
@@ -10,6 +10,7 @@ interface MobileNavLinkProps {
   path: string;
   liClassName?: string;
   dynamic?: boolean;
+  t: TFunction;
 }
 
 export function MobileNavLink({
@@ -17,22 +18,22 @@ export function MobileNavLink({
   path,
   locale,
   liClassName,
-  dynamic = false
+  dynamic = false,
+  t,
 }: MobileNavLinkProps) {
-  const { isNotPtBr, ...router } = useRouter();
+  const { asPath, ...router } = useRouter();
 
-  const isActive = 
+  const isActive =
     (locale && router.locale?.toLowerCase().includes(name)) ||
-    (!locale && dynamic && router.asPath.replace(/\/en-us/, "/").startsWith(path)) || 
-    (!locale && router.asPath.replace(/\/en-us/, "/") === path);
+    (!locale && dynamic && asPath.replace(/\/en-us/, "/").startsWith(path)) ||
+    (!locale && asPath.replace(/\/en-us/, "/") === path);
 
-  if(locale === "pt-br") {
-    path = router.asPath;
-  } else if(locale) {
-    path = router.asPath.replace(/\/en-us/, "/");
+  if (locale === "pt-br") {
+    path = asPath;
+  } else if (locale) {
+    path = asPath.replace(/\/en-us/, "/");
   }
 
-    
   return (
     <MobileNavLinkListItemContainer selected={isActive} className={liClassName}>
       <Link className="no-underline" href={path} locale={locale}>
@@ -45,24 +46,11 @@ export function MobileNavLink({
             />
           </MobileNavLinkIconContainer>
           <div className="flex flex-col justify-center">
-            <h3 className="first-letter:uppercase">{isNotPtBr? name:getTranslatedRouteName(name)}</h3>
-            <p className="text-base italic">{getRouteDescription(name, isNotPtBr)}</p>
+            <h3 className="first-letter:uppercase">{t(`navigation.${name}`)}</h3>
+            <p className="text-base italic">{t(`navigation.descriptions.${name}`)}</p>
           </div>
         </div>
       </Link>
     </MobileNavLinkListItemContainer>
   );
-}
-
-function getRouteDescription(name: string, isNotPtBr = false) {
-  switch(name) {
-  case "resume":
-    return isNotPtBr? "information about me":"informações sobre mim";
-  case "projects":
-    return isNotPtBr? "my public repositories":"meus repositórios públicos";
-  case "achievements":
-    return isNotPtBr? "everything I've done so far":"tudo que fiz até agora";
-  default:
-    return name;
-  }
 }

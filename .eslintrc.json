@@ -8,5 +8,8 @@
     "tailwindcss",
     "react",
     "@typescript-eslint"
-  ]
+  ],
+  "rules": {
+    "tailwindcss/no-custom-classname": "off"
+  }
 }

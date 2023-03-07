@@ -1,13 +1,18 @@
-import tw from "tw-tailwind";
+import { tf } from "tailwind-factory";
 
-export const TooltipContainer = tw.label`
+export const TooltipContainer = tf(
+  "label",
+  `
   relative
   tooltip-container
   cursor-normal
   md:cursor-help
-`;
+`
+);
 
-export const TooltipTextContainer = tw.div`
+export const TooltipTextContainer = tf(
+  "div",
+  `
   hidden  
   md:flex
   flex-row
@@ -27,9 +32,12 @@ export const TooltipTextContainer = tw.div`
   shadow-sm
   md:shadow-lg
   overflow-hidden
-`;
+`
+);
 
-export const TooltipText = tw.p`
+export const TooltipText = tf(
+  "p",
+  `
   text-base
   whitespace-nowrap
   overflow-hidden
@@ -37,4 +45,5 @@ export const TooltipText = tw.p`
   text-ellipsis
   !mt-0
   !pt-0
-`;
+`
+);

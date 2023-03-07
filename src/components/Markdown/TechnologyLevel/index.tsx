@@ -7,14 +7,10 @@ export interface TechnologyLevelProps {
   max: number;
 }
 
-export function TechnologyLevel({
-  technology,
-  level,
-  max
-}: TechnologyLevelProps) {
+export function TechnologyLevel({ technology, level, max }: TechnologyLevelProps) {
   const levels = [];
-  
-  for(let i = 0; i < max; i++) {
+
+  for (let i = 0; i < max; i++) {
     levels.push(
       <LevelBlock
         key={`tech-${technology}-${i}`}
@@ -27,7 +23,7 @@ export function TechnologyLevel({
   return (
     <div className="flex flex-col gap-4">
       <h3>{technology}</h3>
-      <motion.div 
+      <motion.div
         className="flex flex-row gap-3"
         initial="disabled"
         whileInView="visible"
@@ -36,9 +32,9 @@ export function TechnologyLevel({
           visible: {
             transition: {
               delayChildren: 0.05,
-              staggerChildren: 0.05
-            }
-          }
+              staggerChildren: 0.05,
+            },
+          },
         }}
       >
         {levels}

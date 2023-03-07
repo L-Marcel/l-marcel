@@ -20,17 +20,13 @@ export function IconButton({
   disabled = false,
   ...rest
 }: IconButtonProps) {
-  if(!title) {
+  if (!title) {
     return (
-      <IconButtonContainer
-        size={size}
-        disabled={disabled}
-        {...rest}
-      >
+      <IconButtonContainer size={size} disabled={disabled} {...rest}>
         <Icon
-          className={(iconClassName ?? "") + " duration-75"} 
-          name={icon} 
-          title={title} 
+          className={(iconClassName ?? "") + " duration-75"}
+          name={icon}
+          title={title}
           withoutTooltip
         />
       </IconButtonContainer>
@@ -39,15 +35,8 @@ export function IconButton({
 
   return (
     <Tooltip label={title} className={"mt-2 " + tooltipClassName}>
-      <IconButtonContainer
-        size={size}
-        {...rest}
-      >
-        <Icon
-          className="duration-75" 
-          name={icon}
-          withoutTooltip
-        />
+      <IconButtonContainer size={size} {...rest}>
+        <Icon className="duration-75" name={icon} withoutTooltip />
       </IconButtonContainer>
     </Tooltip>
   );

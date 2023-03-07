@@ -3,8 +3,13 @@ import { useMenuIsOpen } from "../../../context/hooks/useMenuIsOpen";
 import { MobileNavLink } from "../../Navigation/MobileNavLink";
 import { NavLink } from "../../Navigation/NavLink";
 import { MobileMenuContentContainer, MobileMenuLinksList } from "./styles";
+import { TFunction } from "next-i18next";
 
-export function MobileMenuContent() {
+interface MobileMenuContentProps {
+  t: TFunction;
+}
+
+export function MobileMenuContent({ t }: MobileMenuContentProps) {
   const { isOpen, toggleMenu } = useMenuIsOpen();
 
   function handleOnClickInOverlay() {
@@ -36,33 +41,13 @@ export function MobileMenuContent() {
       >
         <MobileMenuContentContainer>
           <ul className="mobile-locale-menu-group flex flex-row justify-center">
-            <NavLink
-              path=""
-              name="pt-br"
-              locale="pt-br"
-              liClassName="flex-1"
-            />
-            <NavLink
-              path=""
-              name="en-us"
-              locale="en-us"
-              liClassName="flex-1"
-            />
+            <NavLink t={t} path="" name="pt-br" locale="pt-br" liClassName="flex-1" />
+            <NavLink t={t} path="" name="en-us" locale="en-us" liClassName="flex-1" />
           </ul>
           <MobileMenuLinksList>
-            <MobileNavLink
-              path="/"
-              name="resume"
-            />
-            <MobileNavLink
-              path="/projects"
-              name="projects"
-              dynamic
-            />
-            <MobileNavLink
-              path="/achievements"
-              name="achievements"
-            />
+            <MobileNavLink t={t} path="/" name="resume" />
+            <MobileNavLink t={t} path="/projects" name="projects" dynamic />
+            <MobileNavLink t={t} path="/achievements" name="achievements" />
           </MobileMenuLinksList>
         </MobileMenuContentContainer>
       </Transition>

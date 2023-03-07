@@ -1,3 +1,4 @@
+import { useTranslation } from "next-i18next";
 import { useRouter } from "../../context/hooks/useRouter";
 import { ReturnButtonContainer } from "./styles";
 
@@ -6,7 +7,8 @@ export interface ReturnButtonProps {
 }
 
 export function ReturnButton({ path }: ReturnButtonProps) {
-  const { push, isNotPtBr } = useRouter();
+  const { push } = useRouter();
+  const { t } = useTranslation();
 
   function handleNavigateBack() {
     push(path);
@@ -14,7 +16,7 @@ export function ReturnButton({ path }: ReturnButtonProps) {
 
   return (
     <ReturnButtonContainer onClick={handleNavigateBack}>
-      {"<-"} {isNotPtBr? "return":"voltar"}
+      {t("return_button")}
     </ReturnButtonContainer>
   );
 }
