@@ -4,8 +4,7 @@ import { ToggleThemeButton } from "./ToggleThemeButton";
 import { NavLink } from "../Navigation/NavLink";
 import { VerticalDivider } from "../VerticalDivider";
 import { MobileMenu } from "./Mobile/MobileMenu";
-import { withTranslation } from "react-i18next";
-import { TFunction } from "next-i18next";
+import { TFunction, withTranslation } from "next-i18next";
 
 interface HeaderProps {
   t: TFunction;
