@@ -107,7 +107,7 @@ export class Github {
     return await this.api
       .get(
         `repos/l-marcel/l-marcel/contents/README_ERROR${
-          locale === "en-us" ? ".en-US" : ""
+          locale === "en-US" ? ".en-US" : ""
         }.md`
       )
       .then((res) => {
@@ -116,7 +116,7 @@ export class Github {
   }
 
   static async getReadme(locale: string, repository = "l-marcel/l-marcel") {
-    if (locale === "en-us") {
+    if (locale === "en-US") {
       return await this.api
         //en-US
         .get(`repos/${repository}/contents/README.en-US.md`)
@@ -219,7 +219,7 @@ export class Github {
     maxPage = 2,
     repositories = [],
     getLanguages = false,
-    locale = "pt-br",
+    locale = "pt-BR",
   }: GithubGetReposOptions): Promise<Repository[]> {
     const url = "https://api.github.com/users/l-marcel/repos";
 
@@ -259,9 +259,9 @@ export class Github {
 
           const nameAlreadyDefined = !!config?.name;
 
-          if (locale === "pt-br" && config?.translatedDescription) {
+          if (locale === "pt-BR" && config?.translatedDescription) {
             repos[i].description = config?.translatedDescription;
-          } else if (locale === "pt-br" && !repos[i].fork) {
+          } else if (locale === "pt-BR" && !repos[i].fork) {
             repos[i].description = "";
           }
 
@@ -333,11 +333,11 @@ export class Github {
 
   static async getRepositoryDocs({
     repositoryName,
-    locale = "pt-br",
+    locale = "pt-BR",
     replaceRules,
   }: GithubGetRepoDocsOptions): Promise<GithubGetRepoDocsData> {
     let readme: string = await Github.getReadme(
-      locale ?? "pt-br",
+      locale ?? "pt-BR",
       `l-marcel/${repositoryName}`
     );
 

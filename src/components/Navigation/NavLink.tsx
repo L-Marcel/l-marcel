@@ -27,7 +27,7 @@ export function NavLink({
     (!locale && dynamic && asPath.replace(/\/en-us/, "/").startsWith(path)) ||
     (!locale && asPath.replace(/\/en-us/, "/") === path);
 
-  if (locale === "pt-br") {
+  if (locale === "pt-BR") {
     path = asPath;
   } else if (locale) {
     path = asPath.replace(/\/en-us/, "/");

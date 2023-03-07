@@ -91,18 +91,18 @@ function Resume({ data, withProfile, updatedAt, demoVideoURL = null }: ResumePro
 }
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
-  const isNotPtBr = locale === "en-us";
+  const isNotPtBr = locale === "en-US";
   const updatedAt = new Date().toString();
 
   const { readme, demoVideoURL } = await Github.getRepositoryDocs({
     repositoryName: "l-marcel",
-    locale: locale ?? "pt-br",
+    locale: locale ?? "pt-BR",
     replaceRules: (readme) => {
       readme = readme.replace(
         // eslint-disable-next-line prettier/prettier
         "<div id=\"repository-buttons\"/>",
         `<a class="navigation-link" href="https://github.com/l-marcel/l-marcel" target="_blank">
-  ${locale !== "pt-br" ? "repository" : "repositório"}
+  ${locale !== "pt-BR" ? "repository" : "repositório"}
 </a>
 <span id="only-if-not-last">•</span>`
       );

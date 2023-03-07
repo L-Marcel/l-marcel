@@ -20,7 +20,7 @@ function Projects({ repositories, technologies, locale }: ProjectsProps) {
   return (
     <>
       <NextSeo
-        title={locale === "en-us" ? "Projects" : "Projetos"}
+        title={locale === "en-US" ? "Projects" : "Projetos"}
         defaultTitle="L-Marcel"
         titleTemplate="L-Marcel - %s"
       />
@@ -48,10 +48,10 @@ function Projects({ repositories, technologies, locale }: ProjectsProps) {
 }
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
-  const isNotPtBr = locale === "en-us";
+  const isNotPtBr = locale === "en-US";
 
   const repositories = await Github.getRepositories({
-    locale: locale ?? "pt-br",
+    locale: locale ?? "pt-BR",
     getLanguages: true,
   });
 

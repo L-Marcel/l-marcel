@@ -71,7 +71,7 @@ export default Translation.use(Resume);
 //   }
 //   const { readme, demoVideoURL } = await Github.getRepositoryDocs({
 //     repositoryName: params?.name,
-//     locale: locale ?? "pt-br",
+//     locale: locale ?? "pt-BR",
 //     replaceRules: (readme) => {
 //       readme = readme.replace(
 //         '<span id="repository-name"/>',
@@ -82,7 +82,7 @@ export default Translation.use(Resume);
 //         `<a class="navigation-link" href="https://github.com/l-marcel/${
 //           params?.name
 //         }" target="_blank">
-//   ${locale !== "pt-br" ? "repository" : "repositório"}
+//   ${locale !== "pt-BR" ? "repository" : "repositório"}
 // </a>
 // <span id="only-if-not-last">•</span>`
 //       );

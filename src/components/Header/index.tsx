@@ -28,8 +28,8 @@ function _Header({ t }: HeaderProps) {
             <li className="h-[2.8125rem]">
               <VerticalDivider />
             </li>
-            <NavLink t={t} path="" name="pt-br" locale="pt-br" />
-            <NavLink t={t} path="" name="en-us" locale="en-us" />
+            <NavLink t={t} path="" name="pt-br" locale="pt-BR" />
+            <NavLink t={t} path="" name="en-us" locale="en-US" />
           </ul>
         </nav>
         <span className="fixed top-0 z-[-5] w-full border-t-[1.3125rem] border-primary-600 drop-shadow-sm md:top-[2.78rem]"></span>

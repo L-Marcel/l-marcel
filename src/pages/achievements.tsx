@@ -43,7 +43,7 @@ function Achievements({ achievements }: AchievementsProps) {
 }
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
-  const isNotPtBr = locale === "en-us";
+  const isNotPtBr = locale === "en-US";
   const achievements = await Graphql.getInformation(isNotPtBr ? "EN" : "BR")
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     .then((res: any) => {
