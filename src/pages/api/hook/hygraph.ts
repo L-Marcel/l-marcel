@@ -4,9 +4,9 @@ import { revalidatePath } from "../../../utils/revalidatePath";
 
 async function revalidatePagesWithHygraphData(req: NextApiRequest, res: NextApiResponse) {
   const isValid = verifyWebhookSignature({
-    body: {},
-    signature: String(req.headers["gcms-signature"]),
-    secret: process.env.HYGRAPH_WEBHOOK_SECRET as string,
+    body: req.body,
+    signature: String(req.headers["gcms-signature"]) ?? "",
+    secret: String(process.env.HYGRAPH_WEBHOOK_SECRET ?? ""),
   });
 
   if (isValid) {
