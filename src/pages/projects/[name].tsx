@@ -1,7 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import Resume, { ResumeProps } from "..";
 import { useRouter } from "../../context/hooks/useRouter";
-import { Translation } from "../../services/translation";
 
 export function Project(props: ResumeProps) {
   const router = useRouter();
@@ -37,7 +36,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   };
 };
 
-export default Translation.use(Resume);
+export default Resume;
 
 // const repositories = await Github.getRepositories({});
 // let paths: (

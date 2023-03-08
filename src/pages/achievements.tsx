@@ -3,7 +3,6 @@ import { NextSeo } from "next-seo";
 import { IconType } from "../components/Icon";
 import { Timeline } from "../components/Timeline";
 import { Graphql } from "../services/classes/Graphql";
-import { Translation } from "../services/translation";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { i18n, useTranslation } from "next-i18next";
 
@@ -69,4 +68,4 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
   };
 };
 
-export default Translation.use(Achievements);
+export default Achievements;

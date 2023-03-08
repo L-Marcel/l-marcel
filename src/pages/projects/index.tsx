@@ -6,7 +6,6 @@ import { MenuProvider } from "../../context/providers/MenuProvider";
 import { Github, Repository } from "../../services/classes/Github";
 import { NextSeo } from "next-seo";
 import { SearchProvider } from "../../context/providers/SearchProvider";
-import { Translation } from "../../services/translation";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { i18n } from "next-i18next";
 interface ProjectsProps {

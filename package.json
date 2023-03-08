@@ -3,8 +3,6 @@
   "version": "3.0.0",
   "private": true,
   "scripts": {
-    "check": "ncu",
-    "upgrade": "ncu -u",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -39,7 +37,6 @@
     "remark-gfm": "^3.0.1",
     "scheduler": "^0.23.0",
     "tailwind-factory": "^2.3.6",
-    "tw-tailwind": "^1.0.21",
     "use-context-selector": "^1.4.1",
     "zustand": "^4.3.6"
   },
@@ -58,7 +55,6 @@
     "eslint-config-next": "^13.2.3",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-tailwindcss": "^3.10.1",
-    "npm-check-updates": "^16.7.10",
     "postcss": "^8.4.21",
     "postcss-import": "^15.1.0",
     "postcss-nesting": "^10.2.0",

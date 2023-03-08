@@ -29,6 +29,7 @@ import { HiArrowSmLeft, HiOutlineAdjustments, HiTemplate } from "react-icons/hi"
 import { IoIosSchool, IoMdOpen } from "react-icons/io";
 import {
   SiAngular,
+  SiC,
   SiChakraui,
   SiCplusplus,
   SiCsharp,
@@ -83,6 +84,7 @@ const languagesAndFrameworks = {
   angular: SiAngular,
   rust: SiRust,
   java: FaJava,
+  c: SiC,
   "c++": SiCplusplus,
   "c#": SiCsharp,
   python: SiPython,

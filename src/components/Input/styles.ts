@@ -194,7 +194,8 @@ export const OptionsKdb = tf(
   `
   mx-1
   lowercase
-  bg-gray-700
+  dark:bg-gray-700
+  bg-white-700
   rounded-lg
   px-[5px]
   py-[1.2px]

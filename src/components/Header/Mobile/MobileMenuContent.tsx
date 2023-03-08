@@ -41,8 +41,8 @@ export function MobileMenuContent({ t }: MobileMenuContentProps) {
       >
         <MobileMenuContentContainer>
           <ul className="mobile-locale-menu-group flex flex-row justify-center">
-            <NavLink t={t} path="" name="pt-BR" locale="pt-BR" liClassName="flex-1" />
-            <NavLink t={t} path="" name="en-US" locale="en-US" liClassName="flex-1" />
+            <NavLink t={t} path="" name="pt-br" locale="pt-BR" liClassName="flex-1" />
+            <NavLink t={t} path="" name="en-us" locale="en-US" liClassName="flex-1" />
           </ul>
           <MobileMenuLinksList>
             <MobileNavLink t={t} path="/" name="resume" />
