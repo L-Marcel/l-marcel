@@ -1,6 +1,6 @@
 <div valing="top">
   <h1>Hello, I'm <span>Lucas Marcel</span></h1>
-  <p>I'm a junior full-stack developer specializing in <span>JavaScript</span> and a <span>React.js</span> enthusiast.</p>
+  <p>I'm a junior full stack developer specializing in <span>JavaScript</span> and a <span>React.js</span> enthusiast.</p>
   <nav>
     <div id="repository-buttons"/>
     <a class="navigation-link disabled" href="https://github.com/L-Marcel/l-marcel/blob/main/README.md" target="_blank">
@@ -19,7 +19,7 @@
 
 <br/>
 
-<p>I'm 20 years old, I'm Brazilian and I started programming for the first time in 2018. I finished technical high school in 2022 and received an academic award for my performance. I also won a Rocketseat full scholarship in early 2022 and today I continue my studies on my own.</p>
+<p>I'm 20 years old, I'm Brazilian and I started programming for the first time in 2018. I finished technical high school in 2022 and received an academic award for my performance. I also won a Rocketseat full scholarship in early 2022 and today I continue my studies at the Digital Metropolis Institute (IMD) of the Federal University of Rio Grande do Norte (UFRN).</p>
 
 <pre>
 C:\projects\l-marcel> <span>pnpm</span> dev
@@ -57,7 +57,7 @@ C:\projects\l-marcel> <span>pnpm</span> dev
 <div id="list">
 <div id="grid-item">
   <h3><span>Software</span> development</h3>
-  <p>I have been programming since 2018 and, since then, I have acquired a wide range of knowledge using technologies, languages, frameworks, and libraries such as: JavaScript, TypeScript, React.js, Next, Vite, Nest, Node, Prisma, Figma, Docker, Storybook, Git, HTML, CSS, Sass, Tailwind, Stitches and others.</p>
+  <p>I have been programming since 2018 and, since then, I have acquired a wide range of knowledge using technologies, languages, frameworks, and libraries such as: JavaScript, TypeScript, React.js, Next, Vite, Nest, Node, Prisma, Figma, Jest, Docker, Storybook, Git, HTML, CSS, Sass, Tailwind, Stitches and others.</p>
 </div>
 </div>
 <div id="list">

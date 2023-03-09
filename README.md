@@ -1,6 +1,6 @@
 <div valing="top">
 <h1>Olá, sou <span>Lucas Marcel</span></h1>
-<p>Sou um desenvolvedor fullstack júnior especializado em <span>JavaScript</span> e entusiasta do <span>React.js.</span></p>
+<p>Sou um desenvolvedor full stack júnior especializado em <span>JavaScript</span> e entusiasta do <span>React.js.</span></p>
 <nav>
   <div id="repository-buttons"/>
   <a class="navigation-link disabled" href="https://github.com/L-Marcel/l-marcel/blob/main/README.en-US.md" target="_blank">
@@ -19,7 +19,7 @@
 
 <br/>
 
-<p>Tenho 20 anos, sou brasileiro e comecei a programar pela primeira vez em 2018. Concluí o ensino médio técnico em 2022 e recebi uma láurea acadêmica pelo meu rendimento. Também ganhei uma bolsa de estudos completa da Rocketseat no começo de 2022 e hoje sigo meus estudos por conta própria.</p>
+<p>Tenho 20 anos, sou brasileiro e comecei a programar pela primeira vez em 2018. Concluí o ensino médio técnico em 2022 e recebi uma láurea acadêmica pelo meu rendimento. Também ganhei uma bolsa de estudos completa da Rocketseat no começo de 2022 e hoje sigo meus estudos no Instituto Metrópole Digital (IMD) da Universidade Federal do Rio Grande do Norte (UFRN).</p>
 
 <pre>
 C:\projects\l-marcel> <span>pnpm</span> dev
@@ -58,7 +58,7 @@ C:\projects\l-marcel> <span>pnpm</span> dev
 <div id="list">
 <div id="grid-item">
   <h3>Desenvolvimento de <span>Software</span></h3>
-  <p>Programo desde 2018 e, desde então, adquiri uma vasta gama de conhecimentos utilizando tecnologias, linguagens, frameworks e bibliotecas como: JavaScript, TypeScript, React.js, Next, Vite, Nest, Node, Prisma, Figma, Docker, Storybook, Git, HTML, CSS, Sass, Tailwind, Stitches e outros.</p>
+  <p>Programo desde 2018 e, desde então, adquiri uma vasta gama de conhecimentos utilizando tecnologias, linguagens, frameworks e bibliotecas como: JavaScript, TypeScript, React.js, Next, Vite, Nest, Node, Prisma, Figma, Jest, Docker, Storybook, Git, HTML, CSS, Sass, Tailwind, Stitches e outros.</p>
 </div>
 </div>
 <div id="list">
