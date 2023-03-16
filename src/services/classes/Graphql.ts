@@ -14,7 +14,7 @@ export class Graphql {
     return await this.api.request(
       `
       query MyAchivements {
-        achievements(orderBy: registered_in_DESC) {
+        achievements(orderBy: registered_in_DESC, first: 100) {
           id
           title
           subtitle

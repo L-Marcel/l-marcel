@@ -112,6 +112,13 @@
           2lg:mt-[4px]
           text-base #{!important};
       }
+
+      a {
+        @apply
+          mt-[3px]
+          2lg:mt-[4px]
+          text-base #{!important};
+      }
       
       .no-timeline-margin {
         @apply

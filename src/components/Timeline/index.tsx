@@ -44,6 +44,49 @@ export function Timeline({ achievements }: TimelineProps) {
             button_icon,
             button_text,
           }) => {
+            function getDescriptionHTML() {
+              const space = / /g;
+              const haveSpace = space.test(description);
+
+              const words = haveSpace ? description.split(" ") : [description];
+
+              let content = "";
+              for (const w in words) {
+                let word = words[w];
+
+                const linkRegex = /\[.*\]\(.*\)/g;
+                const haveLink = linkRegex.test(word);
+
+                if (haveLink) {
+                  const links = word.match(linkRegex);
+
+                  if (links) {
+                    for (const i in links) {
+                      const link = links[i];
+
+                      const hrefRegex = /(?<=\().*(?=\))/g;
+                      const labelRegex = /(?<=\[).*(?=\])/g;
+
+                      const [href] = link.match(hrefRegex) ?? [""];
+                      const [label] = link.match(labelRegex) ?? [""];
+
+                      word = word.replace(
+                        link,
+                        `<a href="${href}" target="_blank">${label}</a>`
+                      );
+                    }
+                  }
+                }
+                content += word + " ";
+              }
+
+              return {
+                __html: content,
+              };
+            }
+
+            const descriptionHTML = getDescriptionHTML();
+
             const iconName = getAchievementIcon(icon);
             const date = format(
               new Date(registered_in + " 00:00:01"),
@@ -77,7 +120,10 @@ export function Timeline({ achievements }: TimelineProps) {
               >
                 <h2>{title}</h2>
                 <h3>{subtitle}</h3>
-                <p>{description}</p>
+                <p
+                  className="whitespace-pre-wrap"
+                  dangerouslySetInnerHTML={descriptionHTML}
+                />
                 {expires_in && (
                   <TimelineElementTimerContainer dateTime={dateTimeToExpire}>
                     {isExpired >= 1 ? (
