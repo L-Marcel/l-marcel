@@ -14,6 +14,10 @@
     <a class="navigation-link" href="https://l-marcel.vercel.app/resume.pdf" target="_blank">
       resume
     </a>
+    <span>•</span>
+    <a class="navigation-link" href="https://lattes.cnpq.br/9771880246762542" target="_blank">
+      lattes
+    </a>
   </nav>
 </div>
 
