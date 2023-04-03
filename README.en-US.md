@@ -89,17 +89,6 @@ C:\projects\l-marcel> <span>pnpm</span> dev
 </div>
 </div>
 
-<div id="list-title">
-<div id="icon experience"></div>
-<h2>Experience</h2>
-</div>
-<div id="list">
-<div id="grid-item">
-  <h3>Scholar | IFRN | <span>2020 - 2021</span></h3>
-  <p>I was assigned to teach Instrumental Electricity classes for lower-year students and be responsible for the Electronics laboratory, during this period I also taught classes in Algorithms and Digital Electronics.</p>
-</div>
-</div>
-
 <div id="statistics">
   <h2><span>Github profile</span> statistics:</h2>
   <div>

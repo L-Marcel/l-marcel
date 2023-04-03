@@ -90,17 +90,6 @@ C:\projects\l-marcel> <span>pnpm</span> dev
 </div>
 </div>
 
-<div id="list-title">
-<div id="icon experience"></div>
-<h2>Experiência</h2>
-</div>
-<div id="list">
-<div id="grid-item">
-  <h3>Bolsista TAL | IFRN | <span>2020 - 2021</span></h3>
-  <p>Fui designado para dar aulas de Eletricidade Instrumental para os alunos dos anos inferiores e ficar responsável pelo laboratório de Eletrônica, durante esse período também dei aulas de Algoritmos e Eletrônica Digital.</p>
-</div>
-</div>
-
 <div id="statistics">
 <h2>Estatísticas do <span>Github</span>:</h2>
 <div>
