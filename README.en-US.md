@@ -1,6 +1,6 @@
 <div valing="top">
   <h1>Hello, I'm <span>Lucas Marcel</span></h1>
-  <p>I've been programming since <span>2018</span>, focusing on <span>Web</span> development.</p>
+  <p>I've been programming since <span>2018</span>, focusing on <span>Web</span> development (<span>Frontend</span>).</p>
   <nav>
     <div id="repository-buttons"/>
     <a class="navigation-link disabled" href="https://github.com/L-Marcel/l-marcel/blob/main/README.md" target="_blank">
@@ -122,10 +122,10 @@
       Course: Informatics
     </p></li>
     <li><p>
-      Web programming
+      Web Programming
     </p></li>
     <li><p>
-      Object oriented programming
+      Object Oriented Programming
     </p></li>
   </ul>
 </div>

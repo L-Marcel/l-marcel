@@ -257,10 +257,6 @@
     }
   }
 
-  .item-detail {
-    margin-top: 10px;
-  }
-  
   .list-container {
     h2, h2 > span {
       @apply
@@ -408,6 +404,10 @@
         md:text-[2.25rem]
         md:block;
     }
+  }
+
+  .item-detail {
+    margin-top: 12px;
   }
 };
 
