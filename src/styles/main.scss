@@ -406,15 +406,16 @@
     }
   }
 
-  .item-detail {
-    margin-top: 12px;
-  }
 };
 
 @tailwind utilities;
 
 .text-break-word {
   word-break: break-word;
+}
+
+.item-detail {
+  margin-top: 12px;
 }
 
 #only-if-not-last:last-of-type {
