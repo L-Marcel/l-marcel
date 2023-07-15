@@ -15,6 +15,9 @@ module.exports = {
         xs: {
           max: "340px",
         },
+        mmd: {
+          max: "768px",
+        },
         "2lg": "1170px",
       },
       fontFamily: {

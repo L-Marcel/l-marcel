@@ -18,8 +18,8 @@
     <a class="navigation-link" href="https://l-marcel.vercel.app/resume.pdf" target="_blank">
       resume
     </a>
-    <span>•</span>
-    <a class="navigation-link" href="https://lattes.cnpq.br/9771880246762542" target="_blank">
+    <span class="disabled-in-mobile">•</span>
+    <a class="navigation-link disabled-in-mobile" href="https://lattes.cnpq.br/9771880246762542" target="_blank">
       lattes
     </a>
   </nav>
@@ -40,7 +40,7 @@
     <li><p>
       A tool to generate text boxes that simulate text editors. With accessibility, several customizable themes, support for plugins and integration for several programming languages.
     </p></li>
-    <li><p>
+    <li class="item-detail"><p>
       <span>Technologies</span>: ReactJS, JavaScript, TypeScript, Tailwind and PrismJS
     </p></li>
   </ul>
@@ -53,7 +53,7 @@
     <li><p>
       A CSS in JS library to create styled components using classes from Tailwind and variants like in Stitches. The tool is accompanied by a VSCode extension and a Babel plugin.
     </p></li>
-    <li><p>
+    <li class="item-detail"><p>
       <span>Technologies</span>: ReactJS, JavaScript, TypeScript, Tailwind, Babel, Jest, PostCSS and Sass
     </p></li>
   </ul>

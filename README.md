@@ -18,8 +18,8 @@
   <a class="navigation-link" href="https://l-marcel.vercel.app/curriculo.pdf" target="_blank">
     curriculo
   </a>
-  <span>•</span>
-  <a class="navigation-link" href="https://lattes.cnpq.br/9771880246762542" target="_blank">
+  <span class="disabled-in-mobile">•</span>
+  <a class="navigation-link disabled-in-mobile" href="https://lattes.cnpq.br/9771880246762542" target="_blank">
     lattes
   </a>
 </nav>
@@ -40,7 +40,7 @@
     <li><p>
       Uma ferramenta para gerar caixas de texto que simulam editores de texto. Com acessibilidade, diversos temas customizáveis, suporte para plugins e integração para diversas linguagens de programação.
     </p></li>
-    <li><p>
+    <li class="item-detail"><p>
       <span>Tecnologias</span>: ReactJS, JavaScript, TypeScript, Tailwind e PrismJS
     </p></li>
   </ul>
@@ -53,7 +53,7 @@
     <li><p>
       Uma biblioteca CSS in JS para criar componentes estilizados utilizando classes do Tailwind e variantes como no Stitches. A ferramenta é acompanhada por uma extensão do VSCode e um plugin do Babel.
     </p></li>
-    <li><p>
+    <li class="item-detail"><p>
       <span>Tecnologias</span>: ReactJS, JavaScript, TypeScript, Tailwind, Babel, Jest, PostCSS e Sass
     </p></li>
   </ul>

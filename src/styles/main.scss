@@ -218,6 +218,11 @@
         hidden;
     }
 
+    .disabled-in-mobile {
+      @apply
+        mmd:hidden
+    }
+
     button:not(:hover):not(:active) {
       @apply
         bg-white-700
@@ -250,6 +255,10 @@
           visible;
       }
     }
+  }
+
+  .item-detail {
+    margin-top: 10px;
   }
   
   .list-container {
