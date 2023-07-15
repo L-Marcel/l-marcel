@@ -35,7 +35,7 @@
 </div>
 <div id="list">
 <div id="grid-item">
-  <h4>Project: Highlight (<a href="https://core.l-marcel.vercel.app/?path=/story/highlight-examples--editable-with-plugin" taget="_blank">demonstration</a>)</h4>
+  <h4 class="item-title">Project: Highlight (<a href="https://core.l-marcel.vercel.app/?path=/story/highlight-examples--editable-with-plugin" taget="_blank">demonstration</a>)</h4>
   <ul>
     <li><p>
       A tool to generate text boxes that simulate text editors. With accessibility, several customizable themes, support for plugins and integration for several programming languages.
@@ -48,7 +48,7 @@
 </div>
 <div id="list">
 <div id="grid-item">
-  <h4>Project: Tailwind Factory (<a href="https://www.npmjs.com/package/tailwind-factory" taget="_blank">documentation</a>)</h4>
+  <h4 class="item-title">Project: Tailwind Factory (<a href="https://www.npmjs.com/package/tailwind-factory" taget="_blank">documentation</a>)</h4>
   <ul>
     <li><p>
       A CSS in JS library to create styled components using classes from Tailwind and variants like in Stitches. The tool is accompanied by a VSCode extension and a Babel plugin.
@@ -81,7 +81,7 @@
 </div>
 <div id="list">
 <div id="grid-item">
-  <h4>IMD / UFRN</h4>
+  <h4 class="item-title">IMD / UFRN</h4>
   <ul>
     <li><p>
       Bachelor: Information Technology
@@ -97,7 +97,7 @@
 </div>
 <div id="list">
 <div id="grid-item">
-  <h4>Rocketseat</h4>
+  <h4 class="item-title">Rocketseat</h4>
   <ul>
     <li><p>
       Course: Ignite
@@ -116,7 +116,7 @@
 </div>
 <div id="list">
 <div id="grid-item">
-  <h4>IFRN</h4>
+  <h4 class="item-title">IFRN</h4>
   <ul>
     <li><p>
       Course: Informatics
