@@ -137,10 +137,10 @@ export const MarkdownListContainer = tf(
 export const MarkdownListItemContainer = tf(
   "li",
   `
-  text-lg
-  2xl:text-xl
+  text-xl
+  2xl:text-2xl
   flex
-  flex-col
+  flex-row
 `
 );
 
