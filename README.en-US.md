@@ -1,5 +1,6 @@
 <div valing="top">
   <h1>Hello, I'm <span>Lucas Marcel</span></h1>
+  <p>A <span>Frontend</span> developer who has been programming since <span>2018</span>.</p>
   <p>I've been programming since <span>2018</span>, focusing on <span>Web</span> development (<span>Frontend</span>).</p>
   <nav>
     <div id="repository-buttons"/>
