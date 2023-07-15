@@ -1,16 +1,20 @@
 <div valing="top">
 <h1>Olá, sou <span>Lucas Marcel</span></h1>
-<p>Sou um desenvolvedor full stack júnior especializado em <span>JavaScript</span> e entusiasta do <span>React.js.</span></p>
+<p>Programo desde <span>2018</span>, dando foco ao desenvolvimento <span>Web</span>.</p>
 <nav>
   <div id="repository-buttons"/>
   <a class="navigation-link disabled" href="https://github.com/L-Marcel/l-marcel/blob/main/README.en-US.md" target="_blank">
     en-us
   </a>
   <span class="disabled">•</span>
-  <a class="navigation-link" href="https://www.figma.com/file/RasJwsoUk7npUECQuWp2Yh/l-marcel?node-id=5%3A2&t=zXLOXZQQOlPbMviX-1" target="_blank">
-    figma
+  <a class="navigation-link" href="https://www.linkedin.com/in/l-marcel" target="_blank">
+    linkedin
   </a>
   <span>•</span>
+  <a class="navigation-link disabled" href="https://l-marcel.vercel.app" target="_blank">
+    portfólio
+  </a>
+  <span class="disabled">•</span>
   <a class="navigation-link" href="https://l-marcel.vercel.app/curriculo.pdf" target="_blank">
     curriculo
   </a>
@@ -23,13 +27,53 @@
 
 <br/>
 
-<p>Tenho 20 anos, sou brasileiro e comecei a programar pela primeira vez em 2018. Concluí o ensino médio técnico em 2022 e recebi uma láurea acadêmica pelo meu rendimento. Também ganhei uma bolsa de estudos completa da Rocketseat no começo de 2022 e hoje sigo meus estudos no Instituto Metrópole Digital (IMD) da Universidade Federal do Rio Grande do Norte (UFRN).</p>
+<p>Tive um artigo publicado no Simpósio Brasileiro de Informática na Educação, concluí o curso Ignite da Rocketseat e atualmente estudo na Universidade Federal do Rio Grande do Norte (UFRN). Me especializei em ReactJS, Node, Next, JavaScript e TypeScript.</p>
 
-<pre>
-C:\projects\l-marcel> <span>pnpm</span> dev
-</pre>
+<div id="list-title">
+<div id="icon cube"></div>
+<h2>Experiência</h2>
+</div>
+<div id="list">
+<div id="grid-item">
+  <h4>Projeto: Highlight (<a href="https://core.l-marcel.vercel.app/?path=/story/highlight-examples--editable-with-plugin" taget="_blank">demonstração</a>)</h4>
+  <ul>
+    <li><p>
+      Uma ferramenta para gerar caixas de texto que simulam editores de texto. Com acessibilidade, diversos temas customizáveis, suporte para plugins e integração para diversas linguagens de programação
+    </p></li>
+    <li><p>
+      Tecnologias: ReactJS, JavaScript, TypeScript, Tailwind e PrismJS
+    </p></li>
+  </ul>
+</div>
+</div>
+<div id="list">
+<div id="grid-item">
+  <h4>Projeto: Tailwind Factory (<a href="https://www.npmjs.com/package/tailwind-factory" taget="_blank">documentação</a>)</h4>
+  <ul>
+    <li><p>
+      Uma biblioteca CSS in JS para criar componentes estilizados utilizando classes do Tailwind e variantes como no Stitches. A ferramenta é acompanhada por uma extensão do VSCode e um plugin do Babel
+    </p></li>
+    <li><p>
+      Tecnologias: ReactJS, JavaScript, TypeScript, Tailwind, Babel, Jest, PostCSS e Sass
+    </p></li>
+  </ul>
+</div>
+</div>
 
-<p>Quero entrar para o mercado e continuar expandindo meus conhecimentos na área.</p>
+<div id="grid">
+  <div id="grid-item">
+    <h2>Tecnologias:</h2>
+    <ul>
+      <li id="react.js"><p>ReactJS</p></li>
+      <li id="javascript"><p>JavaScript</p></li>
+      <li id="typescript"><p>TypeScript</p></li>
+      <li id="node.js"><p>Node</p></li>
+      <li id="next.js"><p>Next</p></li>
+      <li id="sass"><p>Sass</p></li>
+      <li id="git"><p>Git / GitHub</p></li>
+    </ul>
+  </div>
+</div>
 
 <div id="list-title">
 <div id="icon school"></div>
@@ -37,56 +81,53 @@ C:\projects\l-marcel> <span>pnpm</span> dev
 </div>
 <div id="list">
 <div id="grid-item">
-  <h3>Ensino Técnico Integrado | <span>02/2022</span> | IFRN</h3>
+  <h4>IMD / UFRN</h4>
   <ul>
-    <li><p>Matéria principal: Programação para Internet</p></li>
-    <li><p>Matéria secundária: Programação Orientada a Objetos</p></li>
-    <li><p>Cursos relacionados: Informática</p></li>
+    <li><p>
+      Bacharel: Tecnologia da Informação
+    </p></li>
+    <li><p>
+      Ênfase: Engenharia de Software
+    </p></li>
+    <li><p>
+      Em andamento
+    </p></li>
   </ul>
 </div>
 </div>
 <div id="list">
 <div id="grid-item">
-  <h3>Ignite | <span>10/2021</span> | Rocketseat</h3>
+  <h4>Rocketseat</h4>
   <ul>
-    <li><p>Trilhas: React.js, Node.js e React Native</p></li>
+    <li><p>
+      Curso: Ignite
+    </p></li>
+    <li><p>
+      React avançado
+    </p></li>
+    <li><p>
+      Node avançado
+    </p></li>
+    <li><p>
+      React Native avançado
+    </p></li>
   </ul>
 </div>
 </div>
-
-
-<div id="list-title">
-<div id="icon cube"></div>
-<h2>Habilidades e Conhecimentos</h2>
-</div>
 <div id="list">
 <div id="grid-item">
-  <h3>Desenvolvimento de <span>Software</span></h3>
-  <p>Programo desde 2018 e, desde então, adquiri uma vasta gama de conhecimentos utilizando tecnologias, linguagens, frameworks e bibliotecas como: JavaScript, TypeScript, React.js, Next, Vite, Nest, Node, Prisma, Figma, Jest, Docker, Storybook, Git, HTML, CSS, Sass, Tailwind, Stitches e outros.</p>
-</div>
-</div>
-<div id="list">
-<div id="grid-item">
-  <h3><span>Aprendizado</span> constante</h3>
-  <p>Pratico o autodidatismo. Leio documentações, pesquiso novos meios para resolver um problema e acompanho notícias dentro da área.</p>
-</div>
-</div>
-<div id="list">
-<div id="grid-item">
-  <h3>Comunicação</h3>
-  <p>Tenho conhecimento de vários termos técnicos utilizados na área e desenvolvi bastante a leitura e escrita no Inglês, mas não sou fluente. Minha língua materna é o Português.</p>
-</div>
-</div>
-<div id="list">
-<div id="grid-item">
-  <h3>Gerenciamento de <span>banco de dados</span></h3>
-  <p>Compreendo os relacionamentos das entidades dentro de um banco de dados. Sei planejar e reorganizar essas estruturas e sei fazer consultas diretas ao banco de dados.</p>
-</div>
-</div>
-<div id="list">
-<div id="grid-item">
-  <h3><span>Integração e entrega</span> contínua</h3>
-  <p>Compreendo os relacionamentos das entidades dentro de um banco de dados. Sei planejar e reorganizar essas estruturas e sei fazer consultas diretas ao banco de dados.</p>
+  <h4>IFRN</h4>
+  <ul>
+    <li><p>
+      Curso: Informática
+    </p></li>
+    <li><p>
+      Programação para Internet
+    </p></li>
+    <li><p>
+      Programação Orientada a Objetos
+    </p></li>
+  </ul>
 </div>
 </div>
 

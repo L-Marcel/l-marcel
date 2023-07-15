@@ -100,9 +100,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
       readme = readme.replace(
         // eslint-disable-next-line prettier/prettier
         "<div id=\"repository-buttons\"/>",
-        `<a class="navigation-link" href="https://github.com/l-marcel/l-marcel" target="_blank">
-  ${locale !== "pt-BR" ? "repository" : "repositório"}
-</a>
+        `<a class="navigation-link" href="https://github.com/l-marcel" target="_blank">github</a>
 <span id="only-if-not-last">•</span>`
       );
       return readme;
