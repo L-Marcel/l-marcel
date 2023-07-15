@@ -1,4 +1,10 @@
 {
+  "error": {
+    "404": {
+      "title": "Página não encontrada",
+      "message": "Desculpa, eu não estava esperando ver você passar por isso! Mas veja pelo lado bom: assim essa página tem alguma utilidade..."
+    }
+  },
   "return_button": "<- voltar",
   "navigation": {
     "resume": "currículo",

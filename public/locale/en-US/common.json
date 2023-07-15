@@ -1,4 +1,10 @@
 {
+  "error": {
+    "404": {
+      "title": "Page not found",
+      "message": "Sorry, I wasn't expecting to see you go through this! But look on the bright side: so this page has some use..."
+    }
+  },
   "return_button": "<- return",
   "navigation": {
     "resume": "resume",

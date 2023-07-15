@@ -8,6 +8,7 @@ import { NextSeo } from "next-seo";
 import { SearchProvider } from "../../context/providers/SearchProvider";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { i18n } from "next-i18next";
+
 interface ProjectsProps {
   repositories: Repository[];
   technologies: string[];
