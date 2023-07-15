@@ -1,6 +1,6 @@
 <div valing="top">
   <h1>Hello, I'm <span>Lucas Marcel</span></h1>
-  <p>A <span>Frontend</span> developer who has been programming since <span>2018</span></p>
+  <p><span>Frontend</span> developer since <span>2018</span>.</p>
   <nav>
     <div id="repository-buttons"/>
     <a class="navigation-link disabled" href="https://github.com/L-Marcel/l-marcel/blob/main/README.md" target="_blank">
