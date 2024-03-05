@@ -11,14 +11,14 @@ import "../styles/timeline.scss";
 import { appWithTranslation } from "next-i18next";
 
 function MyApp({ Component, pageProps }: AppProps) {
+  // <Header/>
+  // <Footer/>
   return (
     <>
       <Layout>
-        <Header />
         <Component {...pageProps} />
-        <Footer />
       </Layout>
-      <Analytics />
+      <Analytics/>
     </>
   );
 }

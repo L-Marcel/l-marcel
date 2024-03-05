@@ -1,32 +1,33 @@
-import { GetStaticProps } from "next";
+//import { GetStaticProps } from "next";
 import { NextSeo } from "next-seo";
-import ReactMarkdown from "react-markdown";
-import { SpecialComponents } from "react-markdown/lib/ast-to-react";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { NormalComponents } from "react-markdown/lib/complex-types";
-import rehypeRaw from "rehype-raw";
-import remarkGfm from "remark-gfm";
-import { MarkdownCode } from "../components/Markdown/MarkdownCode";
-import { MarkdownLink } from "../components/Markdown/MarkdownLink";
-import { MarkdownList } from "../components/Markdown/MarkdownList";
-import { MarkdownListItem } from "../components/Markdown/MarkdownListItem";
-import { MarkdownSections } from "../components/Markdown/MarkdownSections";
-import {
-  MarkdownBrContainer,
-  MarkdownH1Container,
-  MarkdownH2Container,
-  MarkdownNavContainer,
-  MarkdownPContainer,
-} from "../components/Markdown/styles";
-import { Profile } from "../components/Profile";
-import { Github } from "../services/classes/Github";
-import { DemoVideoContainer, FirstSection } from "../styles/document/styles";
-import Image from "next/image";
-import { i18n } from "next-i18next";
+//import ReactMarkdown from "react-markdown";
+//import { SpecialComponents } from "react-markdown/lib/ast-to-react";
+//import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+//import { NormalComponents } from "react-markdown/lib/complex-types";
+// import rehypeRaw from "rehype-raw";
+// import remarkGfm from "remark-gfm";
+// import { MarkdownCode } from "../components/Markdown/MarkdownCode";
+// import { MarkdownLink } from "../components/Markdown/MarkdownLink";
+// import { MarkdownList } from "../components/Markdown/MarkdownList";
+// import { MarkdownListItem } from "../components/Markdown/MarkdownListItem";
+// import { MarkdownSections } from "../components/Markdown/MarkdownSections";
+// import {
+//   MarkdownBrContainer,
+//   MarkdownH1Container,
+//   MarkdownH2Container,
+//   MarkdownNavContainer,
+//   MarkdownPContainer,
+// } from "../components/Markdown/styles";
+// import { Profile } from "../components/Profile";
+// import { Github } from "../services/classes/Github";
+// import { DemoVideoContainer, FirstSection } from "../styles/document/styles";
+// import Image from "next/image";
+// import { i18n } from "next-i18next";
+import Disable from "./disabled";
 
-export type MarkdownComponents = Partial<
-  Omit<NormalComponents, keyof SpecialComponents> & SpecialComponents
->;
+// export type MarkdownComponents = Partial<
+//   Omit<NormalComponents, keyof SpecialComponents> & SpecialComponents
+// >;
 
 export interface ResumeProps {
   data: string;
@@ -36,11 +37,14 @@ export interface ResumeProps {
   demoVideoURL: string | null;
 }
 
-function Resume({ data, withProfile, updatedAt, demoVideoURL = null }: ResumeProps) {
+function Resume({ 
+  //data, withProfile, updatedAt, demoVideoURL = null 
+}: ResumeProps) {
   return (
     <>
       <NextSeo defaultTitle="L-Marcel" titleTemplate="L-Marcel" />
-      <FirstSection profile={withProfile}>
+      <Disable/>
+      {/* <FirstSection profile={withProfile}>
         {withProfile && <Profile updatedAt={updatedAt} />}
       </FirstSection>
       <section className="flex h-full min-h-[calc(100vh_-_14rem)] flex-1 flex-col gap-8 md:min-h-[calc(100vh_-_16rem)] xs:min-h-[calc(100vh_-_9rem)]">
@@ -84,46 +88,46 @@ function Resume({ data, withProfile, updatedAt, demoVideoURL = null }: ResumePro
             />
           </DemoVideoContainer>
         )}
-      </section>
+      </section> */}
     </>
   );
 }
 
-export const getStaticProps: GetStaticProps = async ({ locale }) => {
-  const isNotPtBr = locale === "en-US";
-  const updatedAt = new Date().toString();
+// export const getStaticProps: GetStaticProps = async ({ locale }) => {
+//   const isNotPtBr = locale === "en-US";
+//   const updatedAt = new Date().toString();
 
-  const { readme, demoVideoURL } = await Github.getRepositoryDocs({
-    repositoryName: "l-marcel",
-    locale: locale ?? "pt-BR",
-    replaceRules: (readme) => {
-      readme = readme.replace(
-        // eslint-disable-next-line prettier/prettier
-        "<div id=\"repository-buttons\"/>",
-        `<a class="navigation-link" href="https://github.com/l-marcel" target="_blank">github</a>
-<span id="only-if-not-last">•</span>`
-      );
-      return readme;
-    },
-  });
+//   const { readme, demoVideoURL } = await Github.getRepositoryDocs({
+//     repositoryName: "l-marcel",
+//     locale: locale ?? "pt-BR",
+//     replaceRules: (readme) => {
+//       readme = readme.replace(
+//         // eslint-disable-next-line prettier/prettier
+//         "<div id=\"repository-buttons\"/>",
+//         `<a class="navigation-link" href="https://github.com/l-marcel" target="_blank">github</a>
+// <span id="only-if-not-last">•</span>`
+//       );
+//       return readme;
+//     },
+//   });
 
-  if (process.env.NODE_ENV === "development") {
-    await i18n?.reloadResources();
-  }
+//   if (process.env.NODE_ENV === "development") {
+//     await i18n?.reloadResources();
+//   }
 
-  return {
-    props: {
-      data: readme,
-      updatedAt,
-      withProfile: true,
-      demoVideoURL,
-      ...(await serverSideTranslations(isNotPtBr ? "en-US" : "pt-BR", [
-        "common",
-        "home",
-      ])),
-    },
-    revalidate: false,
-  };
-};
+//   return {
+//     props: {
+//       data: readme,
+//       updatedAt,
+//       withProfile: true,
+//       demoVideoURL,
+//       ...(await serverSideTranslations(isNotPtBr ? "en-US" : "pt-BR", [
+//         "common",
+//         "home",
+//       ])),
+//     },
+//     revalidate: false,
+//   };
+// };
 
 export default Resume;

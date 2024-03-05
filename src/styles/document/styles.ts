@@ -15,13 +15,13 @@ export const PageBody = tf(
 `
 );
 
+//justify-between
 export const Layout = tf(
   "main",
   `
   relative
   flex
   flex-col
-  justify-between
   min-h-[calc(100vh-3.1rem)]
   md:min-h-[calc(100vh-2.8125rem)]
 `

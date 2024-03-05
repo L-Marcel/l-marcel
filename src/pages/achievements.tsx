@@ -1,10 +1,11 @@
-import { GetStaticProps } from "next";
+//import { GetStaticProps } from "next";
 import { NextSeo } from "next-seo";
 import { IconType } from "../components/Icon";
-import { Timeline } from "../components/Timeline";
-import { Graphql } from "../services/classes/Graphql";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { i18n, useTranslation } from "next-i18next";
+// import { Timeline } from "../components/Timeline";
+// import { Graphql } from "../services/classes/Graphql";
+// import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+// import { i18n, useTranslation } from "next-i18next";
+import Disable from "./disabled";
 
 export type Achievement = {
   id: string;
@@ -24,48 +25,49 @@ export interface AchievementsProps {
   achievements: Achievement[];
 }
 
-function Achievements({ achievements }: AchievementsProps) {
-  const { t } = useTranslation("achievements");
+function Achievements({}: AchievementsProps) {
+  //const { t } = useTranslation("achievements");
 
   return (
     <>
       <NextSeo
-        title={t("seo.title") ?? "L-Marcel"}
+        title="L-Marcel"
         defaultTitle="L-Marcel"
         titleTemplate="L-Marcel - %s"
       />
-      <section className="-mb-8 max-w-[100vw] overflow-x-hidden">
+      <Disable/>
+      {/* <section className="-mb-8 max-w-[100vw] overflow-x-hidden">
         <Timeline achievements={achievements} />
-      </section>
+      </section> */}
     </>
   );
 }
 
-export const getStaticProps: GetStaticProps = async ({ locale }) => {
-  const isNotPtBr = locale === "en-US";
-  const achievements = await Graphql.getInformation(isNotPtBr ? "EN" : "BR")
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    .then((res: any) => {
-      return res.achievements ?? [];
-    })
-    .catch(() => {
-      return [];
-    });
+// export const getStaticProps: GetStaticProps = async ({ locale }) => {
+//   const isNotPtBr = locale === "en-US";
+//   const achievements = await Graphql.getInformation(isNotPtBr ? "EN" : "BR")
+//     // eslint-disable-next-line @typescript-eslint/no-explicit-any
+//     .then((res: any) => {
+//       return res.achievements ?? [];
+//     })
+//     .catch(() => {
+//       return [];
+//     });
 
-  if (process.env.NODE_ENV === "development") {
-    await i18n?.reloadResources();
-  }
+//   if (process.env.NODE_ENV === "development") {
+//     await i18n?.reloadResources();
+//   }
 
-  return {
-    props: {
-      achievements,
-      ...(await serverSideTranslations(isNotPtBr ? "en-US" : "pt-BR", [
-        "common",
-        "achievements",
-      ])),
-    },
-    revalidate: false,
-  };
-};
+//   return {
+//     props: {
+//       achievements,
+//       ...(await serverSideTranslations(isNotPtBr ? "en-US" : "pt-BR", [
+//         "common",
+//         "achievements",
+//       ])),
+//     },
+//     revalidate: false,
+//   };
+// };
 
 export default Achievements;
