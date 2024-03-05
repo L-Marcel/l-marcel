@@ -1,4 +1,12 @@
-<div valing="top">
+# Olá, sou Lucas Marcel!
+
+Estudei desenvolvimento Web com JavaScript durante anos, tenho conhecimento superficial de desenvolvimento Mobile e atualmente estou explorando a área de desenvolvimento de jogos pois quero assumir como um hobby.
+
+Ingressei na UFRN em 2023 e pretendo me graduar como Técnico da Informação com ênfase em Engenharia de Software até 2028. De preferência com o certificado do Programa de Estudos Secundários (PES) de Jogos Digitais da UF.
+
+Atualmente não estou procurando emprego.
+
+<!-- <div valing="top">
 <h1>Olá, sou <span>Lucas Marcel</span></h1>
 <p>Desenvolvedor <span>Frontend</span> desde de <span>2018</span>.</p>
 <nav>
@@ -140,4 +148,4 @@
   <div id="images">
     <img id="langs" alt="langs" src="https://github-readme-stats.vercel.app/api/top-langs/?username=l-marcel&layout=compact&bg_color=white&title_color=423958&border_color=ffffff00&locale=pt-br"/>
   </div>
-</div>
+</div> -->
