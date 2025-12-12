@@ -2,36 +2,50 @@
   <ul align="left" style="list-style: none">
     <summary>
       <h1>
-        👋 Olá, me chamo Lucas Marcel
+        👋 Olá, seja bem-vindo(a)!
       </h1>
       <p>
-        Estou bacharelando em Tecnologia da Informação – ênfase em Engenharia de Software.
+        Sou discente do Bacharelado em Tecnologia da Informação pela Universidade Federal do Rio Grande do Norte (UFRN), com ingresso direcionado à Engenharia de Software.
       </p>
     </summary>
   </ul>
 </div>
 
 <p align="left">
-  <a href="mailto:lmgh1312@gmail.com" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logoColor=white" height="28" style="margin-right: 4px"></a>
   <a href="https://www.linkedin.com/in/l-marcel" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logoColor=white" height="28" style="margin-right: 4px"></a>
+  <a href="mailto:lmgh1312@gmail.com" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logoColor=white" height="28" style="margin-right: 4px"></a>
 </p>
 
-<p align="left">📖 Estudando desenvolvimento de aplicações robustas e escaláveis na UFRN. Hábil em tecnologias do <i>front-end</i> e <i>back-end</i>, dando foco a experiência do usuário, segurança e desempenho. Mas sem se limitar apenas ao desenvolvimento <i>web</i>.
-</br>
-</br>
-🚀 Já experimentou e realizou projetos com várias linguagens de programação e tem uma sólida base em estrutura de dados, análise de algoritmos e padrões de projetos. Deseja aprofundar seu conhecimento em programação para aprimorar as habilidades no desenvolvimento de aplicações de alto desempenho.
+<p align="left">
+Sou discente do Bacharelado em Tecnologia da Informação pela Universidade Federal do Rio Grande do Norte (UFRN), com ingresso direcionado à Engenharia de Software. Possuo experiência acadêmica e prática no desenvolvimento de software Fullstack, com ênfase nas tecnologias Java (Ecossistema Spring: Boot, Web, Cloud, AI, Security e Data) e JavaScript/TypeScript (Node.js, React.js e Next.js).
+
+Disponho de conhecimentos sólidos em arquitetura de sistemas distribuídos, microsserviços, padrões de projeto (Design Patterns), conteinerização (Docker), versionamento (Git) e bancos de dados relacionais.
 </p>
-
-**<h3 align="left">Mais sobre mim</h3>**
-
-- 💼 Atualmente estou trabalhando: **em nada**
-- 🌱 Atualmente estou estudando: **na UFRN**
-- 💬 Pode me perguntar sobre: **TypeScript, Next, React, Node, Godot, Java, C++, Threads e RESTful APIs**
-<!-- - 📂 Portfolio: **<a href="https://l-marcel.vercel.app" target="_blank">https://l-marcel.vercel.app</a>** -->
 
  **<h3 align="left">Habilidades</h3>**
 
-<div style="display: flex; flex-wrap: wrap; gap: 4px; justify-content: left;"><img src="https://skillicons.dev/icons?i=typescript" height="40" alt="TypeScript" style="margin-right: 4px"> <img src="https://skillicons.dev/icons?i=javascript" height="40" alt="JavaScript" style="margin-right: 4px"> <img src="https://skillicons.dev/icons?i=cpp" height="40" alt="C++" style="margin-right: 4px"> <img src="https://skillicons.dev/icons?i=java" height="40" alt="Java" style="margin-right: 4px"> <img src="https://skillicons.dev/icons?i=prisma" height="40" alt="Prisma" style="margin-right: 4px"> <img src="https://skillicons.dev/icons?i=nextjs" height="40" alt="Nextjs" style="margin-right: 4px"> <img src="https://skillicons.dev/icons?i=react" height="40" alt="React" style="margin-right: 4px"> <img src="https://skillicons.dev/icons?i=tailwind" height="40" alt="Tailwind CSS" style="margin-right: 4px"> <img src="https://skillicons.dev/icons?i=vite" height="40" alt="Vite" style="margin-right: 4px"> <img src="https://skillicons.dev/icons?i=sass" height="40" alt="Sass" style="margin-right: 4px"> <img src="https://skillicons.dev/icons?i=nodejs" height="40" alt="Node.js" style="margin-right: 4px"> <img src="https://skillicons.dev/icons?i=express" height="40" alt="Express" style="margin-right: 4px"> <img src="https://skillicons.dev/icons?i=spring" height="40" alt="Spring" style="margin-right: 4px"> <img src="https://skillicons.dev/icons?i=postgresql" height="40" alt="PostgreSQL" style="margin-right: 4px"> <img src="https://skillicons.dev/icons?i=mysql" height="40" alt="MySQL" style="margin-right: 4px"> <img src="https://skillicons.dev/icons?i=jest" height="40" alt="Jest" style="margin-right: 4px"> <img src="https://skillicons.dev/icons?i=vscode" height="40" alt="VSCode" style="margin-right: 4px"> <img src="https://skillicons.dev/icons?i=notion" height="40" alt="Notion" style="margin-right: 4px"> <img src="https://skillicons.dev/icons?i=figma" height="40" alt="Figma" style="margin-right: 4px"> <img src="https://skillicons.dev/icons?i=godot" height="40" alt="Godot" style="margin-right: 4px"></div>
+<div style="display: flex; flex-wrap: wrap; gap: 4px; justify-content: left;">
+  <img src="https://skillicons.dev/icons?i=typescript" height="40" alt="TypeScript" style="margin-right: 4px"> 
+  <img src="https://skillicons.dev/icons?i=javascript" height="40" alt="JavaScript" style="margin-right: 4px"> 
+  <img src="https://skillicons.dev/icons?i=cpp" height="40" alt="C++" style="margin-right: 4px"> 
+  <img src="https://skillicons.dev/icons?i=java" height="40" alt="Java" style="margin-right: 4px"> 
+  <img src="https://skillicons.dev/icons?i=prisma" height="40" alt="Prisma" style="margin-right: 4px"> 
+  <img src="https://skillicons.dev/icons?i=nextjs" height="40" alt="Nextjs" style="margin-right: 4px"> 
+  <img src="https://skillicons.dev/icons?i=react" height="40" alt="React" style="margin-right: 4px"> 
+  <img src="https://skillicons.dev/icons?i=tailwind" height="40" alt="Tailwind CSS" style="margin-right: 4px"> 
+  <img src="https://skillicons.dev/icons?i=vite" height="40" alt="Vite" style="margin-right: 4px"> 
+  <img src="https://skillicons.dev/icons?i=sass" height="40" alt="Sass" style="margin-right: 4px"> 
+  <img src="https://skillicons.dev/icons?i=nodejs" height="40" alt="Node.js" style="margin-right: 4px"> 
+  <img src="https://skillicons.dev/icons?i=express" height="40" alt="Express" style="margin-right: 4px"> 
+  <img src="https://skillicons.dev/icons?i=spring" height="40" alt="Spring" style="margin-right: 4px"> 
+  <img src="https://skillicons.dev/icons?i=postgresql" height="40" alt="PostgreSQL" style="margin-right: 4px"> 
+  <img src="https://skillicons.dev/icons?i=mysql" height="40" alt="MySQL" style="margin-right: 4px"> 
+  <img src="https://skillicons.dev/icons?i=jest" height="40" alt="Jest" style="margin-right: 4px"> 
+  <img src="https://skillicons.dev/icons?i=vscode" height="40" alt="VSCode" style="margin-right: 4px"> 
+  <img src="https://skillicons.dev/icons?i=notion" height="40" alt="Notion" style="margin-right: 4px"> 
+  <img src="https://skillicons.dev/icons?i=figma" height="40" alt="Figma" style="margin-right: 4px"> 
+  <img src="https://skillicons.dev/icons?i=godot" height="40" alt="Godot" style="margin-right: 4px">
+</div>
 
 **<h3 align="left">Estatísticas do GitHub</h3>**
 
