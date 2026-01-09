@@ -50,9 +50,8 @@ Disponho de conhecimentos sólidos em arquitetura de sistemas distribuídos, tra
 </div>
 
 **<h3 align="left">Estatísticas do GitHub</h3>**
-
 <div align="left">
-    <img height="180em" src="https://github-readme-streak-stats-eight.vercel.app?user=l-marcel&theme=react&locale=pt_BR" alt="GitHub Streak" />
-    <img height="180em" src="https://github-readme-stats.vercel.app/api?username=l-marcel&theme=react&hide_title=true&hide_rank=false&show_icons=false&include_all_commits=false&locale=pt-br&count_private=true&line_height=23" alt="GitHub stats Card" />
-    <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs?username=l-marcel&theme=react&hide_title=true&layout=compact&langs_count=6&hide_progress=false&card_width=400&locale=pt-br" alt="GitHub top-langs Card" />
+  <img height="180" src="https://github-readme-streak-stats-eight.vercel.app?user=l-marcel&theme=react&locale=pt_BR&cache=v1" alt="GitHub Streak" />
+  <img height="180" src="https://stats-lmarcel.vercel.app/api?username=l-marcel&theme=react&hide_title=true&hide_rank=false&show_icons=false&include_all_commits=false&locale=pt-br&line_height=23&cache=v1" alt="GitHub stats Card" />
+  <img height="180" src="https://stats-lmarcel.vercel.app/api/top-langs?username=l-marcel&theme=react&hide_title=true&layout=compact&langs_count=6&hide_progress=false&card_width=400&locale=pt-br&cache=v1" alt="GitHub top-langs Card" />
 </div>
