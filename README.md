@@ -16,10 +16,9 @@
   <a href="mailto:lmgh1312@gmail.com" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logoColor=white" height="28" style="margin-right: 4px"></a>
 </p>
 
-<p align="left">
-Sou discente do Bacharelado em Tecnologia da Informação pela Universidade Federal do Rio Grande do Norte (UFRN), com ingresso direcionado à Engenharia de Software. Possuo experiência acadêmica e prática no desenvolvimento de software Fullstack, com ênfase nas tecnologias Java (Ecossistema Spring: Boot, Web, Cloud, AI, Security e Data) e JavaScript/TypeScript (Node.js, React.js e Next.js).
+<p align="left">Sou discente do Bacharelado em Tecnologia da Informação pela Universidade Federal do Rio Grande do Norte (UFRN), com ingresso direcionado à Engenharia de Software. Possuo experiência acadêmica e prática no desenvolvimento de software Fullstack, com ênfase nas tecnologias Java (Ecossistema Spring: Boot, Web, Cloud, AI, Security e Data) e JavaScript/TypeScript (Node.js, React.js e Next.js).
 
-Disponho de conhecimentos sólidos em arquitetura de sistemas distribuídos, microsserviços, padrões de projeto (Design Patterns), conteinerização (Docker), versionamento (Git) e bancos de dados relacionais.
+Disponho de conhecimentos sólidos em arquitetura de sistemas distribuídos, trade-offs de consistência (teoremas CAP/PACELC), bancos de dados relacionais, microsserviços, padrões de projeto (Design Patterns), conteinerização (Docker) e versionamento (Git), bem como embasamento teórico em orquestração (Kubernetes), entrega e integração contínua (Jenkins e GitLab) e metodologias ágeis (Scrum e Kanban).
 </p>
 
  **<h3 align="left">Habilidades</h3>**
